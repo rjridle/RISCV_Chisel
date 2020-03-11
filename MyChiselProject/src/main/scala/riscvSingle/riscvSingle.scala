@@ -47,6 +47,7 @@ class riscv extends Module {
 
     val d = Module(new decoder)
     val dp = Module(new datapath)
+    
     val instW = Wire(UInt(32.W))
     val readDataW = Wire(UInt(32.W))
     readDataW := io.readData
@@ -158,28 +159,28 @@ class decoder extends Module {
         io.branchSrc := 0.U
 
         when(io.funct7 === "b0000000".U) {
-            when(io.funct3 === "b000".U) {
+            when(io.funct3 === "b000".U) {          //ADD
                 io.aluControl := 2.U
-            }.elsewhen(io.funct3 === "b001".U) {
+            }.elsewhen(io.funct3 === "b001".U) {    //SLL
                 io.aluControl := 3.U
-            }.elsewhen(io.funct3 === "b010".U) {
+            }.elsewhen(io.funct3 === "b010".U) {    //SLT
                 io.aluControl := 9.U
-            }.elsewhen(io.funct3 === "b011".U) {
+            }.elsewhen(io.funct3 === "b011".U) {    //SLTU
                 io.aluControl := 5.U
-            }.elsewhen(io.funct3 === "b100".U) {
+            }.elsewhen(io.funct3 === "b100".U) {    //XOR
                 io.aluControl := 6.U
-            }.elsewhen(io.funct3 === "b101".U) {
+            }.elsewhen(io.funct3 === "b101".U) {    //SRL
                 io.aluControl := 7.U
-            }.elsewhen(io.funct3 === "b110".U) {
+            }.elsewhen(io.funct3 === "b110".U) {    //OR
                 io.aluControl := 1.U
-            }.otherwise {
-                io.aluControl := 0.U
+            }.otherwise {                           //AND
+                io.aluControl := 0.U                
             }
         }.otherwise {
-            when(io.funct3 === "b000".U) {
-                io.aluControl := 8.U
-            }.otherwise {
-                io.aluControl := 4.U
+            when(io.funct3 === "b000".U) {          //MUL
+                io.aluControl := 8.U                
+            }.otherwise {                           //SUB
+                io.aluControl := 4.U                
             }
         }
     }.elsewhen (io.opcode === "b0010011".U) {
@@ -191,24 +192,24 @@ class decoder extends Module {
         io.memW := 0.U
         io.branchSrc := 0.U
 
-        when(io.funct3 === "b000".U) {
+        when(io.funct3 === "b000".U) {              // ADDI
             io.aluControl := 2.U
-        }.elsewhen(io.funct3 === "b001".U) {
+        }.elsewhen(io.funct3 === "b001".U) {        // SLLI
             io.aluControl := 3.U
-        }.elsewhen(io.funct3 === "b010".U) {
+        }.elsewhen(io.funct3 === "b010".U) {        // SLTI
             io.aluControl := 9.U
-        }.elsewhen(io.funct3 === "b011".U) {
+        }.elsewhen(io.funct3 === "b011".U) {        // SLTIU
             io.aluControl := 5.U
-        }.elsewhen(io.funct3 === "b100".U) {
+        }.elsewhen(io.funct3 === "b100".U) {        // XORI
             io.aluControl := 6.U
-        }.elsewhen(io.funct3 === "b101".U) {
+        }.elsewhen(io.funct3 === "b101".U) {        // SRLI
             io.aluControl := 7.U
-        }.elsewhen(io.funct3 === "b110".U) {
+        }.elsewhen(io.funct3 === "b110".U) {        // ORI
             io.aluControl := 1.U
         }.otherwise {
-            io.aluControl := 0.U
+            io.aluControl := 0.U                    // ANDI
         }
-    }.elsewhen (io.opcode === "b0000011".U) {
+    }.elsewhen (io.opcode === "b0000011".U) {       // LOAD
         io.regSrc := "b000".U
         io.immSrc := "b00".U
         io.aluSrc := 1.U
@@ -217,7 +218,7 @@ class decoder extends Module {
         io.memW := 1.U
         io.branchSrc := 0.U
         io.aluControl := 0.U
-    }.elsewhen (io.opcode === "b0100011".U) {
+    }.elsewhen (io.opcode === "b0100011".U) {       // STORE
         io.regSrc := "b000".U
         io.immSrc := "b00".U
         io.aluSrc := 1.U
@@ -235,23 +236,23 @@ class decoder extends Module {
         io.memW := 0.U
         io.aluControl := 4.U
         
-        when(io.funct3 === "b000".U & io.zero === 1.U){
+        when(io.funct3 === "b000".U & io.zero === 1.U){         // BEQ
             io.branchSrc := 1.U
-        }.elsewhen(io.funct3 === "b001".U & io.zero === 0.U) {
+        }.elsewhen(io.funct3 === "b001".U & io.zero === 0.U) {  // BNE
             io.branchSrc := 1.U
-        }.elsewhen(io.funct3 === "b100".U & io.lt === 1.U) {
+        }.elsewhen(io.funct3 === "b100".U & io.lt === 1.U) {    // BLT
             io.branchSrc := 1.U
-        }.elsewhen(io.funct3 === "b101".U & io.gt === 1.U) {
+        }.elsewhen(io.funct3 === "b101".U & io.gt === 1.U) {    // BGE
             io.branchSrc := 1.U
-        }.elsewhen(io.funct3 === "b110".U & io.lt === 1.U) {
+        }.elsewhen(io.funct3 === "b110".U & io.lt === 1.U) {    // BLTU
             io.branchSrc := 1.U
-        }.elsewhen(io.funct3 === "b111".U & io.gt === 1.U) {
+        }.elsewhen(io.funct3 === "b111".U & io.gt === 1.U) {    // BGEU
             io.branchSrc := 1.U
-        }.otherwise {
+        }.otherwise {                                           // NONE
             io.branchSrc := 0.U
         }
 
-    }.elsewhen (io.opcode === "b1101111".U) {
+    }.elsewhen (io.opcode === "b1101111".U) {                   // JAL
         io.regSrc := "b100".U
         io.immSrc := "b10".U
         io.aluSrc := 1.U
@@ -260,7 +261,7 @@ class decoder extends Module {
         io.memW := 0.U
         io.branchSrc := 1.U
         io.aluControl := 0.U
-    }.otherwise {
+    }.otherwise {                                               // NONE
         io.regSrc := "b000".U
         io.immSrc := "b00".U
         io.aluSrc := 0.U
@@ -325,10 +326,16 @@ class datapath extends Module {
     val memImm = Wire(UInt(32.W))
     val branchImm = Wire(UInt(32.W))
     val jumpImm = Wire(UInt(32.W))
+    val branchExtImm = Wire(UInt(32.W))
+    val extImm = Wire(UInt(32.W))
+    val memToRegW = Wire(UInt(1.W))
+    val readDataW = Wire(UInt(32.W))
+    val aluOutW = Wire(UInt(32.W))
     val ra1 = Wire(UInt(5.W))
     val ra2 = Wire(UInt(5.W))
     val ra4 = Wire(UInt(32.W))
     val srcB = Wire(UInt(32.W))
+    val result = Wire(UInt(32.W))
 
     //Branch Logic
     branchImm := Cat(io.instr(31), io.instr(7), io.instr(30,25), io.instr(11,8))
@@ -336,31 +343,27 @@ class datapath extends Module {
     ext1.io.instr12 := branchImm
     ext1.io.instr20 := jumpImm
     ext1.io.immSrc := io.immSrc
-
     ext2.io.instr12 := io.instr(31,20) 
     ext2.io.instr20 := jumpImm
     ext2.io.immSrc := io.immSrc
-
-    //PC logic
-    val branchExtImm = Wire(UInt(32.W))
     branchExtImm := ext1.io.extImm
-    val extImm = Wire(UInt(32.W))
     extImm := ext2.io.extImm
-    val result = Wire(UInt(32.W))
-    result := Mux(io.memToReg.andR, io.readData, alu.io.out)
-    val memToRegW = Wire(UInt(1.W))
-    val readDataW = Wire(UInt(32.W))
-    val aluOutW = Wire(UInt(32.W))
+    
+    
+    
+    
+    //print data
     memToRegW := io.memToReg
     readDataW := io.readData
     aluOutW := alu.io.out
     
+    //PC logic
     val pcReg =  RegInit (0.U(32.W))
     val pcNext = Wire(UInt(32.W))
     val pcBranch = Wire(UInt(32.W))
     val pcPlus8 = Wire(UInt(32.W))
     val pcPlus4 = Wire(UInt(32.W))
-    pcPlus4 := pcReg + "b100".U
+    pcPlus4 := pcReg + "h4".U
     pcPlus8 := pcPlus4 + "b100".U
     pcBranch := branchExtImm + pcReg
     pcNext := Mux(io.branchSrc.andR, pcBranch, pcPlus4)
@@ -375,12 +378,15 @@ class datapath extends Module {
     io.dataAdd := rf.io.rd1 + memImm
     
 
+    result := Mux(io.memToReg.andR, io.readData, alu.io.out)
+
     //regFile logic
     ra1 := Mux(io.regSrc(0).andR, "b11111".U, io.instr(19,15))
     ra2 := Mux(io.regSrc(1).andR, io.instr(11,7), io.instr(24,20))
     ra4 := Mux(io.regSrc(2).andR, pcPlus4, result)
 
     
+
     printf("**********DATAPATH**********\n")
     printf("****ALUD****\n")
     printf(p"mux[$memToRegW, readData($readDataW), alu.out($aluOutW)]\n")
@@ -526,7 +532,7 @@ class alu extends Module {
             io.out := io.a >> io.b(18,0)
         }
     }.elsewhen(io.aluControl === "b1000".U) {
-        io.out := sum
+        io.out := io.a * io.b
     }.elsewhen(io.aluControl === "b1001".U) {
         when (sum(31).andR) {
             io.out := 1.U
@@ -585,7 +591,7 @@ class imem extends Module {
     })
 
     val MEM = Mem(1024, UInt(32.W))
-    loadMemoryFromFile(MEM, "/home/rjridle/chisel/customchisel/MyChiselProject/tests/fib.x")
+    loadMemoryFromFile(MEM, "/home/rjridle/chisel/RISCV_Chisel/single_cycle/risc-v-chisel/MyChiselProject/tests/beqTests/simpBeq.x")
 
     io.mem_out := MEM(io.mem_addr)
     
@@ -604,7 +610,7 @@ class dmem extends Module {
 }
 
 class riscvSingleTest(t: top) extends PeekPokeTester(t) {
-    for (x <- 0 to 65){
+    for (x <- 0 to 20){
         step(1)
     }
 }
