@@ -1,4 +1,3 @@
-// See README.md for license details.
 
 def scalacOptionsVersion(scalaVersion: String): Seq[String] = {
   Seq() ++ {
@@ -26,7 +25,7 @@ def javacOptionsVersion(scalaVersion: String): Seq[String] = {
   }
 }
 
-name := "chisel-module-template"
+name := "RISCV_Single_Cycle"
 
 version := "3.1.1"
 
