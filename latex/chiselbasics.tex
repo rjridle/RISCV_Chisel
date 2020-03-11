@@ -1,0 +1,1056 @@
+\documentclass[12pt, letterpaper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+%\usepackage{beramono}
+ 
+\title{RISC-V Processor Developed in the Chisel Programming Language}
+\author{Ryan Ridley}
+\date{August 2019}
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstdefinestyle{scala}{
+  frame=tb,
+  language=scala,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  frame=single,
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+}
+
+\begin{document}
+\maketitle
+
+\chapter{First Chapter}
+ 
+\section{Overview}
+RISC-V is a reduced instruction set architecture that is becoming more and more popular in today's processors. Chisel, which is a hardware 
+description language embedded in the Scala programming language, is also becoming more and more popular in toady's time. This document is 
+an overview of how a RISC-V processor was created in Chisel. Chisel basics, Scala basics, debugging, testing, and more will all be covered 
+using the RISC-V processor and (mostly when covering the basics) smaller, easier code snippets as examples. 
+\section{Chisel Introduction}
+ 
+Chisel is a hardware description language embedded in the Scala programming language. Chisel allows the user to describe hardware in a
+highly parameterized, object oriented way. This is what makes Chisel more attractive than Verilog or VHDL. Chisel still allows the user to
+output a Verilog file of the Chisel code. Using Scala as a basis, object oriented functionality can be used to program logic to aid in the design
+of hardware.
+ 
+\section{Chisel Template}
+ 
+To begin making a Chisel project, the \href{https://github.com/freechipsproject/chisel-template}{project template} must first be downloaded. 
+This project template deal with a lot of the boiler plate code that Chisel needs to create the project.
+When creating a custom project, the source files must be in the directory src/main/scala. Any test files, files that run tests on the source code, 
+need to be in src/test/scala. These test files will be explained later.
+ 
+\section{Scala Basics}
+\subsection{Variables}
+
+Scala uses many of the same programming paradigms as many other popular programming languages. The first is  variables (var) and constant values (val).
+
+\begin{lstlisting}[style=scala]
+   var numberOfKittens = 6
+   val kittensPerHouse = 101
+   val alphabet = "abcdefghijklmnopqrxtuvwxyz"
+   var done = false
+\end{lstlisting}
+
+\noindent The value of the variables \textbf{numberOfKittens} and \textbf{done} can be changed
+
+\begin{lstlisting}[style=scala]
+   numberOfKittens += 1
+   done = false
+\end{lstlisting}
+
+\noindent while the others defined with val cannot.
+
+\subsection{If Statement}
+
+One of the most important functions in a programming language is the if statement. Scala supports this in the same fashion that most languages do.
+
+\begin{lstlisting}[style=scala]
+   if(numberOfKittens > kittensPerHouse) {
+      println("Too many kittens!")
+   }
+
+   //braces are not required as long 
+   //as branches are one liners
+
+   if (done) 
+      println("Done!")
+   else
+      numberOfKittens += 1
+
+\end{lstlisting}
+
+\noindent The \textbf{if} conditional can also return a value. It is given by the last line of the selected branch.
+
+\begin{lstlisting}[style=scala]
+   val likelyCharacterSet = if (alphabet.length == 26) 
+      "english"
+   else
+      "not english"
+\end{lstlisting}
+
+\subsection{Methods}
+
+Methods are defined with the keyword \textbf{def}.
+Parameters are defined in a comma separated list that define the name and type as follows.
+
+\begin{lstlisting}[style=scala]
+   def methodName(param1: Int, param2: 
+      String, param3: Boolean) {
+      //code
+   }
+
+   //Methods can also be one liners.
+
+   def times2(x: Int): Int = 2 * x 
+\end{lstlisting}
+
+\subsection{Lists}
+Lists are a lot like arrays but support more functionality for appending and extracting.
+
+\begin{lstlisting}[style=scala]
+   val x = 7
+   val y = 14
+   val list1 = List(1, 2, 3)
+   
+   //Another way to make a list
+   val list2 = x :: y :: y :: Nil	
+
+   val list3 = list1 ++ list2
+   val m = list2.length
+   val s = list2.size
+
+   val headOfList = list1.head	//Gets the head of list
+   val tailOfList = list1.tail	//Gets the tail of list
+
+   //Gets the third element of the list
+   val third = list1(2)			
+\end{lstlisting}
+
+\subsection{For Loops}
+
+Scala has for loops that work just like in traditional languages.
+
+\begin{lstlisting}[style=scala]
+   for (i <- 0 to 7) {print(i + " ")}
+   println()
+\end{lstlisting}
+
+Using \textbf{until} instead of \textbf{to} to go up to a value, but stop before it. 
+
+\begin{lstlisting}[style=scala]
+   for (i <- 0 until 7) {print(i + " ")}
+   println()
+\end{lstlisting}
+
+Adding \textbf{by} at the end will increment i by a fixed amount.
+
+\begin{lstlisting}[style=scala]
+   for (i <- 0 to 10 by 2) {print(i + " ")}
+   println()
+\end{lstlisting}
+
+\subsection{Classes}
+Here is an example of a class.
+
+\begin{lstlisting}[style=scala]
+   // WrapCounter counts up to a 
+   //max value based on a bit size
+
+   class WrapCounter(counterBits: Int) {
+
+     val max: Long = (1 << counterBits) - 1
+     var counter = 0L
+    
+     def inc(): Long = {
+       counter = counter + 1
+       if (counter > max) {
+           counter = 0
+       }
+       counter
+     }
+    println(s"counter created with max value \$max")
+   }
+\end{lstlisting}
+
+The structure of Scala is very similar to languages like Java and C++. Now that a basis of Scala has been 
+set, making hardware will now be much easier and more reusable.
+
+\chapter{Chisel Basics}
+Chisel is a hardware description language that uses Scala as a basis for object oriented programming. All Chisel code requires
+certain packages to be imported and a specific format that must be followed.
+Make sure to add these imports at the beginning of every file that includes Chisel code.
+
+\begin{lstlisting}[style=scala]
+   import chisel3._
+   import chisel3.util._
+   import chisel3.iotester.{ChiselFlatSpec, 
+      Driver, PeekPokeTester}
+\end{lstlisting}
+The last import is specifically for testing Chisel code. Here is a very simple Chisel module.
+
+\begin{lstlisting}[style=scala]
+   // Chisel Code: Declare a new module definition
+   class Passthrough extends Module {
+     val io = IO(new Bundle {
+       val in = Input(UInt(4.W))
+       val out = Output(UInt(4.W))
+     })
+     io.out := io.in
+   }
+\end{lstlisting}
+
+Every Chisel module (class) must extend \textbf{Module}. Next are the input and outputs of the module.
+\textbf{io} is needed for every module. All of the vals inside \textbf{IO(new Bundle {})} are the 
+inputs and outputs of the user. When referencing a variable, \textbf{io.variableName} is required.
+Looking at the \textbf{in} variable we can see that it is declared as an input, unsigned integer (UInt),
+and is a width of four (4.W). The variable \textbf{out} is similar except it is declared as an output.
+This is a simple passthrough module. The output is immediately set to the input. The operator used to connect
+the values is \textbf{:=}. This is basically like taking a wire and connecting the output to the input. This is
+a directional operator, meaning that the left hand signal drives the right hand signal. 
+
+\section{Types}
+Unfortunately, Scala types (integers, doubles, etc.) are not compatible with Chisel types. Below is an example.
+
+\begin{lstlisting}[style=scala]
+   val two = 1 + 1 //Scala integer
+
+   val utwo = 1.U + 1.U //Chisel unsigned integer
+
+\end{lstlisting}
+A \textbf{.U} must be added to the end of a number to cast into the Chisel unsigned integer type. For booleans, a \textbf{.B} is added to the end:
+
+\begin{lstlisting}[style=scala]
+   val true_value = true.B
+   
+   val false_value = false.B
+\end{lstlisting}
+Casting is another function that Chisel supports. Here are some common castings:
+
+\begin{itemize}
+   \item \verb|asUInt()|
+   \item \verb|asSInt()|
+   \item \verb|asBool()|
+\end{itemize}
+
+\subsection{Multiplexing and Concatenation}
+Variables can be set with the \textbf{Mux()} function or concatenated with the \textbf{Cat()} function.
+
+\begin{lstlisting}[style=scala]
+
+   class MyOperatorsTwo extends Module {
+     val io = IO(new Bundle {
+       val in      = Input(UInt(4.W))
+       val out_mux = Output(UInt(4.W))
+       val out_cat = Output(UInt(4.W))
+     })
+
+     val s = true.B
+     io.out_mux := Mux(s, 3.U, 0.U) 
+     io.out_cat := Cat(2.U, 1.U)    
+   }
+\end{lstlisting}
+
+\subsection{Conditionals}
+\subsubsection{When Statement}
+When dealing with hardware in Chisel, a different type of conditional statement must be used. Using Chisel conditionals along with Scala conditionals can make a powerful
+team. Below is an example of a Chisel conditional.
+
+\begin{lstlisting}[style=scala]
+   class Mux3 extends Module {
+     val io = IO(new Bundle {
+       val in1 = Input(UInt(16.W))
+       val in2 = Input(UInt(16.W))
+       val in3 = Input(UInt(16.W))
+       val out = Output(UInt(16.W))
+     })
+    
+     when(io.in1 > io.in2 && io.in1 > io.in3) {
+       io.out := io.in1  
+     }.elsewhen(io.in2 > io.in1 && io.in2 > io.in3) {
+       io.out := io.in2 
+     }.otherwise {
+       io.out := io.in3
+     }
+   }
+\end{lstlisting}
+Chisel uses \textbf{when, elsewhen, and otherwise} for its conditional statements. Works exactly like a regular if statement.
+
+\subsubsection{Switch Statement}
+The switch statement works much the same as a regular switch statement.
+
+\begin{lstlisting}[style=scala]
+   switch(x) {
+     is(value1) {
+       // run if x === value1
+     } is(value2) {
+       // run if x === value2
+     }
+   }
+Great for control flow.
+\end{lstlisting}
+
+\subsection{Testing Chisel}
+There are a few debugging tools that Chisel supports. PeekPokeTester is one class that can be extended that allows the user 
+to "poke" (set) signals and the "peek" (view) the resulting signals.
+Review the following example:
+
+\begin{lstlisting}[style=scala]
+class ALU extends Module {
+  val io = IO(new Bundle {
+    val a = Input(UInt(32.W))
+    val b = Input(UInt(32.W))
+    val op = Input(UInt(5.W))
+    val out = Output(UInt(32.W))
+  })
+
+  when (io.op === 0.U) {
+        io.out := io.a + io.b   //ADD
+    }.elsewhen (io.op === 1.U) {
+        io.out := io.a - io.b   //SUB
+    }.elsewhen (io.op === 2.U) {
+        io.out := io.a & io.b   //AND
+    }.elsewhen (io.op === 3.U) {
+        io.out := io.a | io.b   //OR
+    }.elsewhen (io.op === 4.U) {
+        io.out := io.a ^ io.b   //XOR
+    }.otherwise {
+        io.out := io.a
+    }
+  }
+\end{lstlisting}
+
+Here is the main class that holds all of our logic. Next, a testing class needs to be made. It looks as follows:
+
+\begin{lstlisting}[style=scala]
+ class ALUTest(alu: ALU) extends PeekPokeTester(alu) {
+    poke(alu.io.a, 17.U)
+    poke(alu.io.b, 1.U)
+    poke(alu.io.op, 0.U)
+    step(1)
+
+    println("The result: " + peek(alu.io.out))
+}
+
+object ALU extends App {
+  iotesters.Driver.execute(args, () => new ALU) {
+    alu => new ALUTest(alu)
+  ]}
+}
+\end{lstlisting}
+
+Chisel finds the object of the main class (ALU) and using 
+
+\textbf{iotesters.Driver.execute} the ALUTest class will be run.
+Using \textbf{poke} values can be inserted into the inputs. The inputs and outputs can also be "peeked" at using \textbf{peek}.
+Using the println function, io.out is printed to the console using \textbf{peek(alu.io.out)}. 
+This is useful for debugging code, but the only values that can be peeked at are io inputs and outputs. 
+Any internal signals trying to be peeked at will cause an error to be thrown. If internal signals need to 
+be looked at then a wire must first be made.
+
+\begin{lstlisting}[style=scala]
+class debuggingTest extends Module {
+ val io = IO(new Bundle{
+    val a = Input(UInt(32.W))
+    val b = Input(UInt(32.W))
+    val out = Output(UInt(32.W))
+ })
+
+ val and = Wire(UInt(32.W))
+ and := io.a & io.b
+ printf(p"a & b = \$and\n")
+
+ io.out := io.a + io.b
+}
+\end{lstlisting}
+
+Using this method allows internal signals that are not inputs or outputs to be printed to the terminal. This is used heavily in 
+the RISC-V processor for debugging. If multiple classes are being run and all have print statements in them, then the order in 
+which these classes are called will determine when the print statement gets called. This can cause some confusing debugging because 
+this is different than most hardware description languages when everything is technically ran at once. Chisel is an object oriented 
+programming language at the core so it follows that standard paradigms of most object oriented programming languages.
+
+
+\chapter{RISC-V Processor}
+Now with a basic understanding of both Scala and Chisel, construction a simple processor is easier than it may seem. The design of 
+this particular processor is split up into 9 classes (or modules).
+\begin{itemize}
+   \item top
+   \item riscv
+   \item extend
+   \item decoder
+   \item datapath
+   \item regfile
+   \item alu
+   \item imem
+   \item dmem
+\end{itemize}
+
+An explanation of each class and how it fits into the whole architecture is what will follow Next
+\section{Top Module}
+Top is exactly what it sounds like. This is the top of the program where everything is brought together. This mainly brings the instruction
+memory (imem) and main memory (dmem) into the main processing unit (riscv).
+
+\begin{lstlisting}[style=scala]
+    class top extends Module {
+    val io = IO(new Bundle {
+    })
+
+    val r = Module(new riscv)
+    val im = Module(new imem)
+    val dm = Module(new dmem)
+
+    //printing constants
+    val instr_out = Wire(UInt(32.W))
+    val pc_pulled = Wire(UInt(32.W))
+    val mem_inW = Wire(UInt(32.W))
+    val mem_outW = Wire(UInt(32.W))
+    instr_out := im.io.mem_out
+    pc_pulled := r.io.pc / 4.U
+    im.io.mem_addr := r.io.pc / 4.U
+    r.io.instr := im.io.mem_out
+    dm.io.mem_addr := r.io.aluResult
+    dm.io.mem_in := r.io.writeData
+    dm.io.enable := r.io.memWrite
+    r.io.readData := dm.io.mem_out
+    mem_outW := dm.io.mem_out
+    mem_inW := r.io.writeData
+
+    printf(p"Instruction pulled: $instr_out\n")
+    printf(p"PC pulled: $pc_pulled\n")
+    printf(p"mem_in($mem_inW) - mem_out($mem_outW)\n")
+    
+
+    printf("\n\n---------NEXT INSTRUCTION---------\n")
+}
+\end{lstlisting}
+
+We can first see the class declaration at the top and that no input or output variables have been declared.
+Next are module declarations for riscv, dmem, and imem. These variables \textbf{r}, \textbf{im}, and \textbf{dm} can
+now be used to deliver values to all the classes. We first pull the PC from the riscv module and give it to imem. Then 
+the new instruction is pulled and given back to the riscv module. 
+
+\begin{lstlisting}[style=scala]
+    im.io.mem_addr := r.io.pc / 4.U
+    r.io.instr := im.io.mem_out
+\end{lstlisting}
+
+Next, values are pulled into dmem so that the correct mem\_out value can be calculated.
+Even though a value is pulled from dmem every cycle, 
+this does not necessarily mean that the value pulled will be used in any calculations. 
+This will become clear when we come to the datapath module. Values are also stored into dmem if the write enable is set.
+The rest of the module is just debugging information. 
+
+\begin{lstlisting}[style=scala]
+    dm.io.mem_addr := r.io.aluResult
+    dm.io.mem_in := r.io.writeData
+    dm.io.enable := r.io.memWrite
+    r.io.readData := dm.io.mem_out
+\end{lstlisting}
+
+\section{RISCV Module}
+Next is the \textbf{riscv} module which moves data between the datapath and decoder. First are the declarations for the decoder module (d)
+and the datapath module (dp).
+
+\begin{lstlisting}[style=scala]
+    val d = Module(new decoder)
+    val dp = Module(new datapath)
+\end{lstlisting}
+
+There will be occasional omissions of print statements/debugging information that isn't completely relevant.
+Data from the instruction is fed into the decoder module. Things like opcode, funct7, funct3, destination register (rd), 
+and some control signals from the alu that come out of the datapath.
+
+\begin{lstlisting}[style=scala]
+    d.io.opcode := io.instr(6,0)
+    d.io.funct7 := io.instr(31,25)
+    d.io.funct3 := io.instr(14,12)
+    d.io.rd := io.instr(11,7)
+    d.io.zero := dp.io.zero
+    d.io.lt := dp.io.lt
+    d.io.gt := dp.io.gt
+\end{lstlisting}
+
+These are all the signals that the decoder needs to calculate control signals that will be fed into the datapath. 
+
+\begin{lstlisting}[style=scala]
+    dp.io.regSrc := d.io.regSrc
+    dp.io.regWrite := d.io.regW
+    dp.io.immSrc := d.io.immSrc
+    dp.io.aluSrc := d.io.aluSrc
+    dp.io.aluControl := d.io.aluControl
+    dp.io.memToReg := d.io.memW
+    dp.io.instr := io.instr
+    dp.io.readData := io.readData
+    dp.io.branchSrc := d.io.branchSrc
+\end{lstlisting}
+
+The pc is then fetched from the datapath and fed back up to the top module to fetch the next instruction along with data
+that is going to be written into memory. 
+
+\begin{lstlisting}[style=scala]
+    io.pc := dp.io.pc
+    io.memWrite := d.io.memW
+    io.aluResult := dp.io.dataAdd
+    io.writeData := dp.io.writeData
+    io.memImmP := dp.io.memImmP
+\end{lstlisting}
+
+
+\section{Decoder Module}
+The decoder is the module sets sets most of the control signals that determine what the alu
+will do, if a branch is necessary, if a value is being written to a register, if a value pulled from memory is begin written to a register,
+etc. First, the class declaration.
+\begin{lstlisting}[style=scala]
+   class decoder extends Module {
+    val io = IO(new Bundle {
+        val opcode = Input(UInt(7.W))
+        val funct7 = Input(UInt(7.W))
+        val funct3 = Input(UInt(3.W))
+        val rd = Input(UInt(5.W))
+        val regSrc = Output(UInt(3.W))
+        val regW = Output(UInt(1.W))
+        val immSrc = Output(UInt(2.W))
+        val aluSrc = Output(UInt(1.W))
+        val aluControl = Output(UInt(4.W))
+        val memW = Output(UInt(1.W))
+        val memToReg = Output(UInt(1.W))
+        val branchSrc = Output(UInt(1.W))
+        val zero = Input(UInt(1.W))
+        val lt = Input(UInt(1.W))
+        val gt = Input(UInt(1.W))
+    })
+\end{lstlisting}
+How the decoder determines what control signals to set is a long list of when statements
+("if statements" for other programming languages) that uses the opcode, funct7, and funct3 control signals received from the 
+instruction. Since the when statements are relatively self-explanatory and very long there will be no explanation for every block.
+
+\begin{lstlisting}[style=scala]
+    when(io.opcode === "b0110011".U) {
+      io.regSrc := "b000".U
+      io.immSrc := "b00".U
+      io.aluSrc := 0.U
+      io.memToReg := 0.U
+      io.regW := 1.U
+      io.memW := 0.U
+      io.branchSrc := 0.U
+
+      when(io.funct7 === "b0000000".U) {
+          when(io.funct3 === "b000".U) {
+              io.aluControl := 2.U
+          }.elsewhen(io.funct3 === "b001".U) {
+              io.aluControl := 3.U
+          }.elsewhen(io.funct3 === "b010".U) {
+              io.aluControl := 9.U
+          }.elsewhen(io.funct3 === "b011".U) {
+              io.aluControl := 5.U
+          }.elsewhen(io.funct3 === "b100".U) {
+              io.aluControl := 6.U
+          }.elsewhen(io.funct3 === "b101".U) {
+              io.aluControl := 7.U
+          }.elsewhen(io.funct3 === "b110".U) {
+              io.aluControl := 1.U
+          }.otherwise {
+              io.aluControl := 0.U
+          }
+      }.otherwise {
+          when(io.funct3 === "b000".U) {
+              io.aluControl := 8.U
+          }.otherwise {
+              io.aluControl := 4.U
+          }
+      }
+  }.elsewhen (io.opcode === "b0010011".U) {
+      io.regSrc := "b000".U
+      io.immSrc := "b00".U
+      io.aluSrc := 1.U
+      io.memToReg := 0.U
+      io.regW := 1.U
+      io.memW := 0.U
+      io.branchSrc := 0.U
+
+      when(io.funct3 === "b000".U) {
+          io.aluControl := 2.U
+      }.elsewhen(io.funct3 === "b001".U) {
+          io.aluControl := 3.U
+      }.elsewhen(io.funct3 === "b010".U) {
+          io.aluControl := 9.U
+      }.elsewhen(io.funct3 === "b011".U) {
+          io.aluControl := 5.U
+      }.elsewhen(io.funct3 === "b100".U) {
+          io.aluControl := 6.U
+      }.elsewhen(io.funct3 === "b101".U) {
+          io.aluControl := 7.U
+      }.elsewhen(io.funct3 === "b110".U) {
+          io.aluControl := 1.U
+      }.otherwise {
+          io.aluControl := 0.U
+      }
+  }.elsewhen (io.opcode === "b0000011".U) {
+      io.regSrc := "b000".U
+      io.immSrc := "b00".U
+      io.aluSrc := 1.U
+      io.memToReg := 1.U
+      io.regW := 1.U
+      io.memW := 1.U
+      io.branchSrc := 0.U
+      io.aluControl := 0.U
+  }.elsewhen (io.opcode === "b0100011".U) {
+      io.regSrc := "b000".U
+      io.immSrc := "b00".U
+      io.aluSrc := 1.U
+      io.memToReg := 0.U
+      io.regW := 0.U
+      io.memW := 1.U
+      io.branchSrc := 0.U
+      io.aluControl := 0.U
+  }.elsewhen (io.opcode === "b1100011".U) {
+      io.regSrc := "b000".U
+      io.immSrc := "b01".U
+      io.aluSrc := 0.U
+      io.memToReg := 0.U
+      io.regW := 0.U
+      io.memW := 0.U
+      io.aluControl := 4.U
+      
+      when(io.funct3 === "b000".U & io.zero === 1.U){
+          io.branchSrc := 1.U
+      }.elsewhen(io.funct3 === "b001".U 
+         & io.zero === 0.U) {
+          io.branchSrc := 1.U
+      }.elsewhen(io.funct3 === "b100".U 
+         & io.lt === 1.U) {
+          io.branchSrc := 1.U
+      }.elsewhen(io.funct3 === "b101".U 
+         & io.gt === 1.U) {
+          io.branchSrc := 1.U
+      }.elsewhen(io.funct3 === "b110".U 
+         & io.lt === 1.U) {
+          io.branchSrc := 1.U
+      }.elsewhen(io.funct3 === "b111".U 
+         & io.gt === 1.U) {
+          io.branchSrc := 1.U
+      }.otherwise {
+          io.branchSrc := 0.U
+      }
+
+  }.elsewhen (io.opcode === "b1101111".U) {
+      io.regSrc := "b100".U
+      io.immSrc := "b10".U
+      io.aluSrc := 1.U
+      io.memToReg := 0.U
+      io.regW := 1.U
+      io.memW := 0.U
+      io.branchSrc := 1.U
+      io.aluControl := 0.U
+  }.otherwise {
+      io.regSrc := "b000".U
+      io.immSrc := "b00".U
+      io.aluSrc := 0.U
+      io.memToReg := 0.U
+      io.regW := 0.U
+      io.memW := 0.U
+      io.branchSrc := 0.U
+      io.aluControl := 0.U
+  }
+\end{lstlisting}
+
+The rest of the module is purely debugging information.
+
+\section{Datapath Module}
+The datapath connects many modules together including the alu, register file, and extend module.
+Here is the class declaration.
+\begin{lstlisting}[style=scala]
+   class datapath extends Module {
+      val io = IO(new Bundle {
+         val regSrc = Input(UInt(3.W))
+         val regWrite = Input(UInt(1.W))
+         val immSrc = Input(UInt(2.W))
+         val aluSrc = Input(UInt(1.W))
+         val aluControl = Input(UInt(4.W))
+         val memToReg = Input(UInt(1.W))
+         val instr = Input(UInt(32.W))
+         val readData = Input(UInt(32.W))
+         val branchSrc = Input(UInt(1.W))
+         val pc = Output(UInt(32.W))
+         val dataAdd = Output(UInt(32.W))
+         val writeData = Output(UInt(32.W))
+         val zero = Output(UInt(1.W))
+         val lt = Output(UInt(1.W))
+         val gt = Output(UInt(1.W))
+         val memImmP = Output(UInt(32.W))
+      })
+\end{lstlisting}
+
+First, module declarations and necessary wires are made. Two extends modules are needed because 
+two different values, branchExtImm and extImm, need to be extended.
+
+\begin{lstlisting}[style=scala]
+   val ext1 = Module(new extend)
+   val rf = Module(new regfile)
+   val ext2 = Module(new extend)
+   val alu = Module(new alu)
+
+   val memImmStore = Wire(UInt(32.W))
+   val memImm = Wire(UInt(32.W))
+   val branchImm = Wire(UInt(32.W))
+   val jumpImm = Wire(UInt(32.W))
+   val branchExtImm = Wire(UInt(32.W))
+   val extImm = Wire(UInt(32.W))
+   val memToRegW = Wire(UInt(1.W))
+   val readDataW = Wire(UInt(32.W))
+   val aluOutW = Wire(UInt(32.W))
+   val ra1 = Wire(UInt(5.W))
+   val ra2 = Wire(UInt(5.W))
+   val ra4 = Wire(UInt(32.W))
+   val srcB = Wire(UInt(32.W))
+   val result = Wire(UInt(32.W))
+\end{lstlisting}
+
+These wires are needed to hold values from muxs or, in the case of the immediates, to hold values that are concatenated together.
+Next is the branching logic.
+
+\begin{lstlisting}[style=scala]
+   branchImm := Cat(io.instr(31), io.instr(7), io.instr(30,25), io.instr(11,8))
+   jumpImm := Cat(io.instr(31), io.instr(19,12), io.instr(20), io.instr(30,21))
+   ext1.io.instr12 := branchImm
+   ext1.io.instr20 := jumpImm
+   ext1.io.immSrc := io.immSrc
+   ext2.io.instr12 := io.instr(31,20) 
+   ext2.io.instr20 := jumpImm
+   ext2.io.immSrc := io.immSrc
+   branchExtImm := ext1.io.extImm
+   extImm := ext2.io.extImm
+\end{lstlisting}
+
+BranchImm and jumpImm are both calculated from the 32 bit instruction and then extended using the extend module.
+PC logic is then calculated next. Wires are made to hold calculated values. Remember that when "placeholder" variables are
+needed, use \textbf{Wire()}. 
+
+\begin{lstlisting}[style=scala]
+   //PC logic
+   val pcReg =  RegInit (0.U(32.W))
+   val pcNext = Wire(UInt(32.W))
+   val pcBranch = Wire(UInt(32.W))
+   val pcPlus8 = Wire(UInt(32.W))
+   val pcPlus4 = Wire(UInt(32.W))
+   pcPlus4 := pcReg + "b100".U
+   pcPlus8 := pcPlus4 + "b100".U
+   pcBranch := branchExtImm + pcReg
+   pcNext := Mux(io.branchSrc.andR, pcBranch, pcPlus4)
+   pcReg := pcNext
+   io.pc := pcReg
+\end{lstlisting}
+
+One things to note here is that any base number (binary, decimal, hexadecimal) can be added to 
+any other base base number by casting it as that base. When calculating pcPlus4, \textbf{"b100".U}
+was used to add the binary number 4 to pcReg. Quotes are required followed by what base the number is.
+\textbf{"h4".U} and \textbf{4.U} (no quotes needed) are all equal. The \textbf{.U} is always required when 
+adding unsigned numbers to chisel types. Next, result is calculated using a mux followed by memory logic.
+
+\begin{lstlisting}[style=scala]
+    memImmStore := Cat(io.instr(31,25), io.instr(11,7))
+    memImm := Mux(io.memToReg.andR, extImm, memImmStore)
+    io.memImmP := memImm
+    io.dataAdd := rf.io.rd1 + memImm
+    
+    result := Mux(io.memToReg.andR, io.readData, alu.io.out)
+\end{lstlisting}
+
+\textbf{dataAdd} is the memory address of either the value to be pulled or to be stored. Since this is a single
+cycle architecture a value can only be stored or pulled on one cycle allowing for only one variable to be used for
+storing and pulling. Notice that when calculating memImm, the first parameter in the mux is 
+\textbf{io.memToReg.andR}. The Mux function requires a boolean value in the first parameter. Since io.memToReg is
+a 1 bit value, using .andR at the end will and the bits and return a boolean value. If the 1 bit value is 1 then 
+it will return true. If 0, then it will return false. Next is the register file logic. 
+
+\begin{lstlisting}[style=scala]
+    //regFile logic
+    ra1 := Mux(io.regSrc(0).andR, "b11111".U, io.instr(19,15))
+    ra2 := Mux(io.regSrc(1).andR, io.instr(11,7), io.instr(24,20))
+    ra4 := Mux(io.regSrc(2).andR, pcPlus4, result)
+    rf.io.we3 := io.regWrite
+    rf.io.ra1 := ra1
+    rf.io.ra2 := ra2
+    rf.io.wa3 := io.instr(11,7)
+    rf.io.wd3 := ra4
+    rf.io.r31 := pcPlus8
+    io.writeData := rf.io.rd2
+\end{lstlisting}
+
+In RISC-V, almost all types of instructions have the same format. The values for the destination, rs1, and rs2 registers occupy the same
+bits inside the instruction allowing for less work to retrieve/set the values inside those registers. For arithmetic and logical instructions
+rs1 occupies the bits 19-15, ra2 occupies 24-20, and the destination register occupies 11-7. Muxs are used to determine from what register values
+are to be pulled. For ra1, is io.regSrc(0) is 1, then the value put into ra1 will be the value in the 32nd ("b11111") register. ra2 also uses a mux
+to switch between the destination register or rs2. ra4 is the value that is going to be written to a register. More of this will become clear when
+looking at the register file module. Lastly is the ALU logic. 
+
+\begin{lstlisting}[style=scala]
+   //ALU logic
+   srcB := Mux(io.aluSrc.andR, extImm, rf.io.rd2)
+
+   
+   alu.io.a := rf.io.rd1
+   alu.io.b := srcB
+   alu.io.aluControl := io.aluControl
+   alu.io.imm := io.aluSrc
+   io.zero := alu.io.zero
+   io.lt := alu.io.lt
+   io.gt := alu.io.gt
+\end{lstlisting}
+
+The value srcB uses a mux to switch between either rd2 or extImm which is used for branches and jumps.
+Next is just setting the values inside of the alu module and then retrieving control. We saw before that
+the alu result was already pulled into the variable \textbf{result}. 
+
+\section{Register File Module}
+We've seen before the values being set inside the decoder module and it may have been slightly confusing.
+Looking at the class declaration and seeing what signals are inputs and outputs will help clear up confusion.
+
+\begin{lstlisting}[style=scala]
+   class regfile extends Module {
+    val io = IO(new Bundle {
+        val we3 = Input(UInt(1.W))
+        val ra1 = Input(UInt(5.W))
+        val ra2 = Input(UInt(5.W))
+        val wa3 = Input(UInt(5.W))
+        val wd3 = Input(UInt(32.W))
+        val r31 = Input(UInt(32.W))
+        val rd1 = Output(UInt(32.W))
+        val rd2 = Output(UInt(32.W))
+    })
+\end{lstlisting}
+
+Here is a list of each signal and what it does inside the module:
+
+\begin{tabular}{ |p{1cm}||p{1cm}|p{2cm}|p{7cm}|  }
+   \hline
+   \multicolumn{4}{|c|}{regfile} \\
+   \hline
+   Signal Name & Bit Width & Input or Output & Function of signal\\
+   \hline
+   we3    & 1   & Input  & Write enable\\
+   ra1    & 5   & Input  & Address of first reg value to be pulled\\
+   ra2    & 5   & Input  & Address of second reg value to be pulled\\
+   wa3    & 5   & Input  & Address of register to be written to\\
+   wd3    & 32  & Input  & Value to be written into register\\
+   r31    & 32  & Input  & Always "b11111"\\
+   rd1    & 32  & Output & Value of first register\\
+   rd2    & 32  & Output & Value of second register\\
+   \hline
+  \end{tabular}
+
+Now that an understanding of what each signal does has been made, the rest of the register file module
+is extremely simple. First, the variable rf is made into a chisel memory type with 32 positions for 32
+bit unsigned integers. Next, if the write enable signal is set and the destination register is not register 0,
+the value wd3 is set in the register at position wa3. 
+
+\begin{lstlisting}[style=scala]
+   val rf = Mem(32, UInt(32.W))
+
+    when(io.we3.andR && !(io.wa3 === 0.U)){
+        rf(io.wa3) := io.wd3
+    }.otherwise {
+        rf(0.U) := 0.U
+    }
+\end{lstlisting}
+
+In RISC-V the first register is reserved solely for the value 0. The otherwise statement takes care to set 0
+to the first register every time another value tries to be set in register 0. Next, values are pulled from registers
+and given back to the datapath.
+
+\begin{lstlisting}[style=scala]
+   io.rd1 := Mux((io.ra1 === 31.U), rf(io.r31), rf(io.ra1))
+   io.rd2 := Mux((io.ra2 === 31.U), rf(io.r31), rf(io.ra2))
+\end{lstlisting}
+
+\section{ALU Module}
+
+The ALU module deals with all the arithmetic and logical operations. The ALU also sets some control signals
+used for branching. First, the class declaration.
+
+\begin{lstlisting}[style=scala]
+   val io = IO(new Bundle {
+        val a = Input(UInt(32.W))
+        val b = Input(UInt(32.W))
+        val aluControl = Input(UInt(4.W))
+        val imm = Input(UInt(1.W))
+        val out = Output(UInt(32.W))
+
+        val zero = Output(Bool())
+        val lt = Output(Bool())
+        val gt = Output(Bool())
+    })
+\end{lstlisting}
+
+The signals a and b are the two values that are operated on while aluControl and imm are control signals. \textbf{out}
+is obviously the output of the calculations. zero, lt, and gt are the control signals that are sent to the decoder to
+determine if a branch should occur. Like the decoder, the alu uses when statements to determine what operation it should perform.
+
+\begin{lstlisting}[style=scala]
+   val sum = Wire(UInt(32.W))
+
+    when(io.aluControl(3) === 1.U){
+        sum := io.a + ~io.b + io.aluControl(3)
+    }.otherwise {
+        sum := io.a + io.b
+    }
+    
+    when (io.aluControl === "b0000".U) {
+        io.out := io.a & io.b
+    }.elsewhen (io.aluControl === "b0001".U) {
+        io.out := io.a | io.b
+    }.elsewhen (io.aluControl === "b0010".U) {
+        io.out := sum
+    }.elsewhen (io.aluControl === "b0011".U) {
+        when (io.imm.andR) {
+            io.out := io.a << io.b(4, 0)
+        }.otherwise {
+            io.out := io.a << io.b(18,0)
+        }
+    }.elsewhen (io.aluControl === "b0100".U) {
+        when (io.imm.andR) {
+            io.out := io.a >> io.b(4, 0)
+        }.otherwise {
+            io.out := io.a >> io.b(18,0)
+        }
+    }.elsewhen (io.aluControl === "b0110".U) {
+        io.out := io.a ^ io.b
+    }.elsewhen (io.aluControl === "b0111".U) {
+        when (io.imm.andR) {
+            io.out := io.a >> io.b(4, 0)
+        }.otherwise {
+            io.out := io.a >> io.b(18,0)
+        }
+    }.elsewhen(io.aluControl === "b1000".U) {
+        io.out := sum
+    }.elsewhen(io.aluControl === "b1001".U) {
+        when (sum(31).andR) {
+            io.out := 1.U
+        }.otherwise {
+            io.out := 0.U
+        }
+    }.otherwise {
+        io.out := 0.U
+    }
+\end{lstlisting}
+
+Next the control signals are set for branching.
+
+\begin{lstlisting}[style=scala]
+   when(io.a - io.b === 0.U)
+    {
+        io.zero := 1.U
+    }.otherwise{
+        io.zero := 0.U
+    }
+    io.lt := (io.a < io.b)
+    io.gt := (io.a > io.b)
+\end{lstlisting}
+
+\section{Extend Module}
+The extend module is used for extending values into 32 bits. Not much explanation is needed.
+
+\begin{lstlisting}[style=scala]
+   class extend extends Module {
+    val io = IO(new Bundle {
+        val instr12 = Input(UInt(12.W))
+        val instr20 = Input(UInt(20.W))
+        val immSrc = Input(UInt(2.W))
+        val extImm = Output(UInt(32.W))
+    })
+
+    when(io.immSrc === 0.U){
+        when(io.instr12(11) === 1.U){
+            io.extImm := Cat("b11111111111111111111".U, io.instr12)
+        }.otherwise {
+            io.extImm := Cat("b00000000000000000000".U, io.instr12)
+        }
+    }.elsewhen(io.immSrc === 1.U){
+        when(io.instr12(11) === 1.U){
+            io.extImm := Cat("b1111111111111111111".U, io.instr12, "b0".U)
+        }.otherwise{
+            io.extImm := Cat("b0000000000000000000".U, io.instr12, "b0".U)
+        }
+    }.elsewhen(io.immSrc === 2.U){
+        when(io.instr20(19) === 1.U){
+            io.extImm := Cat("b11111111111".U, io.instr20, "b0".U)
+        }.otherwise{
+            io.extImm := Cat("b00000000000".U, io.instr20, "b0".U)
+        }
+    }.otherwise {
+        io.extImm := 0.U
+    }
+  }
+\end{lstlisting}
+
+\section{Memory Modules}
+Lastly we move on the the instruction memory and main memory modules which are both very similar.
+First, the instruction memory.
+
+\begin{lstlisting}[style=scala]
+   class imem extends Module {
+    val io = IO(new Bundle {
+        val mem_addr = Input(UInt(32.W))
+        val mem_out = Output(UInt(32.W))
+    })
+
+    val MEM = Mem(1024, UInt(32.W))
+    loadMemoryFromFile(MEM, "/PATH/TO/MEM/FILE")
+
+    io.mem_out := MEM(io.mem_addr)
+    
+   }
+\end{lstlisting}
+
+The instruction memory module uses the function \textbf{loadMemoryFromFile()} to load the 
+hexadecimal instructions from a text file at the given path. The rest of the module is self-explanatory.
+Main memory works very much the same except that it has a write enable signal.
+
+\begin{lstlisting}[style=scala]
+   class dmem extends Module {
+    val io = IO(new Bundle {
+        val mem_addr = Input(UInt(32.W))
+        val mem_in = Input(UInt(32.W))
+        val enable = Input(UInt(1.W))
+        val mem_out = Output(UInt(32.W))
+    })
+    val mem = SyncReadMem(1024, UInt(32.W))
+    mem.write(io.mem_addr, io.mem_in)
+    io.mem_out := mem.read(io.mem_addr, io.enable.andR)
+   }
+\end{lstlisting}
+
+The write enable is necessary due to the fact that it would write random values into memory without it. 
+A value for mem\_out is always grabbed and sent back to the datapath. This is fine because the pulled value will
+only be used if the \textbf{memToReg} control signal is set.
+
+\section{Running the Processor}
+To run this processor, navigate to the \textbf{MyChiselProjects} directory in the terminal. The Chisel Project Template directory from GitHub is required to run any Chisel program since it loads all the dependencies needed. The main program (\textbf{riscvSingle.scala}) is located in MyChiselProject/src/main/scala/riscvSingle/ .
+Next, the command to run 
+
+\begin{lstlisting}[language=bash]
+	sbt 'runMain riscvSingle.top'
+\end{lstlisting}
+
+This will invoke the \textbf{top} method inside of \textbf{riscvSingle.scala}. Information about each cycle will be printed to the terminal. As said before in the Memory Modules section, hexadecimal instructions will be loaded into the program. I am going to try and make this more streamline by writing a script where the project and test file can be entered into the terminal. 
+
+\end{document}

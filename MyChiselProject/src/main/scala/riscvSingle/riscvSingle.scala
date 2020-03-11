@@ -591,7 +591,7 @@ class imem extends Module {
     })
 
     val MEM = Mem(1024, UInt(32.W))
-    loadMemoryFromFile(MEM, "/home/rjridle/chisel/RISCV_Chisel/single_cycle/risc-v-chisel/MyChiselProject/tests/beqTests/simpBeq.x")
+    loadMemoryFromFile(MEM, "/home/rjridle/chisel/RISCV_Chisel/single_cycle/risc-v-chisel/MyChiselProject/tests/TESTFILE.X")
 
     io.mem_out := MEM(io.mem_addr)
     
