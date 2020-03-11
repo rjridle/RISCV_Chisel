@@ -16,17 +16,22 @@ BLTU	BGEU	JAL
 The file riscvSingle.scala located at MyChiselProject/src/main/scala/riscvSingle
 is the main file containing the whole architecture. 
 
+When first downloading the repo run ./installDependencies.sh to install things like 
+java and sbt which are needed to run Chisel. After that, projects are ready to be ran.
+
 To simulate the processor:
-1. Open riscvSingle.scala located at MyChiselProject/src/main/scala/riscvSingle
-   in a test editor
-2. Replace the path inside of the "loadMemoryFromFile" function with your
-   absolute path. Should look like
-	 /absolute/path/to/risc-v-chisel/MyChiselProject/tests/some_test.x
-   Located in tests/ there are example hex files (\*.x) and machine
-   language files (\*.s) that can be used.
-3. Navigate back the MyChiselProjects/  
-4. Once inside MyChiselProjects/, run the command
-	sbt 'runMain riscvSingle.top'
+3. Navigate to MyChiselProjects/  
+4. Once inside MyChiselProjects/, run the command script
+
+	./runProject.sh [project file name] [test file name]
+
+   DO NOT USE EXTENSIONS or else it will not work. project file name should be the name of
+   the main file and it MUST be located in src/main/scala/. Test files are found in tests/
+   and the path starting from tests must be entered. For example:
+
+	./runProject.sh riscvSingle beqTests/simpBeq
+   or
+	./runProject.sh riscvSingle fib
 
 For more information about Chisel and the RISCV processor, see the
 LaTeX documentation.
