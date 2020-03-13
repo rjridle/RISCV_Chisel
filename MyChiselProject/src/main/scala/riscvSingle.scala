@@ -7,6 +7,7 @@ import chisel3.util.experimental.loadMemoryFromFile
 
 class top extends Module {
     val io = IO(new Bundle {
+        val valid = Output(UInt(1.W))
     })
 
     val r = Module(new riscv)
@@ -30,7 +31,7 @@ class top extends Module {
     printf(p"mem_in($mem_inW) -------- mem_out($mem_outW)\n")
     im.io.mem_addr := r.io.pc / 4.U
     r.io.instr := im.io.mem_out
-
+    io.valid := Mux(instr_out(6, 0) === "b1110011".U, 0.U, 1.U)
     printf("\n\n---------NEXT INSTRUCTION---------\n")
 }
 
@@ -261,6 +262,15 @@ class decoder extends Module {
         io.memW := 0.U
         io.branchSrc := 1.U
         io.aluControl := 0.U
+    }.elsewhen (io.opcode === "b1110011".U) {                   // ECALL
+        io.regSrc := "b000".U
+        io.immSrc := "b00".U
+        io.aluSrc := 0.U
+        io.memToReg := 0.U
+        io.regW := 0.U
+        io.memW := 0.U
+        io.branchSrc := 0.U
+        io.aluControl := 0.U    
     }.otherwise {                                               // NONE
         io.regSrc := "b000".U
         io.immSrc := "b00".U
@@ -610,8 +620,22 @@ class dmem extends Module {
 }
 
 class riscvSingleTest(t: top) extends PeekPokeTester(t) {
-    for (x <- 0 to 20){
+    var cycles = 0
+    var validP = peek(t.io.valid)
+    println(s"Starting valid = $validP")
+    while (peek(t.io.valid) == BigInt(1) && cycles < 100) {
+        validP = peek(t.io.valid)
+        println(s"valid = $validP")
         step(1)
+        cycles += 1
+    }
+
+    if (cycles > 98 ) {
+        println(s"$cycles cycles were ran and end of program not reached. Exiting.")
+        System.exit(0)
+    }
+    else {
+        println(s"Program completed in $cycles cycles. Exiting.")
     }
 }
 
@@ -619,7 +643,7 @@ object top extends App {
   iotesters.Driver.execute(args, () => new top) {
     t => new riscvSingleTest(t)
   }
-
+}
 
 /*
 class riscvSingleTest(rv: riscv) extends PeekPokeTester(rv) {

@@ -33,35 +33,27 @@
   breakatwhitespace=true,
   tabsize=3,
 }
-
 \begin{document}
 \maketitle
-
 \chapter{First Chapter}
- 
 \section{Overview}
 RISC-V is a reduced instruction set architecture that is becoming more and more popular in today's processors. Chisel, which is a hardware 
 description language embedded in the Scala programming language, is also becoming more and more popular in toady's time. This document is 
 an overview of how a RISC-V processor was created in Chisel. Chisel basics, Scala basics, debugging, testing, and more will all be covered 
 using the RISC-V processor and (mostly when covering the basics) smaller, easier code snippets as examples. 
 \section{Chisel Introduction}
- 
 Chisel is a hardware description language embedded in the Scala programming language. Chisel allows the user to describe hardware in a
 highly parameterized, object oriented way. This is what makes Chisel more attractive than Verilog or VHDL. Chisel still allows the user to
 output a Verilog file of the Chisel code. Using Scala as a basis, object oriented functionality can be used to program logic to aid in the design
 of hardware.
- 
 \section{Chisel Template}
- 
 To begin making a Chisel project, the \href{https://github.com/freechipsproject/chisel-template}{project template} must first be downloaded. 
 This project template deal with a lot of the boiler plate code that Chisel needs to create the project.
 When creating a custom project, the source files must be in the directory src/main/scala. Any test files, files that run tests on the source code, 
 need to be in src/test/scala. These test files will be explained later.
- 
 \section{Scala Basics}
 \subsection{Variables}
-
-Scala uses many of the same programming paradigms as many other popular programming languages. The first is  variables (var) and constant values (val).
+Scala uses many of the same programming paradigms as many other popular programming languages. The first is  variables (var) and constant values (val). 
 
 \begin{lstlisting}[style=scala]
    var numberOfKittens = 6
@@ -78,9 +70,8 @@ Scala uses many of the same programming paradigms as many other popular programm
 \end{lstlisting}
 
 \noindent while the others defined with val cannot.
-
+\pagebreak
 \subsection{If Statement}
-
 One of the most important functions in a programming language is the if statement. Scala supports this in the same fashion that most languages do.
 
 \begin{lstlisting}[style=scala]
@@ -108,7 +99,6 @@ One of the most important functions in a programming language is the if statemen
 \end{lstlisting}
 
 \subsection{Methods}
-
 Methods are defined with the keyword \textbf{def}.
 Parameters are defined in a comma separated list that define the name and type as follows.
 
@@ -146,7 +136,6 @@ Lists are a lot like arrays but support more functionality for appending and ext
 \end{lstlisting}
 
 \subsection{For Loops}
-
 Scala has for loops that work just like in traditional languages.
 
 \begin{lstlisting}[style=scala]
@@ -154,8 +143,8 @@ Scala has for loops that work just like in traditional languages.
    println()
 \end{lstlisting}
 
-Using \textbf{until} instead of \textbf{to} to go up to a value, but stop before it. 
-
+Using \textbf{until} instead of \textbf{to} to go up to a value, but stop before it.
+ 
 \begin{lstlisting}[style=scala]
    for (i <- 0 until 7) {print(i + " ")}
    println()
@@ -167,7 +156,7 @@ Adding \textbf{by} at the end will increment i by a fixed amount.
    for (i <- 0 to 10 by 2) {print(i + " ")}
    println()
 \end{lstlisting}
-
+\pagebreak
 \subsection{Classes}
 Here is an example of a class.
 
@@ -193,10 +182,9 @@ Here is an example of a class.
 
 The structure of Scala is very similar to languages like Java and C++. Now that a basis of Scala has been 
 set, making hardware will now be much easier and more reusable.
-
 \chapter{Chisel Basics}
-Chisel is a hardware description language that uses Scala as a basis for object oriented programming. All Chisel code requires
-certain packages to be imported and a specific format that must be followed.
+Chisel is a hardware description language that uses Scala as a basis for object oriented programming. 
+All Chisel code requires certain packages to be imported and a specific format that must be followed.
 Make sure to add these imports at the beginning of every file that includes Chisel code.
 
 \begin{lstlisting}[style=scala]
@@ -205,6 +193,7 @@ Make sure to add these imports at the beginning of every file that includes Chis
    import chisel3.iotester.{ChiselFlatSpec, 
       Driver, PeekPokeTester}
 \end{lstlisting}
+
 The last import is specifically for testing Chisel code. Here is a very simple Chisel module.
 
 \begin{lstlisting}[style=scala]
@@ -226,7 +215,6 @@ and is a width of four (4.W). The variable \textbf{out} is similar except it is 
 This is a simple passthrough module. The output is immediately set to the input. The operator used to connect
 the values is \textbf{:=}. This is basically like taking a wire and connecting the output to the input. This is
 a directional operator, meaning that the left hand signal drives the right hand signal. 
-
 \section{Types}
 Unfortunately, Scala types (integers, doubles, etc.) are not compatible with Chisel types. Below is an example.
 
@@ -236,6 +224,7 @@ Unfortunately, Scala types (integers, doubles, etc.) are not compatible with Chi
    val utwo = 1.U + 1.U //Chisel unsigned integer
 
 \end{lstlisting}
+
 A \textbf{.U} must be added to the end of a number to cast into the Chisel unsigned integer type. For booleans, a \textbf{.B} is added to the end:
 
 \begin{lstlisting}[style=scala]
@@ -243,6 +232,7 @@ A \textbf{.U} must be added to the end of a number to cast into the Chisel unsig
    
    val false_value = false.B
 \end{lstlisting}
+
 Casting is another function that Chisel supports. Here are some common castings:
 
 \begin{itemize}
@@ -250,10 +240,9 @@ Casting is another function that Chisel supports. Here are some common castings:
    \item \verb|asSInt()|
    \item \verb|asBool()|
 \end{itemize}
-
+\pagebreak
 \subsection{Multiplexing and Concatenation}
-Variables can be set with the \textbf{Mux()} function or concatenated with the \textbf{Cat()} function.
-
+Variables can be set with the \textbf{Mux()} or \textbf{Cat()} function.
 \begin{lstlisting}[style=scala]
 
    class MyOperatorsTwo extends Module {
@@ -268,11 +257,10 @@ Variables can be set with the \textbf{Mux()} function or concatenated with the \
      io.out_cat := Cat(2.U, 1.U)    
    }
 \end{lstlisting}
-
 \subsection{Conditionals}
 \subsubsection{When Statement}
-When dealing with hardware in Chisel, a different type of conditional statement must be used. Using Chisel conditionals along with Scala conditionals can make a powerful
-team. Below is an example of a Chisel conditional.
+When dealing with hardware in Chisel, a different type of conditional statement must be used. 
+Below is an example of a Chisel conditional.
 
 \begin{lstlisting}[style=scala]
    class Mux3 extends Module {
@@ -292,11 +280,10 @@ team. Below is an example of a Chisel conditional.
      }
    }
 \end{lstlisting}
-Chisel uses \textbf{when, elsewhen, and otherwise} for its conditional statements. Works exactly like a regular if statement.
 
+Chisel uses \textbf{when, elsewhen, and otherwise} for its conditional statements. Works exactly like a regular if statement.
 \subsubsection{Switch Statement}
 The switch statement works much the same as a regular switch statement.
-
 \begin{lstlisting}[style=scala]
    switch(x) {
      is(value1) {
@@ -358,14 +345,13 @@ object ALU extends App {
 \end{lstlisting}
 
 Chisel finds the object of the main class (ALU) and using 
-
 \textbf{iotesters.Driver.execute} the ALUTest class will be run.
 Using \textbf{poke} values can be inserted into the inputs. The inputs and outputs can also be "peeked" at using \textbf{peek}.
 Using the println function, io.out is printed to the console using \textbf{peek(alu.io.out)}. 
 This is useful for debugging code, but the only values that can be peeked at are io inputs and outputs. 
 Any internal signals trying to be peeked at will cause an error to be thrown. If internal signals need to 
 be looked at then a wire must first be made.
-
+\pagebreak
 \begin{lstlisting}[style=scala]
 class debuggingTest extends Module {
  val io = IO(new Bundle{
@@ -389,9 +375,12 @@ this is different than most hardware description languages when everything is te
 programming language at the core so it follows that standard paradigms of most object oriented programming languages.
 
 
+
+
 \chapter{RISC-V Processor}
 Now with a basic understanding of both Scala and Chisel, construction a simple processor is easier than it may seem. The design of 
-this particular processor is split up into 9 classes (or modules).
+this particular processor is split up into 9 classes (or modules)
+with two supplementary classes needed for simulation.
 \begin{itemize}
    \item top
    \item riscv
@@ -402,54 +391,56 @@ this particular processor is split up into 9 classes (or modules).
    \item alu
    \item imem
    \item dmem
+   \item supplementary
 \end{itemize}
+An explanation of each class and how it fits into the whole architecture is what will follow next.
 
-An explanation of each class and how it fits into the whole architecture is what will follow Next
+
+
 \section{Top Module}
 Top is exactly what it sounds like. This is the top of the program where everything is brought together. This mainly brings the instruction
 memory (imem) and main memory (dmem) into the main processing unit (riscv).
 
 \begin{lstlisting}[style=scala]
-    class top extends Module {
     val io = IO(new Bundle {
+    val valid = Output(UInt(1.W))
     })
-
+    
     val r = Module(new riscv)
     val im = Module(new imem)
     val dm = Module(new dmem)
-
-    //printing constants
     val instr_out = Wire(UInt(32.W))
     val pc_pulled = Wire(UInt(32.W))
     val mem_inW = Wire(UInt(32.W))
     val mem_outW = Wire(UInt(32.W))
     instr_out := im.io.mem_out
     pc_pulled := r.io.pc / 4.U
-    im.io.mem_addr := r.io.pc / 4.U
-    r.io.instr := im.io.mem_out
     dm.io.mem_addr := r.io.aluResult
     dm.io.mem_in := r.io.writeData
     dm.io.enable := r.io.memWrite
     r.io.readData := dm.io.mem_out
     mem_outW := dm.io.mem_out
     mem_inW := r.io.writeData
-
-    printf(p"Instruction pulled: $instr_out\n")
-    printf(p"PC pulled: $pc_pulled\n")
-    printf(p"mem_in($mem_inW) - mem_out($mem_outW)\n")
     
-
+    printf(p"Instruction pulled: ${Hexadecimal(instr_out)}\n")
+    printf(p"PC pulled: $pc_pulled\n")
+    printf(p"mem_in($mem_inW) -------- mem_out($mem_outW)\n")
+    im.io.mem_addr := r.io.pc / 4.U
+    r.io.instr := im.io.mem_out
+    io.valid := Mux(instr_out(6, 0) === "b1110011".U, 0.U, 1.U)
     printf("\n\n---------NEXT INSTRUCTION---------\n")
-}
+    }
 \end{lstlisting}
 
-We can first see the class declaration at the top and that no input or output variables have been declared.
+We can first see the class declaration at the top and that has
+a single output declared which determines if the program is still
+running. An \textbf{ECALL} instruction ends the program.
 Next are module declarations for riscv, dmem, and imem. These variables \textbf{r}, \textbf{im}, and \textbf{dm} can
 now be used to deliver values to all the classes. We first pull the PC from the riscv module and give it to imem. Then 
 the new instruction is pulled and given back to the riscv module. 
 
 \begin{lstlisting}[style=scala]
-    im.io.mem_addr := r.io.pc / 4.U
+    pc_pulled := r.io.pc / 4.U
     r.io.instr := im.io.mem_out
 \end{lstlisting}
 
@@ -457,7 +448,7 @@ Next, values are pulled into dmem so that the correct mem\_out value can be calc
 Even though a value is pulled from dmem every cycle, 
 this does not necessarily mean that the value pulled will be used in any calculations. 
 This will become clear when we come to the datapath module. Values are also stored into dmem if the write enable is set.
-The rest of the module is just debugging information. 
+The rest of the module is just debugging information.
 
 \begin{lstlisting}[style=scala]
     dm.io.mem_addr := r.io.aluResult
@@ -466,9 +457,11 @@ The rest of the module is just debugging information.
     r.io.readData := dm.io.mem_out
 \end{lstlisting}
 
+
+
+
 \section{RISCV Module}
-Next is the \textbf{riscv} module which moves data between the datapath and decoder. First are the declarations for the decoder module (d)
-and the datapath module (dp).
+Next is the \textbf{riscv} module which moves data between the datapath and decoder. First are the declarations for the decoder module (d) and the datapath module (dp).
 
 \begin{lstlisting}[style=scala]
     val d = Module(new decoder)
@@ -489,7 +482,7 @@ and some control signals from the alu that come out of the datapath.
     d.io.gt := dp.io.gt
 \end{lstlisting}
 
-These are all the signals that the decoder needs to calculate control signals that will be fed into the datapath. 
+These are all the signals that the decoder needs to calculate control signals that will be fed into the datapath.
 
 \begin{lstlisting}[style=scala]
     dp.io.regSrc := d.io.regSrc
@@ -504,7 +497,7 @@ These are all the signals that the decoder needs to calculate control signals th
 \end{lstlisting}
 
 The pc is then fetched from the datapath and fed back up to the top module to fetch the next instruction along with data
-that is going to be written into memory. 
+that is going to be written into memory.
 
 \begin{lstlisting}[style=scala]
     io.pc := dp.io.pc
@@ -515,10 +508,12 @@ that is going to be written into memory.
 \end{lstlisting}
 
 
+
+
 \section{Decoder Module}
 The decoder is the module sets sets most of the control signals that determine what the alu
-will do, if a branch is necessary, if a value is being written to a register, if a value pulled from memory is begin written to a register,
-etc. First, the class declaration.
+will do, if a branch is necessary, if a value is being written to a register, if a value pulled from memory is begin written to a register, etc. First, the class declaration.
+
 \begin{lstlisting}[style=scala]
    class decoder extends Module {
     val io = IO(new Bundle {
@@ -539,9 +534,11 @@ etc. First, the class declaration.
         val gt = Input(UInt(1.W))
     })
 \end{lstlisting}
+
 How the decoder determines what control signals to set is a long list of when statements
 ("if statements" for other programming languages) that uses the opcode, funct7, and funct3 control signals received from the 
 instruction. Since the when statements are relatively self-explanatory and very long there will be no explanation for every block.
+
 
 \begin{lstlisting}[style=scala]
     when(io.opcode === "b0110011".U) {
@@ -675,9 +672,12 @@ instruction. Since the when statements are relatively self-explanatory and very 
 
 The rest of the module is purely debugging information.
 
+
+\pagebreak
 \section{Datapath Module}
 The datapath connects many modules together including the alu, register file, and extend module.
 Here is the class declaration.
+
 \begin{lstlisting}[style=scala]
    class datapath extends Module {
       val io = IO(new Bundle {
@@ -743,8 +743,8 @@ Next is the branching logic.
 
 BranchImm and jumpImm are both calculated from the 32 bit instruction and then extended using the extend module.
 PC logic is then calculated next. Wires are made to hold calculated values. Remember that when "placeholder" variables are
-needed, use \textbf{Wire()}. 
-
+needed, use \textbf{Wire()}.
+ 
 \begin{lstlisting}[style=scala]
    //PC logic
    val pcReg =  RegInit (0.U(32.W))
@@ -766,6 +766,7 @@ was used to add the binary number 4 to pcReg. Quotes are required followed by wh
 \textbf{"h4".U} and \textbf{4.U} (no quotes needed) are all equal. The \textbf{.U} is always required when 
 adding unsigned numbers to chisel types. Next, result is calculated using a mux followed by memory logic.
 
+
 \begin{lstlisting}[style=scala]
     memImmStore := Cat(io.instr(31,25), io.instr(11,7))
     memImm := Mux(io.memToReg.andR, extImm, memImmStore)
@@ -780,7 +781,7 @@ cycle architecture a value can only be stored or pulled on one cycle allowing fo
 storing and pulling. Notice that when calculating memImm, the first parameter in the mux is 
 \textbf{io.memToReg.andR}. The Mux function requires a boolean value in the first parameter. Since io.memToReg is
 a 1 bit value, using .andR at the end will and the bits and return a boolean value. If the 1 bit value is 1 then 
-it will return true. If 0, then it will return false. Next is the register file logic. 
+it will return true. If 0, then it will return false. Next is the register file logic.
 
 \begin{lstlisting}[style=scala]
     //regFile logic
@@ -807,7 +808,6 @@ looking at the register file module. Lastly is the ALU logic.
    //ALU logic
    srcB := Mux(io.aluSrc.andR, extImm, rf.io.rd2)
 
-   
    alu.io.a := rf.io.rd1
    alu.io.b := srcB
    alu.io.aluControl := io.aluControl
@@ -819,11 +819,13 @@ looking at the register file module. Lastly is the ALU logic.
 
 The value srcB uses a mux to switch between either rd2 or extImm which is used for branches and jumps.
 Next is just setting the values inside of the alu module and then retrieving control. We saw before that
-the alu result was already pulled into the variable \textbf{result}. 
+the alu result was already pulled into the variable \textbf{result}.
 
+\pagebreak
 \section{Register File Module}
 We've seen before the values being set inside the decoder module and it may have been slightly confusing.
 Looking at the class declaration and seeing what signals are inputs and outputs will help clear up confusion.
+
 
 \begin{lstlisting}[style=scala]
    class regfile extends Module {
@@ -838,9 +840,7 @@ Looking at the class declaration and seeing what signals are inputs and outputs 
         val rd2 = Output(UInt(32.W))
     })
 \end{lstlisting}
-
-Here is a list of each signal and what it does inside the module:
-
+Here is a list of each signal and what it does inside the module: \newline
 \begin{tabular}{ |p{1cm}||p{1cm}|p{2cm}|p{7cm}|  }
    \hline
    \multicolumn{4}{|c|}{regfile} \\
@@ -857,11 +857,11 @@ Here is a list of each signal and what it does inside the module:
    rd2    & 32  & Output & Value of second register\\
    \hline
   \end{tabular}
-
+\newline \newline
 Now that an understanding of what each signal does has been made, the rest of the register file module
 is extremely simple. First, the variable rf is made into a chisel memory type with 32 positions for 32
 bit unsigned integers. Next, if the write enable signal is set and the destination register is not register 0,
-the value wd3 is set in the register at position wa3. 
+the value wd3 is set in the register at position wa3. \pagebreak
 
 \begin{lstlisting}[style=scala]
    val rf = Mem(32, UInt(32.W))
@@ -875,17 +875,19 @@ the value wd3 is set in the register at position wa3.
 
 In RISC-V the first register is reserved solely for the value 0. The otherwise statement takes care to set 0
 to the first register every time another value tries to be set in register 0. Next, values are pulled from registers
-and given back to the datapath.
+and given back to the datapath. 
 
 \begin{lstlisting}[style=scala]
    io.rd1 := Mux((io.ra1 === 31.U), rf(io.r31), rf(io.ra1))
    io.rd2 := Mux((io.ra2 === 31.U), rf(io.r31), rf(io.ra2))
 \end{lstlisting}
 
-\section{ALU Module}
 
+
+
+\section{ALU Module}
 The ALU module deals with all the arithmetic and logical operations. The ALU also sets some control signals
-used for branching. First, the class declaration.
+used for branching. First, the class declaration. 
 
 \begin{lstlisting}[style=scala]
    val io = IO(new Bundle {
@@ -904,6 +906,7 @@ used for branching. First, the class declaration.
 The signals a and b are the two values that are operated on while aluControl and imm are control signals. \textbf{out}
 is obviously the output of the calculations. zero, lt, and gt are the control signals that are sent to the decoder to
 determine if a branch should occur. Like the decoder, the alu uses when statements to determine what operation it should perform.
+
 
 \begin{lstlisting}[style=scala]
    val sum = Wire(UInt(32.W))
@@ -966,8 +969,11 @@ Next the control signals are set for branching.
     io.gt := (io.a > io.b)
 \end{lstlisting}
 
+
+
+
 \section{Extend Module}
-The extend module is used for extending values into 32 bits. Not much explanation is needed.
+The extend module is used for extending values into 32 bits. Not much explanation is needed. 
 
 \begin{lstlisting}[style=scala]
    class extend extends Module {
@@ -1002,9 +1008,12 @@ The extend module is used for extending values into 32 bits. Not much explanatio
   }
 \end{lstlisting}
 
+
+
+
 \section{Memory Modules}
-Lastly we move on the the instruction memory and main memory modules which are both very similar.
-First, the instruction memory.
+Next, we move on to the instruction memory and main memory modules which are both very similar.
+First, the instruction memory. 
 
 \begin{lstlisting}[style=scala]
    class imem extends Module {
@@ -1022,8 +1031,9 @@ First, the instruction memory.
 \end{lstlisting}
 
 The instruction memory module uses the function \textbf{loadMemoryFromFile()} to load the 
-hexadecimal instructions from a text file at the given path. The rest of the module is self-explanatory.
-Main memory works very much the same except that it has a write enable signal.
+hexadecimal instructions from a text file at the given path into the \textbf{MEM} variable.
+The rest of the module is self-explanatory. Main memory works very much the same except
+that it has a write enable signal. 
 
 \begin{lstlisting}[style=scala]
    class dmem extends Module {
@@ -1043,14 +1053,87 @@ The write enable is necessary due to the fact that it would write random values 
 A value for mem\_out is always grabbed and sent back to the datapath. This is fine because the pulled value will
 only be used if the \textbf{memToReg} control signal is set.
 
-\section{Running the Processor}
-To run this processor, navigate to the \textbf{MyChiselProjects} directory in the terminal. The Chisel Project Template directory from GitHub is required to run any Chisel program since it loads all the dependencies needed. The main program (\textbf{riscvSingle.scala}) is located in MyChiselProject/src/main/scala/riscvSingle/ .
-Next, the command to run 
 
-\begin{lstlisting}[language=bash]
-	sbt 'runMain riscvSingle.top'
+
+\section{Supplementary}
+Lastly, two more classes are required to simulate the processor.
+The first is a testing class that extends \textbf{PeekPokeTester}
+which is a Chisel test harness that allows the user to "poke" (push)
+values into signals, "peek" at there value, and throw assertions for
+expected values. 
+
+\begin{lstlisting}[style=scala]
+	class riscvSingleTest(t: top) extends PeekPokeTester(t) {
+		var cycles = 0
+		var validP = peek(t.io.valid)
+		println(s"Starting valid = $validP")
+		while (peek(t.io.valid) == BigInt(1) && cycles < 100) {
+			validP = peek(t.io.valid)
+			println(s"valid = $validP")
+			step(1)
+			cycles += 1
+		}
+		
+		if (cycles > 98 ) {
+			println(s"$cycles cycles were ran and end of program not reached. Exiting.")
+			System.exit(0)
+		}
+		else {
+			println(s"Program completed in $cycles cycles. Exiting.")
+		}
+	}
 \end{lstlisting}
 
-This will invoke the \textbf{top} method inside of \textbf{riscvSingle.scala}. Information about each cycle will be printed to the terminal. As said before in the Memory Modules section, hexadecimal instructions will be loaded into the program. I am going to try and make this more streamline by writing a script where the project and test file can be entered into the terminal. 
+The important part of this class is the while loop that checks if the
+valid flag is set and also if the number of cycles is above 100. 
+A cycle limit has been given so that an infinite loop does not occur.
+While these conditions are true, the program will step one cycle
+and continue to load instructions into memory. The rest is purely 
+debugging information. In addition to the testing class, and object
+of \textbf{top} must be made to attach the testing class to the
+top module. 
 
+\begin{lstlisting}[style=scala]
+	object top extends App {
+		iotesters.Driver.execute(args, () => new top) {
+		   t => new riscvSingleTest(t)
+		}
+	}
+\end{lstlisting}
+	
+
+
+\section{Running the Processor}
+To run this processor, navigate to the \textbf{MyChiselProjects} directory in the terminal.
+The main program (\textbf{riscvSingle.scala}) located in MyChiselProject/src/main/scala/ 
+is where changes can be made to the source code.
+Next, run the script 
+
+\begin{lstlisting}[language=bash]
+	./runProject riscvSingle [test_file_name]
+\end{lstlisting}
+
+This will run all the necessary commands to run the specific project. Test files can be found in MyChiselProject/tests/.
+The path starting from tests/ should be used. Requirements for tests are 
+\begin{itemize}
+	\item instructions must be in hexadecimal
+	\item one instruction per line
+	\item last instruction must be \textbf{ECALL} to end test
+	\item file must have a .x extension
+\end{itemize}
+will work. DO NOT ADD EXTENSIONS on the project file name or the test file name when entering into the script.  
+
+
+\section{Work in Progress}
+This processor along with this documentation are still a work in progress and have room to be improved.
+Due to scripts that were made to make simulating the processor easier and faster, more time can be
+given to improving the processors architecture. The following are the improvements/additions that
+will be implemented in the future.
+
+\begin{enumerate}
+	\item Adding more instructions
+	\item Adding a floating point module
+\end{enumerate}
+
+\noindent These are the top priority items that will be added when time/obligations allow.
 \end{document}

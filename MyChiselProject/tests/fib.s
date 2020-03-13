@@ -12,3 +12,4 @@ fib:
 	j fib
 finish:
 	addi x10, x10, 128
+	ecall
