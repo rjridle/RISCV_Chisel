@@ -1,0 +1,10 @@
+[
+  {
+    "class":"firrtl.annotations.LoadMemoryAnnotation",
+    "target":"top.imem.MEM",
+    "fileName":"tests/fib.x",
+    "hexOrBinary":{
+      "name":"h"
+    }
+  }
+]

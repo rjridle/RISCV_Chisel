@@ -5,11 +5,27 @@ import chisel3.util._
 import chisel3.iotesters.{ChiselFlatSpec, Driver, PeekPokeTester}
 import chisel3.util.experimental.loadMemoryFromFile
 
+class MessageTop extends Bundle {
+  val instr_pulled = UInt(32.W)
+  val pc_pulled = UInt(32.W)
+  val memIn = UInt(32.W)
+  val memOut = UInt(32.W)
+  override def toPrintable: Printable = {
+    p"\n\n\ntop Module:\n" +
+    p"  instr pulled: ${Binary(instr_pulled)}\n" +
+    p"  pc pulled   : ${Binary(pc_pulled)}\n" +
+    p"  mem in      : ${Binary(memIn)}\n" +
+    p"  mem out     : ${Binary(memOut)}\n" +
+    p"///////////////////////////////////////////////////\n" 
+  }
+}
+
 class top extends Module {
     val io = IO(new Bundle {
         val valid = Output(UInt(1.W))
     })
 
+    val topMessage = Wire(new MessageTop)
     val r = Module(new riscv)
     val im = Module(new imem)
     val dm = Module(new dmem)
@@ -26,13 +42,27 @@ class top extends Module {
     mem_outW := dm.io.mem_out
     mem_inW := r.io.writeData
 
-    printf(p"Instruction pulled: ${Hexadecimal(instr_out)}\n")
-    printf(p"PC pulled: $pc_pulled\n")
-    printf(p"mem_in($mem_inW) -------- mem_out($mem_outW)\n")
+    // print info
+    topMessage.instr_pulled := instr_out
+    topMessage.pc_pulled := pc_pulled
+    topMessage.memIn := mem_inW
+    topMessage.memOut := mem_outW
+    printf(p"$topMessage")
+
     im.io.mem_addr := r.io.pc / 4.U
     r.io.instr := im.io.mem_out
     io.valid := Mux(instr_out(6, 0) === "b1110011".U, 0.U, 1.U)
-    printf("\n\n---------NEXT INSTRUCTION---------\n")
+}
+
+class MessageRiscv extends Bundle {
+  val instr = UInt(32.W)
+  val readData = UInt(32.W)
+  override def toPrintable: Printable = {
+    p"\n\n\nriscv Module:\n" +
+    p"  instr       : 0x${Hexadecimal(instr)}\n" +
+    p"  readData    : 0x${Hexadecimal(readData)}\n" +
+    p"///////////////////////////////////////////////////\n"
+  }
 }
 
 class riscv extends Module {
@@ -46,18 +76,17 @@ class riscv extends Module {
         val memImmP = Output(UInt(32.W))
     })
 
-    val d = Module(new decoder)
+    val riscvMessage = Wire(new MessageRiscv)
+
     val dp = Module(new datapath)
+    val d = Module(new decoder)
     
-    val instW = Wire(UInt(32.W))
-    val readDataW = Wire(UInt(32.W))
-    readDataW := io.readData
-    instW := io.instr
-    printf("*********RISCV***********\n")
-    printf(p"INSTRUCTION: ${Binary(instW)}\n")
-    printf(p"readData: $readDataW\n")
-    printf("******END RISCV**********\n\n")
-    
+
+    // print info
+    riscvMessage.instr := io.instr
+    riscvMessage.readData := io.readData
+    printf(p"$riscvMessage")
+
     d.io.opcode := io.instr(6,0)
     d.io.funct7 := io.instr(31,25)
     d.io.funct3 := io.instr(14,12)
@@ -84,6 +113,21 @@ class riscv extends Module {
 
 }
 
+class MessageExtend extends Bundle {
+  val instr12 = UInt(12.W)
+  val instr20 = UInt(20.W)
+  val immsrc = UInt(2.W)
+  val extImm = UInt(32.W)
+  override def toPrintable: Printable = {
+    p"\n\n\nriscv Module:\n" +
+    p"  instr12     : ${Binary(instr12)}\n" +
+    p"  instr20     : ${Binary(instr20)}\n" +
+    p"  immsrc      : ${Binary(immsrc)}\n" +
+    p"  instr20     : 0x${Hexadecimal(extImm)}\n" +
+    p"///////////////////////////////////////////////////\n"
+  }
+}
+
 class extend extends Module {
     val io = IO(new Bundle {
         val instr12 = Input(UInt(12.W))
@@ -91,6 +135,8 @@ class extend extends Module {
         val immSrc = Input(UInt(2.W))
         val extImm = Output(UInt(32.W))
     })
+
+    val extendMessage = Wire(new MessageExtend)
 
     when(io.immSrc === 0.U){
         when(io.instr12(11) === 1.U){
@@ -113,22 +159,30 @@ class extend extends Module {
     }.otherwise {
         io.extImm := 0.U
     }
+    extendMessage.instr12 := io.instr12
+    extendMessage.instr20 := io.instr20
+    extendMessage.immsrc := io.immSrc
+    extendMessage.extImm := io.extImm
+    printf(p"$extendMessage")
+}
 
-    val instr12W = Wire(UInt(12.W))
-    val instr20W = Wire(UInt(20.W))
-    val immsrcW = Wire(UInt(2.W))
-    val extImmW = Wire(UInt(32.W))
-    instr12W := io.instr12
-    instr20W := io.instr20
-    immsrcW := io.immSrc
-    extImmW := io.extImm
-
-    printf("*******EXTEND*******\n")
-    printf(p"instr12: ${Binary(instr12W)}\n")
-    printf(p"instr20: ${Binary(instr20W)}\n")
-    printf(p"immsrcW: ${Binary(immsrcW)}\n")
-    printf(p"extImmW: ${Binary(extImmW)}\n")
-    printf("*******END EXTEND*******\n\n")
+class MessageDecoder extends Bundle {
+  val branchSrc = UInt(1.W)
+  val opcode = UInt(7.W)
+  val funct3 = UInt(3.W)
+  val zero = UInt(1.W)
+  val lt = UInt(1.W)
+  val gt = UInt(1.W)
+  override def toPrintable: Printable = {
+    p"\n\n\ndecoder Module:\n" +
+    p"  branchSrc   : ${Binary(branchSrc)}\n" +
+    p"  opcode      : ${Binary(opcode)}\n" +
+    p"  funct3      : ${Binary(funct3)}\n" +
+    p"  zero        : ${Binary(zero)}\n" +
+    p"  lt          : ${Binary(lt)}\n" +
+    p"  gt          : ${Binary(gt)}\n" +
+    p"///////////////////////////////////////////////////\n"
+  }
 }
 
 class decoder extends Module {
@@ -149,6 +203,8 @@ class decoder extends Module {
         val lt = Input(UInt(1.W))
         val gt = Input(UInt(1.W))
     })
+
+    val decoderMessage = Wire(new MessageDecoder)
 
     when(io.opcode === "b0110011".U) {
         io.regSrc := "b000".U
@@ -282,30 +338,44 @@ class decoder extends Module {
         io.aluControl := 0.U
     }
     
-    val opcodeW = Wire(UInt(7.W))
-    val branchSrcW = Wire(UInt(1.W))
-    val funct3W = Wire(UInt(3.W))
-    val zeroW = Wire(UInt(1.W))
-    val ltW = Wire(UInt(1.W))
-    val gtW = Wire(UInt(1.W))
-    branchSrcW := io.branchSrc
-    opcodeW := io.opcode
-    funct3W := io.funct3
-    zeroW := io.zero
-    ltW := io.lt
-    gtW := io.gt
-
-    printf("**********DECODER************\n")
-    printf(p"branchSrc: ${Binary(branchSrcW)}\n")
-    printf(p"opcode: ${Binary(opcodeW)}\n")
-    printf(p"funct3: ${Binary(funct3W)}\n")
-    printf(p"zero: ${Binary(zeroW)}\n")
-    printf(p"lt: ${Binary(ltW)}\n")
-    printf(p"gt: ${Binary(gtW)}\n")
-    printf("*******END DECODER***********\n\n")
+    // print info
+    decoderMessage.branchSrc := io.branchSrc
+    decoderMessage.opcode := io.opcode
+    decoderMessage.funct3 := io.funct3
+    decoderMessage.zero := io.zero
+    decoderMessage.lt := io.lt
+    decoderMessage.gt := io.gt
+    printf(p"$decoderMessage")
 }
 
 
+class MessageDatapath extends Bundle {
+  val memToReg = UInt(1.W)
+  val readData = UInt(32.W)
+  val aluOut = UInt(32.W)
+  val result = UInt(32.W)
+  val pcNext = UInt(32.W)
+  val branchExtImm = UInt(32.W)
+  val pcBranch = UInt(32.W)
+  val pcPlus4 = UInt(32.W)
+  val branchSrc = UInt(1.W)
+  val ra4 = UInt(32.W)
+
+  override def toPrintable: Printable = {
+    p"\n\n\ndatapath Module:\n" +
+    p"  memToReg        : ${Binary(memToReg)}\n" +
+    p"  readData        : ${Hexadecimal(readData)}\n" +
+    p"  aluOut          : ${Hexadecimal(aluOut)}\n" +
+    p"  result          : ${Hexadecimal(result)}\n" +
+    p"  pcNext          : ${Hexadecimal(pcNext)}\n" +
+    p"  branchExtImm    : ${Hexadecimal(branchExtImm)}\n" +
+    p"  pcBranch        : ${Hexadecimal(pcBranch)}\n" +
+    p"  pcPlus4         : ${Hexadecimal(pcPlus4)}\n" +
+    p"  branchSrc       : ${Binary(branchSrc)}\n" +
+    p"  ra4             : ${Hexadecimal(ra4)}\n" +
+    p"///////////////////////////////////////////////////\n" 
+  }
+}
 
 class datapath extends Module {
     val io = IO(new Bundle {
@@ -327,6 +397,7 @@ class datapath extends Module {
         val memImmP = Output(UInt(32.W))
     })
 
+    val datapathMessage = Wire(new MessageDatapath)
     val ext1 = Module(new extend)
     val rf = Module(new regfile)
     val ext2 = Module(new extend)
@@ -394,24 +465,6 @@ class datapath extends Module {
     ra1 := Mux(io.regSrc(0).andR, "b11111".U, io.instr(19,15))
     ra2 := Mux(io.regSrc(1).andR, io.instr(11,7), io.instr(24,20))
     ra4 := Mux(io.regSrc(2).andR, pcPlus4, result)
-
-    
-
-    printf("**********DATAPATH**********\n")
-    printf("****ALUD****\n")
-    printf(p"mux[$memToRegW, readData($readDataW), alu.out($aluOutW)]\n")
-    printf(p"Result: $result\n")
-    printf("****PCD****\n")
-    printf(p"pcNext: $pcNext\n")
-    printf(p"branchExtImm: $branchExtImm\n")
-    printf(p"pvBranch: $pcBranch\n")
-    printf(p"pcPlus4: $pcPlus4\n")
-    val branchSrcW = Wire(UInt(1.W))
-    branchSrcW := io.branchSrc
-    printf(p"branchSrc: $branchSrcW\n")
-    printf("***regFile***\n")
-    printf(p"ra4: $ra4\n")
-    printf("********END DATAPATH*********\n\n")
     
     rf.io.we3 := io.regWrite
     rf.io.ra1 := ra1
@@ -420,8 +473,6 @@ class datapath extends Module {
     rf.io.wd3 := ra4
     rf.io.r31 := pcPlus8
     io.writeData := rf.io.rd2
-
-
 
     //ALU logic
     srcB := Mux(io.aluSrc.andR, extImm, rf.io.rd2)
@@ -434,8 +485,43 @@ class datapath extends Module {
     io.zero := alu.io.zero
     io.lt := alu.io.lt
     io.gt := alu.io.gt
-    
-    
+
+    datapathMessage.memToReg := io.memToReg
+    datapathMessage.readData := io.readData
+    datapathMessage.aluOut := alu.io.out
+    datapathMessage.result := result
+    datapathMessage.pcNext := pcNext
+    datapathMessage.branchExtImm := branchExtImm
+    datapathMessage.pcBranch := pcBranch
+    datapathMessage.pcPlus4 := pcPlus4
+    datapathMessage.branchSrc := io.branchSrc
+    datapathMessage.ra4 := ra4
+    printf(p"$datapathMessage")
+        
+}
+
+class MessageRegFile extends Bundle {
+  val we3 = UInt(1.W)
+  val ra1 = UInt(5.W)
+  val ra2 = UInt(5.W)
+  val wa3 = UInt(5.W)
+  val wd3 = UInt(32.W)
+  val r31 = UInt(32.W)
+  val rd1 = UInt(32.W)
+  val rd2 = UInt(32.W)
+
+  override def toPrintable: Printable = {
+    p"\n\n\nregfile Module:\n" +
+    p"  we3 : ${Binary(we3)}\n" +
+    p"  ra1 : ${Binary(ra1)}\n" +
+    p"  ra2 : ${Binary(ra2)}\n" +
+    p"  wa3 : ${Binary(wa3)}\n" +
+    p"  wd3 : ${Hexadecimal(wd3)}\n" +
+    p"  r31 : ${Hexadecimal(r31)}\n" +
+    p"  rd1 : ${Hexadecimal(rd1)}\n" +
+    p"  rd2 : ${Hexadecimal(rd2)}\n" +
+    p"///////////////////////////////////////////////////\n" 
+  }
 }
 
 class regfile extends Module {
@@ -451,6 +537,7 @@ class regfile extends Module {
     })
 
     val rf = Mem(32, UInt(32.W))
+    val regfileMessage = Wire(new MessageRegFile)
 
     when(io.we3.andR && !(io.wa3 === 0.U)){
         rf(io.wa3) := io.wd3
@@ -461,38 +548,47 @@ class regfile extends Module {
     io.rd1 := Mux((io.ra1 === 31.U), rf(io.r31), rf(io.ra1))
     io.rd2 := Mux((io.ra2 === 31.U), rf(io.r31), rf(io.ra2))
 
-    val wd3W = Wire(UInt(32.W))
-    val wa3W = Wire(UInt(5.W))
-    val rd1W = Wire(UInt(32.W))
-    val rd2W = Wire(UInt(32.W))
-    val ra1W = Wire(UInt(32.W))
-    val ra2W = Wire(UInt(32.W))
-    val we3W = Wire(UInt(1.W))
-
-    wd3W := io.wd3
-    we3W := io.we3
-    wa3W := io.wa3
-    rd1W := io.rd1
-    rd2W := io.rd2
-    ra1W := io.ra1
-    ra2W := io.ra2
-
+    regfileMessage.wd3 := io.wd3
+    regfileMessage.we3 := io.we3
+    regfileMessage.wa3 := io.wa3
+    regfileMessage.rd1 := io.rd1
+    regfileMessage.rd2 := io.rd2
+    regfileMessage.ra1 := io.ra1
+    regfileMessage.ra2 := io.ra2
+    regfileMessage.r31 := io.r31
 
     printf("*********REGFILE*********\n")
-    printf(p"writeSrc($we3W)? $wd3W --> rf($wa3W)\n")
-    printf(p"rd1 = rf($ra1W) = ")
-    printf(p"$rd1W\n")
-    printf(p"rd2 = rf($ra2W) = ")
-    printf(p"$rd2W\n")
     for(j <- 0 to 31){
         val regVal = Wire(UInt(32.W))
         regVal := rf(j.U)
         printf("rf(" + j + ") = ") 
         printf(p"$regVal\n")
     }
-    printf("*******END REGFILE********\n\n")
 }
 
+class MessageAlu extends Bundle {
+  val a = UInt(32.W)
+  val b = UInt(32.W)
+  val sum = UInt(32.W)
+  val out = UInt(32.W)
+  val aluControl = UInt(4.W)
+  val zero = UInt(1.W)
+  val lt = UInt(1.W)
+  val gt = UInt(1.W)
+
+  override def toPrintable: Printable = {
+    p"\n\n\nalu Module:\n" +
+    p"  a           : ${Hexadecimal(a)}\n" +
+    p"  b           : ${Hexadecimal(b)}\n" +
+    p"  sum         : ${Hexadecimal(sum)}\n" +
+    p"  out         : ${Hexadecimal(out)}\n" +
+    p"  aluControl  : ${Binary(aluControl)}\n" +
+    p"  zero        : ${Binary(zero)}\n" +
+    p"  lt          : ${Binary(lt)}\n" +
+    p"  gt          : ${Binary(gt)}\n" +
+    p"///////////////////////////////////////////////////\n" 
+  }
+}
 
 class alu extends Module {
     val io = IO(new Bundle {
@@ -507,6 +603,7 @@ class alu extends Module {
         val gt = Output(Bool())
     })
 
+    val aluMessage = Wire(new MessageAlu)
     val sum = Wire(UInt(32.W))
 
     when(io.aluControl(3) === 1.U){
@@ -553,44 +650,25 @@ class alu extends Module {
         io.out := 0.U
     }
 
-    val aW = Wire(UInt(32.W))
-    val bW = Wire(UInt(32.W))
-    val outW = Wire(UInt(32.W))
-    val sumW = Wire(UInt(32.W))
-    val aluControlW = Wire(UInt(4.W))
-    aluControlW := io.aluControl
-    aW := io.a
-    bW := io.b
-    sumW := sum
-    outW := io.out
-
     when(io.a - io.b === 0.U)
     {
         io.zero := 1.U
     }.otherwise{
         io.zero := 0.U
     }
+
     io.lt := (io.a < io.b)
     io.gt := (io.a > io.b)
 
-    val zeroW = Wire(UInt(1.W))
-    val ltW = Wire(UInt(1.W))
-    val gtW = Wire(UInt(1.W))
-
-    zeroW := io.zero
-    ltW := io.lt
-    gtW := io.gt
-
-    printf("***********ALU**********\n")
-    printf(p"a = $aW\n")
-    printf(p"b = $bW\n")
-    printf(p"sum = $sumW\n")
-    printf(p"out = $outW\n")
-    printf(p"aluControl = ${Binary(aluControlW)}\n")
-    printf(p"zero = $zeroW\n")
-    printf(p"lt = $ltW\n")
-    printf(p"gt = $gtW\n")
-    printf("********END ALU*********\n\n")
+    aluMessage.a := io.a
+    aluMessage.b := io.b
+    aluMessage.sum := sum
+    aluMessage.out := io.out
+    aluMessage.aluControl := io.aluControl
+    aluMessage.zero := io.zero
+    aluMessage.lt := io.lt
+    aluMessage.gt := io.gt
+    printf(p"$aluMessage")
 }
 
 
@@ -643,69 +721,106 @@ object top extends App {
   iotesters.Driver.execute(args, () => new top) {
     t => new riscvSingleTest(t)
   }
+
+  chisel3.Driver.execute(args, () => new top)
 }
 
-/*
-class riscvSingleTest(rv: riscv) extends PeekPokeTester(rv) {
-    poke(rv.io.instr, "h00100093".U)
-    poke(rv.io.readData, 0.U)
-    step(1)
-    println("PC: " + peek(rv.io.pc))
-    println("memWrite: " + peek(rv.io.memWrite))
-    println("aluResult: " + peek(rv.io.aluResult))
-    println("writeData: " + peek(rv.io.writeData))
-    println("memImmP: " + peek(rv.io.memImmP))
-
-    poke(rv.io.instr, "h00108113".U)
-    poke(rv.io.readData, 0.U)
-    step(1)
-    println("PC: " + peek(rv.io.pc))
-    println("memWrite: " + peek(rv.io.memWrite))
-    println("aluResult: " + peek(rv.io.aluResult))
-    println("writeData: " + peek(rv.io.writeData))
-    println("memImmP: " + peek(rv.io.memImmP))
-
-    poke(rv.io.instr, "h001101B3".U)
-    poke(rv.io.readData, 0.U)
-    step(1)
-    println("PC: " + peek(rv.io.pc))
-    println("memWrite: " + peek(rv.io.memWrite))
-    println("aluResult: " + peek(rv.io.aluResult))
-    println("writeData: " + peek(rv.io.writeData))
-    println("memImmP: " + peek(rv.io.memImmP))
-
-     poke(rv.io.instr, "h00218233".U)
-    poke(rv.io.readData, 0.U)
-    step(1)
-    println("PC: " + peek(rv.io.pc))
-    println("memWrite: " + peek(rv.io.memWrite))
-    println("aluResult: " + peek(rv.io.aluResult))
-    println("writeData: " + peek(rv.io.writeData))
-    println("memImmP: " + peek(rv.io.memImmP))
-
-     poke(rv.io.instr, "h003202B3".U)
-    poke(rv.io.readData, 0.U)
-    step(1)
-    println("PC: " + peek(rv.io.pc))
-    println("memWrite: " + peek(rv.io.memWrite))
-    println("aluResult: " + peek(rv.io.aluResult))
-    println("writeData: " + peek(rv.io.writeData))
-    println("memImmP: " + peek(rv.io.memImmP))
-
-     poke(rv.io.instr, "h01810313".U)
-    poke(rv.io.readData, 0.U)
-    step(1)
-    println("PC: " + peek(rv.io.pc))
-    println("memWrite: " + peek(rv.io.memWrite))
-    println("aluResult: " + peek(rv.io.aluResult))
-    println("writeData: " + peek(rv.io.writeData))
-    println("memImmP: " + peek(rv.io.memImmP))
-    step(1)
-}
-
-object riscv extends App {
-  iotesters.Driver.execute(args, () => new riscv) {
-    rv => new riscvSingleTest(rv)
+class MessageRtype extends Bundle {
+  val instr = UInt(32.W)
+  val funct7 = UInt(7.W)
+  val rs1 = UInt(5.W)
+  val rs2 = UInt(5.W)
+  val funct3 = UInt(3.W)
+  val rd = UInt(5.W)
+  val opcode = UInt(7.W)
+  override def toPrintable: Printable = {
+    p"R-Type (${Hexadecimal(instr)}):\n" +
+    p"  funct7      : ${Binary(funct7)}\n" +
+    p"  rs1         : ${Binary(rs1)}\n" +
+    p"  rs2         : ${Binary(rs2)}\n" +
+    p"  funct3      : ${Binary(funct3)}\n" +
+    p"  rd          : ${Binary(rd)}\n" +
+    p"  opcode      : ${Binary(opcode)}\n" 
   }
-  */
+}
+
+class MessageItype extends Bundle {
+  val instr = UInt(32.W)
+  val imm = UInt(12.W)
+  val rs1 = UInt(5.W)
+  val funct3 = UInt(3.W)
+  val rd = UInt(5.W)
+  val opcode = UInt(7.W)
+  override def toPrintable: Printable = {
+    p"I-Type (${Hexadecimal(instr)}):\n" +
+    p"  imm[11:0]   : ${Binary(imm)}\n" +
+    p"  rs1         : ${Binary(rs1)}\n" +
+    p"  funct3      : ${Binary(funct3)}\n" +
+    p"  rd          : ${Binary(rd)}\n" +
+    p"  opcode      : ${Binary(opcode)}\n" 
+  }
+}
+
+class MessageStype extends Bundle {
+  val instr = UInt(32.W)
+  val imm7 = UInt(7.W)
+  val rs1 = UInt(5.W)
+  val rs2 = UInt(5.W)
+  val opcode = UInt(7.W)
+  val imm5 = UInt(5.W)
+  val funct3 = UInt(3.W)
+  override def toPrintable: Printable = {
+    p"S-Type (${Hexadecimal(instr)}):\n" +
+    p"  imm[11:5]   : ${Binary(imm7)}\n" +
+    p"  rs2         : ${Binary(rs2)}\n" +
+    p"  rs1         : ${Binary(rs1)}\n" +
+    p"  funct3      : ${Binary(funct3)}\n" +
+    p"  imm[4:0]    : ${Binary(imm5)}\n" +
+    p"  opcode      : ${Binary(opcode)}\n" 
+  }
+}
+
+class MessageSBtype extends Bundle {
+  val instr = UInt(32.W)
+  val imm7 = UInt(12.W)
+  val rs1 = UInt(5.W)
+  val rs2 = UInt(5.W)
+  val imm5 = UInt(5.W)
+  val opcode = UInt(7.W)
+  val funct3 = UInt(3.W)
+  override def toPrintable: Printable = {
+    p"SB-Type (${Hexadecimal(instr)}):\n" +
+    p"  imm[12|10:5]: ${Binary(imm7)}\n" +
+    p"  rs2         : ${Binary(rs2)}\n" +
+    p"  rs1         : ${Binary(rs1)}\n" +
+    p"  funct3      : ${Binary(funct3)}\n" +
+    p"  imm[4:1|11] : ${Binary(imm5)}\n" +
+    p"  opcode      : ${Binary(opcode)}\n" 
+  }
+}
+
+class MessageUtype extends Bundle {
+  val instr = UInt(32.W)
+  val imm20 = UInt(20.W)
+  val rd = UInt(5.W)
+  val opcode = UInt(7.W)
+  override def toPrintable: Printable = {
+    p"U-Type (${Hexadecimal(instr)}):\n" +
+    p"  imm[31:12]  : ${Binary(imm20)}\n" +
+    p"  rd          : ${Binary(rd)}\n" +
+    p"  opcode      : ${Binary(opcode)}\n" 
+  }
+}
+
+class MessageUJtype extends Bundle {
+  val instr = UInt(32.W)
+  val imm20 = UInt(12.W)
+  val rd = UInt(5.W)
+  val opcode = UInt(7.W)
+  override def toPrintable: Printable = {
+    p"UJ-Type (${Hexadecimal(instr)}):\n" +
+    p"  imm[20|10:1|11|19:12]   : ${Binary(imm20)}\n" +
+    p"  rd                      : ${Binary(rd)}\n" +
+    p"  opcode                  : ${Binary(opcode)}\n" 
+  }
 }
