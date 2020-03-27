@@ -9,7 +9,7 @@ then
 	echo "Test File: $testFile"
 	echo "Placeholder: $testFilePlaceholder"
 	sed -i "s|${testFilePlaceholder}|${testFile}.x|1" src/main/scala/$projectFile.scala
-        sbt "runMain $projectFile.top"
+        sbt "runMain $projectFile.top"  
 	sed -i "s|${testFile}.x|${testFilePlaceholder}|1" src/main/scala/$projectFile.scala	
 else
 	echo "./runProject [name of project file] [name of test file]"

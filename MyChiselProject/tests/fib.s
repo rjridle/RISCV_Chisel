@@ -3,6 +3,7 @@ _start:
 	li x3, 0
 	li x2, 1
 	li x1, 0
+	auipc x20, 0xA
 fib:
 	beq x4, x0, finish
 	add x3, x2, x1
