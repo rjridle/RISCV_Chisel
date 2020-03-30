@@ -272,14 +272,20 @@ class decoder extends Module {
             }.otherwise {                           //AND
                 io.aluControl := 0.U                
             }
-        }.otherwise {
-            when(io.funct3 === "b000".U) {          //MUL
-                io.aluControl := 8.U                
-            }.otherwise {                           //SUB
-                io.aluControl := 4.U                
+        }.elsewhen(io.funct7 === "b0000001".U){
+            when(io.funct3 === "b000".U){           //MUL
+                io.aluControl := 8.U
+            }.elsewhen(io.funct3 === "b101".U){     //DIV
+                io.aluControl := 10.U
+            }.otherwise {
+                io.aluControl := 0.U  
             }
+        }.elsewhen(io.funct7 === "b0100000".U){
+            io.aluControl := 4.U                    //SUB
+        }.otherwise {
+            io.aluControl := 0.U                    //NONE
         }
-    }.elsewhen (io.opcode === "b0010111".U){       //AUIPC
+    }.elsewhen(io.opcode === "b0010111".U){       //AUIPC
         io.regSrc := "b000".U
         io.immSrc := "b11".U
         io.aluSrc := 1.U
@@ -289,7 +295,7 @@ class decoder extends Module {
         io.memW := 0.U
         io.branchSrc := 0.U
         io.aluControl := 2.U
-    }.elsewhen (io.opcode === "b0010011".U) {
+    }.elsewhen(io.opcode === "b0010011".U) {
         io.regSrc := "b000".U
         io.immSrc := "b00".U
         io.aluSrc := 1.U
@@ -316,7 +322,7 @@ class decoder extends Module {
         }.otherwise {
             io.aluControl := 0.U                    // ANDI
         }
-    }.elsewhen (io.opcode === "b0000011".U) {       // LOAD
+    }.elsewhen(io.opcode === "b0000011".U) {       // LOAD
         io.regSrc := "b000".U
         io.immSrc := "b00".U
         io.aluSrc := 1.U
@@ -326,7 +332,7 @@ class decoder extends Module {
         io.memW := 1.U
         io.branchSrc := 0.U
         io.aluControl := 0.U
-    }.elsewhen (io.opcode === "b0100011".U) {       // STORE
+    }.elsewhen(io.opcode === "b0100011".U) {       // STORE
         io.regSrc := "b000".U
         io.immSrc := "b00".U
         io.aluSrc := 1.U
@@ -336,7 +342,7 @@ class decoder extends Module {
         io.memW := 1.U
         io.branchSrc := 0.U
         io.aluControl := 0.U
-    }.elsewhen (io.opcode === "b1100011".U) {
+    }.elsewhen(io.opcode === "b1100011".U) {
         io.regSrc := "b000".U
         io.immSrc := "b01".U
         io.aluSrc := 0.U
@@ -362,7 +368,7 @@ class decoder extends Module {
             io.branchSrc := 0.U
         }
 
-    }.elsewhen (io.opcode === "b1101111".U) {                   // JAL
+    }.elsewhen(io.opcode === "b1101111".U) {                   // JAL
         io.regSrc := "b100".U
         io.immSrc := "b10".U
         io.aluSrc := 1.U
@@ -372,7 +378,7 @@ class decoder extends Module {
         io.memW := 0.U
         io.branchSrc := 1.U
         io.aluControl := 0.U
-    }.elsewhen (io.opcode === "b1110011".U) {                   // ECALL
+    }.elsewhen(io.opcode === "b1110011".U) {                   // ECALL
         io.regSrc := "b000".U
         io.immSrc := "b00".U
         io.aluSrc := 0.U
@@ -706,6 +712,8 @@ class alu extends Module {
         }
     }.elsewhen(io.aluControl === "b1000".U) {
         io.out := io.a * io.b
+    }.elsewhen(io.aluControl === "b1010".U){
+        io.out := io.a / io.b
     }.elsewhen(io.aluControl === "b1001".U) {
         when (sum(31).andR) {
             io.out := 1.U
