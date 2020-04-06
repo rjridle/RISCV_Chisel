@@ -2,7 +2,7 @@
   {
     "class":"firrtl.annotations.LoadMemoryAnnotation",
     "target":"top.imem.MEM",
-    "fileName":"tests/fib.x",
+    "fileName":"tests/arithtest.x",
     "hexOrBinary":{
       "name":"h"
     }

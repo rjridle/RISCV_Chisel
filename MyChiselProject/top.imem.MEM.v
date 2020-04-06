@@ -1,11 +1,11 @@
-module BindsTo_0_imem( // @[:@1229.2]
-  input         clock, // @[:@1230.4]
-  input  [31:0] io_mem_addr, // @[:@1232.4]
-  output [31:0] io_mem_out // @[:@1232.4]
+module BindsTo_0_imem( // @[:@1299.2]
+  input         clock, // @[:@1300.4]
+  input  [31:0] io_mem_addr, // @[:@1302.4]
+  output [31:0] io_mem_out // @[:@1302.4]
 );
 
 initial begin
-  $readmemh("tests/fib.x", imem.MEM);
+  $readmemh("tests/arithtest.x", imem.MEM);
 end
                       endmodule
 

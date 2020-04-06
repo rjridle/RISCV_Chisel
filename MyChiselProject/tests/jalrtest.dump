@@ -1,0 +1,17 @@
+
+jalrtest.out:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <.text>:
+   0:	00400093          	li	ra,4
+   4:	02008a67          	jalr	s4,32(ra)
+   8:	00200113          	li	sp,2
+   c:	00300193          	li	gp,3
+  10:	00400213          	li	tp,4
+  14:	00500293          	li	t0,5
+  18:	00600313          	li	t1,6
+  1c:	00700393          	li	t2,7
+  20:	0000aa17          	auipc	s4,0xa
+  24:	00000073          	ecall
