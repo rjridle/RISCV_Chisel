@@ -47,7 +47,7 @@ This document is an overview of how a RISC-V processor was created in Chisel.
 \section{Chisel Introduction}
 
 Chisel is a hardware description language embedded in the Scala programming language. 
-This allows the user to describe hardware in a highly parameterized, object oriented way. 
+This HDL allows the user to describe hardware in a highly parameterized, object oriented way. 
 This is what makes Chisel more attractive than previous HDL languages. 
 Chisel allows the user to output a Verilog description of the hardware designed with Chisel.
 Designing complicated hardware is made easier with Chisel which can then be converted to Verilog if needed.
@@ -70,14 +70,14 @@ Scala uses many of the same programming paradigms as many other popular programm
    var done = false
 \end{lstlisting}
 
-\noindent The value of the variables \textbf{numberOfKittens} and \textbf{done} can be changed
+\noindent The value of the variables \verb|numberOfKittens| and \verb|done| can be changed
 
 \begin{lstlisting}[style=scala]
    numberOfKittens += 1
    done = false
 \end{lstlisting}
 
-\noindent while the others defined with val cannot.
+\noindent while the others defined with \verb|val| cannot.
 
 \subsection{If Statement}
 One of the most important functions in a programming language is the if statement. Scala supports this in the same fashion that most languages do.
@@ -97,7 +97,7 @@ One of the most important functions in a programming language is the if statemen
 
 \end{lstlisting}
 
-\noindent The \textbf{if} conditional can also return a value. It is given by the last line of the selected branch.
+\noindent The \verb|if| conditional can also return a value. It is given by the last line of the selected branch.
 
 \begin{lstlisting}[style=scala]
    val likelyCharacterSet = if (alphabet.length == 26) 
@@ -107,7 +107,7 @@ One of the most important functions in a programming language is the if statemen
 \end{lstlisting}
 
 \subsection{Methods}
-Methods are defined with the keyword \textbf{def}.
+Methods are defined with the keyword \verb|def|.
 Parameters are defined in a comma separated list that define the name and type as follows.
 
 \begin{lstlisting}[style=scala]
@@ -151,14 +151,14 @@ Scala has for loops that work just like in traditional languages.
    println()
 \end{lstlisting}
 
-Using \textbf{until} instead of \textbf{to} to go up to a value, but stop before it.
+Using \verb|until| instead of \verb|to| to go up to a value, but stop before it.
  
 \begin{lstlisting}[style=scala]
    for (i <- 0 until 7) {print(i + " ")}
    println()
 \end{lstlisting}
 
-Adding \textbf{by} at the end will increment i by a fixed amount.
+Adding \verb|by| at the end will increment i by a fixed amount.
 
 \begin{lstlisting}[style=scala]
    for (i <- 0 to 10 by 2) {print(i + " ")}
@@ -406,8 +406,8 @@ programming language at the core so it follows that standard paradigms of most o
 
 
 \chapter{RISC-V Processor}
-Now with a basic understanding of both Scala and Chisel, construction a simple processor is easier than it may seem. The design of 
-this particular processor is split up into 9 classes (or modules)
+Now with a basic understanding of both Scala and Chisel, constructing a single cycle processor is now possible.
+The design of this particular processor is split up into 9 classes (or modules)
 with two supplementary classes needed for simulation.
 \begin{itemize}
    \item top
@@ -562,8 +562,9 @@ io.memWriteData := dp.io.memWriteData
 \noindent The pc and the data memory signals are sent back to the top module.
 
 \section{Decoder Module}
-The decoder is the module sets most of the control signals that determine what the alu
-will do. If a branch is necessary, if a value is being written to a register, if a value pulled from memory is begin written to a register, etc. First, the class declaration.
+The decoder module sets most of the control signals that the datapath and ALU use for program flow.
+If a branch is necessary, if a value is being written to a register, if a value pulled from memory is begin written to a register, are all dependent on the control signals set in the decoder. 
+First, the class declaration.
 
 \begin{lstlisting}[style=scala]
 class decoder extends Module {
@@ -912,7 +913,7 @@ If \verb|regSrc(2)| does not equal one, the nested \verb|Mux| function is entere
 \noindent Next, the calculated signals are then set to their corresponding signals in the \verb|regFile| module.
 
 In RISC-V, almost all types of instructions have the same format.
-The values for the source registers, \verb|regReadAddress1 (rs1)| and \verb|regReadAddress (rs2)|, occupy the same bits inside the instruction allowing for less work to retrieve/set the values inside those registers.
+The values for the source registers, \verb|regReadAddress1| and \verb|regReadAddress|, occupy the same bits inside the instruction allowing for less work to retrieve/set the values inside those registers.
 For every instruction type except \textbf{U} and \textbf{UJ}, \verb|regReadAddress| occupies bits 19-15.
 For every instruction type except \textbf{U}, \textbf{UJ}, and \textbf{I}, which does not require a second signal from the register file, \verb|regReadAddress2| occupies bits 24-20.
 For the destination register, every instruction type except \textbf{S} and \textbf{SB}, which are branch instructions, \verb|regWriteData (rd)| occupies bits 11-7.
@@ -929,7 +930,7 @@ Lastly is the ALU logic.
    io.greaterThanFlag := alu.io.greaterThanFlag
 \end{lstlisting}
 
-\noindent The first signal, \verb|alu.io.a|, uses a \verb|Mux| with \verb|pcSrc| as the control signal to determine if the pc or register signal is assigned.\verb|alu.io.b| also uses a \verb|Mux| with \verb|aluSrc| as the control signal to determine if an immediate value or the second register signal should be assigned. Finally, \verb|aluControl| is passed into the module and the zero, less than, and greater than flags are grabbed from the ALU module.
+\noindent The first signal, \verb|alu.io.a|, uses a \verb|Mux| with \verb|pcSrc| as the control signal to determine if the pc or register signal is assigned. The same method is used to define \verb|alu.io.b| by using a \verb|Mux| with \verb|aluSrc| as the control signal, and picks between the immediate value or the second register signal. Finally, \verb|aluControl| is passed into the module and the zero, less than, and greater than flags are grabbed from the ALU module.
 
 \pagebreak
 \section{Register File Module}
@@ -1015,7 +1016,7 @@ used for branching. First, the class declaration.
 \end{lstlisting}
 
 \noindent The signals a and b are the two values that are operated on while aluControl is the control signals. \verb|out|
-is obviously the output of the calculations. \verb|zeroFlag|, \verb|lessThanFlag|, and \verb|greaterThanFlag| are the control signals sent to the decoder to determine if a branch should occur. Like the decoder, the alu uses when statements to determine what operation should be perform.
+is obviously the output of the calculations. \verb|zeroFlag|, \verb|lessThanFlag|, and \verb|greaterThanFlag| are the control signals sent to the decoder to determine if a branch should occur. Like the decoder, the alu uses when statements to determine what operation should be performed.
 
 
 \begin{lstlisting}[style=scala]
@@ -1115,10 +1116,10 @@ class imem extends Module {
 }
 \end{lstlisting}
 
-\noindent The instruction memory module uses the function \textbf{loadMemoryFromFile()} to load hexadecimal instructions from a text file at the given path into \verb|MEM|.
+\noindent The instruction memory module uses the function \verb|loadMemoryFromFile()} to load hexadecimal instructions from a text file at the given path into \verb|MEM|.
 Currently, the path to the test file is \verb|tests/TESTFILE.X|.
 This is needed for the custom script (\verb|runProject.sh|) that executes the required commands to simulate the processor.
-\verb|runProject.sh| receives two inputs, the project that is being simulated (\textbf{riscvSingle} in this case) and the test to be run.
+\verb|runProject.sh| receives two inputs, the project that is being simulated (\verb|riscvSingle| in this case) and the test to be run.
 An example shell command would be:\verb|./runProject riscvSingle RV32I_test|.
 For main memory, the same \verb|Mem| structure is used.
 
@@ -1180,7 +1181,7 @@ class riscvSingleTest(t: top) extends PeekPokeTester(t) {
 }
 \end{lstlisting}
 
-\noindent This class extends \verb|PeekPokeTester| since so that signals can be printed to the console for debugging purposes.
+\noindent This class extends \verb|PeekPokeTester| so that signals can be printed to the console for debugging purposes.
 Two variables are needed for the test module, \verb|cycles| and \verb|validP|.
 A counter for the cycles is used for debugging and to keep the program from entering into infinite loops.
 \verb|validP| is used to determine when the processor should stop stepping through the cycles.
@@ -1189,36 +1190,25 @@ This is an arbitrary value which can be changed with increasing test sizes.
 If an \verb|ECALL| instruction is executed, then \verb|validP| is set to 0.
 Inside of the loop, \verb|validP| is peeked at again to get the updated value. 
 The test then steps the processor one cycle and adds one to the cycle counter.
-The if statement then prints out if the test completed or if the test exceeded the cycle count.
+After the loop, the if statement then prints out if the test completed or exceeded the cycle count.
 \newline
 Lastly, a top object is required to initialize the test class and start the simulation.
 \begin{lstlisting}[style=scala]
-\end{lstlisting}
-
-\section{Supplementary}
-Two more classes are required to simulate the processor.
-The first is a testing class that extends \textbf{PeekPokeTester}
-which is a Chisel test harness that allows the user to "poke" (push)
-values into signals, "peek" at there value, and throw assertions for
-expected values. 
-
-\begin{lstlisting}[style=scala]
 object top extends App {
 	iotesters.Driver.execute(args, () => new top) {
-	t => new riscvSingleTest(t)
+		t => new riscvSingleTest(t)
 	}
-	chisel3.Driver.execute(args, () => new top)
+		chisel3.Driver.execute(args, () => new top)
 }
 \end{lstlisting}
 
-
 \section{Running the Processor}
-To run this processor, navigate to the \textbf{MyChiselProjects} directory in the terminal.
-The main program (\textbf{riscvSingle.scala}) located in MyChiselProject/src/main/scala/ is where changes can be made to the source code.
+To run this processor, navigate to the \verb|MyChiselProjects| directory in the terminal.
+The main program (\verb|riscvSingle.scala|) located in MyChiselProject/src/main/scala/ is where changes can be made to the source code.
 Next, run the script:
 
 \begin{lstlisting}[language=bash]
-	./runProject riscvSingle [test_file_name]
+	./runProject riscvSingle test_file
 \end{lstlisting}
 
 \noindent This will run all the necessary commands to run the specific project. Test files can be found in MyChiselProject/tests/.
@@ -1226,7 +1216,7 @@ The path starting from tests/ should be used. Requirements for tests are
 \begin{itemize}
 	\item instructions must be in hexadecimal
 	\item one instruction per line
-	\item last instruction must be \textbf{ECALL} to end test
+	\item last instruction must be \verb|ECALL| to end test
 	\item file must have a .x extension
 \end{itemize}
 DO NOT ADD EXTENSIONS on the project file name or the test file name when entering into the script.  
