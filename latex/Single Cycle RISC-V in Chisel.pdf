@@ -78,7 +78,7 @@ Scala uses many of the same programming paradigms as many other popular programm
 \end{lstlisting}
 
 \noindent while the others defined with val cannot.
-
+\pagebreak
 \subsection{If Statement}
 One of the most important functions in a programming language is the if statement. Scala supports this in the same fashion that most languages do.
 
@@ -164,7 +164,7 @@ Adding \textbf{by} at the end will increment i by a fixed amount.
    for (i <- 0 to 10 by 2) {print(i + " ")}
    println()
 \end{lstlisting}
-
+\pagebreak
 \subsection{Classes}
 Here is an example of a class.
 
@@ -217,16 +217,16 @@ Make sure to add these imports at the beginning of every file that includes Chis
    }
 \end{lstlisting}
 
-\noindent Every Chisel module (class) must extend \verb|Module|. 
+\noindent Every Chisel module (class) must extend \textbf{Module}. 
 Next are the input and outputs of the module.
-\verb|io| is needed for every module. 
-All of the vals inside \verb|IO(new Bundle {})| are the inputs and outputs of the user. 
-When referencing a variable, \verb|io.variableName| is required.
-Looking at the \verb|in| variable we can see that it is declared as an input, unsigned integer (UInt), and is a width of four (4.W).
-The variable \verb|out| is similar except it is declared as an output.
+\textbf{io} is needed for every module. 
+All of the vals inside \textbf{IO(new Bundle {})} are the inputs and outputs of the user. 
+When referencing a variable, \textbf{io.variableName} is required.
+Looking at the \textbf{in} variable we can see that it is declared as an input, unsigned integer (UInt), and is a width of four (4.W).
+The variable \textbf{out} is similar except it is declared as an output.
 This is a simple passthrough module. 
 The output is immediately set to the input.
-The operator used to connect the values is \verb|:=|. 
+The operator used to connect the values is \textbf{:=}. 
 This is basically like taking a wire and connecting the output to the input. 
 This is a directional operator, meaning that the left hand signal drives the right hand signal. 
 \section{Types}
@@ -239,8 +239,8 @@ Unfortunately, Scala types (integers, doubles, etc.) are not compatible with Chi
 
 \end{lstlisting}
 
-\noindent A \verb|.U| must be added to the end of a number to cast into the Chisel unsigned integer type. 
-For booleans, a \verb|.B| is added to the end:
+\noindent A \textbf{.U} must be added to the end of a number to cast into the Chisel unsigned integer type. 
+For booleans, a \textbf{.B} is added to the end:
 
 \begin{lstlisting}[style=scala]
    val true_value = true.B
@@ -258,7 +258,7 @@ Here are some common castings:
 \end{itemize}
 \pagebreak
 \subsection{Multiplexing and Concatenation}
-Variables can be set with the \verb|Mux()| or \verb|Cat()| function.
+Variables can be set with the \textbf{Mux()} or \textbf{Cat()} function.
 \begin{lstlisting}[style=scala]
 
    class MyOperatorsTwo extends Module {
@@ -297,7 +297,7 @@ Below is an example of a Chisel conditional.
    }
 \end{lstlisting}
 
-Chisel uses \verb|when, elsewhen, and otherwise| for its conditional statements.
+Chisel uses \textbf{when, elsewhen, and otherwise} for its conditional statements.
 This works exactly like a regular if statement.
 
 \subsubsection{Switch Statement}
@@ -364,10 +364,10 @@ object ALU extends App {
 }
 \end{lstlisting}
 
-\noindent Chisel finds the object of the main class (ALU) and using \\* \verb|iotesters.Driver.execute| the ALUTest class will be ran.
-Using \verb|poke| values can be inserted into the inputs. 
-The inputs and outputs can also be "peeked" at using \verb|peek|.
-Using the println function, io.out is printed to the console using \verb|peek(alu.io.out)|. 
+\noindent Chisel finds the object of the main class (ALU) and using \\* \textbf{iotesters.Driver.execute} the ALUTest class will be ran.
+Using \textbf{poke} values can be inserted into the inputs. 
+The inputs and outputs can also be "peeked" at using \textbf{peek}.
+Using the println function, io.out is printed to the console using \textbf{peek(alu.io.out)}. 
 This is useful for debugging code, but the only values that can be peeked at are io inputs and outputs. 
 Any internal signals trying to be peeked at will cause an error to be thrown.
 The best way to print internal signals to the console is to use a \textcolor{yellow}{toPrintable} custom message.
@@ -465,9 +465,9 @@ class top extends Module {
 
 \noindent We can first see the class declaration at the top and that has
 a single output declared which determines if the program is still
-running. An \verb|ECALL| instruction ends the program. Once an \verb|ECALL| instruction has been run, valid is set to 0. This is necessary for the test class to stop stepping through the program.
-Next are module declarations for \verb|MessageTop|, \verb|riscv|, \verb|imem|, and \verb|dmem|. These variables \verb|r|, \verb|im|, and \verb|dm| can
-now be used to deliver values to all the classes. Next, data that needs to be stored in memory is handled. The memory address (\verb|memAddress|), data to be written to that memory location (\verb|memWriteData|), and the write enable (\verb|memWriteEnable|) are given to the dmem module. 
+running. An \textbf{ECALL} instruction ends the program. Once an \textbf{ECALL} instruction has been run, valid is set to 0. This is necessary for the test class to stop stepping through the program.
+Next are module declarations for MessageTop, riscv, imem, and dmem. These variables \textbf{r}, \textbf{im}, and \textbf{dm} can
+now be used to deliver values to all the classes. Next, data that needs to be stored in memory is handled. The memory address (memAddress), data to be written to that memory location (memWriteData), and the write enable (memWriteEnable) are given to the dmem module. 
 
 \begin{lstlisting}[style=scala]
     dm.io.memAddress := r.io.memAddress
@@ -487,11 +487,11 @@ now be used to deliver values to all the classes. Next, data that needs to be st
 	r.io.instr := im.io.inst
 \end{lstlisting}
 
-\noindent Lastly, valid is calculated by seeing if an \verb|ECALL| instruction has called.
+\noindent Lastly, valid is calculated by seeing if an \textbf{ECALL} instruction has called.
 
 
 \section{RISCV Module}
-Next is the \verb|riscv| module which moves data between the datapath, decoder, and top modules. 
+Next is the \textbf{riscv} module which moves data between the datapath, decoder, and top modules. 
 
 
 
@@ -810,7 +810,7 @@ Here is the class declaration.
 \end{lstlisting}
 
 \noindent First, module declarations and necessary wires are made. Two extends modules are needed because 
-two different values, \verb|branchExtImm| and \verb|jumpImm|, need to be extended. Register write and address data wires are needed for multiplexing.
+two different values, branchExtImm and jumpImm, need to be extended. Register write and address data wires are needed for multiplexing.
 
 \begin{lstlisting}[style=scala]
    val datapathMessage = Wire(new MessageDatapath)
@@ -830,7 +830,7 @@ two different values, \verb|branchExtImm| and \verb|jumpImm|, need to be extende
    val regReadAddress2 = Wire(UInt(5.W))
 \end{lstlisting}
 
-\noindent Notice that there are four other immediate signals, \verb|auiImm|, \verb|memImm|, \verb|branchExtImm|, \verb|extImm|, that are not using an extend module. These signals do not need to be extended but are still immediate signals that need to be a \verb|Wire()|. 
+\noindent Notice that there are four other immediate signals, auiImm, memImm, branchExtImm, extImm, that are not using an extend module. These signals do not need to be extended but are still immediate signals that need to be a \verb|Wire()|. 
 
 \begin{lstlisting}[style=scala]
    //Immediate Logic
@@ -847,7 +847,7 @@ two different values, \verb|branchExtImm| and \verb|jumpImm|, need to be extende
    extImm := Mux(io.pcSrc.andR, auiImm, ext2.io.extImm)
 \end{lstlisting}
 
-\noindent \verb|branchImm| and \verb|jumpImm| are both calculated from the instruction. They are also only 12-bit signals which is why they need to be extended.
+\noindent BranchImm and jumpImm are both calculated from the instruction. They are also only 12-bit signals which is why they need to be extended.
 PC logic is then calculated next. Wires are made to hold calculated values. Remember that when a signal not being used as an input/output of a module or a "placeholder" variable, it needs to be a \verb|Wire()}|.
  
 \begin{lstlisting}[style=scala]

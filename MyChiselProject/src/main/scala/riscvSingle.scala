@@ -87,7 +87,6 @@ class riscv extends Module {
     })
 
     val riscvMessage = Wire(new MessageRiscv)
-
     val dp = Module(new datapath)
     val d = Module(new decoder)
     
@@ -103,7 +102,6 @@ class riscv extends Module {
     d.io.opcode := io.instr(6,0)
     d.io.funct7 := io.instr(31,25)
     d.io.funct3 := io.instr(14,12)
-    d.io.rd := io.instr(11,7)
     d.io.zeroFlag := dp.io.zeroFlag
     d.io.lessThanFlag := dp.io.lessThanFlag
     d.io.greaterThanFlag := dp.io.greaterThanFlag
@@ -209,7 +207,6 @@ class decoder extends Module {
         val opcode = Input(UInt(7.W))
         val funct7 = Input(UInt(7.W))
         val funct3 = Input(UInt(3.W))
-        val rd = Input(UInt(5.W))
         val regSrc = Output(UInt(3.W))
         val regWriteEnable = Output(UInt(1.W))
         val immSrc = Output(UInt(2.W))
@@ -493,25 +490,24 @@ class datapath extends Module {
     })
 
     val datapathMessage = Wire(new MessageDatapath)
-    val ext1 = Module(new extend)
     val rf = Module(new regfile)
-    val ext2 = Module(new extend)
     val alu = Module(new alu)
+    val ext1 = Module(new extend)
+    val ext2 = Module(new extend)
     val branchImm = Wire(UInt(12.W))
     val jumpImm = Wire(UInt(12.W))
     val auiImm = Wire(SInt(32.W))
     val memImm = Wire(SInt(32.W))
     val branchExtImm = Wire(SInt(32.W))
-    val pcRegBranch = Wire(UInt(32.W))
     val extImm = Wire(SInt(32.W))
+    val pcRegBranch = Wire(UInt(32.W))
     val regWriteData = Wire(SInt(32.W))
     val regReadAddress1 = Wire(UInt(5.W))
     val regReadAddress2 = Wire(UInt(5.W))
 
-    //Branch Logic
+    //Immediate Logic
     branchImm := Cat(io.instr(31), io.instr(7), io.instr(30,25), io.instr(11,8))
     jumpImm := Cat(io.instr(31), io.instr(19,12), io.instr(20), io.instr(30,21))
-
     auiImm := (Cat(io.instr(31,12), 0.U(12.W))).asSInt
     ext1.io.instr12 := branchImm
     ext1.io.instr20 := jumpImm
@@ -540,25 +536,25 @@ class datapath extends Module {
 
     //Mem logic
     memImm := (Cat(io.instr(31,25), io.instr(11,7))).asSInt
+    //io.memAddress := (Mux(io.memToReg.andR, extImm, memImm) + rf.io.regReadData1).asUInt
+    //io.memAddress := (memImm + rf.io.regReadData1).asUInt
     io.memAddress := ((Mux(io.memToReg.andR, extImm, memImm)).asSInt + rf.io.regReadData1).asUInt
 
     //regFile logic
     regReadAddress1 := Mux(io.regSrc(0).andR, "b11111".U, io.instr(19,15))
     regReadAddress2 := Mux(io.regSrc(1).andR, io.instr(11,7), io.instr(24,20))
     regWriteData := Mux(io.regSrc(2).andR, pcPlus4.asSInt, Mux(io.memToReg.andR, io.memReadData, alu.io.out))
-    
     rf.io.regWriteEnable := io.regWriteEnable
     rf.io.regReadAddress1 := regReadAddress1
     rf.io.regReadAddress2 := regReadAddress2
     rf.io.regWriteAddress := io.instr(11,7)
     rf.io.regWriteData := regWriteData
-    rf.io.r31 := pcPlus8
     io.memWriteData := rf.io.regReadData2
     
+    //ALU Logic
     alu.io.a := Mux(io.pcSrc.andR, pcPlus4.asSInt, rf.io.regReadData1)
     alu.io.b := Mux(io.aluSrc.andR, extImm, rf.io.regReadData2)
     alu.io.aluControl := io.aluControl
-    alu.io.imm := io.aluSrc
     io.zeroFlag := alu.io.zeroFlag
     io.lessThanFlag := alu.io.lessThanFlag
     io.greaterThanFlag := alu.io.greaterThanFlag
@@ -591,7 +587,6 @@ class MessageRegFile extends Bundle {
   val regReadAddress2 = UInt(5.W)
   val regWriteAddress = UInt(5.W)
   val regWriteData = SInt(32.W)
-  val r31 = UInt(32.W)
   val regReadData1 = SInt(32.W)
   val regReadData2 = SInt(32.W)
 
@@ -603,7 +598,6 @@ class MessageRegFile extends Bundle {
     p"|  regReadAddress2 : b${Binary(regReadAddress2)}\n" +
     p"|  regWriteAddress : b${Binary(regWriteAddress)}\n" +
     p"|  regWriteData    : 0x${Hexadecimal(regWriteData)}\n" +
-    p"|  r31             : 0x${Hexadecimal(r31)}\n" +
     p"|  regReadData1    : 0x${Hexadecimal(regReadData1)}\n" +
     p"|  regReadData2    : 0x${Hexadecimal(regReadData2)}\n" +
     p"|___________________________\n"
@@ -615,7 +609,6 @@ class regfile extends Module {
         val regWriteEnable = Input(UInt(1.W))
         val regWriteAddress = Input(UInt(5.W))
         val regWriteData = Input(SInt(32.W))
-        val r31 = Input(UInt(32.W))
         val regReadAddress1 = Input(UInt(5.W))
         val regReadAddress2 = Input(UInt(5.W))
         val regReadData1 = Output(SInt(32.W))
@@ -631,8 +624,8 @@ class regfile extends Module {
         rf(0.U) := 0.S
     }
 
-    io.regReadData1 := Mux((io.regReadAddress1 === 31.U), rf(io.r31), rf(io.regReadAddress1))
-    io.regReadData2 := Mux((io.regReadAddress2 === 31.U), rf(io.r31), rf(io.regReadAddress2))
+    io.regReadData1 := rf(io.regReadAddress1)
+    io.regReadData2 := rf(io.regReadAddress2)
 
     regfileMessage.regWriteData := io.regWriteData
     regfileMessage.regWriteEnable := io.regWriteEnable
@@ -641,7 +634,6 @@ class regfile extends Module {
     regfileMessage.regReadData2 := io.regReadData2
     regfileMessage.regReadAddress1 := io.regReadAddress1
     regfileMessage.regReadAddress2 := io.regReadAddress2
-    regfileMessage.r31 := io.r31
     printf(p"$regfileMessage")
 
 
@@ -658,7 +650,6 @@ class regfile extends Module {
 class MessageAlu extends Bundle {
   val a = SInt(32.W)
   val b = SInt(32.W)
-  val sum = SInt(32.W)
   val out = SInt(32.W)
   val aluControl = UInt(4.W)
   val zeroFlag = UInt(1.W)
@@ -670,7 +661,6 @@ class MessageAlu extends Bundle {
     p"|alu Module:\n" +
     p"|  a               : 0x${Hexadecimal(a)}\n" +
     p"|  b               : 0x${Hexadecimal(b)}\n" +
-    p"|  sum             : 0x${Hexadecimal(sum)}\n" +
     p"|  out             : 0x${Hexadecimal(out)}\n" +
     p"|  aluControl      : b${Binary(aluControl)}\n" +
     p"|  zeroFlag        : b${Binary(zeroFlag)}\n" +
@@ -685,7 +675,6 @@ class alu extends Module {
         val a = Input(SInt(32.W))
         val b = Input(SInt(32.W))
         val aluControl = Input(UInt(4.W))
-        val imm = Input(UInt(1.W))
         val out = Output(SInt(32.W))
 
         val zeroFlag = Output(Bool())
@@ -694,9 +683,6 @@ class alu extends Module {
     })
 
     val aluMessage = Wire(new MessageAlu)
-    val sum = Wire(SInt(32.W))
-
-    sum := io.a + io.b
 
     when (io.aluControl === 0.U) {                      //AND, ANDI
         io.out := io.a & io.b
@@ -735,14 +721,12 @@ class alu extends Module {
     }
 
 
-    io.zeroFlag := Mux(sum === 0.S, true.B, false.B)
-
+    io.zeroFlag := Mux(io.a + io.b === 0.S, true.B, false.B)
     io.lessThanFlag := (io.a < io.b)
     io.greaterThanFlag := (io.a > io.b)
 
     aluMessage.a := io.a
     aluMessage.b := io.b
-    aluMessage.sum := sum
     aluMessage.out := io.out
     aluMessage.aluControl := io.aluControl
     aluMessage.zeroFlag := io.zeroFlag
@@ -790,14 +774,12 @@ class dmem extends Module {
 
     val dmemMessage = Wire(new MessageDmem)
     val mem = SyncReadMem(1024, SInt(32.W))
+
     when(io.memWriteEnable.andR){
         mem.write(io.memAddress, io.memWriteData)
     }
 
     io.memReadData := mem(io.memAddress)
-    val addr = io.memAddress
-    val dat = mem(io.memAddress)
-    printf(p"mem($addr) = $dat")
       
     printf("\n\n\nMemory___________________________\n")
     for(j <- 0 to 31){
@@ -821,15 +803,14 @@ class riscvSingleTest(t: top) extends PeekPokeTester(t) {
     println("**********STARTING riscvSingleTest*******")
     var cycles = 1
     var validP = peek(t.io.valid)
-    
-    println(s"Starting valid = $validP")
+
     println(s"CYCLE: $cycles")
-    while (peek(t.io.valid) == BigInt(1) && cycles < 100) {
+    while (validP == BigInt(1) && cycles < 100) {
         println(s"STARTING NEXT CYCLE: $cycles")
-        validP = peek(t.io.valid)
         println(s"valid = $validP")
         step(1)
         cycles += 1
+        validP = peek(t.io.valid)
     }
     step(1)
     if (cycles > 98 ) {
