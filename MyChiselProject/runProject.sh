@@ -2,17 +2,15 @@
 
 if [ "$#" -eq 2 ]
 then
-	projectFile=$1
-	testFile=$2
+	testFile=$1
 	testFilePlaceholder='TESTFILE.X'
-	echo "Project File: $projectFile"
 	echo "Test File: $testFile"
-	sed -i "s|${testFilePlaceholder}|${testFile}.x|1" src/main/scala/$projectFile.scala
-        sbt "runMain $projectFile.top" 2>&1 > ${testFile}.res 
-	sed -i "s|${testFile}.x|${testFilePlaceholder}|1" src/main/scala/$projectFile.scala	
+	sed -i "s|${testFilePlaceholder}|${testFile}.x|1" src/main/scala/riscvSingle.scala
+        sbt "runMain riscvSingle.top" 2>&1 > ${testFile}.res 
+	sed -i "s|${testFile}.x|${testFilePlaceholder}|1" src/main/scala/riscvSingle.scala	
 	vim ${testFile}.res
 else
-	echo "./runProject [name of project file] [name of test file]"
+	echo "./runProject [name of test file]"
 	echo "=>DO NOT ADD EXTENTIONS"
 	echo "=> project file must be located somewhere in MyChiselProjects/src/main/scala/"
 	echo "=> if project file is included in another directory then add the path"
