@@ -5,10 +5,10 @@ circuit fpadd :
     input reset : UInt<1>
     output io : {flip a : UInt<32>, flip b : UInt<32>, mant_a : UInt<24>, mant_b : UInt<24>, exp_a : UInt<8>, exp_b : UInt<8>, exponent : UInt<8>, fract : UInt<23>, s : UInt<32>}
     
-    wire shmant : UInt<24> @[fpadd.scala 62:22]
+    wire shmant : UInt<25> @[fpadd.scala 62:22]
     wire shamt : UInt<8> @[fpadd.scala 63:21]
-    wire shiftedval : UInt<24> @[fpadd.scala 64:26]
-    wire addval : UInt<24> @[fpadd.scala 65:22]
+    wire shiftedval : UInt<25> @[fpadd.scala 64:26]
+    wire addval : UInt<25> @[fpadd.scala 65:22]
     wire ovf : UInt<1> @[fpadd.scala 66:19]
     wire exp_pre : UInt<8> @[fpadd.scala 67:23]
     wire addresult : UInt<25> @[fpadd.scala 68:25]
@@ -57,10 +57,10 @@ circuit fpadd :
     node _T_65 = or(_T_63, _T_64) @[fpadd.scala 96:22]
     node _T_66 = bits(shamt, 5, 5) @[fpadd.scala 96:40]
     node _T_67 = or(_T_65, _T_66) @[fpadd.scala 96:33]
-    node _T_68 = bits(shamt, 4, 4) @[fpadd.scala 96:53]
-    node _T_69 = bits(shamt, 3, 3) @[fpadd.scala 96:64]
-    node _T_70 = and(_T_68, _T_69) @[fpadd.scala 96:57]
-    node _T_71 = or(_T_67, _T_70) @[fpadd.scala 96:45]
+    node _T_68 = bits(shamt, 4, 4) @[fpadd.scala 96:52]
+    node _T_69 = bits(shamt, 3, 3) @[fpadd.scala 96:63]
+    node _T_70 = and(_T_68, _T_69) @[fpadd.scala 96:56]
+    node _T_71 = or(_T_67, _T_70) @[fpadd.scala 96:44]
     ovf <= _T_71 @[fpadd.scala 96:9]
     node _T_72 = not(ovf) @[fpadd.scala 97:23]
     node _T_74 = eq(_T_72, UInt<1>("h00")) @[fpadd.scala 97:23]
@@ -112,6 +112,6 @@ circuit fpadd :
     node _T_101 = bits(reset, 0, 0) @[fpadd.scala 129:11]
     node _T_103 = eq(_T_101, UInt<1>("h00")) @[fpadd.scala 129:11]
     when _T_103 : @[fpadd.scala 129:11]
-      printf(clock, UInt<1>(1), "\n\n\n___________________________\n|fpadd Module:\n|  a          : b%b\n|  b          : b%b\n|  mant_a     : b%b\n|  mant_b     : b%b\n|  exp_a      : b%b\n|  exp_b      : b%b\n|  aminusb    : b%b\n|  bminusa    : b%b\n|  alessb     : b%b\n|  shmant     : b%b\n|  shamt      : b%b\n|  shiftedval : b%b\n|  addval     : b%b\n|  ovf        : b%b\n|  exp_pre    : b%b\n|  exponent   : b%b\n|  addresult  : b%b\n|  fract      : b%b\n|  s          : b%b\n|___________________________\n", fpaddMessage.a, fpaddMessage.b, fpaddMessage.mant_a, fpaddMessage.mant_b, fpaddMessage.exp_a, fpaddMessage.exp_b, fpaddMessage.shmant, fpaddMessage.shamt, fpaddMessage.shiftedval, fpaddMessage.shmant, fpaddMessage.shamt, fpaddMessage.shiftedval, fpaddMessage.addval, fpaddMessage.ovf, fpaddMessage.exp_pre, fpaddMessage.exponent, fpaddMessage.addresult, fpaddMessage.fract, fpaddMessage.s) @[fpadd.scala 129:11]
+      printf(clock, UInt<1>(1), "\n\n\n___________________________\n|fpadd Module:\n|  a          : 0x%x\n|  b          : 0x%x\n|  mant_a     : b%b\n|  mant_b     : b%b\n|  exp_a      : b%b\n|  exp_b      : b%b\n|  aminusb    : b%b\n|  bminusa    : b%b\n|  alessb     : b%b\n|  exp_pre    : b%b\n|  shamt      : b%b\n|  shiftedval : b%b\n|  ovf        : b%b\n|  shmant     : 0x%x\n|  addval     : 0x%x\n|  addresult  : 0x%x\n|  exponent   : b%b\n|  fract      : b%b\n|  s          : 0x%x\n|___________________________\n", fpaddMessage.a, fpaddMessage.b, fpaddMessage.mant_a, fpaddMessage.mant_b, fpaddMessage.exp_a, fpaddMessage.exp_b, fpaddMessage.shmant, fpaddMessage.shamt, fpaddMessage.alessb, fpaddMessage.exp_pre, fpaddMessage.shamt, fpaddMessage.shiftedval, fpaddMessage.ovf, fpaddMessage.shmant, fpaddMessage.addval, fpaddMessage.addresult, fpaddMessage.exponent, fpaddMessage.fract, fpaddMessage.s) @[fpadd.scala 129:11]
       skip @[fpadd.scala 129:11]
     

@@ -50,34 +50,33 @@ class fpadd extends Module {
     val io = IO(new Bundle {
         val a = Input(UInt(32.W))
         val b = Input(UInt(32.W))
-        val mant_a = Output(UInt(24.W))
-        val mant_b = Output(UInt(24.W))
-        val exp_a = Output(UInt(8.W))
-        val exp_b = Output(UInt(8.W))
-        val exponent = Output(UInt(8.W))
-        val fract = Output(UInt(23.W))
         val s = Output(UInt(32.W))
     })
-
-    val shmant = Wire(UInt(24.W))
+    val mant_a = Wire(UInt(24.W))
+    val mant_b = Wire(UInt(24.W))
+    val exp_a = Wire(UInt(8.W))
+    val exp_b = Wire(UInt(8.W))
+    val exponent = Wire(UInt(8.W))
+    val fract = Wire(UInt(23.W))
+    val shmant = Wire(UInt(25.W))
     val shamt = Wire(UInt(8.W))
-    val shiftedval = Wire(UInt(24.W))
-    val addval = Wire(UInt(24.W))
+    val shiftedval = Wire(UInt(25.W))
+    val addval = Wire(UInt(25.W))
     val ovf = Wire(UInt(1.W))
     val exp_pre = Wire(UInt(8.W))
     val addresult = Wire(UInt(25.W))
     val fpaddMessage = Wire(new MessageFpadd) 
     
     //Getting exponents and mantissa
-    io.exp_a := io.a(30, 23)
-    io.mant_a := Cat(1.U, io.a(22, 0))
-    io.exp_b := io.b(30,23)
-    io.mant_b := Cat(1.U, io.b(22, 0))
+    exp_a := io.a(30, 23)
+    mant_a := Cat(1.U, io.a(22, 0))
+    exp_b := io.b(30,23)
+    mant_b := Cat(1.U, io.b(22, 0))
     //*******************************
 
     //EXPCOMP
-    val aminusb = io.exp_a - io.exp_b
-    val bminusa = io.exp_b - io.exp_a
+    val aminusb = exp_a - exp_b
+    val bminusa = exp_b - exp_a
     val alessb = Wire(UInt(1.W))
     
     when(aminusb(7) === 1.U) {
@@ -86,33 +85,33 @@ class fpadd extends Module {
         alessb := 0.U
     }
 
-    exp_pre := Mux(alessb.andR, io.exp_b, io.exp_a)
+    exp_pre := Mux(alessb.andR, exp_b, exp_a)
     shamt := Mux(alessb.andR, bminusa, aminusb)
     //***************************************************
 
 
     //SHIFTMANT
-    shiftedval := Mux(alessb.andR, (io.mant_a >> shamt), (io.mant_b >> shamt))
-    ovf := (shamt(7) | shamt(6) | shamt(5)) | (shamt(4) & shamt(3))
+    shiftedval := Mux(alessb.andR, (mant_a >> shamt), (mant_b >> shamt))
+    ovf := (shamt(7) | shamt(6) | shamt(5) | (shamt(4) & shamt(3)))
     shmant := Mux(ovf.andR, 0.U, shiftedval)
     //***************************************************************
 
     //ADDMANT
-    addval := Mux(alessb.andR, io.mant_b, io.mant_a)
+    addval := Mux(alessb.andR, mant_b, mant_a)
     addresult := shmant + addval
-    io.fract := Mux(addresult(24).andR, addresult(23, 1), addresult(22, 0))
-    io.exponent := Mux(addresult(24).andR, (exp_pre + 1.U), exp_pre)
+    fract := Mux(addresult(24).andR, addresult(23, 1), addresult(22, 0))
+    exponent := Mux(addresult(24).andR, (exp_pre + 1.U), exp_pre)
     //*************************************************************************
 
     //Final result
-    io.s := Cat(0.U, io.exponent, io.fract)
+    io.s := Cat(0.U, exponent, fract)
 
     fpaddMessage.a := io.a
     fpaddMessage.b := io.b
-    fpaddMessage.mant_a := io.mant_a
-    fpaddMessage.mant_b := io.mant_b
-    fpaddMessage.exp_a := io.exp_a
-    fpaddMessage.exp_b := io.exp_b
+    fpaddMessage.mant_a := mant_a
+    fpaddMessage.mant_b := mant_b
+    fpaddMessage.exp_a := exp_a
+    fpaddMessage.exp_b := exp_b
     fpaddMessage.aminusb := aminusb
     fpaddMessage.bminusa := bminusa
     fpaddMessage.alessb := alessb
@@ -122,9 +121,9 @@ class fpadd extends Module {
     fpaddMessage.addval := addval
     fpaddMessage.ovf := ovf
     fpaddMessage.exp_pre := exp_pre
-    fpaddMessage.exponent := io.exponent
+    fpaddMessage.exponent := exponent
     fpaddMessage.addresult := addresult
-    fpaddMessage.fract := io.fract
+    fpaddMessage.fract := fract
     fpaddMessage.s := io.s
     printf(p"$fpaddMessage")
 }
@@ -153,41 +152,35 @@ class MessageFpadd extends Bundle {
   override def toPrintable: Printable = {
     p"\n\n\n___________________________\n" +
     p"|fpadd Module:\n" +
-    p"|  a          : b${Binary(a)}\n" +
-    p"|  b          : b${Binary(b)}\n" +
+    p"|  a          : 0x${Hexadecimal(a)}\n" +
+    p"|  b          : 0x${Hexadecimal(b)}\n" +
     p"|  mant_a     : b${Binary(mant_a)}\n" +
     p"|  mant_b     : b${Binary(mant_b)}\n" +
     p"|  exp_a      : b${Binary(exp_a)}\n" +
     p"|  exp_b      : b${Binary(exp_b)}\n" +
     p"|  aminusb    : b${Binary(shmant)}\n" +
     p"|  bminusa    : b${Binary(shamt)}\n" +
-    p"|  alessb     : b${Binary(shiftedval)}\n" +
-    p"|  shmant     : b${Binary(shmant)}\n" +
+    p"|  alessb     : b${Binary(alessb)}\n" +
+    p"|  exp_pre    : b${Binary(exp_pre)}\n" +
     p"|  shamt      : b${Binary(shamt)}\n" +
     p"|  shiftedval : b${Binary(shiftedval)}\n" +
-    p"|  addval     : b${Binary(addval)}\n" +
     p"|  ovf        : b${Binary(ovf)}\n" +
-    p"|  exp_pre    : b${Binary(exp_pre)}\n" +
+    p"|  shmant     : 0x${Hexadecimal(shmant)}\n" +
+    p"|  addval     : 0x${Hexadecimal(addval)}\n" +
+    p"|  addresult  : 0x${Hexadecimal(addresult)}\n" +
     p"|  exponent   : b${Binary(exponent)}\n" +
-    p"|  addresult  : b${Binary(addresult)}\n" +
     p"|  fract      : b${Binary(fract)}\n" +
-    p"|  s          : b${Binary(s)}\n" +
+    p"|  s          : 0x${Hexadecimal(s)}\n" +
     p"|___________________________\n"
   }
 }
 
 class fpaddTest(fp: fpadd) extends PeekPokeTester(fp) {
-    poke(fp.io.a, "b00111101110011001100110011001101".U)
-    poke(fp.io.b, "b00111110010011001100110011001101".U)
+    poke(fp.io.a, "h3F750000".U)
+    poke(fp.io.b, "h3FC00000".U)
     step(1)
-    expect(fp.io.exp_a, "b01111011".U)
-    expect(fp.io.mant_a, "b110011001100110011001101".U)
-    expect(fp.io.exp_b, "b01111100".U)
-    expect(fp.io.mant_b, "b110011001100110011001101".U)
-    expect(fp.io.exponent, "b01111101".U)
-    expect(fp.io.fract, "b00110011001100110011010".U)
-    expect(fp.io.s, "b00111110100110011001100110011010".U)
-    //fp.io.s = "b00111110100110011001100110011010"
+    expect(fp.io.s, "h401d4000".U)
+    step(1)
 
 }
 
