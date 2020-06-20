@@ -19,8 +19,7 @@ class fpmult extends Module {
     val fract = Wire(UInt(23.W))    //1011_0111_1100_0000_0000_0000 = 0xB7C000
     val result = Wire(UInt(48.W))   //1011_0111_1100_0000_0000_0000
                                     //0000_0000_0000_0000_0000_0000  = 0xB7C000000000
-    
-                        //Answer: 0011_1111_1011_0111_1100_0000_0000_0000 = 0x3fb7c000
+                                    //Answer: 0011_1111_1011_0111_1100_0000_0000_0000 = 0x3fb7c000
     val fpmultMessage = Wire(new MessageFpmult)     
 
     exp_a := io.a(30, 23)
