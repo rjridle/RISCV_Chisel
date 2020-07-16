@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$#" -eq 2 ]
+if [ "$#" -eq 1 ]
 then
 	testFile=$1
 	testFilePlaceholder='TESTFILE.X'
