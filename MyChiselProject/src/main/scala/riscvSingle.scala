@@ -5,6 +5,7 @@ import chisel3.util._
 import chisel3.iotesters.{ChiselFlatSpec, Driver, PeekPokeTester}
 import chisel3.util.experimental.loadMemoryFromFile
 
+/*
 class MessageTop extends Bundle {
   val instr_pulled = UInt(32.W)
   val pc_pulled = UInt(32.W)
@@ -24,39 +25,8 @@ class MessageTop extends Bundle {
     p"|___________________________\n" 
   }
 }
-
-class top extends Module {
-    val io = IO(new Bundle {
-        val valid = Output(UInt(1.W))
-    })
-    
-    val topMessage = Wire(new MessageTop)
-    val r = Module(new riscv)
-    val im = Module(new imem)
-    val dm = Module(new dmem)
-
-    dm.io.memAddress := r.io.memAddress
-    dm.io.memWriteData := r.io.memWriteData
-    dm.io.memWriteEnable := r.io.memWriteEnable
-    
-    r.io.memReadData := dm.io.memReadData
-    
-    // print info
-    topMessage.instr_pulled := im.io.inst
-    topMessage.pc_pulled := r.io.pc / 4.U
-    topMessage.memWriteData := r.io.memWriteData
-    topMessage.memWriteEnable := r.io.memWriteEnable 
-    topMessage.memAddress := r.io.memAddress
-    topMessage.memReadData := dm.io.memReadData
-    printf(p"$topMessage")
-
-    im.io.instAddress := r.io.pc / 4.U
-    
-    r.io.instr := im.io.inst
-    
-    io.valid := Mux(im.io.inst(6, 0) === "b1110011".U, 0.U, 1.U)
-}
-
+*/
+/*
 class MessageRiscv extends Bundle {
   val instr = UInt(32.W)
   val memReadData = SInt(32.W)
@@ -75,7 +45,7 @@ class MessageRiscv extends Bundle {
     p"|___________________________\n"
   }
 }
-
+*/
 class riscv extends Module {
     val io = IO(new Bundle {
         val instr = Input(UInt(32.W))
@@ -86,11 +56,11 @@ class riscv extends Module {
         val memWriteData = Output(SInt(32.W))
     })
 
-    val riscvMessage = Wire(new MessageRiscv)
+    //val riscvMessage = Wire(new MessageRiscv)
     val dp = Module(new datapath)
     val d = Module(new decoder)
-    
 
+    /*
     // print info
     riscvMessage.instr := io.instr
     riscvMessage.memReadData := io.memReadData
@@ -98,6 +68,7 @@ class riscv extends Module {
     riscvMessage.memWriteData := io.memWriteData
     riscvMessage.memAddress := io.memAddress
     printf(p"$riscvMessage")
+    */
 
     d.io.opcode := io.instr(6,0)
     d.io.funct7 := io.instr(31,25)
@@ -125,6 +96,7 @@ class riscv extends Module {
     io.memWriteData := dp.io.memWriteData
 }
 
+/*
 class MessageExtend extends Bundle {
   val instr12 = UInt(12.W)
   val instr20 = UInt(20.W)
@@ -140,6 +112,7 @@ class MessageExtend extends Bundle {
     p"|___________________________\n"
   }
 }
+*/
 
 class extend extends Module {
     val io = IO(new Bundle {
@@ -149,7 +122,7 @@ class extend extends Module {
         val extImm = Output(SInt(32.W))
     })
 
-    val extendMessage = Wire(new MessageExtend)
+    //val extendMessage = Wire(new MessageExtend)
 
     when(io.immSrc === 0.U){
         io.extImm := io.instr12.asSInt
@@ -160,13 +133,17 @@ class extend extends Module {
     }.otherwise {
         io.extImm := 0.S
     }
+    
+    /*
     extendMessage.instr12 := io.instr12
     extendMessage.instr20 := io.instr20
     extendMessage.immsrc := io.immSrc
     extendMessage.extImm := io.extImm
     printf(p"$extendMessage")
+    */
 }
 
+/*
 class MessageDecoder extends Bundle {
   val branchSrc = UInt(2.W)
   val opcode = UInt(7.W)
@@ -207,6 +184,7 @@ class MessageDecoder extends Bundle {
     p"|___________________________\n"
   }
 }
+*/
 
 class decoder extends Module {
     val io = IO(new Bundle {
@@ -230,7 +208,7 @@ class decoder extends Module {
     })
 
 
-    val decoderMessage = Wire(new MessageDecoder)
+    //val decoderMessage = Wire(new MessageDecoder)
 
     when(io.opcode === "b0110011".U) {
         io.regSrc := 0.U
@@ -459,6 +437,7 @@ class decoder extends Module {
         io.fpuControl := 0.U
     }
     
+    /*
     // print info
     decoderMessage.branchSrc := io.branchSrc
     decoderMessage.opcode := io.opcode
@@ -477,9 +456,10 @@ class decoder extends Module {
     decoderMessage.fpuControl := io.fpuControl
     decoderMessage.fpuRegWriteEnable := io.fpuRegWriteEnable
     printf(p"$decoderMessage")
+    */
 }
 
-
+/*
 class MessageDatapath extends Bundle {
   val instr = UInt(32.W)
   val memToReg = UInt(1.W)
@@ -523,6 +503,7 @@ class MessageDatapath extends Bundle {
     p"|___________________________\n" 
   }
 }
+*/
 
 class datapath extends Module {
     val io = IO(new Bundle {
@@ -546,7 +527,7 @@ class datapath extends Module {
         val greaterThanFlag = Output(UInt(1.W))
     })
 
-    val datapathMessage = Wire(new MessageDatapath)
+    //val datapathMessage = Wire(new MessageDatapath)
     val rf = Module(new regfile)
     val fpurf = Module(new fpuRegfile)
     val alu = Module(new alu)
@@ -633,6 +614,7 @@ class datapath extends Module {
     io.lessThanFlag := alu.io.lessThanFlag
     io.greaterThanFlag := alu.io.greaterThanFlag
 
+    /*
     datapathMessage.instr := io.instr
     datapathMessage.memToReg := io.memToReg
     datapathMessage.memImm := memImm
@@ -652,9 +634,10 @@ class datapath extends Module {
     datapathMessage.regWriteData := regWriteData
     datapathMessage.regSrc := io.regSrc
     printf(p"$datapathMessage")
-        
+    */
 }
 
+/*
 class MessageRegFile extends Bundle {
   val regWriteEnable = UInt(1.W)
   val regReadAddress1 = UInt(5.W)
@@ -677,6 +660,7 @@ class MessageRegFile extends Bundle {
     p"|___________________________\n"
   }
 }
+*/
 
 class regfile extends Module {
     val io = IO(new Bundle {
@@ -690,7 +674,7 @@ class regfile extends Module {
     })
 
     val rf = Mem(32, SInt(32.W))
-    val regfileMessage = Wire(new MessageRegFile)
+    //val regfileMessage = Wire(new MessageRegFile)
 
     when(io.regWriteEnable.andR && !(io.regWriteAddress === 0.U)){
         rf(io.regWriteAddress) := io.regWriteData
@@ -701,6 +685,7 @@ class regfile extends Module {
     io.regReadData1 := rf(io.regReadAddress1)
     io.regReadData2 := rf(io.regReadAddress2)
 
+    /*
     regfileMessage.regWriteData := io.regWriteData
     regfileMessage.regWriteEnable := io.regWriteEnable
     regfileMessage.regWriteAddress := io.regWriteAddress
@@ -719,8 +704,10 @@ class regfile extends Module {
         printf(p"$regVal\n")
     }
     printf("|___________________________\n")
+    */
 }
 
+/*
 class MessageFpuRegFile extends Bundle {
   val fpuRegWriteEnable = UInt(1.W)
   val fpuRegReadAddress1 = UInt(5.W)
@@ -743,6 +730,7 @@ class MessageFpuRegFile extends Bundle {
     p"|___________________________\n"
   }
 }
+*/
 
 class fpuRegfile extends Module {
     val io = IO(new Bundle {
@@ -756,7 +744,7 @@ class fpuRegfile extends Module {
     })
 
     val fpu_rf = Mem(32, SInt(32.W))
-    val fpuRegfileMessage = Wire(new MessageFpuRegFile)
+   //val fpuRegfileMessage = Wire(new MessageFpuRegFile)
 
     fpu_rf(0.U) := 1036831949.S
     
@@ -769,6 +757,7 @@ class fpuRegfile extends Module {
     io.fpuRegReadData1 := fpu_rf(io.fpuRegReadAddress1)
     io.fpuRegReadData2 := fpu_rf(io.fpuRegReadAddress2)
 
+    /*
     fpuRegfileMessage.fpuRegWriteData := io.fpuRegWriteData
     fpuRegfileMessage.fpuRegWriteEnable := io.fpuRegWriteEnable
     fpuRegfileMessage.fpuRegWriteAddress := io.fpuRegWriteAddress
@@ -787,8 +776,10 @@ class fpuRegfile extends Module {
         printf(p"${Hexadecimal(regVal)}\n")
     }
     printf("|___________________________\n")
+    */
 }
 
+/*
 class MessageAlu extends Bundle {
   val a = SInt(32.W)
   val b = SInt(32.W)
@@ -811,6 +802,7 @@ class MessageAlu extends Bundle {
     p"|___________________________\n"
   }
 }
+*/
 
 class alu extends Module {
     val io = IO(new Bundle {
@@ -824,7 +816,7 @@ class alu extends Module {
         val greaterThanFlag = Output(Bool())
     })
 
-    val aluMessage = Wire(new MessageAlu)
+    //val aluMessage = Wire(new MessageAlu)
 
     when (io.aluControl === 0.U) {                      //AND, ANDI
         io.out := io.a & io.b
@@ -867,6 +859,7 @@ class alu extends Module {
     io.lessThanFlag := (io.a < io.b)
     io.greaterThanFlag := (io.a > io.b)
 
+    /*
     aluMessage.a := io.a
     aluMessage.b := io.b
     aluMessage.out := io.out
@@ -875,9 +868,10 @@ class alu extends Module {
     aluMessage.lessThanFlag := io.lessThanFlag
     aluMessage.greaterThanFlag := io.greaterThanFlag
     printf(p"$aluMessage")
-
+    */
 }
 
+/*
 class MessageFpu extends Bundle {
     val a = SInt(32.W)
     val b = SInt(32.W)
@@ -926,6 +920,7 @@ class MessageFpu extends Bundle {
     p"|___________________________\n"
   }
 }
+*/
 
 class fpu extends Module {
     val io = IO(new Bundle {
@@ -948,7 +943,7 @@ class fpu extends Module {
     val exp_pre = Wire(UInt(8.W))
     val addresult = Wire(UInt(25.W))
     val result = Wire(UInt(48.W))
-    val fpuMessage = Wire(new MessageFpu) 
+    //val fpuMessage = Wire(new MessageFpu) 
     
     //Getting exponents and mantissa
     exp_a := io.a(30, 23)
@@ -1001,6 +996,7 @@ class fpu extends Module {
     //Final result
     io.s := Cat(0.U, exponent, fract)
 
+    /*
     fpuMessage.a := io.a
     fpuMessage.b := io.b
     fpuMessage.mant_a := mant_a
@@ -1022,6 +1018,7 @@ class fpu extends Module {
     fpuMessage.fract := fract
     fpuMessage.s := io.s
     printf(p"$fpuMessage")
+    */
 }
 
 class imem extends Module {
@@ -1036,6 +1033,7 @@ class imem extends Module {
     io.inst := MEM(io.instAddress)
 }
 
+/*
 class MessageDmem extends Bundle {
   val memAddress = UInt(32.W)
   val memWriteData = SInt(32.W)
@@ -1052,6 +1050,8 @@ class MessageDmem extends Bundle {
     p"|___________________________\n"
   }
 }
+*/
+
 class dmem extends Module {
     val io = IO(new Bundle {
         val memAddress = Input(UInt(32.W))
@@ -1060,7 +1060,7 @@ class dmem extends Module {
         val memReadData = Output(SInt(32.W))
     })
 
-    val dmemMessage = Wire(new MessageDmem)
+    //val dmemMessage = Wire(new MessageDmem)
     val mem = SyncReadMem(1024, SInt(32.W))
 
     when(io.memWriteEnable.andR){
@@ -1068,7 +1068,8 @@ class dmem extends Module {
     }
 
     io.memReadData := mem(io.memAddress)
-      
+    
+    /*
     printf("\n\n\nMemory___________________________\n")
     for(j <- 0 to 31){
         val memVal = Wire(SInt(32.W))
@@ -1083,36 +1084,5 @@ class dmem extends Module {
     dmemMessage.memWriteEnable := io.memWriteEnable
     dmemMessage.memReadData := io.memReadData
     printf(p"$dmemMessage")
-
-
-}
-
-class riscvSingleTest(t: top) extends PeekPokeTester(t) {
-    println("**********STARTING riscvSingleTest*******")
-    var cycles = 1
-    var validP = peek(t.io.valid)
-
-    println(s"CYCLE: $cycles")
-    while (validP == BigInt(1) && cycles < 100) {
-        println(s"STARTING NEXT CYCLE: $cycles")
-        println(s"valid = $validP")
-        step(1)
-        cycles += 1
-        validP = peek(t.io.valid)
-    }
-    step(1)
-    if (cycles > 98 ) {
-        println(s"$cycles cycles were ran and end of program not reached. Exiting.")
-        System.exit(0)
-    }
-    else {
-        println(s"Program completed in $cycles cycles. Exiting.")
-    }
-}
-
-object top extends App {
-  iotesters.Driver.execute(args, () => new top) {
-    t => new riscvSingleTest(t)
-  }
-    chisel3.Driver.execute(args, () => new top)
+    */
 }
