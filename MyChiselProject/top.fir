@@ -946,24 +946,24 @@ circuit top :
     input reset : UInt<1>
     output io : {valid : UInt<1>}
     
-    inst r of riscv @[riscvSingleTest.scala 14:19]
+    inst r of riscv @[riscvSingle.scala 1096:19]
     r.clock <= clock
     r.reset <= reset
-    inst im of imem @[riscvSingleTest.scala 15:20]
+    inst im of imem @[riscvSingle.scala 1097:20]
     im.clock <= clock
     im.reset <= reset
-    inst dm of dmem @[riscvSingleTest.scala 16:20]
+    inst dm of dmem @[riscvSingle.scala 1098:20]
     dm.clock <= clock
     dm.reset <= reset
-    dm.io.memAddress <= r.io.memAddress @[riscvSingleTest.scala 18:22]
-    dm.io.memWriteData <= r.io.memWriteData @[riscvSingleTest.scala 19:24]
-    dm.io.memWriteEnable <= r.io.memWriteEnable @[riscvSingleTest.scala 20:26]
-    r.io.memReadData <= dm.io.memReadData @[riscvSingleTest.scala 22:22]
-    node _T_8 = div(r.io.pc, UInt<3>("h04")) @[riscvSingleTest.scala 34:34]
-    im.io.instAddress <= _T_8 @[riscvSingleTest.scala 34:23]
-    r.io.instr <= im.io.inst @[riscvSingleTest.scala 36:16]
-    node _T_9 = bits(im.io.inst, 6, 0) @[riscvSingleTest.scala 38:31]
-    node _T_11 = eq(_T_9, UInt<7>("h073")) @[riscvSingleTest.scala 38:38]
-    node _T_14 = mux(_T_11, UInt<1>("h00"), UInt<1>("h01")) @[riscvSingleTest.scala 38:20]
-    io.valid <= _T_14 @[riscvSingleTest.scala 38:14]
+    dm.io.memAddress <= r.io.memAddress @[riscvSingle.scala 1100:22]
+    dm.io.memWriteData <= r.io.memWriteData @[riscvSingle.scala 1101:24]
+    dm.io.memWriteEnable <= r.io.memWriteEnable @[riscvSingle.scala 1102:26]
+    r.io.memReadData <= dm.io.memReadData @[riscvSingle.scala 1104:22]
+    node _T_8 = div(r.io.pc, UInt<3>("h04")) @[riscvSingle.scala 1116:34]
+    im.io.instAddress <= _T_8 @[riscvSingle.scala 1116:23]
+    r.io.instr <= im.io.inst @[riscvSingle.scala 1118:16]
+    node _T_9 = bits(im.io.inst, 6, 0) @[riscvSingle.scala 1120:31]
+    node _T_11 = eq(_T_9, UInt<7>("h073")) @[riscvSingle.scala 1120:38]
+    node _T_14 = mux(_T_11, UInt<1>("h00"), UInt<1>("h01")) @[riscvSingle.scala 1120:20]
+    io.valid <= _T_14 @[riscvSingle.scala 1120:14]
     

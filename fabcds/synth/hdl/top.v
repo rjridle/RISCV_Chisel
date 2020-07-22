@@ -1,5 +1,5 @@
 module regfile( // @[:@3.2]
-  input         clock, // @[:@4.4]
+  input         clk, // @[:@4.4]
   input         io_regWriteEnable, // @[:@6.4]
   input  [4:0]  io_regWriteAddress, // @[:@6.4]
   input  [31:0] io_regWriteData, // @[:@6.4]
@@ -77,7 +77,7 @@ module regfile( // @[:@3.2]
   `endif // RANDOMIZE_MEM_INIT
   end
 `endif // RANDOMIZE
-  always @(posedge clock) begin
+  always @(posedge clk) begin
     if(rf__T_29_en & rf__T_29_mask) begin
       rf[rf__T_29_addr] <= rf__T_29_data; // @[riscvSingle.scala 676:17:@8.4]
     end
@@ -229,7 +229,7 @@ module extend( // @[:@301.2]
   assign io_extImm = {{11{_GEN_2[20]}},_GEN_2}; // @[riscvSingle.scala 128:19:@309.6 riscvSingle.scala 130:19:@316.8 riscvSingle.scala 132:19:@323.10 riscvSingle.scala 134:19:@326.10]
 endmodule
 module datapath( // @[:@357.2]
-  input         clock, // @[:@358.4]
+  input         clk, // @[:@358.4]
   input         reset, // @[:@359.4]
   input  [2:0]  io_regSrc, // @[:@360.4]
   input         io_regWriteEnable, // @[:@360.4]
@@ -248,7 +248,7 @@ module datapath( // @[:@357.2]
   output        io_lessThanFlag, // @[:@360.4]
   output        io_greaterThanFlag // @[:@360.4]
 );
-  wire  rf_clock; // @[riscvSingle.scala 531:20:@362.4]
+  wire  rf_clk; // @[riscvSingle.scala 531:20:@362.4]
   wire  rf_io_regWriteEnable; // @[riscvSingle.scala 531:20:@362.4]
   wire [4:0] rf_io_regWriteAddress; // @[riscvSingle.scala 531:20:@362.4]
   wire [31:0] rf_io_regWriteData; // @[riscvSingle.scala 531:20:@362.4]
@@ -334,7 +334,7 @@ module datapath( // @[:@357.2]
   wire  _T_152; // @[riscvSingle.scala 611:31:@513.4]
   wire [11:0] jumpImm; // @[riscvSingle.scala 538:23:@381.4 riscvSingle.scala 550:13:@405.4]
   regfile rf ( // @[riscvSingle.scala 531:20:@362.4]
-    .clock(rf_clock),
+    .clk(rf_clk),
     .io_regWriteEnable(rf_io_regWriteEnable),
     .io_regWriteAddress(rf_io_regWriteAddress),
     .io_regWriteData(rf_io_regWriteData),
@@ -430,7 +430,7 @@ module datapath( // @[:@357.2]
   assign io_zeroFlag = alu_io_zeroFlag; // @[riscvSingle.scala 613:17:@517.4]
   assign io_lessThanFlag = alu_io_lessThanFlag; // @[riscvSingle.scala 614:21:@518.4]
   assign io_greaterThanFlag = alu_io_greaterThanFlag; // @[riscvSingle.scala 615:24:@519.4]
-  assign rf_clock = clock; // @[:@363.4]
+  assign rf_clk = clk; // @[:@363.4]
   assign rf_io_regWriteEnable = io_regWriteEnable; // @[riscvSingle.scala 587:26:@488.4]
   assign rf_io_regWriteAddress = io_instr[11:7]; // @[riscvSingle.scala 590:27:@492.4]
   assign rf_io_regWriteData = _T_133 ? $signed(_T_86) : $signed(_T_138); // @[riscvSingle.scala 591:24:@493.4]
@@ -475,7 +475,7 @@ module datapath( // @[:@357.2]
   `endif // RANDOMIZE_REG_INIT
   end
 `endif // RANDOMIZE
-  always @(posedge clock) begin
+  always @(posedge clk) begin
     if (reset) begin
       pcReg <= 32'h0;
     end else begin
@@ -725,7 +725,7 @@ module decoder( // @[:@521.2]
   assign io_branchSrc = _T_40 ? 2'h0 : _GEN_108; // @[riscvSingle.scala 221:22:@535.6 riscvSingle.scala 272:22:@629.8 riscvSingle.scala 284:22:@644.10 riscvSingle.scala 321:22:@708.12 riscvSingle.scala 333:22:@723.14 riscvSingle.scala 350:26:@745.18 riscvSingle.scala 352:26:@752.20 riscvSingle.scala 354:26:@759.22 riscvSingle.scala 356:26:@766.24 riscvSingle.scala 358:26:@773.26 riscvSingle.scala 360:26:@780.28 riscvSingle.scala 362:26:@783.28 riscvSingle.scala 373:22:@796.18 riscvSingle.scala 385:22:@811.20 riscvSingle.scala 397:22:@826.22 riscvSingle.scala 409:22:@841.24 riscvSingle.scala 434:22:@874.24]
 endmodule
 module riscv( // @[:@880.2]
-  input         clock, // @[:@881.4]
+  input         clk, // @[:@881.4]
   input         reset, // @[:@882.4]
   input  [31:0] io_instr, // @[:@883.4]
   input  [31:0] io_memReadData, // @[:@883.4]
@@ -734,7 +734,7 @@ module riscv( // @[:@880.2]
   output [31:0] io_memAddress, // @[:@883.4]
   output [31:0] io_memWriteData // @[:@883.4]
 );
-  wire  dp_clock; // @[riscvSingle.scala 60:20:@885.4]
+  wire  dp_clk; // @[riscvSingle.scala 60:20:@885.4]
   wire  dp_reset; // @[riscvSingle.scala 60:20:@885.4]
   wire [2:0] dp_io_regSrc; // @[riscvSingle.scala 60:20:@885.4]
   wire  dp_io_regWriteEnable; // @[riscvSingle.scala 60:20:@885.4]
@@ -768,7 +768,7 @@ module riscv( // @[:@880.2]
   wire  d_io_lessThanFlag; // @[riscvSingle.scala 61:19:@888.4]
   wire  d_io_greaterThanFlag; // @[riscvSingle.scala 61:19:@888.4]
   datapath dp ( // @[riscvSingle.scala 60:20:@885.4]
-    .clock(dp_clock),
+    .clk(dp_clk),
     .reset(dp_reset),
     .io_regSrc(dp_io_regSrc),
     .io_regWriteEnable(dp_io_regWriteEnable),
@@ -808,7 +808,7 @@ module riscv( // @[:@880.2]
   assign io_memWriteEnable = d_io_memWriteEnable; // @[riscvSingle.scala 94:23:@913.4]
   assign io_memAddress = dp_io_memAddress; // @[riscvSingle.scala 95:19:@914.4]
   assign io_memWriteData = dp_io_memWriteData; // @[riscvSingle.scala 96:21:@915.4]
-  assign dp_clock = clock; // @[:@886.4]
+  assign dp_clk = clk; // @[:@886.4]
   assign dp_reset = reset; // @[:@887.4]
   assign dp_io_regSrc = d_io_regSrc; // @[riscvSingle.scala 80:18:@900.4]
   assign dp_io_regWriteEnable = d_io_regWriteEnable; // @[riscvSingle.scala 81:26:@901.4]
@@ -828,7 +828,7 @@ module riscv( // @[:@880.2]
   assign d_io_greaterThanFlag = dp_io_greaterThanFlag; // @[riscvSingle.scala 78:26:@899.4]
 endmodule
 module imem( // @[:@917.2]
-  input         clock, // @[:@918.4]
+  input         clk, // @[:@918.4]
   input  [31:0] io_instAddress, // @[:@920.4]
   output [31:0] io_inst // @[:@920.4]
 );
@@ -872,7 +872,7 @@ module imem( // @[:@917.2]
 `endif // RANDOMIZE
 endmodule
 module dmem( // @[:@927.2]
-  input         clock, // @[:@928.4]
+  input         clk, // @[:@928.4]
   input  [31:0] io_memAddress, // @[:@930.4]
   input  [31:0] io_memWriteData, // @[:@930.4]
   input         io_memWriteEnable, // @[:@930.4]
@@ -936,7 +936,7 @@ module dmem( // @[:@927.2]
   `endif // RANDOMIZE_REG_INIT
   end
 `endif // RANDOMIZE
-  always @(posedge clock) begin
+  always @(posedge clk) begin
     if(mem__T_19_en & mem__T_19_mask) begin
       mem[mem__T_19_addr] <= mem__T_19_data; // @[riscvSingle.scala 1064:26:@932.4]
     end
@@ -946,30 +946,30 @@ module dmem( // @[:@927.2]
   end
 endmodule
 module top( // @[:@944.2]
-  input   clock, // @[:@945.4]
+  input   clk, // @[:@945.4]
   input   reset, // @[:@946.4]
   output  io_valid // @[:@947.4]
 );
-  wire  r_clock; // @[riscvSingleTest.scala 14:19:@949.4]
-  wire  r_reset; // @[riscvSingleTest.scala 14:19:@949.4]
-  wire [31:0] r_io_instr; // @[riscvSingleTest.scala 14:19:@949.4]
-  wire [31:0] r_io_memReadData; // @[riscvSingleTest.scala 14:19:@949.4]
-  wire [31:0] r_io_pc; // @[riscvSingleTest.scala 14:19:@949.4]
-  wire  r_io_memWriteEnable; // @[riscvSingleTest.scala 14:19:@949.4]
-  wire [31:0] r_io_memAddress; // @[riscvSingleTest.scala 14:19:@949.4]
-  wire [31:0] r_io_memWriteData; // @[riscvSingleTest.scala 14:19:@949.4]
-  wire  im_clock; // @[riscvSingleTest.scala 15:20:@952.4]
-  wire [31:0] im_io_instAddress; // @[riscvSingleTest.scala 15:20:@952.4]
-  wire [31:0] im_io_inst; // @[riscvSingleTest.scala 15:20:@952.4]
-  wire  dm_clock; // @[riscvSingleTest.scala 16:20:@955.4]
-  wire [31:0] dm_io_memAddress; // @[riscvSingleTest.scala 16:20:@955.4]
-  wire [31:0] dm_io_memWriteData; // @[riscvSingleTest.scala 16:20:@955.4]
-  wire  dm_io_memWriteEnable; // @[riscvSingleTest.scala 16:20:@955.4]
-  wire [31:0] dm_io_memReadData; // @[riscvSingleTest.scala 16:20:@955.4]
-  wire [6:0] _T_9; // @[riscvSingleTest.scala 38:31:@965.4]
-  wire  _T_11; // @[riscvSingleTest.scala 38:38:@966.4]
-  riscv r ( // @[riscvSingleTest.scala 14:19:@949.4]
-    .clock(r_clock),
+  wire  r_clk; // @[riscvSingle.scala 1096:19:@949.4]
+  wire  r_reset; // @[riscvSingle.scala 1096:19:@949.4]
+  wire [31:0] r_io_instr; // @[riscvSingle.scala 1096:19:@949.4]
+  wire [31:0] r_io_memReadData; // @[riscvSingle.scala 1096:19:@949.4]
+  wire [31:0] r_io_pc; // @[riscvSingle.scala 1096:19:@949.4]
+  wire  r_io_memWriteEnable; // @[riscvSingle.scala 1096:19:@949.4]
+  wire [31:0] r_io_memAddress; // @[riscvSingle.scala 1096:19:@949.4]
+  wire [31:0] r_io_memWriteData; // @[riscvSingle.scala 1096:19:@949.4]
+  wire  im_clk; // @[riscvSingle.scala 1097:20:@952.4]
+  wire [31:0] im_io_instAddress; // @[riscvSingle.scala 1097:20:@952.4]
+  wire [31:0] im_io_inst; // @[riscvSingle.scala 1097:20:@952.4]
+  wire  dm_clk; // @[riscvSingle.scala 1098:20:@955.4]
+  wire [31:0] dm_io_memAddress; // @[riscvSingle.scala 1098:20:@955.4]
+  wire [31:0] dm_io_memWriteData; // @[riscvSingle.scala 1098:20:@955.4]
+  wire  dm_io_memWriteEnable; // @[riscvSingle.scala 1098:20:@955.4]
+  wire [31:0] dm_io_memReadData; // @[riscvSingle.scala 1098:20:@955.4]
+  wire [6:0] _T_9; // @[riscvSingle.scala 1120:31:@965.4]
+  wire  _T_11; // @[riscvSingle.scala 1120:38:@966.4]
+  riscv r ( // @[riscvSingle.scala 1096:19:@949.4]
+    .clk(r_clk),
     .reset(r_reset),
     .io_instr(r_io_instr),
     .io_memReadData(r_io_memReadData),
@@ -978,29 +978,29 @@ module top( // @[:@944.2]
     .io_memAddress(r_io_memAddress),
     .io_memWriteData(r_io_memWriteData)
   );
-  imem im ( // @[riscvSingleTest.scala 15:20:@952.4]
-    .clock(im_clock),
+  imem im ( // @[riscvSingle.scala 1097:20:@952.4]
+    .clk(im_clk),
     .io_instAddress(im_io_instAddress),
     .io_inst(im_io_inst)
   );
-  dmem dm ( // @[riscvSingleTest.scala 16:20:@955.4]
-    .clock(dm_clock),
+  dmem dm ( // @[riscvSingle.scala 1098:20:@955.4]
+    .clk(dm_clk),
     .io_memAddress(dm_io_memAddress),
     .io_memWriteData(dm_io_memWriteData),
     .io_memWriteEnable(dm_io_memWriteEnable),
     .io_memReadData(dm_io_memReadData)
   );
-  assign _T_9 = im_io_inst[6:0]; // @[riscvSingleTest.scala 38:31:@965.4]
-  assign _T_11 = _T_9 == 7'h73; // @[riscvSingleTest.scala 38:38:@966.4]
-  assign io_valid = _T_11 ? 1'h0 : 1'h1; // @[riscvSingleTest.scala 38:14:@968.4]
-  assign r_clock = clock; // @[:@950.4]
+  assign _T_9 = im_io_inst[6:0]; // @[riscvSingle.scala 1120:31:@965.4]
+  assign _T_11 = _T_9 == 7'h73; // @[riscvSingle.scala 1120:38:@966.4]
+  assign io_valid = _T_11 ? 1'h0 : 1'h1; // @[riscvSingle.scala 1120:14:@968.4]
+  assign r_clk = clk; // @[:@950.4]
   assign r_reset = reset; // @[:@951.4]
-  assign r_io_instr = im_io_inst; // @[riscvSingleTest.scala 36:16:@964.4]
-  assign r_io_memReadData = dm_io_memReadData; // @[riscvSingleTest.scala 22:22:@961.4]
-  assign im_clock = clock; // @[:@953.4]
-  assign im_io_instAddress = r_io_pc / 32'h4; // @[riscvSingleTest.scala 34:23:@963.4]
-  assign dm_clock = clock; // @[:@956.4]
-  assign dm_io_memAddress = r_io_memAddress; // @[riscvSingleTest.scala 18:22:@958.4]
-  assign dm_io_memWriteData = r_io_memWriteData; // @[riscvSingleTest.scala 19:24:@959.4]
-  assign dm_io_memWriteEnable = r_io_memWriteEnable; // @[riscvSingleTest.scala 20:26:@960.4]
+  assign r_io_instr = im_io_inst; // @[riscvSingle.scala 1118:16:@964.4]
+  assign r_io_memReadData = dm_io_memReadData; // @[riscvSingle.scala 1104:22:@961.4]
+  assign im_clk = clk; // @[:@953.4]
+  assign im_io_instAddress = r_io_pc / 32'h4; // @[riscvSingle.scala 1116:23:@963.4]
+  assign dm_clk = clk; // @[:@956.4]
+  assign dm_io_memAddress = r_io_memAddress; // @[riscvSingle.scala 1100:22:@958.4]
+  assign dm_io_memWriteData = r_io_memWriteData; // @[riscvSingle.scala 1101:24:@959.4]
+  assign dm_io_memWriteEnable = r_io_memWriteEnable; // @[riscvSingle.scala 1102:26:@960.4]
 endmodule
