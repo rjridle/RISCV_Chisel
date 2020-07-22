@@ -1,0 +1,13 @@
+[07/21 16:20:05      0s] 
+[07/21 16:20:05      0s] Cadence Innovus(TM) Implementation System.
+[07/21 16:20:05      0s] Copyright 2017 Cadence Design Systems, Inc. All rights reserved worldwide.
+[07/21 16:20:05      0s] 
+[07/21 16:20:05      0s] Version:	v17.11-s080_1, built Fri Aug 4 11:13:11 PDT 2017
+[07/21 16:20:05      0s] Options:	-init FF/INNOVUS/run_postcts_hold.tcl -log LOG/postcts_hold.log -overwrite -nowin 
+[07/21 16:20:05      0s] Date:		Tue Jul 21 16:20:05 2020
+[07/21 16:20:05      0s] Host:		rivendell.ecen.okstate.edu (x86_64 w/Linux 2.6.32-754.25.1.el6.x86_64) (6cores*12cpus*Intel(R) Xeon(R) CPU E5-4617 0 @ 2.90GHz 15360KB)
+[07/21 16:20:05      0s] OS:		Red Hat Enterprise Linux Server release 6.10 (Santiago)
+[07/21 16:20:05      0s] 
+[07/21 16:20:05      0s] License:
+[07/21 16:20:05      0s] 		invs	Innovus Implementation System	17.1	checkout succeeded
+[07/21 16:20:05      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.

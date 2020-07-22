@@ -1,0 +1,1534 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2017 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v17.11-s080_1, built Fri Aug 4 11:13:11 PDT 2017
+Options:	-init FF/INNOVUS/run_place.tcl -log LOG/place.log -overwrite -nowin 
+Date:		Tue Jul 21 17:25:34 2020
+Host:		rivendell.ecen.okstate.edu (x86_64 w/Linux 2.6.32-754.25.1.el6.x86_64) (6cores*12cpus*Intel(R) Xeon(R) CPU E5-4617 0 @ 2.90GHz 15360KB)
+OS:		Red Hat Enterprise Linux Server release 6.10 (Santiago)
+
+License:
+		invs	Innovus Implementation System	17.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (258 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+Sourcing file "FF/INNOVUS/run_place.tcl" ...
+<CMD> set init_io_file encounter.io
+<FF> Finished loading setup.tcl
+<CMD> setDistributeHost -local
+The timeout for a remote job to respond is 30 seconds.
+Submit command for task runs will be: local
+<CMD> setMultiCpuUsage -localCpu 1
+<CMD> restoreDesign DBS/init.enc.dat riscv
+#% Begin load design ... (date=07/21 17:25:44, mem=395.2M)
+Set Default Input Pin Transition as 0.1 ps.
+**WARN: (GLOBAL-100):	Global 'timing_enable_default_delay_arc' has become obsolete. It will be removed in the next release.
+% Begin Load MMMC data ... (date=07/21 17:25:44, mem=396.1M)
+% End Load MMMC data ... (date=07/21 17:25:44, total cpu=0:00:00.0, real=0:00:00.0, peak res=396.2M, current mem=396.2M)
+rc_typ
+
+Loading LEF file /home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/lef/osu05_stdcells.lef ...
+**WARN: (IMPLF-108):	There is no overlap layer defined in any LEF file
+so you are unable to create rectilinear partition in a hierarchical flow.
+Set DBUPerIGU to M2 pitch 2400.
+
+viaInitial starts at Tue Jul 21 17:25:44 2020
+**WARN: (IMPPP-556):	A SAMENET rule between different layers for a 4 layer technology is probably a mistake. Stacked vias will be difficult to create and probably will not be what expected. Check if this rule can be removed from the technology file: SAMENET cc via 0.150 ;
+**WARN: (IMPPP-556):	A SAMENET rule between different layers for a 4 layer technology is probably a mistake. Stacked vias will be difficult to create and probably will not be what expected. Check if this rule can be removed from the technology file: SAMENET via via2 0.150 ;
+**WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN1 GENERATE.
+Type 'man IMPPP-557' for more detail.
+**WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN2 GENERATE.
+Type 'man IMPPP-557' for more detail.
+**WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN3 GENERATE.
+Type 'man IMPPP-557' for more detail.
+viaInitial ends at Tue Jul 21 17:25:44 2020
+Loading view definition file from DBS/init.enc.dat/viewDefinition.tcl
+Reading libs_tt timing library '/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib' ...
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AND2X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AND2X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AND2X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AND2X2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AND2X2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AND2X2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AOI21X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AOI21X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'C' of cell 'AOI21X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AOI21X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'C' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'D' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'BUFX2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'BUFX2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'BUFX4' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'BUFX4' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'CLKBUF1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+Message <TECHLIB-436> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+Read 39 cells in library 'osu05_stdcells' 
+*** End library_loading (cpu=0.00min, real=0.00min, mem=18.7M, fe_cpu=0.17min, fe_real=0.17min, fe_mem=462.8M) ***
+% Begin Load netlist data ... (date=07/21 17:25:44, mem=432.4M)
+*** Begin netlist parsing (mem=462.8M) ***
+**WARN: (IMPVL-159):	Pin 'YPAD' of cell 'PADGND' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'PADGND' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'YPAD' of cell 'PADVDD' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'PADVDD' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'XNOR2X1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'XNOR2X1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'TBUFX2' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'TBUFX2' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'TBUFX1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'TBUFX1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'OR2X2' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'OR2X2' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'OR2X1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'OR2X1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'OAI22X1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'OAI22X1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'OAI21X1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'OAI21X1' is defined in LEF but not in the timing library.
+**WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Created 39 new cells from 1 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/riscv.v.bin'
+Reading binary database version 1
+
+*** Memory Usage v#1 (Current mem = 473.840M, initial mem = 183.406M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=473.8M) ***
+% End Load netlist data ... (date=07/21 17:25:44, total cpu=0:00:00.0, real=0:00:00.0, peak res=432.4M, current mem=414.3M)
+Set top cell to riscv.
+**WARN: (IMPTS-124):	Timing library description of pin 'YPAD' is missing from cell 'PADGND' in timing library 'osu05_stdcells'.
+**WARN: (IMPTS-124):	Timing library description of pin 'YPAD' is missing from cell 'PADVDD' in timing library 'osu05_stdcells'.
+Hooked 39 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell riscv ...
+*** Netlist is unique.
+** info: there are 41 modules.
+** info: there are 12058 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 506.262M, initial mem = 183.406M) ***
+*info: set bottom ioPad orient R0
+Reading IO assignment file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" ...
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 9: Pad: c01 NW
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 11: Pad: c02 NE
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 13: Pad: c03 SE
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 15: Pad: c04 SW
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 20: Pad: p39 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 22: Pad: p38 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 24: Pad: p37 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 26: Pad: p36 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 28: Pad: p35 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 30: Pad: p34 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 32: Pad: p33 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 34: Pad: p32 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 36: Pad: p31 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 38: Pad: p30 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 43: Pad: p29 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 45: Pad: p28 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 47: Pad: p27 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 49: Pad: p26 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 51: Pad: p25 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 53: Pad: p24 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 55: Pad: p23 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 57: Pad: p22 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 59: Pad: p21 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 61: Pad: p20 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 66: Pad: p19 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 68: Pad: p18 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 70: Pad: p17 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 72: Pad: p16 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 74: Pad: p15 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 76: Pad: p14 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 78: Pad: p13 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 80: Pad: p12 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 82: Pad: p11 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 84: Pad: p10 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 89: Pad: p09 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 91: Pad: p08 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 93: Pad: p07 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 95: Pad: p06 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 97: Pad: p05 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 99: Pad: p04 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 101: Pad: p03 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 103: Pad: p02 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 105: Pad: p01 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/iofile/encounter.io" line 107: Pad: p00 E
+  Reason: unable to determine object from name.
+**WARN: (IMPFP-710):	File version 0 is too old.
+IO file version '0' is too old, will try to place io cell any way.
+**WARN: (IMPFP-3961):	The techSite 'IO' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Horizontal Layer M1 offset = 1500 (derived)
+Vertical Layer M2 offset = 1200 (derived)
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Default Input Pin Transition as 0.1 ps.
+Loading preference file DBS/init.enc.dat/gui.pref.tcl ...
+Applying the recommended capacitance filtering threshold values for 250nm process node: total_c_th=5, relative_c_th=0.03 and coupling_c_th=3.
+	These values will be used by all post-route extraction engines, including tQuantus, IQRC and Quantus QRC extraction.
+	For postRoute effortLevel low extraction, the coupling_c_th value will be used only when the -capFilterMode parameter of the setExtractRCMode command is set to relAndCoup or relOrCoup. Default value of -capFilterMode parameter in postRoute extraction effortLevel low is relOnly.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'standard'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'low'.
+Updating process node dependent CCOpt properties for the 250nm process node.
+**WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+**WARN: (IMPCK-61):	TopPreferredLayer metal3 is smaller than BottomPreferredLayer metal3. The top/bottom preferred layer for CTS should be changed using the 'setCTSMode' command.
+addRing command will ignore shorts while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will consider rows while creating rings.
+The ring targets are set to core/block ring wires.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-2773):	The via resistance between layers M0 and M1 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+Type 'man IMPEXT-2773' for more detail.
+**WARN: (IMPEXT-2773):	The via resistance between layers M1 and M2 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+Type 'man IMPEXT-2773' for more detail.
+**WARN: (IMPEXT-2773):	The via resistance between layers M2 and M3 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+Type 'man IMPEXT-2773' for more detail.
+**WARN: (IMPEXT-2766):	The sheet resistance for layer M1 is not defined in the cap table. Therefore, the LEF value 0.09 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+**WARN: (IMPEXT-2766):	The sheet resistance for layer M2 is not defined in the cap table. Therefore, the LEF value 0.09 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+**WARN: (IMPEXT-2766):	The sheet resistance for layer M3 is not defined in the cap table. Therefore, the LEF value 0.05 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+Summary of Active RC-Corners : 
+ 
+ Analysis View: setup_func
+    RC-Corner Name        : rc_typ
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from Cap Table]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from Cap Table]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+ 
+ Analysis View: hold_func
+    RC-Corner Name        : rc_typ
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from Cap Table]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from Cap Table]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+*Info: initialize multi-corner CTS.
+Reading timing constraints file '/home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/mmmc/riscv.sdc' ...
+Current (total cpu=0:00:10.6, real=0:00:10.0, peak res=554.9M, current mem=554.9M)
+**WARN: (TCLCMD-1142):	Virtual clock 'vclk' is being created with no source objects. (File /home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/mmmc/riscv.sdc, Line 239).
+
+INFO (CTE): Reading of timing constraints file /home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/mmmc/riscv.sdc completed, with 1 WARNING
+WARNING (CTE-25): Line: 8 of File /home/rjridle/risc-v-chisel/fabcds/par/DBS/init.enc.dat/libs/mmmc/riscv.sdc : Skipped unsupported command: set_units
+
+
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:01.0, peak res=572.2M, current mem=572.2M)
+Current (total cpu=0:00:10.7, real=0:00:11.0, peak res=572.2M, current mem=572.2M)
+Total number of combinational cells: 26
+Total number of sequential cells: 4
+Total number of tristate cells: 2
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUFX2 BUFX4 CLKBUF1
+Total number of usable buffers: 3
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: INVX2 INVX1 INVX4 INVX8
+Total number of usable inverters: 4
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: CLKBUF2 CLKBUF3
+Total number of identified usable delay cells: 2
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+% Begin Load floorplan data ... (date=07/21 17:25:45, mem=573.7M)
+Reading floorplan file - DBS/init.enc.dat/riscv.fp.gz (mem = 658.9M).
+% Begin Load floorplan data ... (date=07/21 17:25:45, mem=573.7M)
+*info: reset 12579 existing net BottomPreferredLayer and AvoidDetour
+Deleting old partition specification.
+Set FPlanBox to (0 0 4000800 3999000)
+Horizontal Layer M1 offset = 1500 (derived)
+Vertical Layer M2 offset = 1200 (derived)
+ ... processed partition successfully.
+Reading binary special route file DBS/init.enc.dat/riscv.fp.spr.gz (Created by Innovus v17.11-s080_1 on Tue Jul 21 17:25:33 2020, version: 1)
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+% End Load floorplan data ... (date=07/21 17:25:45, total cpu=0:00:00.0, real=0:00:00.0, peak res=575.2M, current mem=575.2M)
+% End Load floorplan data ... (date=07/21 17:25:45, total cpu=0:00:00.1, real=0:00:00.0, peak res=575.2M, current mem=575.2M)
+% Begin Load SymbolTable ... (date=07/21 17:25:45, mem=575.2M)
+% End Load SymbolTable ... (date=07/21 17:25:45, total cpu=0:00:00.0, real=0:00:00.0, peak res=579.0M, current mem=579.0M)
+% Begin Load placement data ... (date=07/21 17:25:45, mem=576.6M)
+Reading placement file - DBS/init.enc.dat/riscv.place.gz.
+*** Checked 2 GNC rules.
+*** applyConnectGlobalNets disabled.
+** Reading stdCellPlacement_binary (Created by Innovus v17.11-s080_1 on Tue Jul 21 17:25:33 2020, version# 1) ...
+*** Completed restorePlace (cpu=0:00:00.0 real=0:00:00.0 mem=658.9M) ***
+Total net length = 2.515e+01 (1.258e+01 1.258e+01) (ext = 3.260e-01)
+% End Load placement data ... (date=07/21 17:25:45, total cpu=0:00:00.0, real=0:00:00.0, peak res=576.8M, current mem=576.8M)
+*** Checked 2 GNC rules.
+*** Applying global-net connections...
+*** Applied 2 GNC rules (cpu = 0:00:00.0)
+% Begin Load routing data ... (date=07/21 17:25:45, mem=576.8M)
+Reading routing file - DBS/init.enc.dat/riscv.route.gz.
+Reading Innovus routing data (Created by Innovus v17.11-s080_1 on Tue Jul 21 17:25:33 2020 Format: 16.2) ...
+*** Total 12578 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.0 real=0:00:00.0 mem=658.9M) ***
+% End Load routing data ... (date=07/21 17:25:45, total cpu=0:00:00.0, real=0:00:00.0, peak res=580.1M, current mem=580.1M)
+Reading property file DBS/init.enc.dat/riscv.prop
+*** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=658.9M) ***
+Set Default Input Pin Transition as 0.1 ps.
+**WARN: (GLOBAL-100):	Global 'timing_enable_default_delay_arc' has become obsolete. It will be removed in the next release.
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner resistance tables ...
+% Begin Load power constraints ... (date=07/21 17:25:45, mem=582.4M)
+% End Load power constraints ... (date=07/21 17:25:45, total cpu=0:00:00.0, real=0:00:00.0, peak res=582.5M, current mem=582.5M)
+Start generating vias ...
+#Skip building auto via since it is not turned on.
+Via generation completed.
+% Begin load AAE data ... (date=07/21 17:25:45, mem=585.5M)
+AAE DB initialization (MEM=685.254 CPU=0:00:00.1 REAL=0:00:00.0) 
+% End load AAE data ... (date=07/21 17:25:45, total cpu=0:00:00.1, real=0:00:00.0, peak res=585.6M, current mem=585.6M)
+Total number of combinational cells: 26
+Total number of sequential cells: 4
+Total number of tristate cells: 2
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUFX2 BUFX4 CLKBUF1
+Total number of usable buffers: 3
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: INVX2 INVX1 INVX4 INVX8
+Total number of usable inverters: 4
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: CLKBUF2 CLKBUF3
+Total number of identified usable delay cells: 2
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+#% End load design ... (date=07/21 17:25:45, total cpu=0:00:01.3, real=0:00:01.0, peak res=585.7M, current mem=585.7M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-108            1  There is no overlap layer defined in any...
+WARNING   IMPFP-710            1  File version %s is too old.              
+WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+WARNING   IMPTS-124            2  Timing library description of pin '%s' i...
+WARNING   IMPEXT-2766          3  The sheet resistance for layer %s is not...
+WARNING   IMPEXT-2773          3  The via resistance between layers %s and...
+WARNING   IMPCK-61             1  TopPreferredLayer %s is smaller than Bot...
+WARNING   IMPCK-8086           1  The command %s is obsolete and will be r...
+WARNING   IMPVL-159           68  Pin '%s' of cell '%s' is defined in LEF ...
+WARNING   IMPPP-556            2  A SAMENET rule between different layers ...
+WARNING   IMPPP-557            3  A single-layer VIARULE GENERATE for turn...
+WARNING   GLOBAL-100           2  Global '%s' has become obsolete. It will...
+WARNING   TCLCMD-1142          1  Virtual clock '%s' is being created with...
+WARNING   TECHLIB-436         20  Attribute '%s' on '%s' pin '%s' of cell ...
+*** Message Summary: 110 warning(s), 0 error(s)
+
+<CMD> um::enable_metric -on
+<CMD> um::push_snapshot_stack
+<CMD> setDesignMode -process 250
+Applying the recommended capacitance filtering threshold values for 250nm process node: total_c_th=5, relative_c_th=0.03 and coupling_c_th=3.
+	These values will be used by all post-route extraction engines, including tQuantus, IQRC and Quantus QRC extraction.
+	For postRoute effortLevel low extraction, the coupling_c_th value will be used only when the -capFilterMode parameter of the setExtractRCMode command is set to relAndCoup or relOrCoup. Default value of -capFilterMode parameter in postRoute extraction effortLevel low is relOnly.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'standard'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'low'.
+Updating process node dependent CCOpt properties for the 250nm process node.
+<CMD> setAnalysisMode -analysisType onChipVariation
+<CMD> setPlaceMode -place_global_place_io_pins false
+<FF> RUNNING PLACEMENT ...
+<FF> LOADING 'pre_place_tcl' PLUG-IN FILE(s) 
+<FF> -> PLUG/INNOVUS/pre_place.tcl
+**WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+<CMD> place_opt_design -out_dir RPT -prefix place
+No user sequential activity specified, applying default sequential activity of "0.2" for Dynamic Power reporting.
+'set_default_switching_activity' finished successfully.
+*** Starting GigaPlace ***
+**INFO: user set placement options
+setPlaceMode -place_global_place_io_pins false
+**INFO: user set opt options
+*** Start deleteBufferTree ***
+Info: Detect buffers to remove automatically.
+Analyzing netlist ...
+Updating netlist
+
+*summary: 278 instances (buffers/inverters) removed
+*** Finish deleteBufferTree (0:00:00.6) ***
+*** ThreeLayerMode is automatically turned on for small designs with less than 4 layers.
+ThreeLayerMode is on. Timing-driven placement option disabled.
+Deleted 0 physical inst  (cell - / prefix -).
+No user setting net weight.
+Options: clkGateAware pinGuide congEffort=auto gpeffort=medium 
+#std cell=11812 (0 fixed + 11812 movable) #block=0 (0 floating + 0 preplaced)
+#ioInst=0 #net=12330 #term=41976 #term/net=3.40, #fixedIo=0, #floatIo=0, #fixedPin=0, #floatPin=163
+stdCell: 11812 single + 0 double + 0 multi
+Total standard cell length = 136.3344 (mm), area = 4.0900 (mm^2)
+Estimated cell power/ground rail width = 2.343 um
+Average module density = 0.268.
+Density for the design = 0.268.
+       = stdcell_area 56806 sites (4090032 um^2) / alloc_area 212290 sites (15284880 um^2).
+Pin Density = 0.1977.
+            = total # of pins 41976 / total area 212290.
+=== lastAutoLevel = 8 
+**WARN: (IMPSP-9531):	Turning off clkGateAware when timingDriven is off
+Iteration  1: Total net bbox = 4.093e-08 (2.21e-08 1.88e-08)
+              Est.  stn bbox = 4.326e-08 (2.34e-08 1.99e-08)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 909.9M
+Iteration  2: Total net bbox = 4.093e-08 (2.21e-08 1.88e-08)
+              Est.  stn bbox = 4.326e-08 (2.34e-08 1.99e-08)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 909.9M
+Iteration  3: Total net bbox = 7.267e+02 (3.67e+02 3.60e+02)
+              Est.  stn bbox = 9.223e+02 (4.68e+02 4.54e+02)
+              cpu = 0:00:00.6 real = 0:00:01.0 mem = 930.9M
+Iteration  4: Total net bbox = 1.362e+06 (4.69e+05 8.93e+05)
+              Est.  stn bbox = 1.907e+06 (6.13e+05 1.29e+06)
+              cpu = 0:00:02.3 real = 0:00:02.0 mem = 930.9M
+Iteration  5: Total net bbox = 1.894e+06 (8.58e+05 1.04e+06)
+              Est.  stn bbox = 2.697e+06 (1.17e+06 1.52e+06)
+              cpu = 0:00:03.3 real = 0:00:03.0 mem = 930.9M
+Iteration  6: Total net bbox = 2.291e+06 (1.06e+06 1.23e+06)
+              Est.  stn bbox = 3.244e+06 (1.46e+06 1.78e+06)
+              cpu = 0:00:04.5 real = 0:00:05.0 mem = 932.9M
+Iteration  7: Total net bbox = 2.926e+06 (1.42e+06 1.51e+06)
+              Est.  stn bbox = 3.908e+06 (1.84e+06 2.07e+06)
+              cpu = 0:00:00.2 real = 0:00:00.0 mem = 942.0M
+Iteration  8: Total net bbox = 2.926e+06 (1.42e+06 1.51e+06)
+              Est.  stn bbox = 3.908e+06 (1.84e+06 2.07e+06)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 942.0M
+Iteration  9: Total net bbox = 2.968e+06 (1.42e+06 1.54e+06)
+              Est.  stn bbox = 3.963e+06 (1.85e+06 2.11e+06)
+              cpu = 0:00:03.9 real = 0:00:04.0 mem = 943.9M
+Iteration 10: Total net bbox = 2.968e+06 (1.42e+06 1.54e+06)
+              Est.  stn bbox = 3.963e+06 (1.85e+06 2.11e+06)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 943.9M
+Iteration 11: Total net bbox = 2.941e+06 (1.42e+06 1.52e+06)
+              Est.  stn bbox = 3.934e+06 (1.84e+06 2.10e+06)
+              cpu = 0:00:03.2 real = 0:00:03.0 mem = 943.9M
+Iteration 12: Total net bbox = 2.941e+06 (1.42e+06 1.52e+06)
+              Est.  stn bbox = 3.934e+06 (1.84e+06 2.10e+06)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 943.9M
+Iteration 13: Total net bbox = 3.171e+06 (1.54e+06 1.63e+06)
+              Est.  stn bbox = 4.154e+06 (1.96e+06 2.19e+06)
+              cpu = 0:00:08.6 real = 0:00:09.0 mem = 943.9M
+Iteration 14: Total net bbox = 3.171e+06 (1.54e+06 1.63e+06)
+              Est.  stn bbox = 4.154e+06 (1.96e+06 2.19e+06)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 943.9M
+Iteration 15: Total net bbox = 3.171e+06 (1.54e+06 1.63e+06)
+              Est.  stn bbox = 4.154e+06 (1.96e+06 2.19e+06)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 943.9M
+Finished Global Placement (cpu=0:00:26.8, real=0:00:28.0, mem=943.9M)
+**WARN: (IMPSP-9025):	No scan chain specified/traced.
+Type 'man IMPSP-9025' for more detail.
+*** Starting refinePlace (0:00:39.0 mem=943.9M) ***
+Total net bbox length = 3.171e+06 (1.542e+06 1.630e+06) (ext = 6.079e+05)
+Move report: Detail placement moves 11812 insts, mean move: 18.57 um, max move: 488.86 um
+	Max move on inst (U6140): (1964.48, 1757.17) --> (1780.80, 1452.00)
+	Runtime: CPU: 0:00:03.0 REAL: 0:00:03.0 MEM: 943.9MB
+Summary Report:
+Instances move: 11812 (out of 11812 movable)
+Instances flipped: 0
+Mean displacement: 18.57 um
+Max displacement: 488.86 um (Instance: U6140) (1964.48, 1757.17) -> (1780.8, 1452)
+	Length: 3 sites, height: 1 rows, site name: core, cell type: NAND2X1
+Total net bbox length = 3.118e+06 (1.489e+06 1.629e+06) (ext = 6.035e+05)
+Runtime: CPU: 0:00:03.0 REAL: 0:00:03.0 MEM: 943.9MB
+*** Finished refinePlace (0:00:42.0 mem=943.9M) ***
+*** Finished Initial Placement (cpu=0:00:29.9, real=0:00:31.0, mem=943.9M) ***
+UM:  flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:                                                                   final
+     flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:                                                                   global_place
+*** ThreeLayerMode is automatically turned on for small designs with less than 4 layers.
+ThreeLayerMode is on. Timing-driven placement option disabled.
+Starting congestion repair ...
+*** ThreeLayerMode is automatically turned on for small designs with less than 4 layers.
+ThreeLayerMode is on. Timing-driven placement option disabled.
+[NR-eGR] honorMsvRouteConstraint: false
+[NR-eGR] honorClockSpecNDR      : 0
+[NR-eGR] minRouteLayer          : 2
+[NR-eGR] maxRouteLayer          : 3
+[NR-eGR] numTracksPerClockWire  : 0
+[NR-eGR] Layer1 has no routable track
+[NR-eGR] Layer2 has single uniform track structure
+[NR-eGR] Layer3 has single uniform track structure
+[NR-eGR] numRoutingBlks=0 numInstBlks=1725 numPGBlocks=274 numBumpBlks=0 numBoundaryFakeBlks=0
+[NR-eGR] numPreroutedNet = 0  numPreroutedWires = 0
+[NR-eGR] Read numTotalNets=12262  numIgnoredNets=0
+[NR-eGR] ============ Routing rule table ============
+[NR-eGR] Rule id 0. Nets 12262 
+[NR-eGR] id=0  ndrTrackId=0  ndrViaId=-1  extraSpace=0  numShields=0  maxHorDemand=1  maxVerDemand=1
+[NR-eGR] Pitch:  L1=1800  L2=2400  L3=3000
+[NR-eGR] ========================================
+[NR-eGR] 
+[NR-eGR] Layer group 1: route 12262 net(s) in layer range [2, 3]
+[NR-eGR] earlyGlobalRoute overflow of layer group 1: 0.01% H + 0.00% V. EstWL: 3.411750e+06um
+[NR-eGR] 
+[NR-eGR] Congestion Analysis Layer By layer: (blocked Gcells are excluded) 
+[NR-eGR]                OverCon            
+[NR-eGR]                 #Gcell     %Gcell
+[NR-eGR] Layer              (1)    OverCon 
+[NR-eGR] ------------------------------------
+[NR-eGR] Layer1       0( 0.00%)   ( 0.00%) 
+[NR-eGR] Layer2       2( 0.01%)   ( 0.01%) 
+[NR-eGR] Layer3       2( 0.01%)   ( 0.01%) 
+[NR-eGR] ------------------------------------
+[NR-eGR] Total        4( 0.01%)   ( 0.01%) 
+[NR-eGR] 
+[NR-eGR] Overflow after earlyGlobalRoute (GR compatible) 0.01% H + 0.01% V
+[NR-eGR] Overflow after earlyGlobalRoute 0.01% H + 0.01% V
+Local HotSpot Analysis: normalized max congestion hotspot area = 0.00, normalized total congestion hotspot area = 0.00 (area is in unit of 4 std-cell row bins)
+Skipped repairing congestion.
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Layer1(metal1)(F) length: 0.000000e+00um, number of vias: 41745
+[NR-eGR] Layer2(metal2)(V) length: 1.876458e+06um, number of vias: 67034
+[NR-eGR] Layer3(metal3)(H) length: 1.690546e+06um, number of vias: 0
+[NR-eGR] Total length: 3.567004e+06um, number of vias: 108779
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total clock nets wire length: 0.000000e+00um 
+[NR-eGR] --------------------------------------------------------------------------
+End of congRepair (cpu=0:00:00.3, real=0:00:00.0)
+**placeDesign ... cpu = 0: 0:31, real = 0: 0:32, mem = 944.5M **
+     flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:                                                                   final
+UM: Capturing floorplan image ...
+     flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:                                                                   place_design
+**WARN: (IMPOPT-576):	163 nets have unplaced terms. 
+Type 'man IMPOPT-576' for more detail.
+**INFO: setDesignMode -flowEffort standard -> setting 'setOptMode -allEndPoints true' for the duration of this command.
+GigaOpt running with 1 threads.
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner resistance tables ...
+**WARN: (IMPOPT-665):	clk : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	reset : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	io_instr[31] : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	io_instr[30] : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	io_instr[29] : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	io_instr[28] : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	io_instr[27] : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	io_instr[26] : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	io_instr[25] : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	io_instr[24] : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	io_instr[23] : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	io_instr[22] : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	io_instr[21] : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	io_instr[20] : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	io_instr[19] : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	io_instr[18] : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	io_instr[17] : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	io_instr[16] : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	io_instr[15] : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (IMPOPT-665):	io_instr[14] : Net has unplaced terms or is connected to uplaced instances in design. 
+Type 'man IMPOPT-665' for more detail.
+**WARN: (EMS-27):	Message (IMPOPT-665) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+**WARN: (IMPOPT-6118):	The following cells have a dont_touch property but without being dont_use.
+To avoid such a configuration impacting timing closure, since otherwise such cells could be inserted but never optimized or removed, optDesign is treating the following cells as dont_use.
+			Cell PADVDD is dont_touch but not dont_use
+			Cell PADNC is dont_touch but not dont_use
+			Cell PADGND is dont_touch but not dont_use
+			Cell PADFC is dont_touch but not dont_use
+	...
+	Reporting only the 20 first cells found...
+
+**optDesign ... cpu = 0:00:00, real = 0:00:00, mem = 640.0M, totSessionCpu=0:00:43 **
+setTrialRouteMode -maxRouteLayer 3
+Added -handlePreroute to trialRouteMode
+*** optDesign -preCTS ***
+DRC Margin: user margin 0.0; extra margin 0.2
+Setup Target Slack: user slack 0; extra slack 0.1
+Hold Target Slack: user slack 0
+Multi-VT timing optimization disabled based on library information.
+Start to check current routing status for nets...
+All nets are already routed correctly.
+End to check current routing status for nets (mem=950.5M)
+Extraction called for design 'riscv' of instances=11812 and nets=12333 using extraction engine 'preRoute' .
+PreRoute RC Extraction called for design riscv.
+RC Extraction called in multi-corner(1) mode.
+**WARN: (IMPEXT-6197):	The Cap table file is not specified. This will result in lower parasitic accuracy when using preRoute extraction or postRoute extraction with effort level 'low'. It is recommended to generate the Cap table file using the 'generateCapTbl' command and specify it before extraction using 'create_rc_corner/update_rc_corner -cap_table'.
+Type 'man IMPEXT-6197' for more detail.
+RCMode: PreRoute
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 1.00000
+PreRoute extraction is honoring NDR/Shielding/ExtraSpace for clock nets.
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner resistance tables ...
+PreRoute RC Extraction DONE (CPU Time: 0:00:00.0  Real Time: 0:00:00.0  MEM: 950.523M)
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: riscv
+# Design Mode: 250nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate early delays in OCV mode...
+Calculate late delays in OCV mode...
+Start delay calculation (fullDC) (1 T). (MEM=961.133)
+**WARN: (IMPEXT-2882):	Unable to find the resistance for via 'M2_M1' in Cap table or LEF or OA files. The default value of 4.0 ohms is being assigned. To avoid this, check the Cap table and LEF and OA files, provide the resistance and read the files again.
+**WARN: (IMPEXT-2882):	Unable to find the resistance for via 'M3_M2' in Cap table or LEF or OA files. The default value of 4.0 ohms is being assigned. To avoid this, check the Cap table and LEF and OA files, provide the resistance and read the files again.
+Total number of fetched objects 12330
+End delay calculation. (MEM=999.637 CPU=0:00:02.1 REAL=0:00:02.0)
+End delay calculation (fullDC). (MEM=902.266 CPU=0:00:03.1 REAL=0:00:04.0)
+*** Done Building Timing Graph (cpu=0:00:03.6 real=0:00:04.0 totSessionCpu=0:00:47.0 mem=902.3M)
+
+------------------------------------------------------------
+             Initial Summary                             
+------------------------------------------------------------
+
+Setup views included:
+ setup_func 
+
++--------------------+---------+
+|     Setup mode     |   all   |
++--------------------+---------+
+|           WNS (ns):| -8.453  |
+|           TNS (ns):| -68.857 |
+|    Violating Paths:|   16    |
+|          All Paths:|   65    |
++--------------------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |    384 (384)     |  -62.714   |    384 (384)     |
+|   max_tran     |      0 (0)       |   0.000    |      0 (0)       |
+|   max_fanout   |      0 (0)       |     0      |      0 (0)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 26.759%
+------------------------------------------------------------
+**optDesign ... cpu = 0:00:04, real = 0:00:04, mem = 691.7M, totSessionCpu=0:00:47 **
+** INFO : this run is activating medium effort placeOptDesign flow
+*** Starting optimizing excluded clock nets MEM= 849.9M) ***
+*info: No excluded clock nets to be optimized.
+*** Finished optimizing excluded clock nets (CPU Time= 0:00:00.0  MEM= 849.9M) ***
+The useful skew maximum allowed delay is: 0.15
+
+Footprint cell infomation for calculating maxBufDist
+*info: There are 3 candidate Buffer cells
+*info: There are 4 candidate Inverter cells
+
+
+Netlist preparation processing... 
+*** Checked 2 GNC rules.
+*** Applying global-net connections...
+*** Applied 2 GNC rules (cpu = 0:00:00.0)
+Removed 1 instance
+*info: Marking 0 isolation instances dont touch
+*info: Marking 0 level shifter instances dont touch
+[NR-eGR] Started earlyGlobalRoute kernel
+[NR-eGR] Initial Peak syMemory usage = 913.7 MB
+[NR-eGR] honorMsvRouteConstraint: false
+[NR-eGR] honorClockSpecNDR      : 0
+[NR-eGR] minRouteLayer          : 2
+[NR-eGR] maxRouteLayer          : 3
+[NR-eGR] numTracksPerClockWire  : 0
+[NR-eGR] Layer1 has no routable track
+[NR-eGR] Layer2 has single uniform track structure
+[NR-eGR] Layer3 has single uniform track structure
+[NR-eGR] numRoutingBlks=0 numInstBlks=1725 numPGBlocks=274 numBumpBlks=0 numBoundaryFakeBlks=0
+[NR-eGR] numPreroutedNet = 0  numPreroutedWires = 0
+[NR-eGR] Read numTotalNets=12262  numIgnoredNets=0
+[NR-eGR] ============ Routing rule table ============
+[NR-eGR] Rule id 0. Nets 12262 
+[NR-eGR] id=0  ndrTrackId=0  ndrViaId=-1  extraSpace=0  numShields=0  maxHorDemand=1  maxVerDemand=1
+[NR-eGR] Pitch:  L1=1800  L2=2400  L3=3000
+[NR-eGR] ========================================
+[NR-eGR] 
+[NR-eGR] Layer group 1: route 12262 net(s) in layer range [2, 3]
+[NR-eGR] earlyGlobalRoute overflow of layer group 1: 0.08% H + 0.01% V. EstWL: 3.472770e+06um
+[NR-eGR] 
+[NR-eGR] Congestion Analysis Layer By layer: (blocked Gcells are excluded) 
+[NR-eGR]                OverCon            
+[NR-eGR]                 #Gcell     %Gcell
+[NR-eGR] Layer              (1)    OverCon 
+[NR-eGR] ------------------------------------
+[NR-eGR] Layer1       0( 0.00%)   ( 0.00%) 
+[NR-eGR] Layer2      17( 0.10%)   ( 0.10%) 
+[NR-eGR] Layer3      14( 0.08%)   ( 0.08%) 
+[NR-eGR] ------------------------------------
+[NR-eGR] Total       31( 0.09%)   ( 0.09%) 
+[NR-eGR] 
+[NR-eGR] Overflow after earlyGlobalRoute (GR compatible) 0.08% H + 0.10% V
+[NR-eGR] Overflow after earlyGlobalRoute 0.08% H + 0.10% V
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Layer1(metal1)(F) length: 0.000000e+00um, number of vias: 41745
+[NR-eGR] Layer2(metal2)(V) length: 1.909311e+06um, number of vias: 67039
+[NR-eGR] Layer3(metal3)(H) length: 1.720147e+06um, number of vias: 0
+[NR-eGR] Total length: 3.629458e+06um, number of vias: 108784
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total clock nets wire length: 0.000000e+00um 
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] End Peak syMemory usage = 898.5 MB
+[NR-eGR] Early Global Router Kernel+IO runtime : 0.37 seconds
+Extraction called for design 'riscv' of instances=11811 and nets=12333 using extraction engine 'preRoute' .
+PreRoute RC Extraction called for design riscv.
+RC Extraction called in multi-corner(1) mode.
+**WARN: (IMPEXT-6197):	The Cap table file is not specified. This will result in lower parasitic accuracy when using preRoute extraction or postRoute extraction with effort level 'low'. It is recommended to generate the Cap table file using the 'generateCapTbl' command and specify it before extraction using 'create_rc_corner/update_rc_corner -cap_table'.
+Type 'man IMPEXT-6197' for more detail.
+RCMode: PreRoute
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 1.00000
+PreRoute extraction is honoring NDR/Shielding/ExtraSpace for clock nets.
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner resistance tables ...
+PreRoute RC Extraction DONE (CPU Time: 0:00:00.0  Real Time: 0:00:00.0  MEM: 898.508M)
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: riscv
+# Design Mode: 250nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB
+# Signoff Settings: SI Off 
+#################################################################################
+AAE_INFO: 1 threads acquired from CTE.
+Calculate early delays in OCV mode...
+Calculate late delays in OCV mode...
+Start delay calculation (fullDC) (1 T). (MEM=896.508)
+Total number of fetched objects 12329
+End delay calculation. (MEM=946.812 CPU=0:00:02.1 REAL=0:00:02.0)
+End delay calculation (fullDC). (MEM=946.812 CPU=0:00:02.2 REAL=0:00:02.0)
+Begin: GigaOpt high fanout net optimization
++----------+---------+--------+--------+------------+--------+
+| Density  | Commits |  WNS   |  TNS   |    Real    |  Mem   |
++----------+---------+--------+--------+------------+--------+
+|    26.76%|        -|  -8.595| -71.129|   0:00:00.0| 1039.1M|
+|    27.03%|      102|  -8.595| -71.130|   0:00:01.0| 1042.1M|
++----------+---------+--------+--------+------------+--------+
+
+*** Finish pre-CTS High Fanout Net Fixing (cpu=0:00:00.9 real=0:00:01.0 mem=1042.1M) ***
+End: GigaOpt high fanout net optimization
+Begin: GigaOpt DRV Optimization
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        max-tran       |        max-cap        |  max-fanout |  max-length |       setup       |        |        |        |       |          |         |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| nets | terms|  wViol  | nets | terms|  wViol  | nets | terms| nets | terms|   WNS   |   TNS   |  #Buf  |  #Inv  | #Resize|Density|   Real   |   Mem   |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|     0|     0|     0.00|   451|   451|    -4.16|     0|     0|     0|     0|    -8.60|   -71.13|       0|       0|       0|  27.03|          |         |
+|     0|     0|     0.00|     0|     0|     0.00|     0|     0|     0|     0|    -1.85|    -4.38|     422|     140|     166|  28.01| 0:00:10.0|  1042.1M|
+|     0|     0|     0.00|     0|     0|     0.00|     0|     0|     0|     0|    -1.85|    -4.38|       0|       0|       0|  28.01| 0:00:00.0|  1042.1M|
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+*** Finish DRV Fixing (cpu=0:00:10.4 real=0:00:11.0 mem=1042.1M) ***
+
+End: GigaOpt DRV Optimization
+**optDesign ... cpu = 0:00:21, real = 0:00:21, mem = 737.8M, totSessionCpu=0:01:04 **
+Begin: GigaOpt Global Optimization
+*info: use new DP (enabled)
+*info: 2 special nets excluded.
+*info: 4 no-driver nets excluded.
+** GigaOpt Global Opt WNS Slack -1.852  TNS Slack -4.378 
++--------+--------+----------+------------+--------+----------+---------+---------------------+
+|  WNS   |  TNS   | Density  |    Real    |  Mem   |Worst View|Pathgroup|      End Point      |
++--------+--------+----------+------------+--------+----------+---------+---------------------+
+|  -1.852|  -4.378|    28.01%|   0:00:00.0| 1058.1M|setup_func|  default| io_memAddress[31]   |
+|  -0.704|  -0.910|    28.06%|   0:00:01.0| 1065.9M|setup_func|  default| io_memAddress[31]   |
+|  -0.421|  -0.421|    28.07%|   0:00:00.0| 1066.9M|setup_func|  default| io_memAddress[31]   |
+|  -0.421|  -0.421|    28.07%|   0:00:00.0| 1066.9M|setup_func|  default| io_memAddress[31]   |
+|  -0.205|  -0.205|    28.07%|   0:00:00.0| 1066.9M|setup_func|  default| io_memAddress[31]   |
+|   0.000|   0.000|    28.08%|   0:00:00.0| 1066.9M|        NA|       NA| NA                  |
++--------+--------+----------+------------+--------+----------+---------+---------------------+
+
+*** Finish pre-CTS Global Setup Fixing (cpu=0:00:01.4 real=0:00:01.0 mem=1066.9M) ***
+
+*** Finish pre-CTS Setup Fixing (cpu=0:00:01.4 real=0:00:01.0 mem=1066.9M) ***
+** GigaOpt Global Opt End WNS Slack 0.000  TNS Slack 0.000 
+End: GigaOpt Global Optimization
+
+Active setup views:
+ setup_func
+  Dominating endpoints: 0
+  Dominating TNS: -0.000
+
+*** Timing NOT met, worst failing slack is 0.038
+*** Check timing (0:00:00.0)
+Begin: Area Reclaim Optimization
+Reclaim Optimization WNS Slack 0.000  TNS Slack 0.000 Density 28.08
++----------+---------+--------+--------+------------+--------+
+| Density  | Commits |  WNS   |  TNS   |    Real    |  Mem   |
++----------+---------+--------+--------+------------+--------+
+|    28.08%|        -|   0.000|   0.000|   0:00:00.0| 1064.2M|
+|    28.08%|        8|   0.000|   0.000|   0:00:01.0| 1067.0M|
+|    28.08%|        0|   0.000|   0.000|   0:00:00.0| 1067.0M|
+|    28.02%|       36|   0.000|   0.000|   0:00:01.0| 1067.0M|
+|    28.02%|        1|   0.000|   0.000|   0:00:00.0| 1067.0M|
+|    27.87%|      103|   0.000|   0.000|   0:00:02.0| 1067.0M|
+|    27.87%|        2|   0.000|   0.000|   0:00:00.0| 1067.0M|
+|    27.87%|        0|   0.000|   0.000|   0:00:00.0| 1067.0M|
+|    27.87%|        0|   0.000|   0.000|   0:00:00.0| 1067.0M|
++----------+---------+--------+--------+------------+--------+
+Reclaim Optimization End WNS Slack 0.000  TNS Slack 0.000 Density 27.87
+** Finished Core Area Reclaim Optimization (cpu = 0:00:04.5) (real = 0:00:04.0) **
+Executing incremental physical updates
+Executing incremental physical updates
+*** Finished Area Reclaim Optimization (cpu=0:00:05, real=0:00:04, mem=933.43M, totSessionCpu=0:01:11).
+setup target slack: 0.1
+extra slack: 0.1
+std delay: 0.0928
+real setup target slack: 0.0928
+incrSKP preserve mode is on...
+[NR-eGR] Started earlyGlobalRoute kernel
+[NR-eGR] Initial Peak syMemory usage = 933.4 MB
+[NR-eGR] honorMsvRouteConstraint: false
+[NR-eGR] honorClockSpecNDR      : 0
+[NR-eGR] minRouteLayer          : 2
+[NR-eGR] maxRouteLayer          : 3
+[NR-eGR] numTracksPerClockWire  : 0
+[NR-eGR] Layer1 has no routable track
+[NR-eGR] Layer2 has single uniform track structure
+[NR-eGR] Layer3 has single uniform track structure
+[NR-eGR] numRoutingBlks=0 numInstBlks=1730 numPGBlocks=274 numBumpBlks=0 numBoundaryFakeBlks=0
+[NR-eGR] numPreroutedNet = 0  numPreroutedWires = 0
+[NR-eGR] Read numTotalNets=12921  numIgnoredNets=0
+[NR-eGR] ============ Routing rule table ============
+[NR-eGR] Rule id 0. Nets 12830 
+[NR-eGR] id=0  ndrTrackId=0  ndrViaId=-1  extraSpace=0  numShields=0  maxHorDemand=1  maxVerDemand=1
+[NR-eGR] Pitch:  L1=1800  L2=2400  L3=3000
+[NR-eGR] ========================================
+[NR-eGR] 
+[NR-eGR] Layer group 1: route 12830 net(s) in layer range [2, 3]
+[NR-eGR] earlyGlobalRoute overflow of layer group 1: 0.00% H + 0.00% V. EstWL: 3.459900e+06um
+[NR-eGR] 
+[NR-eGR] Congestion Analysis Layer By layer: (blocked Gcells are excluded) 
+[NR-eGR]                OverCon            
+[NR-eGR]                 #Gcell     %Gcell
+[NR-eGR] Layer              (1)    OverCon 
+[NR-eGR] ------------------------------------
+[NR-eGR] Layer1       0( 0.00%)   ( 0.00%) 
+[NR-eGR] Layer2       6( 0.03%)   ( 0.03%) 
+[NR-eGR] Layer3       0( 0.00%)   ( 0.00%) 
+[NR-eGR] ------------------------------------
+[NR-eGR] Total        6( 0.02%)   ( 0.02%) 
+[NR-eGR] 
+[NR-eGR] Overflow after earlyGlobalRoute (GR compatible) 0.00% H + 0.03% V
+[NR-eGR] Overflow after earlyGlobalRoute 0.00% H + 0.03% V
+[NR-eGR] End Peak syMemory usage = 942.5 MB
+[NR-eGR] Early Global Router Kernel+IO runtime : 0.15 seconds
+[hotspot] +------------+---------------+---------------+
+[hotspot] |            |   max hotspot | total hotspot |
+[hotspot] +------------+---------------+---------------+
+[hotspot] | normalized |          0.00 |          0.00 |
+[hotspot] +------------+---------------+---------------+
+Local HotSpot Analysis: normalized max congestion hotspot area = 0.00, normalized total congestion hotspot area = 0.00 (area is in unit of 4 std-cell row bins)
+*** ThreeLayerMode is automatically turned on for small designs with less than 4 layers.
+ThreeLayerMode is on. Timing-driven placement option disabled.
+*** Starting refinePlace (0:01:12 mem=942.5M) ***
+incr SKP is on..., with optDC mode
+total jobs 87
+multi thread init TemplateIndex for each ta. thread num 1
+Wait...
+(cpu=0:00:00.0 mem=942.5M) ***
+total jobs 0 -> 76
+multi thread init TemplateIndex for each ta. thread num 1
+finished multi-thread init
+*** Build Virtual Sizing Timing Model
+(cpu=0:00:00.0 mem=942.5M) ***
+Move report: Timing Driven Placement moves 12418 insts, mean move: 112.20 um, max move: 3369.60 um
+	Max move on inst (FE_OFC102_clk): (40.80, 42.00) --> (2270.40, 1182.00)
+	Runtime: CPU: 0:00:45.2 REAL: 0:00:45.0 MEM: 961.0MB
+Move report: Detail placement moves 3073 insts, mean move: 29.94 um, max move: 240.00 um
+	Max move on inst (U11988): (321.60, 702.00) --> (81.60, 702.00)
+	Runtime: CPU: 0:00:01.5 REAL: 0:00:02.0 MEM: 961.0MB
+Summary Report:
+Instances move: 12426 (out of 12474 movable)
+Instances flipped: 17
+Mean displacement: 112.44 um
+Max displacement: 3369.60 um (Instance: FE_OFC102_clk) (40.8, 42) -> (2270.4, 1182)
+	Length: 2 sites, height: 1 rows, site name: core, cell type: INVX2
+Runtime: CPU: 0:00:46.8 REAL: 0:00:47.0 MEM: 961.0MB
+*** Finished refinePlace (0:01:59 mem=961.0M) ***
+**WARN: (IMPSP-9025):	No scan chain specified/traced.
+Type 'man IMPSP-9025' for more detail.
+Trial Route Overflow 0(H) 0(V)
+*** ThreeLayerMode is automatically turned on for small designs with less than 4 layers.
+ThreeLayerMode is on. Timing-driven placement option disabled.
+Starting congestion repair ...
+*** ThreeLayerMode is automatically turned on for small designs with less than 4 layers.
+ThreeLayerMode is on. Timing-driven placement option disabled.
+[NR-eGR] honorMsvRouteConstraint: false
+[NR-eGR] honorClockSpecNDR      : 0
+[NR-eGR] minRouteLayer          : 2
+[NR-eGR] maxRouteLayer          : 3
+[NR-eGR] numTracksPerClockWire  : 0
+[NR-eGR] Layer1 has no routable track
+[NR-eGR] Layer2 has single uniform track structure
+[NR-eGR] Layer3 has single uniform track structure
+[NR-eGR] numRoutingBlks=0 numInstBlks=1730 numPGBlocks=274 numBumpBlks=0 numBoundaryFakeBlks=0
+[NR-eGR] numPreroutedNet = 0  numPreroutedWires = 0
+[NR-eGR] Read numTotalNets=12921  numIgnoredNets=0
+[NR-eGR] ============ Routing rule table ============
+[NR-eGR] Rule id 0. Nets 12921 
+[NR-eGR] id=0  ndrTrackId=0  ndrViaId=-1  extraSpace=0  numShields=0  maxHorDemand=1  maxVerDemand=1
+[NR-eGR] Pitch:  L1=1800  L2=2400  L3=3000
+[NR-eGR] ========================================
+[NR-eGR] 
+[NR-eGR] Layer group 1: route 12921 net(s) in layer range [2, 3]
+[NR-eGR] earlyGlobalRoute overflow of layer group 1: 0.02% H + 0.00% V. EstWL: 3.443490e+06um
+[NR-eGR] 
+[NR-eGR] Congestion Analysis Layer By layer: (blocked Gcells are excluded) 
+[NR-eGR]                OverCon            
+[NR-eGR]                 #Gcell     %Gcell
+[NR-eGR] Layer              (1)    OverCon 
+[NR-eGR] ------------------------------------
+[NR-eGR] Layer1       0( 0.00%)   ( 0.00%) 
+[NR-eGR] Layer2       6( 0.03%)   ( 0.03%) 
+[NR-eGR] Layer3       4( 0.02%)   ( 0.02%) 
+[NR-eGR] ------------------------------------
+[NR-eGR] Total       10( 0.03%)   ( 0.03%) 
+[NR-eGR] 
+[NR-eGR] Overflow after earlyGlobalRoute (GR compatible) 0.02% H + 0.03% V
+[NR-eGR] Overflow after earlyGlobalRoute 0.02% H + 0.03% V
+Local HotSpot Analysis: normalized max congestion hotspot area = 0.00, normalized total congestion hotspot area = 0.00 (area is in unit of 4 std-cell row bins)
+Skipped repairing congestion.
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Layer1(metal1)(F) length: 0.000000e+00um, number of vias: 43059
+[NR-eGR] Layer2(metal2)(V) length: 1.903314e+06um, number of vias: 69798
+[NR-eGR] Layer3(metal3)(H) length: 1.705846e+06um, number of vias: 0
+[NR-eGR] Total length: 3.609160e+06um, number of vias: 112857
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total clock nets wire length: 0.000000e+00um 
+[NR-eGR] --------------------------------------------------------------------------
+End of congRepair (cpu=0:00:00.4, real=0:00:00.0)
+Start to check current routing status for nets...
+All nets are already routed correctly.
+End to check current routing status for nets (mem=947.9M)
+Extraction called for design 'riscv' of instances=12474 and nets=12996 using extraction engine 'preRoute' .
+PreRoute RC Extraction called for design riscv.
+RC Extraction called in multi-corner(1) mode.
+**WARN: (IMPEXT-6197):	The Cap table file is not specified. This will result in lower parasitic accuracy when using preRoute extraction or postRoute extraction with effort level 'low'. It is recommended to generate the Cap table file using the 'generateCapTbl' command and specify it before extraction using 'create_rc_corner/update_rc_corner -cap_table'.
+Type 'man IMPEXT-6197' for more detail.
+RCMode: PreRoute
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 1.00000
+PreRoute extraction is honoring NDR/Shielding/ExtraSpace for clock nets.
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner resistance tables ...
+PreRoute RC Extraction DONE (CPU Time: 0:00:00.0  Real Time: 0:00:00.0  MEM: 947.859M)
+Compute RC Scale Done ...
+**optDesign ... cpu = 0:01:16, real = 0:01:17, mem = 708.6M, totSessionCpu=0:02:00 **
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: riscv
+# Design Mode: 250nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB
+# Signoff Settings: SI Off 
+#################################################################################
+AAE_INFO: 1 threads acquired from CTE.
+Calculate early delays in OCV mode...
+Calculate late delays in OCV mode...
+Start delay calculation (fullDC) (1 T). (MEM=925.602)
+Total number of fetched objects 12992
+End delay calculation. (MEM=975.164 CPU=0:00:02.2 REAL=0:00:02.0)
+End delay calculation (fullDC). (MEM=975.164 CPU=0:00:02.3 REAL=0:00:02.0)
+Begin: GigaOpt DRV Optimization
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        max-tran       |        max-cap        |  max-fanout |  max-length |       setup       |        |        |        |       |          |         |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| nets | terms|  wViol  | nets | terms|  wViol  | nets | terms| nets | terms|   WNS   |   TNS   |  #Buf  |  #Inv  | #Resize|Density|   Real   |   Mem   |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|     0|     0|     0.00|    61|    61|    -0.17|     0|     0|     0|     0|     0.34|     0.00|       0|       0|       0|  27.87|          |         |
+|     0|     0|     0.00|     0|     0|     0.00|     0|     0|     0|     0|     0.34|     0.00|      29|       0|      45|  27.92| 0:00:02.0|  1088.3M|
+|     0|     0|     0.00|     0|     0|     0.00|     0|     0|     0|     0|     0.34|     0.00|       0|       0|       0|  27.92| 0:00:00.0|  1088.3M|
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+*** Finish DRV Fixing (cpu=0:00:01.7 real=0:00:02.0 mem=1088.3M) ***
+
+*** Starting refinePlace (0:02:05 mem=1104.3M) ***
+Total net bbox length = 3.390e+06 (1.656e+06 1.734e+06) (ext = 5.990e+05)
+Move report: Detail placement moves 28 insts, mean move: 6.26 um, max move: 19.20 um
+	Max move on inst (FE_OFC768_FE_OFN228_n14148): (2500.80, 1182.00) --> (2481.60, 1182.00)
+	Runtime: CPU: 0:00:00.2 REAL: 0:00:00.0 MEM: 1104.3MB
+Summary Report:
+Instances move: 28 (out of 12503 movable)
+Instances flipped: 0
+Mean displacement: 6.26 um
+Max displacement: 19.20 um (Instance: FE_OFC768_FE_OFN228_n14148) (2500.8, 1182) -> (2481.6, 1182)
+	Length: 4 sites, height: 1 rows, site name: core, cell type: BUFX4
+Total net bbox length = 3.390e+06 (1.656e+06 1.734e+06) (ext = 5.990e+05)
+Runtime: CPU: 0:00:00.2 REAL: 0:00:00.0 MEM: 1104.3MB
+*** Finished refinePlace (0:02:05 mem=1104.3M) ***
+*** maximum move = 19.20 um ***
+*** Finished re-routing un-routed nets (1104.3M) ***
+
+*** Finish Physical Update (cpu=0:00:00.4 real=0:00:00.0 mem=1104.3M) ***
+End: GigaOpt DRV Optimization
+
+------------------------------------------------------------
+     Summary (cpu=0.04min real=0.03min mem=951.7M)                             
+------------------------------------------------------------
+
+Setup views included:
+ setup_func 
+
++--------------------+---------+
+|     Setup mode     |   all   |
++--------------------+---------+
+|           WNS (ns):|  0.337  |
+|           TNS (ns):|  0.000  |
+|    Violating Paths:|    0    |
+|          All Paths:|   65    |
++--------------------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |      0 (0)       |   0.000    |      0 (0)       |
+|   max_tran     |      0 (0)       |   0.000    |      0 (0)       |
+|   max_fanout   |      0 (0)       |     0      |      0 (0)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 27.925%
+Routing Overflow: 0.02% H and 0.03% V
+------------------------------------------------------------
+**optDesign ... cpu = 0:01:22, real = 0:01:23, mem = 754.8M, totSessionCpu=0:02:06 **
+*** Timing Is met
+*** Check timing (0:00:00.0)
+*** Timing Is met
+*** Check timing (0:00:00.0)
+Begin: Area Reclaim Optimization
+Reclaim Optimization WNS Slack 0.000  TNS Slack 0.000 Density 27.92
++----------+---------+--------+--------+------------+--------+
+| Density  | Commits |  WNS   |  TNS   |    Real    |  Mem   |
++----------+---------+--------+--------+------------+--------+
+|    27.92%|        -|   0.000|   0.000|   0:00:00.0| 1085.2M|
+|    27.92%|        0|   0.000|   0.000|   0:00:00.0| 1085.2M|
+|    27.90%|       18|   0.000|   0.000|   0:00:01.0| 1085.2M|
+|    27.90%|        0|   0.000|   0.000|   0:00:00.0| 1085.2M|
+|    27.89%|        7|   0.000|   0.000|   0:00:00.0| 1085.2M|
+|    27.89%|        0|   0.000|   0.000|   0:00:00.0| 1085.2M|
+|    27.89%|        0|   0.000|   0.000|   0:00:00.0| 1085.2M|
++----------+---------+--------+--------+------------+--------+
+Reclaim Optimization End WNS Slack 0.000  TNS Slack 0.000 Density 27.89
+** Finished Core Area Reclaim Optimization (cpu = 0:00:01.8) (real = 0:00:01.0) **
+*** Starting refinePlace (0:02:08 mem=1085.2M) ***
+Total net bbox length = 3.389e+06 (1.655e+06 1.734e+06) (ext = 5.990e+05)
+Move report: Detail placement moves 0 insts, mean move: 0.00 um, max move: 0.00 um
+	Runtime: CPU: 0:00:00.1 REAL: 0:00:01.0 MEM: 1085.2MB
+Summary Report:
+Instances move: 0 (out of 12485 movable)
+Instances flipped: 0
+Mean displacement: 0.00 um
+Max displacement: 0.00 um 
+Total net bbox length = 3.389e+06 (1.655e+06 1.734e+06) (ext = 5.990e+05)
+Runtime: CPU: 0:00:00.1 REAL: 0:00:01.0 MEM: 1085.2MB
+*** Finished refinePlace (0:02:08 mem=1085.2M) ***
+*** maximum move = 0.00 um ***
+*** Finished re-routing un-routed nets (1085.2M) ***
+
+*** Finish Physical Update (cpu=0:00:00.3 real=0:00:01.0 mem=1085.2M) ***
+*** Finished Area Reclaim Optimization (cpu=0:00:02, real=0:00:02, mem=950.90M, totSessionCpu=0:02:08).
+[NR-eGR] honorMsvRouteConstraint: false
+[NR-eGR] honorClockSpecNDR      : 0
+[NR-eGR] minRouteLayer          : 2
+[NR-eGR] maxRouteLayer          : 3
+[NR-eGR] numTracksPerClockWire  : 0
+[NR-eGR] Layer1 has no routable track
+[NR-eGR] Layer2 has single uniform track structure
+[NR-eGR] Layer3 has single uniform track structure
+[NR-eGR] numRoutingBlks=0 numInstBlks=1730 numPGBlocks=274 numBumpBlks=0 numBoundaryFakeBlks=0
+[NR-eGR] numPreroutedNet = 0  numPreroutedWires = 0
+[NR-eGR] Read numTotalNets=12932  numIgnoredNets=0
+[NR-eGR] ============ Routing rule table ============
+[NR-eGR] Rule id 0. Nets 12932 
+[NR-eGR] id=0  ndrTrackId=0  ndrViaId=-1  extraSpace=0  numShields=0  maxHorDemand=1  maxVerDemand=1
+[NR-eGR] Pitch:  L1=1800  L2=2400  L3=3000
+[NR-eGR] ========================================
+[NR-eGR] 
+[NR-eGR] Layer group 1: route 12932 net(s) in layer range [2, 3]
+[NR-eGR] earlyGlobalRoute overflow of layer group 1: 0.02% H + 0.00% V. EstWL: 3.444030e+06um
+[NR-eGR] 
+[NR-eGR] Congestion Analysis Layer By layer: (blocked Gcells are excluded) 
+[NR-eGR]                OverCon            
+[NR-eGR]                 #Gcell     %Gcell
+[NR-eGR] Layer              (1)    OverCon 
+[NR-eGR] ------------------------------------
+[NR-eGR] Layer1       0( 0.00%)   ( 0.00%) 
+[NR-eGR] Layer2       4( 0.02%)   ( 0.02%) 
+[NR-eGR] Layer3       4( 0.02%)   ( 0.02%) 
+[NR-eGR] ------------------------------------
+[NR-eGR] Total        8( 0.02%)   ( 0.02%) 
+[NR-eGR] 
+[NR-eGR] Overflow after earlyGlobalRoute (GR compatible) 0.02% H + 0.02% V
+[NR-eGR] Overflow after earlyGlobalRoute 0.02% H + 0.02% V
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Layer1(metal1)(F) length: 0.000000e+00um, number of vias: 43081
+[NR-eGR] Layer2(metal2)(V) length: 1.905537e+06um, number of vias: 69840
+[NR-eGR] Layer3(metal3)(H) length: 1.705970e+06um, number of vias: 0
+[NR-eGR] Total length: 3.611507e+06um, number of vias: 112921
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total clock nets wire length: 0.000000e+00um 
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] End Peak syMemory usage = 937.8 MB
+[NR-eGR] Early Global Router Kernel+IO runtime : 0.38 seconds
+Extraction called for design 'riscv' of instances=12485 and nets=13007 using extraction engine 'preRoute' .
+PreRoute RC Extraction called for design riscv.
+RC Extraction called in multi-corner(1) mode.
+**WARN: (IMPEXT-6197):	The Cap table file is not specified. This will result in lower parasitic accuracy when using preRoute extraction or postRoute extraction with effort level 'low'. It is recommended to generate the Cap table file using the 'generateCapTbl' command and specify it before extraction using 'create_rc_corner/update_rc_corner -cap_table'.
+Type 'man IMPEXT-6197' for more detail.
+RCMode: PreRoute
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 1.00000
+PreRoute extraction is honoring NDR/Shielding/ExtraSpace for clock nets.
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner resistance tables ...
+PreRoute RC Extraction DONE (CPU Time: 0:00:00.0  Real Time: 0:00:00.0  MEM: 937.766M)
+Compute RC Scale Done ...
+[hotspot] +------------+---------------+---------------+
+[hotspot] |            |   max hotspot | total hotspot |
+[hotspot] +------------+---------------+---------------+
+[hotspot] | normalized |          0.00 |          0.00 |
+[hotspot] +------------+---------------+---------------+
+Local HotSpot Analysis: normalized max congestion hotspot area = 0.00, normalized total congestion hotspot area = 0.00 (area is in unit of 4 std-cell row bins)
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: riscv
+# Design Mode: 250nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB
+# Signoff Settings: SI Off 
+#################################################################################
+AAE_INFO: 1 threads acquired from CTE.
+Calculate early delays in OCV mode...
+Calculate late delays in OCV mode...
+Start delay calculation (fullDC) (1 T). (MEM=993)
+Total number of fetched objects 13003
+End delay calculation. (MEM=985.328 CPU=0:00:02.2 REAL=0:00:02.0)
+End delay calculation (fullDC). (MEM=985.328 CPU=0:00:02.3 REAL=0:00:02.0)
+Begin: GigaOpt postEco DRV Optimization
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        max-tran       |        max-cap        |  max-fanout |  max-length |       setup       |        |        |        |       |          |         |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| nets | terms|  wViol  | nets | terms|  wViol  | nets | terms| nets | terms|   WNS   |   TNS   |  #Buf  |  #Inv  | #Resize|Density|   Real   |   Mem   |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+|     0|     0|     0.00|    10|    10|    -0.02|     0|     0|     0|     0|     0.00|     0.00|       0|       0|       0|  27.89|          |         |
+|     0|     0|     0.00|     0|     0|     0.00|     0|     0|     0|     0|     0.00|     0.00|       8|       0|       3|  27.91| 0:00:00.0|  1076.9M|
+|     0|     0|     0.00|     0|     0|     0.00|     0|     0|     0|     0|     0.00|     0.00|       0|       0|       0|  27.91| 0:00:00.0|  1076.9M|
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+*** Finish DRV Fixing (cpu=0:00:00.4 real=0:00:00.0 mem=1076.9M) ***
+
+*** Starting refinePlace (0:02:13 mem=1092.9M) ***
+Total net bbox length = 3.389e+06 (1.656e+06 1.734e+06) (ext = 5.990e+05)
+Move report: Detail placement moves 0 insts, mean move: 0.00 um, max move: 0.00 um
+	Runtime: CPU: 0:00:00.1 REAL: 0:00:01.0 MEM: 1092.9MB
+Summary Report:
+Instances move: 0 (out of 12493 movable)
+Instances flipped: 0
+Mean displacement: 0.00 um
+Max displacement: 0.00 um 
+Total net bbox length = 3.389e+06 (1.656e+06 1.734e+06) (ext = 5.990e+05)
+Runtime: CPU: 0:00:00.1 REAL: 0:00:01.0 MEM: 1092.9MB
+*** Finished refinePlace (0:02:13 mem=1092.9M) ***
+*** maximum move = 0.00 um ***
+*** Finished re-routing un-routed nets (1092.9M) ***
+
+*** Finish Physical Update (cpu=0:00:00.3 real=0:00:01.0 mem=1092.9M) ***
+End: GigaOpt postEco DRV Optimization
+*** Steiner Routed Nets: 0.684%; Threshold: 100; Threshold for Hold: 100
+Start to check current routing status for nets...
+All nets are already routed correctly.
+End to check current routing status for nets (mem=1073.8M)
+
+Active setup views:
+ setup_func
+  Dominating endpoints: 0
+  Dominating TNS: -0.000
+
+Extraction called for design 'riscv' of instances=12493 and nets=13015 using extraction engine 'preRoute' .
+PreRoute RC Extraction called for design riscv.
+RC Extraction called in multi-corner(1) mode.
+**WARN: (IMPEXT-6197):	The Cap table file is not specified. This will result in lower parasitic accuracy when using preRoute extraction or postRoute extraction with effort level 'low'. It is recommended to generate the Cap table file using the 'generateCapTbl' command and specify it before extraction using 'create_rc_corner/update_rc_corner -cap_table'.
+Type 'man IMPEXT-6197' for more detail.
+RCMode: PreRoute
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 1.00000
+PreRoute extraction is honoring NDR/Shielding/ExtraSpace for clock nets.
+Initializing multi-corner resistance tables ...
+PreRoute RC Extraction DONE (CPU Time: 0:00:00.1  Real Time: 0:00:00.0  MEM: 1051.492M)
+Skewing Data Summary (End_of_FINAL)
+--------------------------------------------------
+ Total skewed count:0
+--------------------------------------------------
+[NR-eGR] honorMsvRouteConstraint: false
+[NR-eGR] honorClockSpecNDR      : 0
+[NR-eGR] minRouteLayer          : 2
+[NR-eGR] maxRouteLayer          : 3
+[NR-eGR] numTracksPerClockWire  : 0
+[NR-eGR] Layer1 has no routable track
+[NR-eGR] Layer2 has single uniform track structure
+[NR-eGR] Layer3 has single uniform track structure
+[NR-eGR] numRoutingBlks=0 numInstBlks=1730 numPGBlocks=274 numBumpBlks=0 numBoundaryFakeBlks=0
+[NR-eGR] numPreroutedNet = 0  numPreroutedWires = 0
+[NR-eGR] Read numTotalNets=12940  numIgnoredNets=0
+[NR-eGR] ============ Routing rule table ============
+[NR-eGR] Rule id 0. Nets 12940 
+[NR-eGR] id=0  ndrTrackId=0  ndrViaId=-1  extraSpace=0  numShields=0  maxHorDemand=1  maxVerDemand=1
+[NR-eGR] Pitch:  L1=1800  L2=2400  L3=3000
+[NR-eGR] ========================================
+[NR-eGR] 
+[NR-eGR] Layer group 1: route 12940 net(s) in layer range [2, 3]
+[NR-eGR] earlyGlobalRoute overflow of layer group 1: 0.01% H + 0.00% V. EstWL: 3.444510e+06um
+[NR-eGR] 
+[NR-eGR] Congestion Analysis Layer By layer: (blocked Gcells are excluded) 
+[NR-eGR]                OverCon            
+[NR-eGR]                 #Gcell     %Gcell
+[NR-eGR] Layer              (1)    OverCon 
+[NR-eGR] ------------------------------------
+[NR-eGR] Layer1       0( 0.00%)   ( 0.00%) 
+[NR-eGR] Layer2       7( 0.04%)   ( 0.04%) 
+[NR-eGR] Layer3       1( 0.01%)   ( 0.01%) 
+[NR-eGR] ------------------------------------
+[NR-eGR] Total        8( 0.02%)   ( 0.02%) 
+[NR-eGR] 
+[NR-eGR] Overflow after earlyGlobalRoute (GR compatible) 0.01% H + 0.04% V
+[NR-eGR] Overflow after earlyGlobalRoute 0.01% H + 0.04% V
+[NR-eGR] End Peak syMemory usage = 1051.5 MB
+[NR-eGR] Early Global Router Kernel+IO runtime : 0.14 seconds
+[hotspot] +------------+---------------+---------------+
+[hotspot] |            |   max hotspot | total hotspot |
+[hotspot] +------------+---------------+---------------+
+[hotspot] | normalized |          0.00 |          0.00 |
+[hotspot] +------------+---------------+---------------+
+Local HotSpot Analysis: normalized max congestion hotspot area = 0.00, normalized total congestion hotspot area = 0.00 (area is in unit of 4 std-cell row bins)
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: riscv
+# Design Mode: 250nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB
+# Signoff Settings: SI Off 
+#################################################################################
+AAE_INFO: 1 threads acquired from CTE.
+Calculate early delays in OCV mode...
+Calculate late delays in OCV mode...
+Start delay calculation (fullDC) (1 T). (MEM=1049.49)
+Total number of fetched objects 13011
+End delay calculation. (MEM=1042.56 CPU=0:00:02.2 REAL=0:00:02.0)
+End delay calculation (fullDC). (MEM=1042.56 CPU=0:00:02.4 REAL=0:00:03.0)
+*** Done Building Timing Graph (cpu=0:00:02.6 real=0:00:03.0 totSessionCpu=0:02:16 mem=1042.6M)
+Reported timing to dir RPT
+**optDesign ... cpu = 0:01:33, real = 0:01:33, mem = 758.3M, totSessionCpu=0:02:16 **
+
+------------------------------------------------------------
+     optDesign Final Summary                             
+------------------------------------------------------------
+
+Setup views included:
+ setup_func 
+
++--------------------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg | default |
++--------------------+---------+---------+---------+
+|           WNS (ns):|  0.004  |   N/A   |  0.004  |
+|           TNS (ns):|  0.000  |   N/A   |  0.000  |
+|    Violating Paths:|    0    |   N/A   |    0    |
+|          All Paths:|   65    |   N/A   |   65    |
++--------------------+---------+---------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |      0 (0)       |   0.000    |      0 (0)       |
+|   max_tran     |      0 (0)       |   0.000    |      0 (0)       |
+|   max_fanout   |      0 (0)       |     0      |      0 (0)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 27.909%
+Routing Overflow: 0.01% H and 0.04% V
+------------------------------------------------------------
+**optDesign ... cpu = 0:01:34, real = 0:01:34, mem = 758.0M, totSessionCpu=0:02:17 **
+*** Finished optDesign ***
+     flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:                                       0.000 ns          0.004 ns  final
+UM: Capturing floorplan image ...
+     flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:                                                                   opt_design_prects
+*** Free Virtual Timing Model ...(mem=916.9M)
+**place_opt_design ... cpu = 0:02:06, real = 0:02:07, mem = 892.5M **
+*** Finished GigaPlace ***
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPEXT-6197          5  The Cap table file is not specified. Thi...
+WARNING   IMPEXT-2882          2  Unable to find the resistance for via '%...
+WARNING   IMPSP-9531           1  Turning off clkGateAware when timingDriv...
+WARNING   IMPSP-9025           2  No scan chain specified/traced.          
+WARNING   IMPOPT-576           1  %d nets have unplaced terms.             
+WARNING   IMPOPT-665         163  %s : Net has unplaced terms or is connec...
+WARNING   IMPOPT-6118          1  The following cells have a dont_touch pr...
+WARNING   IMPTCM-77           10  Option "%s" for command %s is obsolete a...
+*** Message Summary: 185 warning(s), 0 error(s)
+
+<CMD> um::pop_snapshot_stack
+<CMD> um::set_metric -name design.power_domains -value {}
+<CMD> um::set_metric -name design.instances.icg -value 0
+<CMD> um::set_metric -name design.area.icg -value {0 um^2}
+<CMD> um::get_metric -pending design.instances.register
+<CMD> um::set_metric -name design.instances.register -value 1023
+<CMD> um::get_metric -pending design.area.register
+<CMD> um::set_metric -name design.area.register -value 883872
+<CMD> um::set_metric -name design.instances.power_switch -value 0
+<CMD> um::set_metric -name design.area.power_switch -value {0 um^2}
+<CMD> um::set_metric -name design.instances.iso_ls -value 0
+<CMD> um::set_metric -name design.area.iso_ls -value {0 um^2}
+UM: Capturing floorplan image ...
+<CMD> um::set_metric -name design.floorplan.image -value {boundary { data { G0.0,0.0,0.0,3999.0,4000.8,3999.0,4000.8,0.0,} fill_color {#FFFFFF} stroke_color {#002794} } ports { data { C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, C0.0,0.0,2, } fill_color {#CA354D} stroke_color {#CA354D} } }
+<CMD> report_message -errors
+<CMD> get_metric -id current -uuid 5e150772 alerts
+<CMD> get_metric -id current -uuid 5e150772 flow.memory.instant
+<CMD> get_metric -id current -uuid 5e150772 flow.memory.resident.instant
+<CMD> get_metric -id current -uuid 5e150772 flow.memory.resident.peak.instant
+<CMD> get_metric -id current -uuid 5e150772 flow.tool.name.short
+<CMD> get_metric -id current -uuid 5e150772 flow.tool.version
+<CMD> get_metric -id current -uuid 5e150772 metric.version.instant
+<CMD> get_metric -id current -uuid 5e150042 flow.memory.instant
+<CMD> get_metric -id current -uuid 5e150042 flow.memory.resident.instant
+<CMD> get_metric -id current -uuid 5e150042 flow.memory.resident.peak.instant
+<CMD> get_metric -id current -uuid 5e150042 flow.tool.name.short
+<CMD> get_metric -id current -uuid 5e150042 flow.tool.version
+<CMD> get_metric -id current -uuid 5e150042 metric.version.instant
+<CMD> get_metric -id current -uuid 5e150042 name
+<CMD> get_metric -id current -uuid 5e150040 flow.memory.instant
+<CMD> get_metric -id current -uuid 5e150042 flow.memory
+<CMD> get_metric -id current -uuid 5e150040 flow.memory.resident.instant
+<CMD> get_metric -id current -uuid 5e150042 flow.memory.resident
+<CMD> get_metric -id current -uuid 5e150040 flow.memory.resident.peak.instant
+<CMD> get_metric -id current -uuid 5e150042 flow.memory.resident.peak
+<CMD> get_metric -id current -uuid 5e150040 flow.tool.name.short
+<CMD> get_metric -id current -uuid 5e150040 flow.tool.version
+<CMD> get_metric -id current -uuid 5e150040 metric.version.instant
+<CMD> get_metric -id current -uuid 5e1500a3 flow.memory.instant
+<CMD> get_metric -id current -uuid 5e1500a3 flow.memory.resident.instant
+<CMD> get_metric -id current -uuid 5e1500a3 flow.memory.resident.peak.instant
+<CMD> get_metric -id current -uuid 5e1500a3 flow.tool.name.short
+<CMD> get_metric -id current -uuid 5e1500a3 flow.tool.version
+<CMD> get_metric -id current -uuid 5e1500a3 metric.version.instant
+<CMD> get_metric -id current -uuid 5e15005f alerts
+<CMD> get_metric -id current -uuid 5e1500a3 name
+<CMD> get_metric -id current -uuid 5e15005f flow.memory.instant
+<CMD> get_metric -id current -uuid 5e150040 flow.memory
+<CMD> get_metric -id current -uuid 5e1500a3 flow.memory
+<CMD> get_metric -id current -uuid 5e15005f flow.memory.resident.instant
+<CMD> get_metric -id current -uuid 5e150040 flow.memory.resident
+<CMD> get_metric -id current -uuid 5e1500a3 flow.memory.resident
+<CMD> get_metric -id current -uuid 5e15005f flow.memory.resident.peak.instant
+<CMD> get_metric -id current -uuid 5e150040 flow.memory.resident.peak
+<CMD> get_metric -id current -uuid 5e1500a3 flow.memory.resident.peak
+<CMD> get_metric -id current -uuid 5e15005f flow.tool.name.short
+<CMD> get_metric -id current -uuid 5e15005f flow.tool.version
+<CMD> get_metric -id current -uuid 5e15005f metric.version.instant
+<CMD> get_metric -id current -uuid 5e1500a7 flow.memory.instant
+<CMD> get_metric -id current -uuid 5e1500a7 flow.memory.resident.instant
+<CMD> get_metric -id current -uuid 5e1500a7 flow.memory.resident.peak.instant
+<CMD> get_metric -id current -uuid 5e1500a7 flow.tool.name.short
+<CMD> get_metric -id current -uuid 5e1500a7 flow.tool.version
+<CMD> get_metric -id current -uuid 5e1500a7 metric.version.instant
+<CMD> get_metric -id current -uuid 5e1500a6 alerts
+<CMD> get_metric -id current -uuid 5e1500a7 name
+<CMD> get_metric -id current -uuid 5e1500a6 flow.memory.instant
+<CMD> get_metric -id current -uuid 5e1500a7 flow.memory
+<CMD> get_metric -id current -uuid 5e1500a6 flow.memory.resident.instant
+<CMD> get_metric -id current -uuid 5e1500a7 flow.memory.resident
+<CMD> get_metric -id current -uuid 5e1500a6 flow.memory.resident.peak.instant
+<CMD> get_metric -id current -uuid 5e1500a7 flow.memory.resident.peak
+<CMD> get_metric -id current -uuid 5e1500a6 flow.tool.name.short
+<CMD> get_metric -id current -uuid 5e1500a6 flow.tool.version
+<CMD> get_metric -id current -uuid 5e1500a6 metric.version.instant
+<CMD> get_metric -id current -uuid 5e15005d alerts
+<CMD> get_metric -id current -uuid 5e1500a6 name
+<CMD> get_metric -id current -uuid 5e15005d flow.memory.instant
+<CMD> get_metric -id current -uuid 5e15005f flow.memory
+<CMD> get_metric -id current -uuid 5e1500a6 flow.memory
+<CMD> get_metric -id current -uuid 5e15005d flow.memory.resident.instant
+<CMD> get_metric -id current -uuid 5e15005f flow.memory.resident
+<CMD> get_metric -id current -uuid 5e1500a6 flow.memory.resident
+<CMD> get_metric -id current -uuid 5e15005d flow.memory.resident.peak.instant
+<CMD> get_metric -id current -uuid 5e15005f flow.memory.resident.peak
+<CMD> get_metric -id current -uuid 5e1500a6 flow.memory.resident.peak
+<CMD> get_metric -id current -uuid 5e15005d flow.tool.name.short
+<CMD> get_metric -id current -uuid 5e15005d flow.tool.version
+<CMD> get_metric -id current -uuid 5e15005d metric.version.instant
+<CMD> get_metric -id current -uuid 5e15005d name
+<CMD> get_metric -id current -uuid 5e15005a flow.memory.instant
+<CMD> get_metric -id current -uuid 5e150772 flow.memory
+<CMD> get_metric -id current -uuid 5e15005d flow.memory
+<CMD> get_metric -id current -uuid 5e15005a flow.memory.resident.instant
+<CMD> get_metric -id current -uuid 5e150772 flow.memory.resident
+<CMD> get_metric -id current -uuid 5e15005d flow.memory.resident
+<CMD> get_metric -id current -uuid 5e15005a flow.memory.resident.peak.instant
+<CMD> get_metric -id current -uuid 5e150772 flow.memory.resident.peak
+<CMD> get_metric -id current -uuid 5e15005d flow.memory.resident.peak
+<CMD> get_metric -id current -uuid 5e15005a flow.tool.name.short
+<CMD> get_metric -id current -uuid 5e15005a flow.tool.version
+<CMD> get_metric -id current -uuid 5e15005a metric.version.instant
+     flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:        127.12            128          0.000 ns          0.004 ns  place
+<CMD> um::enable_metric
+<FF> MAILING RESULTS TO ryanridley46@gmail.com
+<CMD> saveDesign DBS/place.enc -compress
+#% Begin save design ... (date=07/21 17:27:53, mem=725.6M)
+% Begin Save netlist data ... (date=07/21 17:27:53, mem=726.5M)
+Writing Binary DB to DBS/place.enc.dat.tmp/riscv.v.bin in single-threaded mode...
+% End Save netlist data ... (date=07/21 17:27:53, total cpu=0:00:00.0, real=0:00:00.0, peak res=731.1M, current mem=731.1M)
+% Begin Save AAE data ... (date=07/21 17:27:53, mem=731.1M)
+Saving AAE Data ...
+% End Save AAE data ... (date=07/21 17:27:53, total cpu=0:00:00.0, real=0:00:00.0, peak res=731.1M, current mem=731.1M)
+% Begin Save clock tree data ... (date=07/21 17:27:53, mem=731.6M)
+% End Save clock tree data ... (date=07/21 17:27:53, total cpu=0:00:00.0, real=0:00:00.0, peak res=731.6M, current mem=731.6M)
+Saving preference file DBS/place.enc.dat.tmp/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+% Begin Save floorplan data ... (date=07/21 17:27:53, mem=732.9M)
+Saving floorplan file ...
+% End Save floorplan data ... (date=07/21 17:27:53, total cpu=0:00:00.1, real=0:00:00.0, peak res=733.1M, current mem=733.1M)
+Saving Drc markers ...
+... No Drc file written since there is no markers found.
+% Begin Save placement data ... (date=07/21 17:27:53, mem=733.1M)
+** Saving stdCellPlacement_binary (version# 1) ...
+% End Save placement data ... (date=07/21 17:27:53, total cpu=0:00:00.0, real=0:00:00.0, peak res=733.3M, current mem=733.3M)
+% Begin Save routing data ... (date=07/21 17:27:53, mem=733.3M)
+Saving route file ...
+*** Completed saveRoute (cpu=0:00:00.1 real=0:00:00.0 mem=898.6M) ***
+% End Save routing data ... (date=07/21 17:27:53, total cpu=0:00:00.2, real=0:00:00.0, peak res=734.4M, current mem=734.4M)
+Saving property file DBS/place.enc.dat.tmp/riscv.prop
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=898.6M) ***
+% Begin Save power constraints data ... (date=07/21 17:27:53, mem=736.5M)
+% End Save power constraints data ... (date=07/21 17:27:53, total cpu=0:00:00.0, real=0:00:00.0, peak res=736.6M, current mem=736.6M)
+Saving rc congestion map DBS/place.enc.dat.tmp/riscv.congmap.gz ...
+rc_typ
+Generated self-contained design place.enc.dat.tmp
+#% End save design ... (date=07/21 17:27:53, total cpu=0:00:00.7, real=0:00:00.0, peak res=736.6M, current mem=731.6M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+<CMD> saveNetlist DBS/LEC/place.v.gz
+Writing Netlist "DBS/LEC/place.v.gz" ...
+<FF> ==============================================
+<FF>          COMPLETED STEP : place
+<FF>         ELAPSED RUNTIME : 0 days, 00:02:08
+<FF> ==============================================
+
+*** Memory Usage v#1 (Current mem = 914.734M, initial mem = 183.406M) ***
+*** Message Summary: 296 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:02:18, real=0:02:19, mem=914.7M) ---

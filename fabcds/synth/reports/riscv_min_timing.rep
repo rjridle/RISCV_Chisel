@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : riscv
+Version: M-2016.12-SP1
+Date   : Tue Jul 21 13:27:41 2020
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: pcReg_reg[15]
+              (rising edge-triggered flip-flop)
+  Endpoint: io_pc[15] (output port clocked by vclk)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  pcReg_reg[15]/CLK (DFFPOSX1)         0.000000   0.000000 r
+  pcReg_reg[15]/Q (DFFPOSX1)           0.266237   0.266237 r
+  io_pc[15] (out)                      0.000000   0.266237 r
+  data arrival time                               0.266237
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
