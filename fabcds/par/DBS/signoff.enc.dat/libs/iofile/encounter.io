@@ -1,1 +1,0 @@
-/home/rjridle/fabcds33/par/encounter.io

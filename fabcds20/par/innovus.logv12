@@ -1,0 +1,166 @@
+[07/23 02:41:37      0s] 
+[07/23 02:41:37      0s] Cadence Innovus(TM) Implementation System.
+[07/23 02:41:37      0s] Copyright 2017 Cadence Design Systems, Inc. All rights reserved worldwide.
+[07/23 02:41:37      0s] 
+[07/23 02:41:37      0s] Version:	v17.11-s080_1, built Fri Aug 4 11:13:11 PDT 2017
+[07/23 02:41:37      0s] Options:	-init DBS/signoff.enc 
+[07/23 02:41:37      0s] Date:		Thu Jul 23 02:41:37 2020
+[07/23 02:41:37      0s] Host:		rivendell.ecen.okstate.edu (x86_64 w/Linux 2.6.32-754.25.1.el6.x86_64) (6cores*12cpus*Intel(R) Xeon(R) CPU E5-4617 0 @ 2.90GHz 15360KB)
+[07/23 02:41:37      0s] OS:		Red Hat Enterprise Linux Server release 6.10 (Santiago)
+[07/23 02:41:37      0s] 
+[07/23 02:41:37      0s] License:
+[07/23 02:41:37      0s] 		invs	Innovus Implementation System	17.1	checkout succeeded
+[07/23 02:41:37      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[07/23 02:41:47      9s] @(#)CDS: Innovus v17.11-s080_1 (64bit) 08/04/2017 11:13 (Linux 2.6.18-194.el5)
+[07/23 02:41:47      9s] @(#)CDS: NanoRoute 17.11-s080_1 NR170721-2155/17_11-UB (database version 2.30, 390.7.1) {superthreading v1.44}
+[07/23 02:41:47      9s] @(#)CDS: AAE 17.11-s034 (64bit) 08/04/2017 (Linux 2.6.18-194.el5)
+[07/23 02:41:47      9s] @(#)CDS: CTE 17.11-s053_1 () Aug  1 2017 23:31:41 ( )
+[07/23 02:41:47      9s] @(#)CDS: SYNTECH 17.11-s012_1 () Jul 21 2017 02:29:12 ( )
+[07/23 02:41:47      9s] @(#)CDS: CPE v17.11-s095
+[07/23 02:41:47      9s] @(#)CDS: IQRC/TQRC 16.1.1-s215 (64bit) Thu Jul  6 20:18:10 PDT 2017 (Linux 2.6.18-194.el5)
+[07/23 02:41:47      9s] @(#)CDS: OA 22.50-p063 Fri Feb  3 19:45:13 2017
+[07/23 02:41:47      9s] @(#)CDS: SGN 10.10-p124 (19-Aug-2014) (64 bit executable)
+[07/23 02:41:47      9s] @(#)CDS: RCDB 11.10
+[07/23 02:41:47      9s] --- Running on rivendell.ecen.okstate.edu (x86_64 w/Linux 2.6.32-754.25.1.el6.x86_64) (6cores*12cpus*Intel(R) Xeon(R) CPU E5-4617 0 @ 2.90GHz 15360KB) ---
+[07/23 02:41:47     10s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_59389_rivendell.ecen.okstate.edu_rjridle_yD0t4P.
+
+[07/23 02:41:47     10s] Change the soft stacksize limit to 0.2%RAM (258 mbytes). Set global soft_stack_size_limit to change the value.
+[07/23 02:41:47     10s] 
+[07/23 02:41:47     10s] **INFO:  MMMC transition support version v31-84 
+[07/23 02:41:47     10s] 
+[07/23 02:41:47     10s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[07/23 02:41:47     10s] <CMD> suppressMessage ENCEXT-2799
+[07/23 02:41:47     10s] <CMD> getVersion
+[07/23 02:41:48     10s] <CMD> getDrawView
+[07/23 02:41:48     10s] <CMD> loadWorkspace -name Physical
+[07/23 02:41:48     10s] Sourcing file "DBS/signoff.enc" ...
+[07/23 02:41:48     10s] <CMD> restoreDesign /home/rjridle/fabcds25/par/DBS/signoff.enc.dat riscv
+[07/23 02:41:48     10s] #% Begin load design ... (date=07/23 02:41:48, mem=445.1M)
+[07/23 02:41:48     10s] Set Default Input Pin Transition as 0.1 ps.
+[07/23 02:41:48     10s] **WARN: (GLOBAL-100):	Global 'timing_enable_default_delay_arc' has become obsolete. It will be removed in the next release.
+[07/23 02:41:48     10s] % Begin Load MMMC data ... (date=07/23 02:41:48, mem=446.7M)
+[07/23 02:41:48     10s] % End Load MMMC data ... (date=07/23 02:41:48, total cpu=0:00:00.0, real=0:00:00.0, peak res=446.8M, current mem=446.8M)
+[07/23 02:41:48     10s] 
+[07/23 02:41:48     10s] Loading LEF file /home/rjridle/fabcds25/par/DBS/signoff.enc.dat/libs/lef/osu05_stdcells.lef ...
+[07/23 02:41:48     10s] **WARN: (IMPLF-108):	There is no overlap layer defined in any LEF file
+[07/23 02:41:48     10s] so you are unable to create rectilinear partition in a hierarchical flow.
+[07/23 02:41:48     10s] Set DBUPerIGU to M2 pitch 2400.
+[07/23 02:41:48     10s] 
+[07/23 02:41:48     10s] viaInitial starts at Thu Jul 23 02:41:48 2020
+**WARN: (IMPPP-556):	A SAMENET rule between different layers for a 4 layer technology is probably a mistake. Stacked vias will be difficult to create and probably will not be what expected. Check if this rule can be removed from the technology file: SAMENET cc via 0.150 ;
+[07/23 02:41:48     10s] **WARN: (IMPPP-556):	A SAMENET rule between different layers for a 4 layer technology is probably a mistake. Stacked vias will be difficult to create and probably will not be what expected. Check if this rule can be removed from the technology file: SAMENET via via2 0.150 ;
+[07/23 02:41:48     10s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN1 GENERATE.
+[07/23 02:41:48     10s] Type 'man IMPPP-557' for more detail.
+[07/23 02:41:48     10s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN2 GENERATE.
+[07/23 02:41:48     10s] Type 'man IMPPP-557' for more detail.
+[07/23 02:41:48     10s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN3 GENERATE.
+[07/23 02:41:48     10s] Type 'man IMPPP-557' for more detail.
+[07/23 02:41:48     10s] viaInitial ends at Thu Jul 23 02:41:48 2020
+Loading view definition file from /home/rjridle/fabcds25/par/DBS/signoff.enc.dat/viewDefinition.tcl
+[07/23 02:41:48     10s] Reading libs_tt timing library '/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib' ...
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AND2X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AND2X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AND2X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AND2X2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AND2X2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AND2X2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AOI21X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AOI21X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'C' of cell 'AOI21X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AOI21X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'C' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'D' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'BUFX2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'BUFX2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'BUFX4' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'BUFX4' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'CLKBUF1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/23 02:41:48     10s] Message <TECHLIB-436> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[07/23 02:41:48     10s] Read 39 cells in library 'osu05_stdcells' 
+[07/23 02:41:48     10s] *** End library_loading (cpu=0.00min, real=0.00min, mem=17.7M, fe_cpu=0.18min, fe_real=0.18min, fe_mem=523.1M) ***
+[07/23 02:41:48     10s] % Begin Load netlist data ... (date=07/23 02:41:48, mem=483.5M)
+[07/23 02:41:48     10s] *** Begin netlist parsing (mem=523.1M) ***
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'YPAD' of cell 'PADGND' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'PADGND' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'YPAD' of cell 'PADVDD' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'PADVDD' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'XNOR2X1' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'XNOR2X1' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'TBUFX2' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'TBUFX2' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'TBUFX1' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'TBUFX1' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'OR2X2' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'OR2X2' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'OR2X1' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'OR2X1' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'OAI22X1' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'OAI22X1' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'OAI21X1' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'OAI21X1' is defined in LEF but not in the timing library.
+[07/23 02:41:48     10s] **WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+[07/23 02:41:48     10s] To increase the message display limit, refer to the product command reference manual.
+[07/23 02:41:48     10s] Created 39 new cells from 1 timing libraries.
+[07/23 02:41:48     10s] Reading netlist ...
+[07/23 02:41:48     10s] Backslashed names will retain backslash and a trailing blank character.
+[07/23 02:41:48     10s] Reading verilogBinary netlist '/home/rjridle/fabcds25/par/DBS/signoff.enc.dat/riscv.v.bin'
+[07/23 02:41:48     10s] Reading binary database version 1
+[07/23 02:41:48     10s] 
+[07/23 02:41:48     10s] *** Memory Usage v#1 (Current mem = 536.121M, initial mem = 183.406M) ***
+[07/23 02:41:48     10s] *** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=536.1M) ***
+[07/23 02:41:48     10s] % End Load netlist data ... (date=07/23 02:41:48, total cpu=0:00:00.1, real=0:00:00.0, peak res=483.5M, current mem=467.6M)
+[07/23 02:41:48     10s] Set top cell to riscv.
+[07/23 02:41:48     11s] **WARN: (IMPTS-124):	Timing library description of pin 'YPAD' is missing from cell 'PADGND' in timing library 'osu05_stdcells'.
+[07/23 02:41:48     11s] **WARN: (IMPTS-124):	Timing library description of pin 'YPAD' is missing from cell 'PADVDD' in timing library 'osu05_stdcells'.
+[07/23 02:41:48     11s] Hooked 39 DB cells to tlib cells.
+[07/23 02:41:48     11s] Starting recursive module instantiation check.
+[07/23 02:41:48     11s] No recursion found.
+[07/23 02:41:48     11s] Building hierarchical netlist for Cell riscv ...
+[07/23 02:41:48     11s] *** Netlist is unique.
+[07/23 02:41:48     11s] ** info: there are 41 modules.
+[07/23 02:41:48     11s] ** info: there are 17209 stdCell insts.
+[07/23 02:41:48     11s] 
+[07/23 02:41:48     11s] *** Memory Usage v#1 (Current mem = 569.543M, initial mem = 183.406M) ***
+[07/23 02:41:48     11s] *info: set bottom ioPad orient R0
+[07/23 02:41:48     11s] **ERROR: (IMPSYUTIL-96):	Cannot open (for read) FE IO file file: '/home/rjridle/fabcds25/par/DBS/signoff.enc.dat/libs/iofile/encounter.io'. The reason is: No such file or directory
+Type 'man IMPSYUTIL-96' for more detail.
+[07/23 02:41:48     11s] **WARN: (IMPFP-110):	Failed to open file '/home/rjridle/fabcds25/par/DBS/signoff.enc.dat/libs/iofile/encounter.io' for reading.
+[07/23 02:41:48     11s] 
+[07/23 02:41:48     11s] 
+[07/23 02:41:48     11s] ERROR: 
+[07/23 02:41:48     11s] 
+[07/23 02:41:48     11s] 
+[07/23 02:41:48     11s]     while executing
+[07/23 02:41:48     11s] "error $catchMsg"
+[07/23 02:41:48     11s]     (procedure "restoreDesign" line 29)
+[07/23 02:41:48     11s] 
+[07/23 02:41:48     11s] 
+[07/23 02:41:48     11s] 
+[07/23 02:41:48     11s] ERROR : The software requires that designs with timing library information be properly initialized into 
+[07/23 02:41:48     11s]         a multi-mode/multi-corner (MMMC) environment. An error has occurred that has prevented proper initialization
+[07/23 02:41:48     11s]         You should review your design import configuration to make sure all file references are valid and
+[07/23 02:41:48     11s]         the MMMC configuration is correct and complete.
+[07/23 02:41:48     11s] 
+[07/23 02:41:48     11s] 
+[07/23 02:41:48     11s] 
+[07/23 02:41:48     11s] *** Memory Usage v#1 (Current mem = 570.543M, initial mem = 183.406M) ***
+[07/23 02:41:48     11s] 
+[07/23 02:41:48     11s] *** Summary of all messages that are not suppressed in this session:
+[07/23 02:41:48     11s] Severity  ID               Count  Summary                                  
+[07/23 02:41:48     11s] WARNING   IMPLF-108            1  There is no overlap layer defined in any...
+[07/23 02:41:48     11s] WARNING   IMPFP-110            1  Failed to open file '%s' for reading.    
+[07/23 02:41:48     11s] WARNING   IMPTS-124            2  Timing library description of pin '%s' i...
+[07/23 02:41:48     11s] WARNING   IMPVL-159           68  Pin '%s' of cell '%s' is defined in LEF ...
+[07/23 02:41:48     11s] ERROR     IMPSYUTIL-96         1  Cannot open (for %s) %s file: '%s'. The ...
+[07/23 02:41:48     11s] WARNING   IMPPP-556            2  A SAMENET rule between different layers ...
+[07/23 02:41:48     11s] WARNING   IMPPP-557            3  A single-layer VIARULE GENERATE for turn...
+[07/23 02:41:48     11s] WARNING   GLOBAL-100           1  Global '%s' has become obsolete. It will...
+[07/23 02:41:48     11s] WARNING   TECHLIB-436         20  Attribute '%s' on '%s' pin '%s' of cell ...
+[07/23 02:41:48     11s] *** Message Summary: 98 warning(s), 1 error(s)
+[07/23 02:41:48     11s] 
+[07/23 02:41:48     11s] --- Ending "Innovus" (totcpu=0:00:11.1, real=0:00:11.0, mem=570.5M) ---

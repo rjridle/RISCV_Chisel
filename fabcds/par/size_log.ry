@@ -1,5 +1,0 @@
-7/20/2020-7:36:AM - First iteration of 33 Mhz RISCV Chisel pnr at 4000x40000 showed that DIE was too small.
-			For 10Mhz design, 4000x4000 was sufficient to fit the design.
-			Increasing DIE size for 33MHz by 2x - 8000x8000.
-			Hoping this will fix DRC's, mainly metal shorts.
-

@@ -4,7 +4,6 @@ import chisel3._
 import chisel3.util._
 import chisel3.iotesters.{ChiselFlatSpec, Driver, PeekPokeTester}
 import chisel3.util.experimental.loadMemoryFromFile
-
 /*
 class MessageTop extends Bundle {
   val instr_pulled = UInt(32.W)
@@ -25,8 +24,7 @@ class MessageTop extends Bundle {
     p"|___________________________\n" 
   }
 }
-*/
-/*
+
 class MessageRiscv extends Bundle {
   val instr = UInt(32.W)
   val memReadData = SInt(32.W)
@@ -60,7 +58,7 @@ class riscv extends Module {
     val dp = Module(new datapath)
     val d = Module(new decoder)
 
-    /*
+/*
     // print info
     riscvMessage.instr := io.instr
     riscvMessage.memReadData := io.memReadData
@@ -68,8 +66,7 @@ class riscv extends Module {
     riscvMessage.memWriteData := io.memWriteData
     riscvMessage.memAddress := io.memAddress
     printf(p"$riscvMessage")
-    */
-
+*/
     d.io.opcode := io.instr(6,0)
     d.io.funct7 := io.instr(31,25)
     d.io.funct3 := io.instr(14,12)
@@ -95,7 +92,6 @@ class riscv extends Module {
     io.memAddress := dp.io.memAddress
     io.memWriteData := dp.io.memWriteData
 }
-
 /*
 class MessageExtend extends Bundle {
   val instr12 = UInt(12.W)
@@ -133,14 +129,13 @@ class extend extends Module {
     }.otherwise {
         io.extImm := 0.S
     }
-    
-    /*
+/*
     extendMessage.instr12 := io.instr12
     extendMessage.instr20 := io.instr20
     extendMessage.immsrc := io.immSrc
     extendMessage.extImm := io.extImm
     printf(p"$extendMessage")
-    */
+*/
 }
 
 /*
@@ -436,8 +431,7 @@ class decoder extends Module {
         io.fpuRegWriteEnable := 0.U
         io.fpuControl := 0.U
     }
-    
-    /*
+/*    
     // print info
     decoderMessage.branchSrc := io.branchSrc
     decoderMessage.opcode := io.opcode
@@ -456,7 +450,7 @@ class decoder extends Module {
     decoderMessage.fpuControl := io.fpuControl
     decoderMessage.fpuRegWriteEnable := io.fpuRegWriteEnable
     printf(p"$decoderMessage")
-    */
+*/
 }
 
 /*
@@ -576,8 +570,6 @@ class datapath extends Module {
 
     //Mem logic
     memImm := (Cat(io.instr(31,25), io.instr(11,7))).asSInt
-    //io.memAddress := (Mux(io.memToReg.andR, extImm, memImm) + rf.io.regReadData1).asUInt
-    //io.memAddress := (memImm + rf.io.regReadData1).asUInt
     io.memAddress := ((Mux(io.memToReg.andR, extImm, memImm)).asSInt + rf.io.regReadData1).asUInt
 
     //regFile logic
@@ -613,8 +605,7 @@ class datapath extends Module {
     io.zeroFlag := alu.io.zeroFlag
     io.lessThanFlag := alu.io.lessThanFlag
     io.greaterThanFlag := alu.io.greaterThanFlag
-
-    /*
+/*
     datapathMessage.instr := io.instr
     datapathMessage.memToReg := io.memToReg
     datapathMessage.memImm := memImm
@@ -634,7 +625,7 @@ class datapath extends Module {
     datapathMessage.regWriteData := regWriteData
     datapathMessage.regSrc := io.regSrc
     printf(p"$datapathMessage")
-    */
+*/
 }
 
 /*
@@ -685,7 +676,7 @@ class regfile extends Module {
     io.regReadData1 := rf(io.regReadAddress1)
     io.regReadData2 := rf(io.regReadAddress2)
 
-    /*
+/*
     regfileMessage.regWriteData := io.regWriteData
     regfileMessage.regWriteEnable := io.regWriteEnable
     regfileMessage.regWriteAddress := io.regWriteAddress
@@ -704,7 +695,7 @@ class regfile extends Module {
         printf(p"$regVal\n")
     }
     printf("|___________________________\n")
-    */
+*/
 }
 
 /*
@@ -744,7 +735,7 @@ class fpuRegfile extends Module {
     })
 
     val fpu_rf = Mem(32, SInt(32.W))
-   //val fpuRegfileMessage = Wire(new MessageFpuRegFile)
+    //val fpuRegfileMessage = Wire(new MessageFpuRegFile)
 
     fpu_rf(0.U) := 1036831949.S
     
@@ -757,7 +748,7 @@ class fpuRegfile extends Module {
     io.fpuRegReadData1 := fpu_rf(io.fpuRegReadAddress1)
     io.fpuRegReadData2 := fpu_rf(io.fpuRegReadAddress2)
 
-    /*
+/*
     fpuRegfileMessage.fpuRegWriteData := io.fpuRegWriteData
     fpuRegfileMessage.fpuRegWriteEnable := io.fpuRegWriteEnable
     fpuRegfileMessage.fpuRegWriteAddress := io.fpuRegWriteAddress
@@ -776,7 +767,7 @@ class fpuRegfile extends Module {
         printf(p"${Hexadecimal(regVal)}\n")
     }
     printf("|___________________________\n")
-    */
+*/
 }
 
 /*
@@ -859,7 +850,7 @@ class alu extends Module {
     io.lessThanFlag := (io.a < io.b)
     io.greaterThanFlag := (io.a > io.b)
 
-    /*
+/*
     aluMessage.a := io.a
     aluMessage.b := io.b
     aluMessage.out := io.out
@@ -868,7 +859,7 @@ class alu extends Module {
     aluMessage.lessThanFlag := io.lessThanFlag
     aluMessage.greaterThanFlag := io.greaterThanFlag
     printf(p"$aluMessage")
-    */
+*/
 }
 
 /*
@@ -996,7 +987,7 @@ class fpu extends Module {
     //Final result
     io.s := Cat(0.U, exponent, fract)
 
-    /*
+/*
     fpuMessage.a := io.a
     fpuMessage.b := io.b
     fpuMessage.mant_a := mant_a
@@ -1018,7 +1009,7 @@ class fpu extends Module {
     fpuMessage.fract := fract
     fpuMessage.s := io.s
     printf(p"$fpuMessage")
-    */
+*/
 }
 
 class imem extends Module {
@@ -1068,8 +1059,8 @@ class dmem extends Module {
     }
 
     io.memReadData := mem(io.memAddress)
-    
-    /*
+
+/*
     printf("\n\n\nMemory___________________________\n")
     for(j <- 0 to 31){
         val memVal = Wire(SInt(32.W))
@@ -1084,7 +1075,7 @@ class dmem extends Module {
     dmemMessage.memWriteEnable := io.memWriteEnable
     dmemMessage.memReadData := io.memReadData
     printf(p"$dmemMessage")
-    */
+*/
 }
 
 class top extends Module {
@@ -1102,8 +1093,7 @@ class top extends Module {
     dm.io.memWriteEnable := r.io.memWriteEnable
     
     r.io.memReadData := dm.io.memReadData
-    
-    /*
+/*
     // print info
     topMessage.instr_pulled := im.io.inst
     topMessage.pc_pulled := r.io.pc / 4.U
@@ -1112,7 +1102,8 @@ class top extends Module {
     topMessage.memAddress := r.io.memAddress
     topMessage.memReadData := dm.io.memReadData
     printf(p"$topMessage")
-    */
+*/
+
     im.io.instAddress := r.io.pc / 4.U
     
     r.io.instr := im.io.inst

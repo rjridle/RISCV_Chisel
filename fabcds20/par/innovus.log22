@@ -1,0 +1,652 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v19.15-s075_1, built Thu Jul 2 18:24:05 PDT 2020
+Options:	-init DBS/signoff.enc 
+Date:		Fri Aug  7 17:08:16 2020
+Host:		rivendell.ecen.okstate.edu (x86_64 w/Linux 2.6.32-754.25.1.el6.x86_64) (6cores*12cpus*Intel(R) Xeon(R) CPU E5-4617 0 @ 2.90GHz 15360KB)
+OS:		Red Hat Enterprise Linux Server release 6.10 (Santiago)
+
+License:
+		invs	Innovus Implementation System	19.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (258 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+Sourcing file "DBS/signoff.enc" ...
+<CMD> is_common_ui_mode
+<CMD> restoreDesign /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat riscv
+#% Begin load design ... (date=08/07 17:08:30, mem=518.3M)
+Set Default Input Pin Transition as 0.1 ps.
+Loading design 'riscv' saved by 'Innovus' '19.15-s075_1' on 'Fri Aug 7 16:52:31 2020'.
+% Begin Load MMMC data ... (date=08/07 17:08:30, mem=520.6M)
+% End Load MMMC data ... (date=08/07 17:08:30, total cpu=0:00:00.0, real=0:00:00.0, peak res=520.8M, current mem=520.8M)
+rc_typ
+
+Loading LEF file /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/lef/osu05_stdcells.lef ...
+**WARN: (IMPLF-108):	There is no overlap layer defined in any LEF file
+so you are unable to create rectilinear partition in a hierarchical flow.
+Set DBUPerIGU to M2 pitch 2400.
+
+viaInitial starts at Fri Aug  7 17:08:30 2020
+**WARN: (IMPPP-556):	A SAMENET rule between different layers for a 4 layer technology is probably a mistake. Stacked vias will be difficult to create and probably will not be what expected. Check if this rule can be removed from the technology file: SAMENET cc via 0.150000 ;
+**WARN: (IMPPP-556):	A SAMENET rule between different layers for a 4 layer technology is probably a mistake. Stacked vias will be difficult to create and probably will not be what expected. Check if this rule can be removed from the technology file: SAMENET via via2 0.150000 ;
+**WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN1 GENERATE.
+Type 'man IMPPP-557' for more detail.
+**WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN2 GENERATE.
+Type 'man IMPPP-557' for more detail.
+**WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN3 GENERATE.
+Type 'man IMPPP-557' for more detail.
+viaInitial ends at Fri Aug  7 17:08:30 2020
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/viewDefinition.tcl
+Reading libs_tt timing library '/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib' ...
+Read 39 cells in library 'osu05_stdcells' 
+*** End library_loading (cpu=0.00min, real=0.00min, mem=20.0M, fe_cpu=0.24min, fe_real=0.23min, fe_mem=796.1M) ***
+% Begin Load netlist data ... (date=08/07 17:08:30, mem=532.4M)
+*** Begin netlist parsing (mem=796.1M) ***
+**WARN: (IMPVL-159):	Pin 'YPAD' of cell 'PADGND' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'PADGND' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'YPAD' of cell 'PADVDD' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'PADVDD' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'XNOR2X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'XNOR2X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'TBUFX2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'TBUFX2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'TBUFX1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'TBUFX1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'OR2X2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'OR2X2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'OR2X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'OR2X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'OAI22X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'OAI22X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'OAI21X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'OAI21X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Created 39 new cells from 1 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/riscv.v.bin'
+Reading binary database version 2 in 1-threaded mode
+
+*** Memory Usage v#1 (Current mem = 810.113M, initial mem = 295.395M) ***
+*** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=810.1M) ***
+% End Load netlist data ... (date=08/07 17:08:30, total cpu=0:00:00.1, real=0:00:00.0, peak res=541.7M, current mem=541.7M)
+Set top cell to riscv.
+**WARN: (IMPTS-124):	Timing library description of pin 'YPAD' is missing from cell 'PADGND' in timing library 'osu05_stdcells'.
+**WARN: (IMPTS-124):	Timing library description of pin 'YPAD' is missing from cell 'PADVDD' in timing library 'osu05_stdcells'.
+Hooked 39 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell riscv ...
+*** Netlist is unique.
+** info: there are 41 modules.
+** info: there are 31964 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 848.535M, initial mem = 295.395M) ***
+*info: set bottom ioPad orient R0
+Reading IO assignment file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" ...
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 9: Pad: c01 NW
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 11: Pad: c02 NE
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 13: Pad: c03 SE
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 15: Pad: c04 SW
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 20: Pad: p39 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 22: Pad: p38 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 24: Pad: p37 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 26: Pad: p36 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 28: Pad: p35 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 30: Pad: p34 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 32: Pad: p33 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 34: Pad: p32 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 36: Pad: p31 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 38: Pad: p30 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 43: Pad: p29 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 45: Pad: p28 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 47: Pad: p27 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 49: Pad: p26 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 51: Pad: p25 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 53: Pad: p24 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 55: Pad: p23 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 57: Pad: p22 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 59: Pad: p21 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 61: Pad: p20 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 66: Pad: p19 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 68: Pad: p18 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 70: Pad: p17 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 72: Pad: p16 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 74: Pad: p15 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 76: Pad: p14 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 78: Pad: p13 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 80: Pad: p12 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 82: Pad: p11 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 84: Pad: p10 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 89: Pad: p09 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 91: Pad: p08 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 93: Pad: p07 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 95: Pad: p06 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 97: Pad: p05 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 99: Pad: p04 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 101: Pad: p03 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 103: Pad: p02 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 105: Pad: p01 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 107: Pad: p00 E
+  Reason: unable to determine object from name.
+**WARN: (IMPFP-710):	File version 0 is too old.
+IO file version '0' is too old, will try to place io cell any way.
+**WARN: (IMPFP-3961):	The techSite 'IO' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Horizontal Layer M1 offset = 1500 (derived)
+Vertical Layer M2 offset = 1200 (derived)
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Default Input Pin Transition as 0.1 ps.
+Loading preference file /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/gui.pref.tcl ...
+##  Process: 250           (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 250nm process node: total_c_th=5, relative_c_th=0.03 and coupling_c_th=3.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	For postRoute effortLevel low extraction, the coupling_c_th value will be used only when the -capFilterMode parameter of the setExtractRCMode command is set to relAndCoup or relOrCoup. Default value of -capFilterMode parameter in postRoute extraction effortLevel low is relOnly.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'standard'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'low'.
+**WARN: (IMPOPT-7177):	Option medium in 'setOptMode -usefulSkewCCOpt' is deprecated. It still works, but it will be removed in the future release.
+**WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+**WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+**WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+**WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+**WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+This command "restoreDesign /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat ..." required an extra checkout of license tpsxl.
+Additional license(s) checked out: 1 'Tempus_Timing_Signoff_XL' license(s)
+addRing command will ignore shorts while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will consider rows while creating rings.
+The ring targets are set to core/block ring wires.
+*Info: initialize multi-corner CTS.
+Reading timing constraints file '/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/mmmc/modes/setup_func_mode/setup_func_mode.sdc' ...
+Current (total cpu=0:00:16.5, real=0:00:16.0, peak res=806.1M, current mem=798.0M)
+riscv
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:00.4, real=0:00:01.0, peak res=817.3M, current mem=817.3M)
+Current (total cpu=0:00:17.0, real=0:00:17.0, peak res=817.3M, current mem=817.3M)
+Reading latency file '/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/mmmc/views/setup_func/latency.sdc' ...
+Reading latency file '/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/mmmc/views/hold_func/latency.sdc' ...
+Total number of combinational cells: 26
+Total number of sequential cells: 4
+Total number of tristate cells: 2
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUFX2 BUFX4 CLKBUF1
+Total number of usable buffers: 3
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: INVX2 INVX1 INVX4 INVX8
+Total number of usable inverters: 4
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: CLKBUF2 CLKBUF3
+Total number of identified usable delay cells: 2
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+% Begin Load MMMC data post ... (date=08/07 17:08:33, mem=838.3M)
+% End Load MMMC data post ... (date=08/07 17:08:33, total cpu=0:00:00.0, real=0:00:00.0, peak res=838.3M, current mem=838.3M)
+Reading floorplan file - /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/riscv.fp.gz (mem = 1129.9M).
+% Begin Load floorplan data ... (date=08/07 17:08:33, mem=838.4M)
+*info: reset 32468 existing net BottomPreferredLayer and AvoidDetour
+net ignore based on current view = 0
+Deleting old partition specification.
+Set FPlanBox to (0 0 6000000 6000000)
+**WARN: (IMPFP-3961):	The techSite 'IO' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Horizontal Layer M1 offset = 1500 (derived)
+Vertical Layer M2 offset = 1200 (derived)
+ ... processed partition successfully.
+Reading binary special route file /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/riscv.fp.spr.gz (Created by Innovus v19.15-s075_1 on Fri Aug  7 16:52:28 2020, version: 1)
+Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=840.4M, current mem=840.4M)
+There are 180 nets with weight being set
+There are 69 nets with bottomPreferredRoutingLayer being set
+There are 180 nets with avoidDetour being set
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+% End Load floorplan data ... (date=08/07 17:08:33, total cpu=0:00:00.1, real=0:00:00.0, peak res=841.1M, current mem=841.1M)
+Reading congestion map file /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/riscv.route.congmap.gz ...
+% Begin Load SymbolTable ... (date=08/07 17:08:33, mem=841.3M)
+Suppress "**WARN ..." messages.
+Un-suppress "**WARN ..." messages.
+% End Load SymbolTable ... (date=08/07 17:08:34, total cpu=0:00:00.8, real=0:00:01.0, peak res=861.8M, current mem=861.8M)
+Loading place ...
+% Begin Load placement data ... (date=08/07 17:08:34, mem=861.8M)
+Reading placement file - /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/riscv.place.gz.
+** Reading stdCellPlacement_binary (Created by Innovus v19.15-s075_1 on Fri Aug  7 16:52:28 2020, version# 2) ...
+Read Views for adaptive view pruning ...
+Read 0 views from Binary DB for adaptive view pruning
+*** Checked 2 GNC rules.
+*** applyConnectGlobalNets disabled.
+*** Completed restorePlace (cpu=0:00:01.5 real=0:00:01.0 mem=1227.8M) ***
+Total net length = 4.990e+06 (2.463e+06 2.528e+06) (ext = 4.675e+04)
+% End Load placement data ... (date=08/07 17:08:35, total cpu=0:00:01.5, real=0:00:01.0, peak res=949.3M, current mem=946.8M)
+Reading PG file /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/riscv.pg.gz
+*** Completed restorePGFile (cpu=0:00:00.1 real=0:00:01.0 mem=1229.8M) ***
+% Begin Load routing data ... (date=08/07 17:08:36, mem=952.8M)
+Reading routing file - /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/riscv.route.gz.
+Reading Innovus routing data (Created by Innovus v19.15-s075_1 on Fri Aug  7 16:52:28 2020 Format: 19.1) ...
+*** Total 32436 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.3 real=0:00:00.0 mem=1267.8M) ***
+% End Load routing data ... (date=08/07 17:08:36, total cpu=0:00:00.3, real=0:00:00.0, peak res=991.5M, current mem=991.0M)
+Loading Drc markers ...
+... 29081 markers are loaded ...
+... 4 geometry drc markers are loaded ...
+... 0 antenna drc markers are loaded ...
+TAT_INFO: restoreCongMap REAL = 0 : CPU = 0 : MEM = 0.
+Reading property file /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/riscv.prop
+*** Completed restoreProperty (cpu=0:00:00.4 real=0:00:01.0 mem=1279.8M) ***
+Set Default Input Pin Transition as 0.1 ps.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-2773):	The via resistance between layers M0 and M1 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+Type 'man IMPEXT-2773' for more detail.
+**WARN: (IMPEXT-2773):	The via resistance between layers M1 and M2 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+Type 'man IMPEXT-2773' for more detail.
+**WARN: (IMPEXT-2773):	The via resistance between layers M2 and M3 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+Type 'man IMPEXT-2773' for more detail.
+**WARN: (IMPEXT-2766):	The sheet resistance for layer M1 is not defined in the cap table. Therefore, the LEF value 0.09 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+**WARN: (IMPEXT-2766):	The sheet resistance for layer M2 is not defined in the cap table. Therefore, the LEF value 0.09 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+**WARN: (IMPEXT-2766):	The sheet resistance for layer M3 is not defined in the cap table. Therefore, the LEF value 0.05 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+Summary of Active RC-Corners : 
+ 
+ Analysis View: setup_func
+    RC-Corner Name        : rc_typ
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from Cap Table]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+ 
+ Analysis View: hold_func
+    RC-Corner Name        : rc_typ
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from Cap Table]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+Initializing multi-corner resistance tables ...
+Start generating vias ...
+#Skip building auto via since it is not turned on.
+Via generation completed.
+% Begin Load power constraints ... (date=08/07 17:08:37, mem=1013.0M)
+'set_default_switching_activity' finished successfully.
+% End Load power constraints ... (date=08/07 17:08:38, total cpu=0:00:00.5, real=0:00:01.0, peak res=1013.2M, current mem=1013.2M)
+% Begin load AAE data ... (date=08/07 17:08:38, mem=1013.2M)
+AAE DB initialization (MEM=1313.71 CPU=0:00:00.2 REAL=0:00:00.0) 
+% End load AAE data ... (date=08/07 17:08:38, total cpu=0:00:00.7, real=0:00:00.0, peak res=1022.6M, current mem=1022.6M)
+Restoring CCOpt config...
+  Extracting original clock gating for clk...
+    clock_tree clk contains 1024 sinks and 0 clock gates.
+    Extraction for clk complete.
+  Extracting original clock gating for clk done.
+  The skew group clk/setup_func_mode was created. It contains 1024 sinks and 1 sources.
+  The skew group clk/setup_func_mode was created. It contains 1024 sinks and 1 sources.
+Restoring CCOpt config done.
+Total number of combinational cells: 26
+Total number of sequential cells: 4
+Total number of tristate cells: 2
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUFX2 BUFX4 CLKBUF1
+Total number of usable buffers: 3
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: INVX2 INVX1 INVX4 INVX8
+Total number of usable inverters: 4
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: CLKBUF2 CLKBUF3
+Total number of identified usable delay cells: 2
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+**WARN: (IMPCTE-107):	The following globals have been obsoleted since version 19.15-s075_1. They will be removed in the next release. 
+timing_enable_default_delay_arc
+#% End load design ... (date=08/07 17:08:39, total cpu=0:00:08.4, real=0:00:09.0, peak res=1026.6M, current mem=1008.9M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-108            1  There is no overlap layer defined in any...
+WARNING   IMPFP-710            1  File version %s is too old.              
+WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+WARNING   IMPTS-124            2  Timing library description of pin '%s' i...
+WARNING   IMPEXT-2766          3  The sheet resistance for layer %s is not...
+WARNING   IMPEXT-2773          3  The via resistance between layers %s and...
+WARNING   IMPCK-8086           4  The command %s is obsolete and will be r...
+WARNING   IMPVL-159           68  Pin '%s' of cell '%s' is defined in LEF ...
+WARNING   IMPPP-556            2  A SAMENET rule between different layers ...
+WARNING   IMPPP-557            3  A single-layer VIARULE GENERATE for turn...
+WARNING   IMPOPT-7177          1  Option %s in 'setOptMode -usefulSkewCCOp...
+WARNING   IMPCTE-107           1  The following globals have been obsolete...
+WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+*** Message Summary: 94 warning(s), 0 error(s)
+
+<CMD> win
+<CMD> setLayerPreference violation -isVisible 1
+<CMD> violationBrowser -all -no_display_false -displayByLayer
+<CMD_INTERNAL> violationBrowserMarkFalse -tool Verify
+Marked 29079 violation(s) false.
+<CMD_INTERNAL> violationBrowserClose
+<CMD> zoomBox 106.93800 217.24700 6197.57000 5827.24700
+<CMD> zoomBox 691.97000 656.90700 5869.00700 5425.40700
+<CMD> zoomBox 1968.62900 1698.39300 5147.97800 4626.84900
+<CMD> zoomBox 2725.67700 2371.32500 4678.19500 4169.76300
+<CMD> zoomBox 3199.91900 2787.78700 4399.00900 3892.25300
+<CMD> zoomBox 3568.29900 3105.27800 4194.23200 3681.81700
+<CMD> zoomBox 3720.77900 3242.76000 4105.18000 3596.82700
+<CMD> zoomBox 3816.45700 3322.30900 4052.52700 3539.75000
+<CMD> zoomBox 3876.52300 3369.78700 4021.50000 3503.32300
+<CMD> zoomBox 3921.88500 3406.00500 3997.56400 3475.71200
+<CMD> zoomBox 3940.88600 3420.43600 3987.36400 3463.24600
+<CMD> zoomBox 3951.62700 3429.97100 3980.17200 3456.26300
+<CMD> zoomBox 3957.95300 3435.82600 3975.48400 3451.97400
+<CMD> zoomBox 3961.83700 3439.43100 3972.60500 3449.34900
+<CMD> zoomBox 3960.67900 3438.41100 3973.34700 3450.07900
+<CMD> zoomBox 3962.82100 3440.29700 3971.97400 3448.72800
+<CMD> zoomBox 3961.83600 3439.43000 3972.60500 3449.34900
+<CMD> zoomBox 3957.70100 3435.81600 3975.23700 3451.96800
+<CMD> selectWire 3965.5500 3445.0500 3971.2500 3445.9500 2 {io_memWriteData[22]}
+<CMD> deselectAll
+<CMD> selectWire 3965.5500 3445.0500 3971.2500 3445.9500 2 {io_memWriteData[22]}
+<CMD> uiSetTool addWire
+<CMD> setEditMode -type regular
+<CMD> pan 4.19700 -522.54300
+<CMD> pan -0.22600 -526.17300
+<CMD> uiSetTool addWire
+<CMD> uiSetTool select
+<CMD> deselectAll
+<CMD> selectWire 3965.5500 3445.0500 3971.2500 3445.9500 2 {io_memWriteData[22]}
+<CMD> deleteSelectedFromFPlan
+<CMD> undo
+<CMD> deselectAll
+<CMD> selectWire 3965.5500 3445.0500 3971.2500 3445.9500 2 {io_memWriteData[22]}
+<CMD> deselectAll
+<CMD> selectWire 3965.5500 3445.0500 3971.2500 3445.9500 2 {io_memWriteData[22]}
+<CMD> zoomBox 3963.88800 3438.36300 3972.78800 3450.03300
+<CMD> zoomBox 3965.48400 3440.26300 3971.91500 3448.69600
+<CMD> deselectAll
+<CMD> selectWire 3965.5500 3445.0500 3971.2500 3445.9500 2 {io_memWriteData[22]}
+<CMD> setEditMode -nets {io_memWriteData[22]}
+<CMD> gui_select -rect {3967.49700 3445.32000 3967.45000 3444.49100}
+<CMD> deselectAll
+<CMD> selectWire 3965.5500 3445.0500 3971.2500 3445.9500 2 {io_memWriteData[22]}
+<CMD> pan -0.59200 -525.07900
+<CMD> deleteSelectedFromFPlan
+<CMD> uiSetTool addWire
+<CMD> getEditMode -quiet -force_patch
+<CMD> getEditMode -quiet -layer_horizontal
+<CMD> getEditMode -quiet -layer_vertical
+<CMD> setEditMode -width_horizontal 0.900
+<CMD> setEditMode -width_vertical 0.900
+<CMD> setEditMode -spacing_horizontal 0.900
+<CMD> setEditMode -spacing_vertical 0.900
+<CMD> setEditMode -spacing 0.900
+<CMD> editAddRoute 3966.16 3445.36
+<CMD> editAddRoute 3967.33 3443.98
+<CMD> zoomBox 3966.05300 3445.02400 3966.01700 3444.89400
+<CMD> zoomBox 3965.98700 3444.90300 3966.07200 3445.01400
+<CMD> zoomBox 3965.98400 3444.89300 3966.08400 3445.02400
+<CMD> zoomBox 3965.96900 3444.85000 3966.13200 3445.06400
+<CMD> zoomBox 3965.94300 3444.78100 3966.21000 3445.13100
+<CMD> zoomBox 3965.93200 3444.74900 3966.24600 3445.16100
+<CMD> zoomBox 3965.88300 3444.61600 3966.39500 3445.28700
+<CMD> zoomBox 3965.86100 3444.55600 3966.46300 3445.34600
+<CMD> zoomBox 3965.76700 3444.31800 3966.74800 3445.60400
+<CMD> zoomBox 3965.71800 3444.22000 3966.87200 3445.73300
+<CMD> zoomBox 3965.41800 3443.62900 3967.63000 3446.52900
+<CMD> zoomBox 3965.30000 3443.45600 3967.90200 3446.86800
+<CMD> zoomBox 3963.98300 3441.64800 3970.88500 3450.69800
+<CMD> zoomBox 3963.14300 3440.50500 3972.69600 3453.03100
+<CMD> zoomBox 3961.98000 3438.92300 3975.20300 3456.26100
+<CMD> zoomBox 3958.14400 3433.68200 3983.47600 3466.89800
+<CMD> zoomBox 3953.10100 3426.76300 3994.35100 3480.85100
+<CMD> zoomBox 3948.08200 3419.87500 4005.17600 3494.73900
+<CMD> zoomBox 3953.58000 3425.47700 3994.83100 3479.56700
+<CMD> zoomBox 3957.52100 3429.50300 3987.32600 3468.58400
+<CMD> zoomBox 3962.39900 3434.55400 3977.95900 3454.95700
+<CMD> zoomBox 3963.84500 3436.10400 3975.08800 3450.84600
+<CMD> zoomBox 3964.41000 3436.70900 3973.96700 3449.24000
+<CMD> editAddRoute 3966.14 3443.85
+<CMD> zoomSelected
+<CMD> pan -2.05900 -524.93800
+<CMD> uiSetTool select
+<CMD> selectWire 3965.5500 3445.0500 3966.4500 3448.9500 2 {io_memWriteData[22]}
+<CMD> deleteSelectedFromFPlan
+<CMD> uiSetTool addWire
+<CMD> getEditMode -quiet -force_patch
+<CMD> getEditMode -quiet -layer_horizontal
+<CMD> getEditMode -quiet -layer_vertical
+<CMD> editAddRoute 3966.29 3448.38
+<CMD> getEditMode -quiet -force_patch
+<CMD> getEditMode -quiet -layer_horizontal
+<CMD> getEditMode -quiet -layer_vertical
+<CMD> editAddRoute 3966.73 3449.19
+<CMD> zoomSelected
+<CMD> zoomSelected
+<CMD> zoomSelected
+<CMD> undo
+<CMD> getEditMode -quiet -force_patch
+<CMD> getEditMode -quiet -layer_horizontal
+<CMD> getEditMode -quiet -layer_vertical
+<CMD> editAddRoute 3966.28 3445.65
+<CMD> pan -0.93300 -518.65400
+<CMD> editAddRoute 3966.38 3451.97
+<CMD> getEditMode -quiet -force_patch
+<CMD> getEditMode -quiet -layer_horizontal
+<CMD> getEditMode -quiet -layer_vertical
+<CMD> editAddRoute 3966.2 3446.51
+<CMD> editAddRoute 3966.36 3451
+<CMD> getEditMode -quiet -force_patch
+<CMD> getEditMode -quiet -layer_horizontal
+<CMD> getEditMode -quiet -layer_vertical
+<CMD> editAddRoute 3966.28 3446.67
+<CMD> editAddRoute 3966.45 3451.11
+<CMD> getEditMode -quiet -force_patch
+<CMD> getEditMode -quiet -layer_horizontal
+<CMD> getEditMode -quiet -layer_vertical
+<CMD> editAddRoute 3966.4 3446.58
+<CMD> zoomBox 3962.62400 3444.59400 3969.53000 3453.64900
+<CMD> getEditMode -quiet -force_patch
+<CMD> getEditMode -quiet -layer_horizontal
+<CMD> getEditMode -quiet -layer_vertical
+<CMD> editAddRoute 3966.07 3451.54
+<CMD> editAddRoute 3965.72 3447.89
+<CMD> zoomBox 3965.61300 3447.74800 3965.61300 3447.72200
+<CMD> zoomBox 3965.59900 3447.71700 3965.62700 3447.75400
+<CMD> zoomBox 3965.59100 3447.70800 3965.63700 3447.76800
+<CMD> zoomBox 3965.57100 3447.68400 3965.66200 3447.80300
+<CMD> zoomBox 3965.54600 3447.65400 3965.69500 3447.84900
+<CMD> zoomBox 3965.52000 3447.62500 3965.72700 3447.89700
+<CMD> zoomBox 3965.46100 3447.56400 3965.79900 3448.00700
+<CMD> zoomBox 3965.32400 3447.41800 3965.97100 3448.26600
+<CMD> zoomBox 3965.13900 3447.21800 3966.19500 3448.60300
+<CMD> zoomBox 3964.89100 3446.90900 3966.61200 3449.16600
+<CMD> zoomBox 3964.30000 3446.17000 3967.59900 3450.49600
+<CMD> zoomBox 3963.51700 3445.19600 3968.88900 3452.24000
+<CMD> editAddRoute 3966.05 3448.49
+<CMD> editCommitRoute 3966.05 3448.49
+<CMD> undo
+<CMD> getEditMode -quiet -force_patch
+<CMD> getEditMode -quiet -layer_horizontal
+<CMD> getEditMode -quiet -layer_vertical
+<CMD> editAddRoute 3966.06 3451.42
+<CMD> editAddRoute 3965.96 3447.9
+<CMD> editCommitRoute 3965.96 3447.9
+<CMD> zoomBox 3963.84500 3445.81500 3968.41100 3451.80200
+<CMD> pan 0.49600 -516.07000
+<CMD> getEditMode -quiet -force_patch
+<CMD> getEditMode -quiet -layer_horizontal
+<CMD> getEditMode -quiet -layer_vertical
+<CMD> editAddRoute 3966.06 3450.02
+<CMD> editAddRoute 3966.13 3451.05
+<CMD> editCommitRoute 3966.13 3451.05
+<CMD> getEditMode -quiet -force_patch
+<CMD> getEditMode -quiet -layer_horizontal
+<CMD> getEditMode -quiet -layer_vertical
+<CMD> editAddRoute 3965.95 3449.95
+<CMD> editAddRoute 3966.31 3452.9
+<CMD> editCommitRoute 3966.31 3452.92
+<CMD> pan -0.99200 -519.31600
+<CMD> zoomBox 3962.04300 3444.05900 3968.36300 3452.34600
+<CMD> pan 1.28100 -515.97000
+<CMD> uiSetTool select
+<CMD> deselectAll
+<CMD> selectWire 3965.5500 3448.0500 3966.4500 3450.1500 2 {io_memWriteData[22]}
+<CMD> deleteSelectedFromFPlan
+<CMD> pan -0.30300 -520.24200
+<CMD> selectWire 3965.5500 3445.0500 3966.4500 3448.9500 2 {io_memWriteData[22]}
+<CMD> uiSetTool addWire
+<CMD> setEditMode -type regular
+<CMD> setEditMode -type regular
+<CMD> getEditMode -quiet -force_patch
+<CMD> getEditMode -quiet -layer_horizontal
+<CMD> getEditMode -quiet -layer_vertical
+<CMD> editAddRoute 3966.24 3446.29
+<CMD> editAddRoute 3966.09 3451.07
+<CMD> zoomBox 3963.45900 3443.99000 3968.83100 3451.03400
+<CMD> zoomBox 3964.14500 3445.41200 3968.02600 3450.50100
+<CMD> zoomBox 3963.83000 3444.73800 3968.39600 3450.72500
+<CMD> zoomBox 3962.50900 3442.04400 3969.94500 3451.79400
+<CMD> pan -0.01400 -517.50800
+<CMD> editAddRoute 3966.15 3451.19
+<CMD> editCommitRoute 3966.15 3451.19
+<CMD> zoomBox 3961.81800 3444.28500 3970.56700 3455.75700
+<CMD> uiSetTool cutWire
+<CMD> uiSetTool cutWire
+<CMD> editCutWire -only_visible_wires -line { 3965.54 3447.685 3966.507 3447.685 }
+Cut-line is auto-snapped from (3965.540000 3447.685000 3966.507000 3447.685000) to (3965.550000 3447.750000 3966.450000 3447.750000).
+<CMD> zoomBox 3962.49400 3444.77100 3969.93100 3454.52200
+<CMD> editCutWire -only_visible_wires -line { 3965.877 3446.852 3966.562 3447.537 }
+Cut-line is auto-snapped from (3965.877000 3446.852000 3966.562000 3447.537000) to (3965.850000 3446.850000 3966.600000 3447.600000).
+<CMD> zoomBox 3963.65100 3445.83800 3968.21900 3451.82800
+<CMD> zoomBox 3964.36900 3446.51200 3967.17400 3450.19000
+<CMD> zoomBox 3964.81000 3446.93600 3966.53300 3449.19500
+<CMD> editCutWire -only_visible_wires -line { 3965.559 3447.885 3966.463 3447.885 }
+Cut-line is auto-snapped from (3965.559000 3447.885000 3966.463000 3447.885000) to (3965.550000 3447.900000 3966.450000 3447.900000).
+<CMD> editCutWire -only_visible_wires -line { 3965.549 3447.888 3966.454 3447.888 }
+Cut-line is auto-snapped from (3965.549000 3447.888000 3966.454000 3447.888000) to (3965.550000 3447.900000 3966.450000 3447.900000).
+<CMD> editCutWire -only_visible_wires -line { 3966.454 3447.891 3966.454 3447.891 }
+Cut-line is auto-snapped from (3966.454000 3447.891000 3966.454000 3447.891000) to (3966.450000 3447.900000 3966.450000 3447.900000).
+<CMD> zoomOut
+
+*** Memory Usage v#1 (Current mem = 1390.859M, initial mem = 295.395M) ***
+*** Message Summary: 94 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=1:06:05, real=16:43:00, mem=1390.9M) ---

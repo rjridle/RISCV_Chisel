@@ -1,1 +1,0 @@
-/home/rjridle/risc-v-chisel/fabcds/synth/mapped/riscv.sdc
