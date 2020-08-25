@@ -1,7 +1,7 @@
-module BindsTo_0_imem( // @[:@917.2]
-  input         clock, // @[:@918.4]
-  input  [31:0] io_instAddress, // @[:@920.4]
-  output [31:0] io_inst // @[:@920.4]
+module BindsTo_0_imem( // @[:@693.2]
+  input         clock, // @[:@694.4]
+  input  [31:0] io_instAddress, // @[:@696.4]
+  output [31:0] io_inst // @[:@696.4]
 );
 
 initial begin

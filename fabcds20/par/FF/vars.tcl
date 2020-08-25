@@ -1,6 +1,6 @@
 # ############################################################################ #
 # Foundation Flow Codegen Vars Record
-# Executed on 04:50:46 PM(Aug07) by user: rjridle
+# Executed on 04:47:40 PM(Aug19) by user: rjridle
 # Copyright 2008-2012, Cadence Design Systems, Inc.
 # All Rights Reserved
 # ############################################################################ #
@@ -11,8 +11,8 @@ if {![info exists vars]} {
 }
 global env
 set env(VPATH) make
-set vars(ff_exe_dir) "/home/rjridle/fabs/fabcds20/par"
-set vars(rundir) "/home/rjridle/fabs/fabcds20/par"
+set vars(ff_exe_dir) "/home/rjridle/risc-v-chisel/fabcds20/par"
+set vars(rundir) "/home/rjridle/risc-v-chisel/fabcds20/par"
 set vars(script_dir) "FF"
 
 set vars(plug_dir) "PLUG"
@@ -24,12 +24,13 @@ set vars(active_hold_views) {hold_func}
 set vars(active_setup_views) {setup_func}
 set vars(activity_file_format) {TCF}
 set vars(add_tracks) {true}
+set vars(all_analysis_views) {hold_func setup_func}
 set vars(arg_list) {codegen edi flat makefile mode rc novus synth_flow rundir script_dir style user_mode verbose version}
-set vars(argv) {signoff}
+set vars(argv) {init}
 set vars(backup_data) {0}
 set vars(batch) {true}
 set vars(black_box) {true}
-set vars(bsteps) {signoff}
+set vars(bsteps) {init}
 set vars(budget_mode) {giga_opt}
 set vars(captbl_file) {}
 set vars(capture_metrics) {true}
@@ -59,7 +60,7 @@ set vars(cts,time_design,skip) {true}
 set vars(cts_cells) {CLKBUF1 CLKBUF2 CLKBUF3}
 set vars(cts_engine) {ccopt}
 set vars(custom_rundir_name_append) {}
-set vars(cwd) {/home/rjridle/fabs/fabcds20/par}
+set vars(cwd) {/home/rjridle/risc-v-chisel/fabcds20/par}
 set vars(data_root) {../synth/mapped}
 set vars(dbs_dir) {DBS}
 set vars(dbs_format) {fe}
@@ -68,7 +69,7 @@ set vars(default_hold_view) {hold_func}
 set vars(default_setup_view) {setup_func}
 set vars(delay_corners) {corner_tt}
 set vars(design) {riscv}
-set vars(design_root) {/home/rjridle/fabs/fabcds20/par/../..}
+set vars(design_root) {/home/rjridle/risc-v-chisel/fabcds20/par/../..}
 set vars(eco_dir) {ECO}
 set vars(edi) {false}
 set vars(enable_aocv) {false}
@@ -86,7 +87,7 @@ set vars(enable_signoff_eco) {false}
 set vars(enable_socv) {false}
 set vars(enable_ss) {false}
 set vars(error_count) {1}
-set vars(execute_string) {/usr/bin/tclsh /home/rjridle/fabs/fabcds20/par/SCRIPTS/gen_flow.tcl -m flat -d FF -v 16.1.0 -s . -y none -n signoff}
+set vars(execute_string) {/usr/bin/tclsh /home/rjridle/risc-v-chisel/fabcds20/par/SCRIPTS/gen_flow.tcl -m flat -d FF -v 16.1.0 -s . -y none -n init}
 set vars(fast_min,clock_cell_early) {1.00}
 set vars(fast_min,clock_cell_late) {1.00}
 set vars(fast_min,clock_net_early) {1.00}
@@ -141,17 +142,17 @@ set vars(info_count) {1}
 set vars(initialized) {1}
 set vars(innovus_config_tcl) {./innovus_config.tcl}
 set vars(insert_feedthrough) {1}
-set vars(lef_files) {/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lef}
-set vars(library_root) {/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib}
+set vars(lef_files) {/home/rjridle/osugooglelib/outputs/s8_osu130.lef}
+set vars(library_root) {~/osugooglelib/outputs}
 set vars(library_sets) {libs_tt}
-set vars(libs_tt,timing) {/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib}
+set vars(libs_tt,timing) {/home/rjridle/osugooglelib/outputs/s8_osu130_TT_1P8_25C.ccs.lib}
 set vars(litho_driven_routing) {false}
 set vars(loaded) {1}
 set vars(local_cpus) {1}
 set vars(log_dir) {LOG}
 set vars(lp_config_tcl) {}
 set vars(mail,to) {ryanridley46@gmail.com}
-set vars(make) {signoff}
+set vars(make) {init}
 set vars(make_browser) {netscape}
 set vars(make_syn_tool) {genus}
 set vars(make_syn_tool_args) {-64 -legacy_ui}
@@ -180,6 +181,7 @@ set vars(place,time_design,skip) {true}
 set vars(place_io_pins) {false}
 set vars(place_opt_design) {true}
 set vars(placement_based_ptn) {0}
+set vars(plugins) {pre_init_tcl post_init_tcl}
 set vars(plugins_defined) {pre_init_tcl post_init_tcl pre_place_tcl pre_cts_tcl post_cts_tcl}
 set vars(plugins_found) {pre_init_tcl post_init_tcl pre_place_tcl pre_cts_tcl post_cts_tcl}
 set vars(post_cts_tcl) {PLUG/INNOVUS/post_cts.tcl}
@@ -189,13 +191,13 @@ set vars(postroute_setup_hold) {true}
 set vars(power_analysis_view) {}
 set vars(power_effort) {none}
 set vars(power_nets) {VDD}
-set vars(pre_cts_sdc) {/home/rjridle/fabs/fabcds20/synth/mapped/riscv.sdc}
+set vars(pre_cts_sdc) {/home/rjridle/risc-v-chisel/fabcds20/synth/mapped/riscv.sdc}
 set vars(pre_cts_tcl) {PLUG/INNOVUS/pre_cts.tcl}
 set vars(pre_init_tcl) {PLUG/INNOVUS/pre_init.tcl}
 set vars(pre_place_tcl) {PLUG/INNOVUS/pre_place.tcl}
 set vars(preroute_opt_design) {false}
 set vars(proc_file) {1}
-set vars(process) {250nm}
+set vars(process) {130nm}
 set vars(qxconf_file) {}
 set vars(qxlayermap_file) {}
 set vars(qxlib_file) {}
@@ -233,13 +235,13 @@ set vars(run_clp) {true}
 set vars(run_lec) {true}
 set vars(rundir_namechange_method) {suffix}
 set vars(save_constraints) {0}
-set vars(script_path) {/home/rjridle/fabs/fabcds20/par/SCRIPTS}
-set vars(script_root) {/home/rjridle/fabs/fabcds20/par/SCRIPTS}
+set vars(script_path) {/home/rjridle/risc-v-chisel/fabcds20/par/SCRIPTS}
+set vars(script_root) {/home/rjridle/risc-v-chisel/fabcds20/par/SCRIPTS}
 set vars(seed) {1}
 set vars(setup_analysis_views) {hold_func}
 set vars(setup_func,constraint_mode) {setup_func_mode}
 set vars(setup_func,delay_corner) {corner_tt}
-set vars(setup_func_mode,pre_cts_sdc) {/home/rjridle/fabs/fabcds20/synth/mapped/riscv.sdc}
+set vars(setup_func_mode,pre_cts_sdc) {/home/rjridle/risc-v-chisel/fabcds20/synth/mapped/riscv.sdc}
 set vars(setup_path) {.}
 set vars(setup_tcl) {./setup.tcl}
 set vars(signoff_extraction_effort) {low}
@@ -254,8 +256,8 @@ set vars(slow_max,data_cell_late) {1.00}
 set vars(slow_max,data_net_early) {1.00}
 set vars(slow_max,data_net_late) {1.00}
 set vars(sourced) {true}
-set vars(step) {signoff}
-set vars(step_arg) {signoff}
+set vars(step) {init}
+set vars(step_arg) {init}
 set vars(steps) {init place prects cts postcts postcts_hold route postroute postroute_hold signoff}
 set vars(stop_step) {signoff}
 set vars(style) {none}
@@ -267,8 +269,8 @@ set vars(threads) {1}
 set vars(time_info_db) {RPT/time_info.db}
 set vars(time_info_rpt) {RPT/time_info.rpt}
 set vars(timelib) {}
-set vars(timelib,max) {/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib}
-set vars(timelib,min) {/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib}
+set vars(timelib,max) {/home/rjridle/osugooglelib/outputs/s8_osu130_TT_1P8_25C.ccs.lib}
+set vars(timelib,min) {/home/rjridle/osugooglelib/outputs/s8_osu130_TT_1P8_25C.ccs.lib}
 set vars(top) {0}
 set vars(top_cell) {riscv}
 set vars(track_opt) {false}

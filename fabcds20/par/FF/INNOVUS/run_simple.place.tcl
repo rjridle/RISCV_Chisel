@@ -56,7 +56,7 @@ um::push_snapshot_stack
 ######################################################################
 # set_analysis_view -setup $vars(place,active_setup_views) -hold $vars(place,active_hold_views)
 #
-setDesignMode -process 250
+setDesignMode -process 130
 setAnalysisMode -analysisType onChipVariation
 setPlaceMode -place_global_place_io_pins false
 Puts "<FF> RUNNING PLACEMENT ..."

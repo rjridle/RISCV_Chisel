@@ -4,20 +4,20 @@ Report : power
         -analysis_effort low
 Design : riscv
 Version: M-2016.12-SP1
-Date   : Thu Jul 30 22:10:35 2020
+Date   : Wed Aug 19 15:53:27 2020
 ****************************************
 
 
 Library(s) Used:
 
-    osu05_stdcells (File: /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.db)
+    s8_osu130_TT_1P8_25C.ccs (File: /home/rjridle/osugooglelib/outputs/s8_osu130_TT_1P8_25C.ccs.db)
 
 
-Operating Conditions: typical   Library: osu05_stdcells
+Operating Conditions: PVT_1P8V_25C   Library: s8_osu130_TT_1P8_25C.ccs
 Wire Load Model Mode: top
 
 
-Global Operating Voltage = 5    
+Global Operating Voltage = 1.8  
 Power-specific unit information :
     Voltage Units = 1V
     Capacitance Units = 1.000000pf
@@ -26,12 +26,12 @@ Power-specific unit information :
     Leakage Power Units = 1nW
 
 
-  Cell Internal Power  = 55.039883 mW   (71%)
-  Net Switching Power  = 22.535795 mW   (29%)
+  Cell Internal Power  = 625.149414 uW   (64%)
+  Net Switching Power  = 357.881744 uW   (36%)
                          ---------
-Total Dynamic Power    = 77.575676 mW  (100%)
+Total Dynamic Power    = 983.031128 uW  (100%)
 
-Cell Leakage Power     =   1.9077 uW
+Cell Leakage Power     =   7.7330 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -41,11 +41,11 @@ io_pad           0.000000          0.000000          0.000000          0.000000 
 memory           0.000000          0.000000          0.000000          0.000000  (   0.00%)
 black_box        0.000000          0.000000          0.000000          0.000000  (   0.00%)
 clock_network    0.000000          0.000000          0.000000          0.000000  (   0.00%)
-register        32.941517        2.403023e-02        249.103363         32.965790
-                                                                                 (  42.49%)
+register         0.529651        1.352459e-03        2.448659e+03          0.533452
+                                                                                 (  53.84%)
 sequential       0.000000          0.000000          0.000000          0.000000  (   0.00%)
-combinational   22.098415         22.511656        1.658582e+03         44.611858
-                                                                                 (  57.51%)
+combinational  9.549826e-02          0.356527        5.284353e+03          0.457310
+                                                                                 (  46.16%)
 --------------------------------------------------------------------------------------------------
-Total           55.039932 mW      22.535686 mW     1.907685e+03 nW      77.577652 mW
+Total            0.625149 mW       0.357880 mW     7.733012e+03 nW       0.990762 mW
 1

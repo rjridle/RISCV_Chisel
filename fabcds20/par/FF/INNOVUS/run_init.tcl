@@ -1,5 +1,5 @@
 ####################################################################
-# Innovus Foundation Flow Code Generator, Fri Aug  7 15:52:16 CDT 2020
+# Innovus Foundation Flow Code Generator, Wed Aug 19 16:47:40 CDT 2020
 # Version : 17.10-p003_1
 ####################################################################
 
@@ -59,7 +59,7 @@ puts "<FF> Plugin -> always_source_tcl"
 add_tracks
 source FF/timingderate.sdc
 setMaxRouteLayer 3
-setDesignMode -process 250
+setDesignMode -process 130
 puts "<FF> Plugin -> post_init_tcl"
 ff_procs::source_plug post_init_tcl
 timeDesign -preplace -prefix preplace -outDir RPT

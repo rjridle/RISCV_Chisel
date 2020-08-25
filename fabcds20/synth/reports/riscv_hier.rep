@@ -3,35 +3,31 @@
 Report : hierarchy
 Design : riscv
 Version: M-2016.12-SP1
-Date   : Thu Jul 30 22:10:35 2020
+Date   : Wed Aug 19 15:53:27 2020
 ****************************************
 
 Attributes:
     r - licensed design
 
 riscv              r
-    AND2X1           osu05_stdcells
-    AND2X2           osu05_stdcells
-    AOI21X1          osu05_stdcells
-    AOI22X1          osu05_stdcells
-    BUFX2            osu05_stdcells
-    BUFX4            osu05_stdcells
-    DFFPOSX1         osu05_stdcells
-    FAX1             osu05_stdcells
-    HAX1             osu05_stdcells
-    INVX1            osu05_stdcells
-    INVX2            osu05_stdcells
-    INVX4            osu05_stdcells
-    INVX8            osu05_stdcells
-    MUX2X1           osu05_stdcells
-    NAND2X1          osu05_stdcells
-    NAND3X1          osu05_stdcells
-    NOR2X1           osu05_stdcells
-    NOR3X1           osu05_stdcells
-    OAI21X1          osu05_stdcells
-    OAI22X1          osu05_stdcells
-    OR2X1            osu05_stdcells
-    OR2X2            osu05_stdcells
-    XNOR2X1          osu05_stdcells
-    XOR2X1           osu05_stdcells
+    ADDFX1           s8_osu130_TT_1P8_25C.ccs
+    ADDHXL           s8_osu130_TT_1P8_25C.ccs
+    AND2X1           s8_osu130_TT_1P8_25C.ccs
+    AND2X2           s8_osu130_TT_1P8_25C.ccs
+    AND2XL           s8_osu130_TT_1P8_25C.ccs
+    AOI21XL          s8_osu130_TT_1P8_25C.ccs
+    BUFX1            s8_osu130_TT_1P8_25C.ccs
+    BUFXL            s8_osu130_TT_1P8_25C.ccs
+    CLKINVX1         s8_osu130_TT_1P8_25C.ccs
+    CLKINVX2         s8_osu130_TT_1P8_25C.ccs
+    DFFXL            s8_osu130_TT_1P8_25C.ccs
+    INVXL            s8_osu130_TT_1P8_25C.ccs
+    NAND2X1          s8_osu130_TT_1P8_25C.ccs
+    NAND2XL          s8_osu130_TT_1P8_25C.ccs
+    NAND3XL          s8_osu130_TT_1P8_25C.ccs
+    NOR2X1           s8_osu130_TT_1P8_25C.ccs
+    NOR2XL           s8_osu130_TT_1P8_25C.ccs
+    OAI21XL          s8_osu130_TT_1P8_25C.ccs
+    OR2X1            s8_osu130_TT_1P8_25C.ccs
+    XNOR2XL          s8_osu130_TT_1P8_25C.ccs
 1

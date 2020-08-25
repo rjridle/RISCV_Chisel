@@ -1,0 +1,20 @@
+ 
+****************************************
+Report : clocks
+Design : riscv
+Version: M-2016.12-SP1
+Date   : Fri Aug 21 15:36:50 2020
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+clock         28.000000 {0 14}              f p       {clock}
+--------------------------------------------------------------------------------
+1

@@ -1,0 +1,221 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Fri Aug  7 17:08:29 2020                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v19.15-s075_1 (64bit) 07/02/2020 18:24 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: NanoRoute 19.15-s075_1 NR200630-1046/19_15-UB (database version 18.20, 510.7.1) {superthreading v1.53}
+#@(#)CDS: AAE 19.15-s016 (64bit) 07/02/2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: CTE 19.15-s034_1 () Jul  2 2020 10:12:29 ( )
+#@(#)CDS: SYNTECH 19.15-s013_1 () Jul  1 2020 08:44:53 ( )
+#@(#)CDS: CPE v19.15-s065
+#@(#)CDS: IQuantus/TQuantus 19.1.3-s260 (64bit) Thu May 28 10:57:28 PDT 2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getVersion
+is_common_ui_mode
+restoreDesign /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat riscv
+win
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false -displayByLayer
+violationBrowserMarkFalse -tool Verify
+violationBrowserClose
+zoomBox 106.93800 217.24700 6197.57000 5827.24700
+zoomBox 691.97000 656.90700 5869.00700 5425.40700
+zoomBox 1968.62900 1698.39300 5147.97800 4626.84900
+zoomBox 2725.67700 2371.32500 4678.19500 4169.76300
+zoomBox 3199.91900 2787.78700 4399.00900 3892.25300
+zoomBox 3568.29900 3105.27800 4194.23200 3681.81700
+zoomBox 3720.77900 3242.76000 4105.18000 3596.82700
+zoomBox 3816.45700 3322.30900 4052.52700 3539.75000
+zoomBox 3876.52300 3369.78700 4021.50000 3503.32300
+zoomBox 3921.88500 3406.00500 3997.56400 3475.71200
+zoomBox 3940.88600 3420.43600 3987.36400 3463.24600
+zoomBox 3951.62700 3429.97100 3980.17200 3456.26300
+zoomBox 3957.95300 3435.82600 3975.48400 3451.97400
+zoomBox 3961.83700 3439.43100 3972.60500 3449.34900
+zoomBox 3960.67900 3438.41100 3973.34700 3450.07900
+zoomBox 3962.82100 3440.29700 3971.97400 3448.72800
+zoomBox 3961.83600 3439.43000 3972.60500 3449.34900
+zoomBox 3957.70100 3435.81600 3975.23700 3451.96800
+selectWire 3965.5500 3445.0500 3971.2500 3445.9500 2 {io_memWriteData[22]}
+deselectAll
+selectWire 3965.5500 3445.0500 3971.2500 3445.9500 2 {io_memWriteData[22]}
+uiSetTool addWire
+setEditMode -type regular
+pan 4.19700 -522.54300
+pan -0.22600 -526.17300
+uiSetTool addWire
+uiSetTool select
+deselectAll
+selectWire 3965.5500 3445.0500 3971.2500 3445.9500 2 {io_memWriteData[22]}
+deleteSelectedFromFPlan
+undo
+deselectAll
+selectWire 3965.5500 3445.0500 3971.2500 3445.9500 2 {io_memWriteData[22]}
+deselectAll
+selectWire 3965.5500 3445.0500 3971.2500 3445.9500 2 {io_memWriteData[22]}
+zoomBox 3963.88800 3438.36300 3972.78800 3450.03300
+zoomBox 3965.48400 3440.26300 3971.91500 3448.69600
+deselectAll
+selectWire 3965.5500 3445.0500 3971.2500 3445.9500 2 {io_memWriteData[22]}
+setEditMode -nets {io_memWriteData[22]}
+gui_select -rect {3967.49700 3445.32000 3967.45000 3444.49100}
+deselectAll
+selectWire 3965.5500 3445.0500 3971.2500 3445.9500 2 {io_memWriteData[22]}
+pan -0.59200 -525.07900
+deleteSelectedFromFPlan
+uiSetTool addWire
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+setEditMode -width_horizontal 0.900
+setEditMode -width_vertical 0.900
+setEditMode -spacing_horizontal 0.900
+setEditMode -spacing_vertical 0.900
+setEditMode -spacing 0.900
+editAddRoute 3966.16 3445.36
+editAddRoute 3967.33 3443.98
+zoomBox 3966.05300 3445.02400 3966.01700 3444.89400
+zoomBox 3965.98700 3444.90300 3966.07200 3445.01400
+zoomBox 3965.98400 3444.89300 3966.08400 3445.02400
+zoomBox 3965.96900 3444.85000 3966.13200 3445.06400
+zoomBox 3965.94300 3444.78100 3966.21000 3445.13100
+zoomBox 3965.93200 3444.74900 3966.24600 3445.16100
+zoomBox 3965.88300 3444.61600 3966.39500 3445.28700
+zoomBox 3965.86100 3444.55600 3966.46300 3445.34600
+zoomBox 3965.76700 3444.31800 3966.74800 3445.60400
+zoomBox 3965.71800 3444.22000 3966.87200 3445.73300
+zoomBox 3965.41800 3443.62900 3967.63000 3446.52900
+zoomBox 3965.30000 3443.45600 3967.90200 3446.86800
+zoomBox 3963.98300 3441.64800 3970.88500 3450.69800
+zoomBox 3963.14300 3440.50500 3972.69600 3453.03100
+zoomBox 3961.98000 3438.92300 3975.20300 3456.26100
+zoomBox 3958.14400 3433.68200 3983.47600 3466.89800
+zoomBox 3953.10100 3426.76300 3994.35100 3480.85100
+zoomBox 3948.08200 3419.87500 4005.17600 3494.73900
+zoomBox 3953.58000 3425.47700 3994.83100 3479.56700
+zoomBox 3957.52100 3429.50300 3987.32600 3468.58400
+zoomBox 3962.39900 3434.55400 3977.95900 3454.95700
+zoomBox 3963.84500 3436.10400 3975.08800 3450.84600
+zoomBox 3964.41000 3436.70900 3973.96700 3449.24000
+editAddRoute 3966.14 3443.85
+zoomSelected
+pan -2.05900 -524.93800
+uiSetTool select
+selectWire 3965.5500 3445.0500 3966.4500 3448.9500 2 {io_memWriteData[22]}
+deleteSelectedFromFPlan
+uiSetTool addWire
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+editAddRoute 3966.29 3448.38
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+editAddRoute 3966.73 3449.19
+zoomSelected
+zoomSelected
+zoomSelected
+undo
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+editAddRoute 3966.28 3445.65
+pan -0.93300 -518.65400
+editAddRoute 3966.38 3451.97
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+editAddRoute 3966.2 3446.51
+editAddRoute 3966.36 3451
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+editAddRoute 3966.28 3446.67
+editAddRoute 3966.45 3451.11
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+editAddRoute 3966.4 3446.58
+zoomBox 3962.62400 3444.59400 3969.53000 3453.64900
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+editAddRoute 3966.07 3451.54
+editAddRoute 3965.72 3447.89
+zoomBox 3965.61300 3447.74800 3965.61300 3447.72200
+zoomBox 3965.59900 3447.71700 3965.62700 3447.75400
+zoomBox 3965.59100 3447.70800 3965.63700 3447.76800
+zoomBox 3965.57100 3447.68400 3965.66200 3447.80300
+zoomBox 3965.54600 3447.65400 3965.69500 3447.84900
+zoomBox 3965.52000 3447.62500 3965.72700 3447.89700
+zoomBox 3965.46100 3447.56400 3965.79900 3448.00700
+zoomBox 3965.32400 3447.41800 3965.97100 3448.26600
+zoomBox 3965.13900 3447.21800 3966.19500 3448.60300
+zoomBox 3964.89100 3446.90900 3966.61200 3449.16600
+zoomBox 3964.30000 3446.17000 3967.59900 3450.49600
+zoomBox 3963.51700 3445.19600 3968.88900 3452.24000
+editAddRoute 3966.05 3448.49
+editCommitRoute 3966.05 3448.49
+undo
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+editAddRoute 3966.06 3451.42
+editAddRoute 3965.96 3447.9
+editCommitRoute 3965.96 3447.9
+zoomBox 3963.84500 3445.81500 3968.41100 3451.80200
+pan 0.49600 -516.07000
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+editAddRoute 3966.06 3450.02
+editAddRoute 3966.13 3451.05
+editCommitRoute 3966.13 3451.05
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+editAddRoute 3965.95 3449.95
+editAddRoute 3966.31 3452.9
+editCommitRoute 3966.31 3452.92
+pan -0.99200 -519.31600
+zoomBox 3962.04300 3444.05900 3968.36300 3452.34600
+pan 1.28100 -515.97000
+uiSetTool select
+deselectAll
+selectWire 3965.5500 3448.0500 3966.4500 3450.1500 2 {io_memWriteData[22]}
+deleteSelectedFromFPlan
+pan -0.30300 -520.24200
+selectWire 3965.5500 3445.0500 3966.4500 3448.9500 2 {io_memWriteData[22]}
+uiSetTool addWire
+setEditMode -type regular
+setEditMode -type regular
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+editAddRoute 3966.24 3446.29
+editAddRoute 3966.09 3451.07
+zoomBox 3963.45900 3443.99000 3968.83100 3451.03400
+zoomBox 3964.14500 3445.41200 3968.02600 3450.50100
+zoomBox 3963.83000 3444.73800 3968.39600 3450.72500
+zoomBox 3962.50900 3442.04400 3969.94500 3451.79400
+pan -0.01400 -517.50800
+editAddRoute 3966.15 3451.19
+editCommitRoute 3966.15 3451.19
+zoomBox 3961.81800 3444.28500 3970.56700 3455.75700
+uiSetTool cutWire
+uiSetTool cutWire
+editCutWire -only_visible_wires -line { 3965.54 3447.685 3966.507 3447.685 }
+zoomBox 3962.49400 3444.77100 3969.93100 3454.52200
+editCutWire -only_visible_wires -line { 3965.877 3446.852 3966.562 3447.537 }
+zoomBox 3963.65100 3445.83800 3968.21900 3451.82800
+zoomBox 3964.36900 3446.51200 3967.17400 3450.19000
+zoomBox 3964.81000 3446.93600 3966.53300 3449.19500
+editCutWire -only_visible_wires -line { 3965.559 3447.885 3966.463 3447.885 }
+editCutWire -only_visible_wires -line { 3965.549 3447.888 3966.454 3447.888 }
+editCutWire -only_visible_wires -line { 3966.454 3447.891 3966.454 3447.891 }
+zoomOut

@@ -70,14 +70,14 @@ set all_in_ex_clk [remove_from_collection [all_inputs] [get_ports $my_clk]]
 set_propagated_clock [get_clocks $my_clk]
 
 # Setting constraints on input ports 
-set_driving_cell  -lib_cell DFFPOSX1 -pin Q $all_in_ex_clk
+set_driving_cell  -lib_cell DFFSXL -pin Q $all_in_ex_clk
 
 # Set input/output delay
 set_input_delay 0.0 -max -clock $my_clk $all_in_ex_clk
 set_output_delay 0.0 -max -clock $my_clk [all_outputs]
 
 # Setting load constraint on output ports 
-set_load [expr [load_of osu05_stdcells/DFFPOSX1/D] * 1] [all_outputs]
+set_load [expr [load_of s8_osu130/DFFSXL/D] * 1] [all_outputs]
 
 # Set the wire load model 
 set_wire_load_mode "top"

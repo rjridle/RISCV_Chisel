@@ -1,0 +1,935 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v19.15-s075_1, built Thu Jul 2 18:24:05 PDT 2020
+Options:	-init FF/INNOVUS/run_init.tcl -log LOG/init.log -overwrite -nowin 
+Date:		Fri Aug  7 15:52:16 2020
+Host:		rivendell.ecen.okstate.edu (x86_64 w/Linux 2.6.32-754.25.1.el6.x86_64) (6cores*12cpus*Intel(R) Xeon(R) CPU E5-4617 0 @ 2.90GHz 15360KB)
+OS:		Red Hat Enterprise Linux Server release 6.10 (Santiago)
+
+License:
+		invs	Innovus Implementation System	19.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (258 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+Sourcing file "FF/INNOVUS/run_init.tcl" ...
+<CMD> set init_io_file encounter.io
+<FF> Finished loading setup.tcl
+<CMD> setDistributeHost -local
+The timeout for a remote job to respond is 3600 seconds.
+Submit command for task runs will be: local
+<CMD> setMultiCpuUsage -localCpu 1
+<FF> LOADING 'pre_init_tcl' PLUG-IN FILE(s) 
+<FF> -> PLUG/INNOVUS/pre_init.tcl
+<CMD> set init_layout_view {}
+<CMD> set init_verilog /home/rjridle/fabs/fabcds20/synth/mapped/riscv.vh
+<CMD> set init_mmmc_file /home/rjridle/fabs/fabcds20/par/FF/view_definition.tcl
+<CMD> set init_lef_file /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lef
+<CMD> set init_top_cell riscv
+<CMD> set init_gnd_net VSS
+<CMD> set init_pwr_net VDD
+<CMD> init_design
+#% Begin Load MMMC data ... (date=08/07 15:52:28, mem=466.7M)
+#% End Load MMMC data ... (date=08/07 15:52:28, total cpu=0:00:00.0, real=0:00:00.0, peak res=466.9M, current mem=466.9M)
+rc_typ
+
+Loading LEF file /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lef ...
+**WARN: (IMPLF-108):	There is no overlap layer defined in any LEF file
+so you are unable to create rectilinear partition in a hierarchical flow.
+Set DBUPerIGU to M2 pitch 2400.
+
+viaInitial starts at Fri Aug  7 15:52:28 2020
+**WARN: (IMPPP-556):	A SAMENET rule between different layers for a 4 layer technology is probably a mistake. Stacked vias will be difficult to create and probably will not be what expected. Check if this rule can be removed from the technology file: SAMENET cc via 0.150000 ;
+**WARN: (IMPPP-556):	A SAMENET rule between different layers for a 4 layer technology is probably a mistake. Stacked vias will be difficult to create and probably will not be what expected. Check if this rule can be removed from the technology file: SAMENET via via2 0.150000 ;
+**WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN1 GENERATE.
+Type 'man IMPPP-557' for more detail.
+**WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN2 GENERATE.
+Type 'man IMPPP-557' for more detail.
+**WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN3 GENERATE.
+Type 'man IMPPP-557' for more detail.
+viaInitial ends at Fri Aug  7 15:52:28 2020
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from /home/rjridle/fabs/fabcds20/par/FF/view_definition.tcl
+Reading libs_tt timing library '/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib' ...
+Read 39 cells in library 'osu05_stdcells' 
+*** End library_loading (cpu=0.00min, real=0.00min, mem=20.0M, fe_cpu=0.20min, fe_real=0.20min, fe_mem=617.6M) ***
+#% Begin Load netlist data ... (date=08/07 15:52:28, mem=478.7M)
+*** Begin netlist parsing (mem=617.6M) ***
+**WARN: (IMPVL-159):	Pin 'YPAD' of cell 'PADGND' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'PADGND' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'YPAD' of cell 'PADVDD' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'PADVDD' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'XNOR2X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'XNOR2X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'TBUFX2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'TBUFX2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'TBUFX1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'TBUFX1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'OR2X2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'OR2X2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'OR2X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'OR2X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'OAI22X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'OAI22X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'OAI21X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'OAI21X1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Created 39 new cells from 1 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist '/home/rjridle/fabs/fabcds20/synth/mapped/riscv.vh'
+
+*** Memory Usage v#1 (Current mem = 623.574M, initial mem = 287.395M) ***
+*** End netlist parsing (cpu=0:00:00.1, real=0:00:01.0, mem=623.6M) ***
+#% End Load netlist data ... (date=08/07 15:52:29, total cpu=0:00:00.1, real=0:00:01.0, peak res=488.5M, current mem=488.5M)
+Set top cell to riscv.
+**WARN: (IMPTS-124):	Timing library description of pin 'YPAD' is missing from cell 'PADGND' in timing library 'osu05_stdcells'.
+**WARN: (IMPTS-124):	Timing library description of pin 'YPAD' is missing from cell 'PADVDD' in timing library 'osu05_stdcells'.
+Hooked 39 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell riscv ...
+*** Netlist is unique.
+** info: there are 41 modules.
+** info: there are 22309 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 673.996M, initial mem = 287.395M) ***
+Reading IO assignment file "encounter.io" ...
+**Warn: ignored IO file "encounter.io" line 9: Pad: c01 NW
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 11: Pad: c02 NE
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 13: Pad: c03 SE
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 15: Pad: c04 SW
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 20: Pad: p39 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 22: Pad: p38 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 24: Pad: p37 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 26: Pad: p36 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 28: Pad: p35 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 30: Pad: p34 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 32: Pad: p33 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 34: Pad: p32 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 36: Pad: p31 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 38: Pad: p30 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 43: Pad: p29 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 45: Pad: p28 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 47: Pad: p27 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 49: Pad: p26 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 51: Pad: p25 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 53: Pad: p24 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 55: Pad: p23 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 57: Pad: p22 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 59: Pad: p21 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 61: Pad: p20 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 66: Pad: p19 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 68: Pad: p18 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 70: Pad: p17 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 72: Pad: p16 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 74: Pad: p15 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 76: Pad: p14 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 78: Pad: p13 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 80: Pad: p12 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 82: Pad: p11 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 84: Pad: p10 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 89: Pad: p09 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 91: Pad: p08 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 93: Pad: p07 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 95: Pad: p06 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 97: Pad: p05 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 99: Pad: p04 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 101: Pad: p03 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 103: Pad: p02 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 105: Pad: p01 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "encounter.io" line 107: Pad: p00 E
+  Reason: unable to determine object from name.
+**WARN: (IMPFP-710):	File version 0 is too old.
+IO file version '0' is too old, will try to place io cell any way.
+**WARN: (IMPFP-3961):	The techSite 'IO' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Horizontal Layer M1 offset = 1500 (derived)
+Vertical Layer M2 offset = 1200 (derived)
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Default Input Pin Transition as 0.1 ps.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-2773):	The via resistance between layers M0 and M1 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+Type 'man IMPEXT-2773' for more detail.
+**WARN: (IMPEXT-2773):	The via resistance between layers M1 and M2 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+Type 'man IMPEXT-2773' for more detail.
+**WARN: (IMPEXT-2773):	The via resistance between layers M2 and M3 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+Type 'man IMPEXT-2773' for more detail.
+**WARN: (IMPEXT-2766):	The sheet resistance for layer M1 is not defined in the cap table. Therefore, the LEF value 0.09 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+**WARN: (IMPEXT-2766):	The sheet resistance for layer M2 is not defined in the cap table. Therefore, the LEF value 0.09 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+**WARN: (IMPEXT-2766):	The sheet resistance for layer M3 is not defined in the cap table. Therefore, the LEF value 0.05 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+Summary of Active RC-Corners : 
+ 
+ Analysis View: setup_func
+    RC-Corner Name        : rc_typ
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from Cap Table]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+ 
+ Analysis View: hold_func
+    RC-Corner Name        : rc_typ
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from Cap Table]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner resistance tables ...
+*Info: initialize multi-corner CTS.
+Reading timing constraints file '/home/rjridle/fabs/fabcds20/synth/mapped/riscv.sdc' ...
+Current (total cpu=0:00:12.8, real=0:00:13.0, peak res=692.8M, current mem=692.8M)
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File /home/rjridle/fabs/fabcds20/synth/mapped/riscv.sdc, Line 8).
+
+INFO (CTE): Reading of timing constraints file /home/rjridle/fabs/fabcds20/synth/mapped/riscv.sdc completed, with 1 WARNING
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=711.3M, current mem=711.3M)
+Current (total cpu=0:00:12.9, real=0:00:13.0, peak res=711.3M, current mem=711.3M)
+Total number of combinational cells: 26
+Total number of sequential cells: 4
+Total number of tristate cells: 2
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUFX2 BUFX4 CLKBUF1
+Total number of usable buffers: 3
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: INVX2 INVX1 INVX4 INVX8
+Total number of usable inverters: 4
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: CLKBUF2 CLKBUF3
+Total number of identified usable delay cells: 2
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+#% Begin Load MMMC data post ... (date=08/07 15:52:29, mem=731.9M)
+#% End Load MMMC data post ... (date=08/07 15:52:29, total cpu=0:00:00.0, real=0:00:00.0, peak res=732.0M, current mem=732.0M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-108            1  There is no overlap layer defined in any...
+WARNING   IMPFP-710            1  File version %s is too old.              
+WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+WARNING   IMPTS-124            2  Timing library description of pin '%s' i...
+WARNING   IMPEXT-2766          3  The sheet resistance for layer %s is not...
+WARNING   IMPEXT-2773          3  The via resistance between layers %s and...
+WARNING   IMPVL-159           68  Pin '%s' of cell '%s' is defined in LEF ...
+WARNING   IMPPP-556            2  A SAMENET rule between different layers ...
+WARNING   IMPPP-557            3  A single-layer VIARULE GENERATE for turn...
+WARNING   TCLCMD-1461          1  Skipped unsupported command: %s          
+*** Message Summary: 86 warning(s), 0 error(s)
+
+<CMD> um::push_snapshot_stack
+<CMD> add_tracks
+<FF> DERATING DELAY CORNERS ...
+<CMD> setMaxRouteLayer 3
+<CMD> setDesignMode -process 250
+##  Process: 250           (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 250nm process node: total_c_th=5, relative_c_th=0.03 and coupling_c_th=3.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	For postRoute effortLevel low extraction, the coupling_c_th value will be used only when the -capFilterMode parameter of the setExtractRCMode command is set to relAndCoup or relOrCoup. Default value of -capFilterMode parameter in postRoute extraction effortLevel low is relOnly.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'standard'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'low'.
+<FF> LOADING 'post_init_tcl' PLUG-IN FILE(s) 
+<FF> -> PLUG/INNOVUS/post_init.tcl
+<CMD> floorPlan -d 6000 6000 40.05 40.6 40.05 42
+Snap core to bottom to manufacture grid: 40.6500.
+**WARN: (IMPFP-4026):	Adjusting core to 'Left' to 40.800000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+**WARN: (IMPFP-4026):	Adjusting core to 'Bottom' to 42.000000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+**WARN: (IMPFP-4026):	Adjusting core to 'Right' to 40.800000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+**WARN: (IMPFP-3961):	The techSite 'IO' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Horizontal Layer M1 offset = 1500 (derived)
+Vertical Layer M2 offset = 1200 (derived)
+**WARN: (IMPFP-325):	Floorplan of the design is resized. All current floorplan objects are automatically derived based on specified new floorplan. This may change blocks, fixed standard cells, existing routes and blockages.
+<CMD> globalNetConnect VSS -type pgpin -pin gnd -inst *
+<CMD> globalNetConnect VDD -type pgpin -pin vdd -inst *
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer metal3 -stacked_via_bottom_layer metal1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+<CMD> addRing -nets {VDD VSS} -type core_rings -follow core -layer {top metal1 bottom metal1 left metal2 right metal2} -width {top 14.4 bottom 14.4 left 14.4 right 14.4} -spacing {top 1.8 bottom 1.8 left 1.8 right 1.8} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -extend_corner {} -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=08/07 15:52:29, mem=733.3M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 905.2M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+| metal1 |        4       |       NA       |
+|   via  |        8       |        0       |
+| metal2 |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=08/07 15:52:29, total cpu=0:00:00.0, real=0:00:00.0, peak res=735.2M, current mem=735.2M)
+<CMD> setSrouteMode -viaConnectToShape { noshape }
+<CMD> sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { metal1(1) metal3(3) } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { metal1(1) metal3(3) } -nets { VDD VSS } -allowLayerChange 1 -blockPin useLef -targetViaLayerRange { metal1(1) metal3(3) }
+#% Begin sroute (date=08/07 15:52:29, mem=735.4M)
+*** Begin SPECIAL ROUTE on Fri Aug  7 15:52:29 2020 ***
+SPECIAL ROUTE ran on directory: /home/rjridle/fabs/fabcds20/par
+SPECIAL ROUTE ran on machine: rivendell.ecen.okstate.edu (Linux 2.6.32-754.25.1.el6.x86_64 Xeon 1.20Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 1
+srouteBottomTargetLayerLimit set to 1
+srouteConnectConverterPin set to false
+srouteCrossoverViaBottomLayer set to 1
+srouteCrossoverViaTopLayer set to 3
+srouteFloatingStripeTarget set to "blockring padring ring stripe ringpin blockpin followpin"
+srouteFollowCorePinEnd set to 3
+srouteJogControl set to "preferWithChanges differentLayer"
+srouteNoViaOnWireShape set to "padring ring stripe blockring blockpin coverpin blockwire corewire followpin iowire"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 3
+srouteTopTargetLayerLimit set to 3
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 1788.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 6 layers, 3 routing layers, 0 overlap layer
+Read in 34 macros, 24 used
+Read in 24 components
+  24 core components: 24 unplaced, 0 placed, 0 fixed
+Read in 163 logical pins
+Read in 163 nets
+Read in 2 special nets, 2 routed
+Read in 48 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-1254):	Cannot find any block pin of net VDD. Check netlist, or change option to include the pin.
+**WARN: (IMPSR-1256):	Cannot find any CORE class pad pin of net VDD. Change routing area or layer to include the expected pin, or check netlist, or change port class in the technology file.
+Type 'man IMPSR-1256' for more detail.
+Cannot find any AREAIO class pad pin of net VDD. Check net list, or change port class in the technology file, or change option to include pin in given range.
+**WARN: (IMPSR-1254):	Cannot find any block pin of net VSS. Check netlist, or change option to include the pin.
+**WARN: (IMPSR-1256):	Cannot find any CORE class pad pin of net VSS. Change routing area or layer to include the expected pin, or check netlist, or change port class in the technology file.
+Type 'man IMPSR-1256' for more detail.
+Cannot find any AREAIO class pad pin of net VSS. Check net list, or change port class in the technology file, or change option to include pin in given range.
+CPU time for FollowPin 0 seconds
+CPU time for FollowPin 0 seconds
+  Number of IO ports routed: 0
+  Number of Block ports routed: 0
+  Number of Stripe ports routed: 0
+  Number of Core ports routed: 396
+  Number of Pad ports routed: 0
+  Number of Power Bump ports routed: 0
+  Number of Followpin connections: 198
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 1791.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 0 via definition ...Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+
+sroute created 594 wires.
+ViaGen created 396 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+| metal1 |       594      |       NA       |
+|   via  |       396      |        0       |
++--------+----------------+----------------+
+#% End sroute (date=08/07 15:52:29, total cpu=0:00:00.1, real=0:00:00.0, peak res=748.4M, current mem=742.0M)
+<CMD> timeDesign -preplace -prefix preplace -outDir RPT
+Setting timing_disable_library_data_to_data_checks to 'true'.
+Setting timing_disable_user_data_to_data_checks to 'true'.
+Set Using Default Delay Limit as 101.
+**WARN: (IMPDC-1629):	The default delay limit was set to 101. This is less than the default of 1000 and may result in inaccurate delay calculation for nets with a fanout higher than the setting.  If needed, the default delay limit may be adjusted by running the command 'set delaycal_use_default_delay_limit'.
+Setting High Fanout Nets ( > 100 ) as ideal temporarily for -prePlace option
+Set Default Net Delay as 0 ps.
+Set Default Net Load as 0 pF. 
+Starting delay calculation for Setup views
+AAE DB initialization (MEM=962.758 CPU=0:00:00.2 REAL=0:00:00.0) 
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: riscv
+# Design Mode: 250nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in Single mode...
+Start delay calculation (fullDC) (1 T). (MEM=966.172)
+siFlow : Timing analysis mode is single, using late cdB files
+Total number of fetched objects 22832
+End delay calculation. (MEM=1041.53 CPU=0:00:03.0 REAL=0:00:03.0)
+End delay calculation (fullDC). (MEM=1023.99 CPU=0:00:03.9 REAL=0:00:04.0)
+*** Done Building Timing Graph (cpu=0:00:04.9 real=0:00:05.0 totSessionCpu=0:00:18.8 mem=1024.0M)
+
+------------------------------------------------------------
+          timeDesign Summary                             
+------------------------------------------------------------
+
+Setup views included:
+ setup_func 
+
++--------------------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg | default |
++--------------------+---------+---------+---------+
+|           WNS (ns):| -0.132  | -0.097  | -0.132  |
+|           TNS (ns):| -79.492 | -50.197 | -79.492 |
+|    Violating Paths:|   879   |   821   |   879   |
+|          All Paths:|  1121   |  1024   |  1121   |
++--------------------+---------+---------+---------+
+
+Density: 19.571%
+------------------------------------------------------------
+Set Using Default Delay Limit as 1000.
+Resetting back High Fanout Nets as non-ideal
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Reported timing to dir RPT
+Total CPU time: 7.32 sec
+Total Real time: 8.0 sec
+Total Memory Usage: 961.46875 Mbytes
+<CMD> checkDesign -all
+**WARN: (IMPREPO-205):	There are 5 Cells with missing PG PIN.
+Begin checking placement ... (start mem=961.5M, init mem=963.4M)
+*info: Recommended don't use cell = 0           
+*info: Placed = 0             
+*info: Unplaced = 22309       
+Placement Density:19.57%(6845328/34977744)
+Placement Density (including fixed std cells):19.57%(6845328/34977744)
+Finished checkPlace (total: cpu=0:00:00.0, real=0:00:00.0; vio checks: cpu=0:00:00.0, real=0:00:00.0; mem=961.5M)
+############################################################################
+# Innovus Netlist Design Rule Check
+# Fri Aug  7 15:52:37 2020
+
+############################################################################
+Design: riscv
+
+------ Design Summary:
+Total Standard Cell Number   (cells) : 22309
+Total Block Cell Number      (cells) : 0
+Total I/O Pad Cell Number    (cells) : 0
+Total Standard Cell Area     ( um^2) : 6845328.00
+Total Block Cell Area        ( um^2) : 0.00
+Total I/O Pad Cell Area      ( um^2) : 0.00
+
+------ Design Statistics:
+
+Number of Instances            : 22309
+Number of Non-uniquified Insts : 22309
+Number of Nets                 : 22838
+Average number of Pins per Net : 3.13
+Maximum number of Pins in Net  : 1025
+
+------ I/O Port summary
+
+Number of Primary I/O Ports    : 163
+Number of Input Ports          : 66
+Number of Output Ports         : 97
+Number of Bidirectional Ports  : 0
+Number of Power/Ground Ports   : 0
+Number of Floating Ports                     *: 0
+Number of Ports Connected to Multiple Pads   *: 0
+Number of Ports Connected to Core Instances   : 163
+**WARN: (IMPREPO-202):	There are 163 Ports connected to core instances.
+
+------ Design Rule Checking:
+
+Number of Output Pins connect to Power/Ground *: 0
+Number of Insts with Input Pins tied together ?: 8
+Number of TieHi/Lo term nets not connected to instance's PG terms ?: 0
+Number of Input/InOut Floating Pins            : 0
+Number of Output Floating Pins                 : 0
+Number of Output Term Marked TieHi/Lo         *: 0
+
+**WARN: (IMPREPO-216):	There are 8 Instances with input pins tied together.
+Number of nets with tri-state drivers          : 0
+Number of nets with parallel drivers           : 0
+Number of nets with multiple drivers           : 0
+Number of nets with no driver (No FanIn)       : 0
+Number of Output Floating nets (No FanOut)     : 30
+Number of High Fanout nets (>50)               : 8
+**WARN: (IMPREPO-227):	There are 8 High Fanout nets (>50).
+**WARN: (IMPREPO-213):	There are 163 I/O Pins connected to Non-IO Insts.
+Checking for any assigns in the netlist...
+Assigns in module riscv
+  io_pc[0] pcPlus4[0]
+  io_pc[1] pcPlus4[1]
+Checking routing tracks.....
+Checking other grids.....
+Checking routing blockage.....
+Checking components.....
+Checking constraints (guide/region/fence).....
+Checking groups.....
+Checking Ptn Core Box.....
+
+Checking Preroutes.....
+No. of regular pre-routes not on tracks : 0 
+ Design check done.
+Report saved in file checkDesign/riscv.main.htm.ascii.
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPREPO-227          1  There are %d High Fanout nets (>50).     
+WARNING   IMPREPO-202          1  There are %d Ports connected to core ins...
+WARNING   IMPREPO-205          1  There are %d Cells with missing PG PIN.  
+WARNING   IMPREPO-213          1  There are %d I/O Pins connected to Non-I...
+WARNING   IMPREPO-216          1  There are %d Instances with input pins t...
+*** Message Summary: 5 warning(s), 0 error(s)
+
+<CMD> check_timing
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: riscv
+# Design Mode: 250nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in Single mode...
+Start delay calculation (fullDC) (1 T). (MEM=977.461)
+Total number of fetched objects 22832
+End delay calculation. (MEM=1036.67 CPU=0:00:03.0 REAL=0:00:03.0)
+End delay calculation (fullDC). (MEM=1036.67 CPU=0:00:03.9 REAL=0:00:04.0)
+     +------------------------------------------+ 
+     |           TIMING CHECK SUMMARY           | 
+     |------------------------------------------| 
+     |  Warning |      Warning       |  Number  | 
+     |          |    Description     |    of    | 
+     |          |                    | Warnings | 
+     |----------+--------------------+----------| 
+     | no_drive | No drive assertion |        1 | 
+     +------------------------------------------+ 
+<CMD> um::pop_snapshot_stack
+<CMD> getOptMode -multiBitFlopOpt -quiet
+UM:   timing.setup.tns  timing.setup.wns  snapshot
+UM:         -79.492 ns         -0.132 ns  init
+<CMD> um::get_metric_definition -name *.drc
+<CMD> um::get_metric_definition -name *.drc.layer:*
+<CMD> um::get_metric_definition -name *.drc.layer:*.type:*
+<CMD> um::get_metric_definition -name *.drc.type:*
+<CMD> um::get_metric_definition -name check.drc
+<CMD> um::get_metric_definition -name check.drc.antenna
+<CMD> um::get_metric_definition -name check.place.*
+<CMD> um::get_metric_definition -name clock.area.buffer
+<CMD> um::get_metric_definition -name clock.area.clkgate
+<CMD> um::get_metric_definition -name clock.area.inverter
+<CMD> um::get_metric_definition -name clock.area.logic
+<CMD> um::get_metric_definition -name clock.area.nonicg
+<CMD> um::get_metric_definition -name clock.area.total
+<CMD> um::get_metric_definition -name clock.area_distribution.buffer.base_cell:*
+<CMD> um::get_metric_definition -name clock.area_distribution.clkgate.base_cell:*
+<CMD> um::get_metric_definition -name clock.area_distribution.inverter.base_cell:*
+<CMD> um::get_metric_definition -name clock.area_distribution.logic.base_cell:*
+<CMD> um::get_metric_definition -name clock.area_distribution.nonicg.base_cell:*
+<CMD> um::get_metric_definition -name clock.buffer_depth_constraint.skew_group:*.*
+<CMD> um::get_metric_definition -name clock.capacitance.gate.leaf
+<CMD> um::get_metric_definition -name clock.capacitance.gate.top
+<CMD> um::get_metric_definition -name clock.capacitance.gate.trunk
+<CMD> um::get_metric_definition -name clock.capacitance.sink.*
+<CMD> um::get_metric_definition -name clock.capacitance.total.leaf
+<CMD> um::get_metric_definition -name clock.capacitance.total.top
+<CMD> um::get_metric_definition -name clock.capacitance.total.trunk
+<CMD> um::get_metric_definition -name clock.capacitance.wire.leaf
+<CMD> um::get_metric_definition -name clock.capacitance.wire.top
+<CMD> um::get_metric_definition -name clock.capacitance.wire.trunk
+<CMD> um::get_metric_definition -name clock.drv.nets.capacitance.*
+<CMD> um::get_metric_definition -name clock.drv.nets.capacitance.count
+<CMD> um::get_metric_definition -name clock.drv.nets.capacitance.max
+<CMD> um::get_metric_definition -name clock.drv.nets.fanout.*
+<CMD> um::get_metric_definition -name clock.drv.nets.fanout.count
+<CMD> um::get_metric_definition -name clock.drv.nets.fanout.max
+<CMD> um::get_metric_definition -name clock.drv.nets.length.*
+<CMD> um::get_metric_definition -name clock.drv.nets.length.count
+<CMD> um::get_metric_definition -name clock.drv.nets.length.max
+<CMD> um::get_metric_definition -name clock.drv.nets.remaining
+<CMD> um::get_metric_definition -name clock.drv.nets.resistance.*
+<CMD> um::get_metric_definition -name clock.drv.nets.resistance.count
+<CMD> um::get_metric_definition -name clock.drv.nets.resistance.max
+<CMD> um::get_metric_definition -name clock.drv.nets.unfixable
+<CMD> um::get_metric_definition -name clock.halo.clock_tree:*.count
+<CMD> um::get_metric_definition -name clock.halo.clock_tree:*.violations
+<CMD> um::get_metric_definition -name clock.instances.buffer
+<CMD> um::get_metric_definition -name clock.instances.buffer.creator.*
+<CMD> um::get_metric_definition -name clock.instances.clkgate
+<CMD> um::get_metric_definition -name clock.instances.inverter
+<CMD> um::get_metric_definition -name clock.instances.inverter.creator.*
+<CMD> um::get_metric_definition -name clock.instances.logic
+<CMD> um::get_metric_definition -name clock.instances.nonicg
+<CMD> um::get_metric_definition -name clock.instances.total
+<CMD> um::get_metric_definition -name clock.instances_distribution.buffer.base_cell:*
+<CMD> um::get_metric_definition -name clock.instances_distribution.clkgate.base_cell:*
+<CMD> um::get_metric_definition -name clock.instances_distribution.inverter.base_cell:*
+<CMD> um::get_metric_definition -name clock.instances_distribution.logic.base_cell:*
+<CMD> um::get_metric_definition -name clock.instances_distribution.nonicg.base_cell:*
+<CMD> um::get_metric_definition -name clock.latency.primary_reporting_skew_group.primary_half_corner.*
+<CMD> um::get_metric_definition -name clock.latency.skew_group:*.delay_corner:*.early.*
+<CMD> um::get_metric_definition -name clock.latency.skew_group:*.delay_corner:*.late.*
+<CMD> um::get_metric_definition -name clock.nets.length.leaf
+<CMD> um::get_metric_definition -name clock.nets.length.top
+<CMD> um::get_metric_definition -name clock.nets.length.total
+<CMD> um::get_metric_definition -name clock.nets.length.trunk
+<CMD> um::get_metric_definition -name clock.skew.primary_reporting_skew_group.primary_half_corner.*
+<CMD> um::get_metric_definition -name clock.skew.primary_reporting_skew_group.primary_half_corner.skew_band.*
+<CMD> um::get_metric_definition -name clock.skew.skew_group:*.delay_corner:*.early.gate
+<CMD> um::get_metric_definition -name clock.skew.skew_group:*.delay_corner:*.early.skew_band.*
+<CMD> um::get_metric_definition -name clock.skew.skew_group:*.delay_corner:*.early.target
+<CMD> um::get_metric_definition -name clock.skew.skew_group:*.delay_corner:*.early.target_met
+<CMD> um::get_metric_definition -name clock.skew.skew_group:*.delay_corner:*.early.total
+<CMD> um::get_metric_definition -name clock.skew.skew_group:*.delay_corner:*.early.wire
+<CMD> um::get_metric_definition -name clock.skew.skew_group:*.delay_corner:*.late.gate
+<CMD> um::get_metric_definition -name clock.skew.skew_group:*.delay_corner:*.late.skew_band.*
+<CMD> um::get_metric_definition -name clock.skew.skew_group:*.delay_corner:*.late.target
+<CMD> um::get_metric_definition -name clock.skew.skew_group:*.delay_corner:*.late.target_met
+<CMD> um::get_metric_definition -name clock.skew.skew_group:*.delay_corner:*.late.total
+<CMD> um::get_metric_definition -name clock.skew.skew_group:*.delay_corner:*.late.wire
+<CMD> um::get_metric_definition -name clock.stage_depth_constraint.*
+<CMD> um::get_metric_definition -name clock.transition.auto_target.delay_corner:*.early.clock_tree:*
+<CMD> um::get_metric_definition -name clock.transition.auto_target.delay_corner:*.late.clock_tree:*
+<CMD> um::get_metric_definition -name clock.transition.primary_half_corner.leaf.*.*
+<CMD> um::get_metric_definition -name clock.transition.primary_half_corner.leaf.*.max
+<CMD> um::get_metric_definition -name clock.transition.primary_half_corner.top.*.*
+<CMD> um::get_metric_definition -name clock.transition.primary_half_corner.top.*.max
+<CMD> um::get_metric_definition -name clock.transition.primary_half_corner.trunk.*.*
+<CMD> um::get_metric_definition -name clock.transition.primary_half_corner.trunk.*.max
+<CMD> um::get_metric_definition -name clock.transition.target.delay_corner:*.early.leaf.clock_tree:*
+<CMD> um::get_metric_definition -name clock.transition.target.delay_corner:*.early.top.clock_tree:*
+<CMD> um::get_metric_definition -name clock.transition.target.delay_corner:*.early.trunk.clock_tree:*
+<CMD> um::get_metric_definition -name clock.transition.target.delay_corner:*.late.leaf.clock_tree:*
+<CMD> um::get_metric_definition -name clock.transition.target.delay_corner:*.late.top.clock_tree:*
+<CMD> um::get_metric_definition -name clock.transition.target.delay_corner:*.late.trunk.clock_tree:*
+<CMD> um::get_metric_definition -name clock.transition.target.primary_half_corner.leaf.*
+<CMD> um::get_metric_definition -name clock.transition.target.primary_half_corner.top.*
+<CMD> um::get_metric_definition -name clock.transition.target.primary_half_corner.trunk.*
+<CMD> um::get_metric_definition -name design.area
+<CMD> um::get_metric_definition -name design.area.always_on
+<CMD> um::get_metric_definition -name design.area.blackbox
+<CMD> um::get_metric_definition -name design.area.buffer
+<CMD> um::get_metric_definition -name design.area.combinatorial
+<CMD> um::get_metric_definition -name design.area.hinst:*
+<CMD> um::get_metric_definition -name design.area.icg
+<CMD> um::get_metric_definition -name design.area.inverter
+<CMD> um::get_metric_definition -name design.area.io
+<CMD> um::get_metric_definition -name design.area.isolation
+<CMD> um::get_metric_definition -name design.area.latch
+<CMD> um::get_metric_definition -name design.area.level_shifter
+<CMD> um::get_metric_definition -name design.area.logical
+<CMD> um::get_metric_definition -name design.area.macro
+<CMD> um::get_metric_definition -name design.area.physical
+<CMD> um::get_metric_definition -name design.area.power_switch
+<CMD> um::get_metric_definition -name design.area.register
+<CMD> um::get_metric_definition -name design.area.std_cell
+<CMD> um::get_metric_definition -name design.area.vth:*
+<CMD> um::get_metric_definition -name design.area.vth:*.ratio
+<CMD> um::get_metric_definition -name design.blockages.place.area
+<CMD> um::get_metric_definition -name design.blockages.route.area
+<CMD> um::get_metric_definition -name design.blockages.route.area.layer:*
+<CMD> um::get_metric_definition -name design.congestion.hotspot.max
+<CMD> um::get_metric_definition -name design.congestion.hotspot.total
+<CMD> um::get_metric_definition -name design.density
+<CMD> um::get_metric_definition -name design.floorplan.image
+<CMD> um::get_metric_definition -name design.instances
+<CMD> um::get_metric_definition -name design.instances.always_on
+<CMD> um::get_metric_definition -name design.instances.blackbox
+<CMD> um::get_metric_definition -name design.instances.buffer
+<CMD> um::get_metric_definition -name design.instances.combinatorial
+<CMD> um::get_metric_definition -name design.instances.hinst:*
+<CMD> um::get_metric_definition -name design.instances.icg
+<CMD> um::get_metric_definition -name design.instances.inverter
+<CMD> um::get_metric_definition -name design.instances.io
+<CMD> um::get_metric_definition -name design.instances.isolation
+<CMD> um::get_metric_definition -name design.instances.latch
+<CMD> um::get_metric_definition -name design.instances.level_shifter
+<CMD> um::get_metric_definition -name design.instances.logical
+<CMD> um::get_metric_definition -name design.instances.macro
+<CMD> um::get_metric_definition -name design.instances.physical
+<CMD> um::get_metric_definition -name design.instances.power_switch
+<CMD> um::get_metric_definition -name design.instances.register
+<CMD> um::get_metric_definition -name design.instances.std_cell
+<CMD> um::get_metric_definition -name design.instances.vth:*
+<CMD> um::get_metric_definition -name design.instances.vth:*.ratio
+<CMD> um::get_metric_definition -name design.multibit.*
+<CMD> um::get_metric_definition -name design.name
+<CMD> um::get_metric_definition -name design.route.drc.image
+<CMD> um::get_metric_definition -name flow.cputime
+<CMD> um::get_metric_definition -name flow.cputime.total
+<CMD> um::get_metric_definition -name flow.last_child_snapshot
+<CMD> um::get_metric_definition -name flow.log
+<CMD> um::get_metric_definition -name flow.machine
+<CMD> um::get_metric_definition -name flow.machine.cpu.frequency
+<CMD> um::get_metric_definition -name flow.machine.cpu.model
+<CMD> um::get_metric_definition -name flow.machine.cpu.number
+<CMD> um::get_metric_definition -name flow.machine.hostname
+<CMD> um::get_metric_definition -name flow.machine.memory.free
+<CMD> um::get_metric_definition -name flow.machine.memory.total
+<CMD> um::get_metric_definition -name flow.machine.os
+<CMD> um::get_metric_definition -name flow.machine.swap.free
+<CMD> um::get_metric_definition -name flow.machine.swap.total
+<CMD> um::get_metric_definition -name flow.memory
+<CMD> um::get_metric_definition -name flow.memory.resident
+<CMD> um::get_metric_definition -name flow.memory.resident.peak
+<CMD> um::get_metric_definition -name flow.realtime
+<CMD> um::get_metric_definition -name flow.realtime.total
+<CMD> um::get_metric_definition -name flow.root_config
+<CMD> um::get_metric_definition -name flow.run_directory
+<CMD> um::get_metric_definition -name flow.run_tag
+<CMD> um::get_metric_definition -name flow.step.tcl
+<CMD> um::get_metric_definition -name flow.template.feature_enabled
+<CMD> um::get_metric_definition -name flow.template.type
+<CMD> um::get_metric_definition -name flow.tool_list
+<CMD> um::get_metric_definition -name flow.user
+<CMD> um::get_metric_definition -name messages
+<CMD> um::get_metric_definition -name power
+<CMD> um::get_metric_definition -name power.clock
+<CMD> um::get_metric_definition -name power.hinst:*
+<CMD> um::get_metric_definition -name power.internal
+<CMD> um::get_metric_definition -name power.internal.hinst:*
+<CMD> um::get_metric_definition -name power.internal.type:*
+<CMD> um::get_metric_definition -name power.leakage
+<CMD> um::get_metric_definition -name power.leakage.hinst:*
+<CMD> um::get_metric_definition -name power.leakage.type:*
+<CMD> um::get_metric_definition -name power.switching
+<CMD> um::get_metric_definition -name power.switching.hinst:*
+<CMD> um::get_metric_definition -name power.switching.type:*
+<CMD> um::get_metric_definition -name route.drc
+<CMD> um::get_metric_definition -name route.drc.antenna
+<CMD> um::get_metric_definition -name route.drc.layer:*
+<CMD> um::get_metric_definition -name route.map.*
+<CMD> um::get_metric_definition -name route.overflow
+<CMD> um::get_metric_definition -name route.overflow.horizontal
+<CMD> um::get_metric_definition -name route.overflow.layer:*
+<CMD> um::get_metric_definition -name route.overflow.vertical
+<CMD> um::get_metric_definition -name route.shielding.*
+<CMD> um::get_metric_definition -name route.via
+<CMD> um::get_metric_definition -name route.via.layer:*
+<CMD> um::get_metric_definition -name route.via.multicut
+<CMD> um::get_metric_definition -name route.via.multicut.layer:*
+<CMD> um::get_metric_definition -name route.via.multicut.percentage
+<CMD> um::get_metric_definition -name route.via.singlecut
+<CMD> um::get_metric_definition -name route.via.singlecut.layer:*
+<CMD> um::get_metric_definition -name route.via.singlecut.percentage
+<CMD> um::get_metric_definition -name route.via.total
+<CMD> um::get_metric_definition -name route.wirelength
+<CMD> um::get_metric_definition -name timing.drv.max_cap.total
+<CMD> um::get_metric_definition -name timing.drv.max_cap.worst
+<CMD> um::get_metric_definition -name timing.drv.max_fanout.total
+<CMD> um::get_metric_definition -name timing.drv.max_fanout.worst
+<CMD> um::get_metric_definition -name timing.drv.max_length.total
+<CMD> um::get_metric_definition -name timing.drv.max_length.worst
+<CMD> um::get_metric_definition -name timing.drv.max_tran.total
+<CMD> um::get_metric_definition -name timing.drv.max_tran.worst
+<CMD> um::get_metric_definition -name timing.hold.feps
+<CMD> um::get_metric_definition -name timing.hold.feps.analysis_view:*
+<CMD> um::get_metric_definition -name timing.hold.feps.path_group:*
+<CMD> um::get_metric_definition -name timing.hold.feps.path_group:*.analysis_view:*
+<CMD> um::get_metric_definition -name timing.hold.feps.path_group:reg2reg
+<CMD> um::get_metric_definition -name timing.hold.histogram
+<CMD> um::get_metric_definition -name timing.hold.histogram.views
+<CMD> um::get_metric_definition -name timing.hold.pba.histogram
+<CMD> um::get_metric_definition -name timing.hold.pba.histogram.views
+<CMD> um::get_metric_definition -name timing.hold.tns
+<CMD> um::get_metric_definition -name timing.hold.tns.analysis_view:*
+<CMD> um::get_metric_definition -name timing.hold.tns.path_group:*
+<CMD> um::get_metric_definition -name timing.hold.tns.path_group:*.analysis_view:*
+<CMD> um::get_metric_definition -name timing.hold.tns.path_group:reg2reg
+<CMD> um::get_metric_definition -name timing.hold.wns
+<CMD> um::get_metric_definition -name timing.hold.wns.analysis_view:*
+<CMD> um::get_metric_definition -name timing.hold.wns.path_group:*
+<CMD> um::get_metric_definition -name timing.hold.wns.path_group:*.analysis_view:*
+<CMD> um::get_metric_definition -name timing.hold.wns.path_group:reg2reg
+<CMD> um::get_metric_definition -name timing.setup.feps
+<CMD> um::get_metric_definition -name timing.setup.feps.analysis_view:*
+<CMD> um::get_metric_definition -name timing.setup.feps.path_group:*
+<CMD> um::get_metric_definition -name timing.setup.feps.path_group:*.analysis_view:*
+<CMD> um::get_metric_definition -name timing.setup.feps.path_group:reg2reg
+<CMD> um::get_metric_definition -name timing.setup.histogram
+<CMD> um::get_metric_definition -name timing.setup.histogram.views
+<CMD> um::get_metric_definition -name timing.setup.pba.histogram
+<CMD> um::get_metric_definition -name timing.setup.pba.histogram.views
+<CMD> um::get_metric_definition -name timing.setup.tns
+<CMD> um::get_metric_definition -name timing.setup.tns.analysis_view:*
+<CMD> um::get_metric_definition -name timing.setup.tns.path_group:*
+<CMD> um::get_metric_definition -name timing.setup.tns.path_group:*.analysis_view:*
+<CMD> um::get_metric_definition -name timing.setup.tns.path_group:reg2reg
+<CMD> um::get_metric_definition -name timing.setup.type
+<CMD> um::get_metric_definition -name timing.setup.wns
+<CMD> um::get_metric_definition -name timing.setup.wns.analysis_view:*
+<CMD> um::get_metric_definition -name timing.setup.wns.path_group:*
+<CMD> um::get_metric_definition -name timing.setup.wns.path_group:*.analysis_view:*
+<CMD> um::get_metric_definition -name timing.setup.wns.path_group:reg2reg
+<CMD> um::get_metric_definition -name timing.si.glitches
+<CMD> um::get_metric_definition -name timing.si.noise
+<CMD> um::get_metric_definition -name transition.*
+<CMD> um::get_metric_definition -name transition.count
+<CMD> um::get_metric_definition -name transition.max
+<CMD> get_metric -raw -id current -uuid b51cd247-5e20-42f5-8440-4200802c4b89 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid b51cd247-5e20-42f5-8440-4200802c4b89 clock.PostConditioning.area.total
+<CMD> get_metric -raw -id current -uuid b51cd247-5e20-42f5-8440-4200802c4b89 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid b51cd247-5e20-42f5-8440-4200802c4b89 clock.Routing.area.total
+<CMD> get_metric -raw -id current -uuid b51cd247-5e20-42f5-8440-4200802c4b89 clock.Implementation.area.total
+<CMD> get_metric -raw -id current -uuid b51cd247-5e20-42f5-8440-4200802c4b89 clock.eGRPC.area.total
+<CMD> get_metric -raw -id current -uuid b51cd247-5e20-42f5-8440-4200802c4b89 clock.Construction.area.total
+<CMD> get_metric -raw -id current -uuid b51cd247-5e20-42f5-8440-4200802c4b89 clock.Implementation.area.total
+<FF> MAILING RESULTS TO ryanridley46@gmail.com
+<CMD> saveDesign DBS/init.enc -compress
+#% Begin save design ... (date=08/07 15:52:43, mem=830.2M)
+% Begin Save ccopt configuration ... (date=08/07 15:52:43, mem=832.2M)
+% End Save ccopt configuration ... (date=08/07 15:52:43, total cpu=0:00:00.0, real=0:00:00.0, peak res=833.1M, current mem=833.1M)
+% Begin Save netlist data ... (date=08/07 15:52:43, mem=833.1M)
+Writing Binary DB to DBS/init.enc.dat.tmp/riscv.v.bin in single-threaded mode...
+% End Save netlist data ... (date=08/07 15:52:43, total cpu=0:00:00.1, real=0:00:00.0, peak res=833.1M, current mem=833.1M)
+Saving congestion map file DBS/init.enc.dat.tmp/riscv.route.congmap.gz ...
+% Begin Save AAE data ... (date=08/07 15:52:43, mem=833.8M)
+Saving AAE Data ...
+% End Save AAE data ... (date=08/07 15:52:43, total cpu=0:00:00.0, real=0:00:00.0, peak res=833.8M, current mem=833.8M)
+% Begin Save clock tree data ... (date=08/07 15:52:43, mem=834.2M)
+% End Save clock tree data ... (date=08/07 15:52:43, total cpu=0:00:00.0, real=0:00:00.0, peak res=834.2M, current mem=834.2M)
+Saving preference file DBS/init.enc.dat.tmp/gui.pref.tcl ...
+Saving mode setting ...
+Saving global file ...
+% Begin Save floorplan data ... (date=08/07 15:52:43, mem=835.5M)
+Saving floorplan file ...
+% End Save floorplan data ... (date=08/07 15:52:43, total cpu=0:00:00.0, real=0:00:00.0, peak res=835.5M, current mem=835.5M)
+Saving PG file DBS/init.enc.dat.tmp/riscv.pg.gz
+*** Completed savePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=996.7M) ***
+Saving Drc markers ...
+... No Drc file written since there is no markers found.
+% Begin Save placement data ... (date=08/07 15:52:43, mem=835.6M)
+** Saving stdCellPlacement_binary (version# 2) ...
+Save Adaptive View Pruing View Names to Binary file
+% End Save placement data ... (date=08/07 15:52:43, total cpu=0:00:00.0, real=0:00:00.0, peak res=835.7M, current mem=835.7M)
+% Begin Save routing data ... (date=08/07 15:52:43, mem=835.7M)
+Saving route file ...
+*** Completed saveRoute (cpu=0:00:00.0 real=0:00:02.0 mem=996.7M) ***
+% End Save routing data ... (date=08/07 15:52:45, total cpu=0:00:00.0, real=0:00:02.0, peak res=837.0M, current mem=836.0M)
+Saving property file DBS/init.enc.dat.tmp/riscv.prop
+*** Completed saveProperty (cpu=0:00:00.0 real=0:00:00.0 mem=999.7M) ***
+% Begin Save power constraints data ... (date=08/07 15:52:45, mem=836.4M)
+% End Save power constraints data ... (date=08/07 15:52:45, total cpu=0:00:00.0, real=0:00:00.0, peak res=836.5M, current mem=836.5M)
+rc_typ
+Generated self-contained design init.enc.dat.tmp
+#% End save design ... (date=08/07 15:52:46, total cpu=0:00:01.9, real=0:00:03.0, peak res=838.3M, current mem=837.5M)
+*** Message Summary: 0 warning(s), 0 error(s)
+
+<CMD> saveNetlist DBS/LEC/init.v.gz
+Writing Netlist "DBS/LEC/init.v.gz" ...
+<FF> ==============================================
+<FF>          COMPLETED STEP : init
+<FF>         ELAPSED RUNTIME : 0 days, 00:00:19
+<FF> ==============================================
+
+*** Memory Usage v#1 (Current mem = 1032.992M, initial mem = 287.395M) ***
+*** Message Summary: 102 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:28.4, real=0:00:31.0, mem=1033.0M) ---

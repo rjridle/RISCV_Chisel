@@ -47,7 +47,7 @@ if {[info exists vars(cpf_file)]} {
 }
 
 # Floorplan (from long time ago in a galaxy far, far away)
-floorplan -d 6000 6000 40.05 40.6 40.05 42
+floorplan -d 1000 1000 40.05 40.6 40.05 42
 
 # Make VDD/VSS power connectors
 globalNetConnect VSS -type pgpin -pin gnd -inst * 

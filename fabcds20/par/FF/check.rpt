@@ -4,7 +4,7 @@
 #  WARNING: Neither fp_file, def_files, fp_tcl_file, fp_tcl_proc are defined
 #  INFO:    netlist = ../synth/mapped/riscv.vh
 #  INFO:    flow = mmmc
-#  INFO:    process = 250nm
+#  INFO:    process = 130nm
 #  INFO:    library_sets = libs_tt
 #  INFO:    rc_corners = rc_typ
 #  INFO:    delay_corners = corner_tt
@@ -19,11 +19,11 @@
 #  ==============================================
 #  INFO: libs_tt:
 #  INFO:    timing = 
-#  INFO:       /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib
+#  INFO:       /home/rjridle/osugooglelib/outputs/s8_osu130_TT_1P8_25C.ccs.lib
 #  ==============================================
 #                 LEF Files
 #  ==============================================
-#  INFO: /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lef
+#  INFO: /home/rjridle/osugooglelib/outputs/s8_osu130.lef
 #  WARNING: PAC is obsolete and will be removed in a future version. Consider using Sign-off ECO.#  ==============================================
 #                  RC Corners
 #  ==============================================
@@ -40,7 +40,7 @@
 #             Constraint Modes
 #  ==============================================
 #  INFO: setup_func_mode:
-#  INFO:    pre_cts_sdc = /home/rjridle/fabs/fabcds20/synth/mapped/riscv.sdc
+#  INFO:    pre_cts_sdc = /home/rjridle/risc-v-chisel/fabcds20/synth/mapped/riscv.sdc
 #  INFO:    Variable vars(setup_func_mode,post_cts_sdc) not defined
 #  INFO:    Variable vars(setup_func_mode,incr_cts_sdc) not defined
 #  ==============================================
@@ -150,7 +150,7 @@
 #  -----------------------------------------------------
 #                Signal Integrity Options
 #  -----------------------------------------------------
-#                 Process = 250nm
+#                 Process = 130nm
 #  -----------------------------------------------------
 #                   Multiple CPUs
 #  -----------------------------------------------------

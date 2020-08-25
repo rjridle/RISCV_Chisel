@@ -1,0 +1,18 @@
+ 
+****************************************
+Report : path_group
+Design : riscv
+Version: M-2016.12-SP1
+Date   : Fri Aug 21 15:36:50 2020
+****************************************
+
+                        Critical
+Group Name    Weight    Range
+--------------------------------------------------------------------------------
+**default**   1.00      0.00                 
+clock         1.00      0.00                 
+
+Path Group clock:
+	-to      clock
+
+1

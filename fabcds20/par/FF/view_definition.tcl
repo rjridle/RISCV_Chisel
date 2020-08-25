@@ -13,10 +13,10 @@ create_rc_corner -name rc_typ -T 25
 # -postRoute_xcap $vars(rc_typ,post_route_xcap_factor)
 #------------------------------------------------
 create_library_set -name libs_tt \
-   -timing [list /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib]
+   -timing [list /home/rjridle/osugooglelib/outputs/s8_osu130_TT_1P8_25C.ccs.lib]
 create_delay_corner -name corner_tt -library_set libs_tt -rc_corner rc_typ
 create_constraint_mode -name setup_func_mode \
-   -sdc_files [list /home/rjridle/fabs/fabcds20/synth/mapped/riscv.sdc]
+   -sdc_files [list /home/rjridle/risc-v-chisel/fabcds20/synth/mapped/riscv.sdc]
 create_analysis_view -name hold_func \
    -constraint_mode setup_func_mode \
    -delay_corner corner_tt

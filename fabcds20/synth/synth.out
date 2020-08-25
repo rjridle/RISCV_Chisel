@@ -49,7 +49,8 @@ analyze -f sverilog -lib WORK $my_verilog_files
 Running PRESTO HDLC
 Compiling source file ./hdl/top.v
 Presto compilation completed successfully.
-Loading db file '/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.db'
+Loading db file '/home/rjridle/osugooglelib/outputs/s8_osu130_TT_1P8_25C.ccs.db'
+Information: Using CCS timing libraries. (TIM-024)
 Loading db file '/programs/synopsys/syn_vM-2016.12/libraries/syn/dw_foundation.sldb'
 1
 #
@@ -59,7 +60,7 @@ Loading db file '/programs/synopsys/syn_vM-2016.12/libraries/syn/dw_foundation.s
 elaborate $my_toplevel -lib WORK 
 Loading db file '/programs/synopsys/syn_vM-2016.12/libraries/syn/gtech.db'
 Loading db file '/programs/synopsys/syn_vM-2016.12/libraries/syn/standard.sldb'
-  Loading link library 'osu05_stdcells'
+  Loading link library 's8_osu130_TT_1P8_25C.ccs'
   Loading link library 'gtech'
 Running PRESTO HDLC
 Presto compilation completed successfully.
@@ -162,7 +163,7 @@ link
   Linking design 'riscv'
   Using the following designs and libraries:
   --------------------------------------------------------------------------
-  osu05_stdcells (library)    /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.db
+  s8_osu130_TT_1P8_25C.ccs (library) /home/rjridle/osugooglelib/outputs/s8_osu130_TT_1P8_25C.ccs.db
   dw_foundation.sldb (library) /programs/synopsys/syn_vM-2016.12/libraries/syn/dw_foundation.sldb
 
 1
@@ -208,7 +209,7 @@ set_propagated_clock [get_clocks $my_clk]
 Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
 1
 # Setting constraints on input ports 
-set_driving_cell  -lib_cell DFFPOSX1 -pin Q $all_in_ex_clk
+set_driving_cell  -lib_cell DFFSXL -pin Q $all_in_ex_clk
 1
 # Set input/output delay
 set_input_delay 0.0 -max -clock $my_clk $all_in_ex_clk
@@ -216,7 +217,9 @@ set_input_delay 0.0 -max -clock $my_clk $all_in_ex_clk
 set_output_delay 0.0 -max -clock $my_clk [all_outputs]
 1
 # Setting load constraint on output ports 
-set_load [expr [load_of osu05_stdcells/DFFPOSX1/D] * 1] [all_outputs]
+set_load [expr [load_of s8_osu130/DFFSXL/D] * 1] [all_outputs]
+Error: Can't find lib_pin 's8_osu130/DFFSXL/D'. (UID-109)
+Error: Value for list '<library_cell_pin>' must have 1 elements. (CMD-036)
 1
 # Set the wire load model 
 set_wire_load_mode "top"
@@ -249,7 +252,7 @@ Information: Auto ungrouping of the design is disabled because the '-no_boundary
 Warning: The value of variable 'compile_preserve_subdesign_interfaces' has been changed to true because '-no_boundary_optimization' is used. (OPT-133)
 Information: Starting from 2013.12 release, constant propagation is enabled even when boundary optimization is disabled. (OPT-1318)
 Information: Performing power optimization. (PWR-850)
-Analyzing: "/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.db"
+Analyzing: "/home/rjridle/osugooglelib/outputs/s8_osu130_TT_1P8_25C.ccs.db"
 Library analysis succeeded.
 Information: Evaluating DesignWare library utilization. (UISN-27)
 
@@ -262,7 +265,7 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 
   Simplifying Design 'riscv'
 
-Loaded alib file './alib-52/osu05_stdcells.db.alib'
+Loaded alib file './alib-52/s8_osu130_TT_1P8_25C.ccs.db.alib'
 Information: State dependent leakage is now switched from on to off.
 
   Beginning Pass 1 Mapping
@@ -278,37 +281,40 @@ Information: Added key list 'DesignWare' to design 'riscv'. (DDB-72)
 Information: Updating design information... (UID-85)
 Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
 Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: The library cell 'TIELO' in the library 's8_osu130_TT_1P8_25C.ccs' is not characterized for internal power. (PWR-536)
+Information: The library cell 'TIEHI' in the library 's8_osu130_TT_1P8_25C.ccs' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
 Information: The register 'rf_reg[0][9]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][6]' is a constant and will be removed. (OPT-1206)
-Information: The register 'rf_reg[0][25]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][7]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][5]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][1]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][3]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'rf_reg[0][15]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][14]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][4]' is a constant and will be removed. (OPT-1206)
-Information: The register 'rf_reg[0][18]' is a constant and will be removed. (OPT-1206)
-Information: The register 'rf_reg[0][21]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'rf_reg[0][18]' is a constant and will be removed. (OPT-1206)
+Information: The register 'rf_reg[0][25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'rf_reg[0][21]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][17]' is a constant and will be removed. (OPT-1206)
-Information: The register 'rf_reg[0][15]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][13]' is a constant and will be removed. (OPT-1206)
-Information: The register 'rf_reg[0][11]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][8]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][23]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][22]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][20]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][12]' is a constant and will be removed. (OPT-1206)
-Information: The register 'rf_reg[0][27]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][26]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][10]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'rf_reg[0][27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'rf_reg[0][11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'rf_reg[0][30]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][28]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][24]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][16]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][0]' is a constant and will be removed. (OPT-1206)
-Information: The register 'rf_reg[0][30]' is a constant and will be removed. (OPT-1206)
 Information: The register 'rf_reg[0][31]' is a constant and will be removed. (OPT-1206)
 
   Beginning Mapping Optimizations  (Ultra High effort)
@@ -326,6 +332,15 @@ Information: The register 'rf_reg[0][31]' is a constant and will be removed. (OP
   Mapping 'DW01_add'
   Mapping 'DW01_add'
   Mapping 'DW01_add'
+  Mapping 'riscv_DW01_add_50'
+  Mapping 'riscv_DW01_add_51'
+  Mapping 'riscv_DW01_add_52'
+  Mapping 'riscv_DW01_add_53'
+  Mapping 'riscv_DW01_add_54'
+  Mapping 'riscv_DW01_add_55'
+  Mapping 'riscv_DW01_add_56'
+  Mapping 'riscv_DW01_add_57'
+  Mapping 'riscv_DW01_add_58'
   Mapping 'riscv_DW01_add_59'
   Mapping 'riscv_DW01_add_60'
   Mapping 'riscv_DW01_add_61'
@@ -345,15 +360,6 @@ Information: The register 'rf_reg[0][31]' is a constant and will be removed. (OP
   Mapping 'riscv_DW01_add_75'
   Mapping 'riscv_DW01_add_76'
   Mapping 'riscv_DW01_add_77'
-  Mapping 'riscv_DW01_add_78'
-  Mapping 'riscv_DW01_add_79'
-  Mapping 'riscv_DW01_add_80'
-  Mapping 'riscv_DW01_add_81'
-  Mapping 'riscv_DW01_add_82'
-  Mapping 'riscv_DW01_add_83'
-  Mapping 'riscv_DW01_add_84'
-  Mapping 'riscv_DW01_add_85'
-  Mapping 'riscv_DW01_add_86'
   Mapping 'riscv_DW_inc_0'
   Building model 'DW01_absval_width33' (cla)
   Building model 'DW01_absval_width33' (cla)
@@ -363,13 +369,22 @@ Information: The register 'rf_reg[0][31]' is a constant and will be removed. (OP
   Mapping 'riscv_DW01_absval_1'
   Structuring 'riscv_DW01_inc_1'
   Mapping 'riscv_DW01_inc_1'
+  Mapping 'riscv_DW01_add_78'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'riscv_DW01_add_79'
+  Mapping 'riscv_DW01_add_80'
+  Mapping 'riscv_DW01_add_81'
+  Mapping 'riscv_DW01_add_82'
+  Mapping 'riscv_DW01_add_83'
+  Mapping 'riscv_DW01_add_84'
+  Mapping 'riscv_DW01_add_85'
+  Mapping 'riscv_DW01_add_86'
   Mapping 'riscv_DW01_add_87'
-  Mapping 'DW01_add'
-  Mapping 'DW01_add'
-  Mapping 'DW01_add'
-  Mapping 'DW01_add'
-  Mapping 'DW01_add'
-  Mapping 'DW01_add'
   Mapping 'riscv_DW01_add_88'
   Mapping 'riscv_DW01_add_89'
   Mapping 'riscv_DW01_add_90'
@@ -403,15 +418,6 @@ Information: The register 'rf_reg[0][31]' is a constant and will be removed. (OP
   Mapping 'riscv_DW01_add_118'
   Mapping 'riscv_DW01_add_119'
   Mapping 'riscv_DW01_add_120'
-  Mapping 'riscv_DW01_add_121'
-  Mapping 'riscv_DW01_add_122'
-  Mapping 'riscv_DW01_add_123'
-  Mapping 'riscv_DW01_add_124'
-  Mapping 'riscv_DW01_add_125'
-  Mapping 'riscv_DW01_add_126'
-  Mapping 'riscv_DW01_add_127'
-  Mapping 'riscv_DW01_add_128'
-  Mapping 'riscv_DW01_add_129'
   Mapping 'riscv_DW_inc_2'
   Building model 'DW01_absval_width33' (cla)
   Building model 'DW01_absval_width33' (cla)
@@ -421,10 +427,19 @@ Information: The register 'rf_reg[0][31]' is a constant and will be removed. (OP
   Mapping 'riscv_DW01_absval_2'
   Structuring 'riscv_DW01_inc_2'
   Mapping 'riscv_DW01_inc_2'
+  Mapping 'riscv_DW01_add_121'
+  Mapping 'riscv_DW01_add_122'
+  Mapping 'riscv_DW01_add_123'
+  Mapping 'riscv_DW01_sub_0'
+  Mapping 'riscv_DW01_add_124'
+  Mapping 'riscv_DW01_add_125'
+  Mapping 'riscv_DW01_add_126'
+  Mapping 'riscv_DW01_add_127'
+  Mapping 'riscv_DW01_add_128'
+  Mapping 'riscv_DW01_add_129'
   Mapping 'riscv_DW01_add_130'
   Mapping 'riscv_DW01_add_131'
   Mapping 'riscv_DW01_add_132'
-  Mapping 'riscv_DW01_sub_0'
   Mapping 'riscv_DW01_add_133'
   Mapping 'riscv_DW01_add_134'
   Mapping 'riscv_DW01_add_135'
@@ -493,107 +508,7 @@ Information: The register 'rf_reg[0][31]' is a constant and will be removed. (OP
   Mapping 'riscv_DW01_add_198'
   Mapping 'riscv_DW01_add_199'
   Mapping 'riscv_DW01_add_200'
-  Mapping 'riscv_DW01_add_201'
-  Mapping 'riscv_DW01_add_202'
-  Mapping 'riscv_DW01_add_203'
-  Mapping 'riscv_DW01_add_204'
-  Mapping 'riscv_DW01_add_205'
-  Mapping 'riscv_DW01_add_206'
-  Mapping 'riscv_DW01_add_207'
-  Mapping 'riscv_DW01_add_208'
-  Mapping 'riscv_DW01_add_209'
   Mapping 'riscv_DW_inc_4'
-  Building model 'DW01_absval_width33' (cla)
-  Building model 'DW01_absval_width33' (cla)
-  Structuring 'riscv_DW_div_tc_3'
-  Mapping 'riscv_DW_div_tc_3'
-  Structuring 'riscv_DW01_absval_3'
-  Mapping 'riscv_DW01_absval_3'
-  Structuring 'riscv_DW01_inc_3'
-  Mapping 'riscv_DW01_inc_3'
-  Mapping 'riscv_DW01_add_210'
-  Mapping 'riscv_DW01_add_211'
-  Mapping 'riscv_DW01_add_212'
-  Mapping 'riscv_DW01_sub_1'
-  Mapping 'riscv_DW01_add_213'
-  Mapping 'riscv_DW01_add_214'
-  Mapping 'riscv_DW01_add_215'
-  Mapping 'riscv_DW01_add_216'
-  Mapping 'riscv_DW01_add_217'
-  Mapping 'riscv_DW01_add_218'
-  Mapping 'riscv_DW01_add_219'
-  Mapping 'riscv_DW01_add_220'
-  Mapping 'riscv_DW01_add_221'
-  Mapping 'riscv_DW01_add_222'
-  Mapping 'riscv_DW01_add_223'
-  Mapping 'riscv_DW01_add_224'
-  Mapping 'riscv_DW01_add_225'
-  Mapping 'riscv_DW01_add_226'
-  Mapping 'riscv_DW01_add_227'
-  Mapping 'riscv_DW01_add_228'
-  Mapping 'riscv_DW01_add_229'
-  Mapping 'riscv_DW01_add_230'
-  Mapping 'riscv_DW01_add_231'
-  Mapping 'riscv_DW01_add_232'
-  Mapping 'riscv_DW01_add_233'
-  Mapping 'riscv_DW01_add_234'
-  Mapping 'riscv_DW01_add_235'
-  Mapping 'riscv_DW01_add_236'
-  Mapping 'riscv_DW01_add_237'
-  Mapping 'riscv_DW01_add_238'
-  Mapping 'riscv_DW01_add_239'
-  Mapping 'riscv_DW01_add_240'
-  Mapping 'riscv_DW01_add_241'
-  Mapping 'riscv_DW01_add_242'
-  Mapping 'riscv_DW01_add_243'
-  Mapping 'riscv_DW01_add_244'
-  Mapping 'riscv_DW01_add_245'
-  Mapping 'riscv_DW01_add_246'
-  Mapping 'riscv_DW01_add_247'
-  Mapping 'riscv_DW01_add_248'
-  Mapping 'riscv_DW01_add_249'
-  Mapping 'riscv_DW01_add_250'
-  Mapping 'riscv_DW01_add_251'
-  Mapping 'riscv_DW01_add_252'
-  Mapping 'riscv_DW01_add_253'
-  Mapping 'riscv_DW01_add_254'
-  Mapping 'riscv_DW01_add_255'
-  Mapping 'riscv_DW01_add_256'
-  Mapping 'riscv_DW01_add_257'
-  Mapping 'riscv_DW01_add_258'
-  Mapping 'riscv_DW01_add_259'
-  Mapping 'riscv_DW01_add_260'
-  Mapping 'riscv_DW01_add_261'
-  Mapping 'riscv_DW01_add_262'
-  Mapping 'riscv_DW01_add_263'
-  Mapping 'riscv_DW01_add_264'
-  Mapping 'riscv_DW01_add_265'
-  Mapping 'riscv_DW01_add_266'
-  Mapping 'riscv_DW01_add_267'
-  Mapping 'riscv_DW01_add_268'
-  Mapping 'riscv_DW01_add_269'
-  Mapping 'riscv_DW01_add_270'
-  Mapping 'riscv_DW01_add_271'
-  Mapping 'riscv_DW01_add_272'
-  Mapping 'riscv_DW01_add_273'
-  Mapping 'riscv_DW01_add_274'
-  Mapping 'riscv_DW01_add_275'
-  Mapping 'riscv_DW01_add_276'
-  Mapping 'riscv_DW01_add_277'
-  Mapping 'riscv_DW01_add_278'
-  Mapping 'riscv_DW01_add_279'
-  Mapping 'riscv_DW01_add_280'
-  Mapping 'riscv_DW01_add_281'
-  Mapping 'riscv_DW01_add_282'
-  Mapping 'riscv_DW01_add_283'
-  Mapping 'riscv_DW01_add_284'
-  Mapping 'riscv_DW01_add_285'
-  Mapping 'riscv_DW01_add_286'
-  Mapping 'riscv_DW01_add_287'
-  Mapping 'riscv_DW01_add_288'
-  Mapping 'riscv_DW01_add_289'
-  Mapping 'riscv_DW_inc_6'
-  Mapping 'riscv_DW_div_tc_3'
   Mapping Optimization (Phase 1)
 
   Beginning Constant Register Removal
@@ -601,6 +516,8 @@ Information: The register 'rf_reg[0][31]' is a constant and will be removed. (OP
 
   Beginning Global Optimizations
   ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
   Global Optimization (Phase 1)
   Global Optimization (Phase 2)
   Global Optimization (Phase 3)
@@ -631,21 +548,6 @@ Information: The register 'rf_reg[0][31]' is a constant and will be removed. (OP
   Global Optimization (Phase 28)
   Global Optimization (Phase 29)
   Global Optimization (Phase 30)
-  Mapping 'riscv_DW01_add_369'
-  Mapping 'riscv_DW01_add_370'
-  Mapping 'riscv_DW01_add_371'
-  Mapping 'riscv_DW01_add_372'
-  Mapping 'riscv_DW01_add_373'
-  Mapping 'riscv_DW01_add_374'
-  Mapping 'riscv_DW01_add_375'
-  Mapping 'riscv_DW01_add_376'
-  Mapping 'riscv_DW01_add_377'
-  Mapping 'riscv_DW01_add_378'
-  Mapping 'riscv_DW01_add_379'
-  Mapping 'riscv_DW01_add_380'
-  Mapping 'riscv_DW01_add_381'
-  Mapping 'riscv_DW01_add_382'
-  Mapping 'riscv_DW01_add_383'
 Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
 Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
 Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
@@ -661,49 +563,49 @@ Information: Input delay ('rise') on clock port 'clk' will be added to the clock
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:03:18 7412391.0      2.94    2899.6      10.4                           2119.4551      0.00  
-    0:03:19 7415901.0      0.00       0.0      10.4                           2120.8162      0.00  
-    0:03:19 7415901.0      0.00       0.0      10.4                           2120.8162      0.00  
-    0:03:19 7415901.0      0.00       0.0      10.4                           2120.8162      0.00  
+    0:02:05   26733.8      0.00       0.0       2.7                           10451.2959      0.00  
+    0:02:05   26733.8      0.00       0.0       2.7                           10451.2959      0.00  
+    0:02:05   26733.8      0.00       0.0       2.7                           10451.2959      0.00  
+    0:02:05   26733.8      0.00       0.0       2.7                           10451.2959      0.00  
 
   Beginning WLM Backend Optimization
   --------------------------------------
-    0:05:10 6743268.0      0.00       0.0      10.3                           1933.0599      0.00  
-    0:05:15 6691356.0      0.00       0.0       9.3                           1916.7079      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
+    0:03:14   26161.0      0.00       0.0       2.0                           10130.9414      0.00  
+    0:03:14   26145.8      0.00       0.0       1.9                           10119.7461      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
 
 
-  Beginning Design Rule Fixing  (max_fanout)  (max_capacitance)
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
   ----------------------------
 
                                   TOTAL                                                            
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:05:16 6691284.0      0.00       0.0       9.3                           1916.7012      0.00  
+    0:03:28   26065.7      0.00       0.0       0.2                           9147.0059      0.00  
   Global Optimization (Phase 31)
   Global Optimization (Phase 32)
   Global Optimization (Phase 33)
-    0:05:17 6698412.0      0.00       0.0       0.0                           1918.2102      0.00  
-    0:05:17 6698412.0      0.00       0.0       0.0                           1918.2102      0.00  
+    0:03:28   26068.9      0.00       0.0       0.0                           9147.2695      0.00  
+    0:03:28   26068.9      0.00       0.0       0.0                           9147.2695      0.00  
 
 
   Beginning Leakage Power Optimization  (max_leakage_power 0)
@@ -713,7 +615,7 @@ Information: Input delay ('rise') on clock port 'clk' will be added to the clock
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:05:17 6698412.0      0.00       0.0       0.0                           1918.2102      0.00  
+    0:03:28   26068.9      0.00       0.0       0.0                           9147.2695      0.00  
   Global Optimization (Phase 34)
   Global Optimization (Phase 35)
   Global Optimization (Phase 36)
@@ -726,49 +628,44 @@ Information: Input delay ('rise') on clock port 'clk' will be added to the clock
   Global Optimization (Phase 43)
   Global Optimization (Phase 44)
   Global Optimization (Phase 45)
-  Global Optimization (Phase 46)
-  Global Optimization (Phase 47)
-  Global Optimization (Phase 48)
-  Global Optimization (Phase 49)
-    0:05:27 6781140.0      0.00       0.0       0.0                           1939.6324      0.00  
-    0:05:27 6781140.0      0.00       0.0       0.0                           1939.6324      0.00  
-    0:05:27 6781140.0      0.00       0.0       0.0                           1939.6324      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
+    0:03:31   26031.4      0.00       0.0       0.0                           7671.2881      0.00  
+    0:03:31   26031.4      0.00       0.0       0.0                           7671.2881      0.00  
+    0:03:31   26031.4      0.00       0.0       0.0                           7671.2881      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:32   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
 
                                   TOTAL                                                            
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:05:28 6781356.0      0.00       0.0       0.0                           1939.7391      0.00  
-    0:05:30 6699132.0      0.00       0.0       0.0                           1919.3610      0.00  
-    0:05:30 6699132.0      0.00       0.0       0.0                           1919.3610      0.00  
-    0:05:30 6699132.0      0.00       0.0       0.0                           1919.3610      0.00  
-    0:05:31 6699204.0      0.00       0.0       0.0                           1919.4014      0.00  
-    0:05:33 6677748.0      0.00       0.0       0.0                           1912.4745      0.00  
-    0:05:36 6667740.0      0.00       0.0       0.0                           1909.1825      0.00  
-    0:05:36 6667740.0      0.00       0.0       0.0                           1909.1825      0.00  
-    0:05:36 6667740.0      0.00       0.0       0.0                           1909.1825      0.00  
-    0:05:36 6667740.0      0.00       0.0       0.0                           1909.1825      0.00  
-    0:05:38 6664284.0      0.00       0.0       0.0                           1907.6854      0.00  
-Loading db file '/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.db'
+    0:03:33   26031.4      0.00       0.0       0.0                           7672.3779      0.00  
+    0:03:34   25991.7      0.00       0.0       0.2                           7695.4912      0.00  
+    0:03:34   25991.7      0.00       0.0       0.2                           7695.4912      0.00  
+    0:03:34   25991.7      0.00       0.0       0.2                           7695.4912      0.00  
+    0:03:34   25991.7      0.00       0.0       0.2                           7696.3091      0.00  
+    0:03:37   25987.8      0.00       0.0       0.0                           7680.9824      0.00  
+    0:03:37   25987.8      0.00       0.0       0.0                           7680.9824      0.00  
+    0:03:37   25987.8      0.00       0.0       0.0                           7680.9824      0.00  
+    0:03:37   25987.8      0.00       0.0       0.0                           7680.9824      0.00  
+    0:03:38   25987.2      0.00       0.0       0.0                           7679.9141      0.00  
+Loading db file '/home/rjridle/osugooglelib/outputs/s8_osu130_TT_1P8_25C.ccs.db'
 
 
 Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
@@ -813,7 +710,7 @@ redirect reports/check_design.rpt { check_design }
 set filename [format "%s%s%s"  "mapped/" $my_toplevel ".vh"]
 mapped/riscv.vh
 write_file -f verilog -hierarchy -output $filename
-Writing verilog file '/home/rjridle/fabcds20/synth/mapped/riscv.vh'.
+Writing verilog file '/home/rjridle/risc-v-chisel/fabcds20/synth/mapped/riscv.vh'.
 Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
 1
 set filename [format "%s%s%s"  "mapped/" $my_toplevel ".sdc"]
@@ -829,11 +726,7 @@ set filename [format "%s%s%s"  "mapped/" $my_toplevel ".sdf"]
 mapped/riscv.sdf
 write_sdf $filename
 Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
-Information: Writing timing information to file '/home/rjridle/fabcds20/synth/mapped/riscv.sdf'. (WT-3)
-Information: Updating design information... (UID-85)
-Warning: Design 'riscv' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
-Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
-Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Writing timing information to file '/home/rjridle/risc-v-chisel/fabcds20/synth/mapped/riscv.sdf'. (WT-3)
 1
 # Report Timing
 set filename [format "%s%s%s"  "reports/" $my_toplevel "_reportpath.rep"]

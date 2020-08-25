@@ -1,5 +1,5 @@
 ####################################################################
-# Innovus Foundation Flow Code Generator, Fri Aug  7 15:52:48 CDT 2020
+# Innovus Foundation Flow Code Generator, Wed Aug 19 16:47:18 CDT 2020
 # Version : 17.10-p003_1
 ####################################################################
 
@@ -60,7 +60,7 @@ um::push_snapshot_stack
 ######################################################################
 # set_analysis_view -setup $vars(place,active_setup_views) -hold $vars(place,active_hold_views)
 #
-setDesignMode -process 250
+setDesignMode -process 130
 setAnalysisMode -analysisType onChipVariation
 setPlaceMode -place_global_place_io_pins false
 Puts "<FF> RUNNING PLACEMENT ..."

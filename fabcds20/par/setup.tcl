@@ -39,7 +39,7 @@ global vars
 ###############################################################################
 set vars(design_root)  [pwd]/../..
 set vars(data_root)    "../synth/mapped"
-set vars(library_root) "/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib"
+set vars(library_root) "~/osugooglelib/outputs"
 set vars(script_root)  [pwd]/SCRIPTS
 set init_io_file encounter.io
 
@@ -88,7 +88,7 @@ set vars(netlist)          "../synth/mapped/riscv.vh"
 # vars(process)                            <process node> (65nm, 90nm, e.g.)
 # vars(max_route_layers)                   <top routing layer>
 ###############################################################################
-set vars(process)                          250nm
+set vars(process)                          130nm
 set vars(max_route_layer)                  3
 
 ###############################################################################
@@ -99,8 +99,8 @@ set vars(max_route_layer)                  3
 # set vars(<set1>,si)     <list of cdb/udn files> (OPTIONAL)
 ###############################################################################
 set vars(library_sets)   "libs_tt"
-set vars(libs_tt,timing) "/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib"
-set vars(lef_files) "/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lef"
+set vars(libs_tt,timing) "/home/rjridle/osugooglelib/outputs/s8_osu130_TT_1P8_25C.ccs.lib"
+set vars(lef_files) "/home/rjridle/osugooglelib/outputs/s8_osu130.lef"
 
 ###############################################################################
 # Define rc corners ...

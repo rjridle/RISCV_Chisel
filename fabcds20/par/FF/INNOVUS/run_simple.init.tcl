@@ -55,7 +55,7 @@ puts "<FF> Plugin -> always_source_tcl"
 add_tracks
 source FF/timingderate.sdc
 setMaxRouteLayer 3
-setDesignMode -process 250
+setDesignMode -process 130
 puts "<FF> Plugin -> post_init_tcl"
 ff_procs::source_plug post_init_tcl
 timeDesign -preplace -prefix preplace -outDir RPT
