@@ -1,0 +1,945 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2017 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v17.11-s080_1, built Fri Aug 4 11:13:11 PDT 2017
+Options:	-init DBS/signoff.enc 
+Date:		Fri Jul 17 13:30:47 2020
+Host:		rivendell.ecen.okstate.edu (x86_64 w/Linux 2.6.32-754.25.1.el6.x86_64) (6cores*12cpus*Intel(R) Xeon(R) CPU E5-4617 0 @ 2.90GHz 15360KB)
+OS:		Red Hat Enterprise Linux Server release 6.10 (Santiago)
+
+License:
+		invs	Innovus Implementation System	17.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (258 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+<CMD> getDrawView
+<CMD> loadWorkspace -name Physical
+Sourcing file "DBS/signoff.enc" ...
+<CMD> restoreDesign /home/rjridle/fabcds/par/DBS/signoff.enc.dat riscv
+#% Begin load design ... (date=07/17 13:30:58, mem=448.2M)
+Set Default Input Pin Transition as 0.1 ps.
+**WARN: (GLOBAL-100):	Global 'timing_enable_default_delay_arc' has become obsolete. It will be removed in the next release.
+% Begin Load MMMC data ... (date=07/17 13:30:58, mem=449.9M)
+% End Load MMMC data ... (date=07/17 13:30:58, total cpu=0:00:00.0, real=0:00:00.0, peak res=450.0M, current mem=450.0M)
+rc_typ
+
+Loading LEF file /home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/lef/osu05_stdcells.lef ...
+**WARN: (IMPLF-108):	There is no overlap layer defined in any LEF file
+so you are unable to create rectilinear partition in a hierarchical flow.
+Set DBUPerIGU to M2 pitch 2400.
+
+viaInitial starts at Fri Jul 17 13:30:58 2020
+**WARN: (IMPPP-556):	A SAMENET rule between different layers for a 4 layer technology is probably a mistake. Stacked vias will be difficult to create and probably will not be what expected. Check if this rule can be removed from the technology file: SAMENET cc via 0.150 ;
+**WARN: (IMPPP-556):	A SAMENET rule between different layers for a 4 layer technology is probably a mistake. Stacked vias will be difficult to create and probably will not be what expected. Check if this rule can be removed from the technology file: SAMENET via via2 0.150 ;
+**WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN1 GENERATE.
+Type 'man IMPPP-557' for more detail.
+**WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN2 GENERATE.
+Type 'man IMPPP-557' for more detail.
+**WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN3 GENERATE.
+Type 'man IMPPP-557' for more detail.
+viaInitial ends at Fri Jul 17 13:30:58 2020
+Loading view definition file from /home/rjridle/fabcds/par/DBS/signoff.enc.dat/viewDefinition.tcl
+Reading libs_tt timing library '/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib' ...
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AND2X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AND2X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AND2X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AND2X2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AND2X2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AND2X2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AOI21X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AOI21X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'C' of cell 'AOI21X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AOI21X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'C' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'D' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'BUFX2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'BUFX2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'BUFX4' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'BUFX4' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'CLKBUF1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+Message <TECHLIB-436> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+Read 39 cells in library 'osu05_stdcells' 
+*** End library_loading (cpu=0.00min, real=0.00min, mem=17.7M, fe_cpu=0.18min, fe_real=0.18min, fe_mem=523.1M) ***
+% Begin Load netlist data ... (date=07/17 13:30:58, mem=484.9M)
+*** Begin netlist parsing (mem=523.1M) ***
+**WARN: (IMPVL-159):	Pin 'YPAD' of cell 'PADGND' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'PADGND' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'YPAD' of cell 'PADVDD' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'PADVDD' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'XNOR2X1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'XNOR2X1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'TBUFX2' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'TBUFX2' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'TBUFX1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'TBUFX1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'OR2X2' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'OR2X2' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'OR2X1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'OR2X1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'OAI22X1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'OAI22X1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'gnd' of cell 'OAI21X1' is defined in LEF but not in the timing library.
+**WARN: (IMPVL-159):	Pin 'vdd' of cell 'OAI21X1' is defined in LEF but not in the timing library.
+**WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Created 39 new cells from 1 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilogBinary netlist '/home/rjridle/fabcds/par/DBS/signoff.enc.dat/riscv.v.bin'
+Reading binary database version 1
+
+*** Memory Usage v#1 (Current mem = 536.121M, initial mem = 183.406M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=536.1M) ***
+% End Load netlist data ... (date=07/17 13:30:58, total cpu=0:00:00.0, real=0:00:00.0, peak res=484.9M, current mem=470.8M)
+Set top cell to riscv.
+**WARN: (IMPTS-124):	Timing library description of pin 'YPAD' is missing from cell 'PADGND' in timing library 'osu05_stdcells'.
+**WARN: (IMPTS-124):	Timing library description of pin 'YPAD' is missing from cell 'PADVDD' in timing library 'osu05_stdcells'.
+Hooked 39 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell riscv ...
+*** Netlist is unique.
+** info: there are 41 modules.
+** info: there are 18091 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 570.543M, initial mem = 183.406M) ***
+*info: set bottom ioPad orient R0
+Reading IO assignment file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" ...
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 9: Pad: c01 NW
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 11: Pad: c02 NE
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 13: Pad: c03 SE
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 15: Pad: c04 SW
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 20: Pad: p39 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 22: Pad: p38 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 24: Pad: p37 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 26: Pad: p36 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 28: Pad: p35 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 30: Pad: p34 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 32: Pad: p33 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 34: Pad: p32 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 36: Pad: p31 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 38: Pad: p30 N
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 43: Pad: p29 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 45: Pad: p28 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 47: Pad: p27 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 49: Pad: p26 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 51: Pad: p25 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 53: Pad: p24 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 55: Pad: p23 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 57: Pad: p22 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 59: Pad: p21 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 61: Pad: p20 W
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 66: Pad: p19 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 68: Pad: p18 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 70: Pad: p17 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 72: Pad: p16 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 74: Pad: p15 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 76: Pad: p14 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 78: Pad: p13 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 80: Pad: p12 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 82: Pad: p11 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 84: Pad: p10 S
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 89: Pad: p09 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 91: Pad: p08 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 93: Pad: p07 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 95: Pad: p06 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 97: Pad: p05 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 99: Pad: p04 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 101: Pad: p03 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 103: Pad: p02 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 105: Pad: p01 E
+  Reason: unable to determine object from name.
+**Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 107: Pad: p00 E
+  Reason: unable to determine object from name.
+**WARN: (IMPFP-710):	File version 0 is too old.
+IO file version '0' is too old, will try to place io cell any way.
+**WARN: (IMPFP-3961):	The techSite 'IO' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Horizontal Layer M1 offset = 1500 (derived)
+Vertical Layer M2 offset = 1200 (derived)
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Default Input Pin Transition as 0.1 ps.
+Loading preference file /home/rjridle/fabcds/par/DBS/signoff.enc.dat/gui.pref.tcl ...
+Applying the recommended capacitance filtering threshold values for 250nm process node: total_c_th=5, relative_c_th=0.03 and coupling_c_th=3.
+	These values will be used by all post-route extraction engines, including tQuantus, IQRC and Quantus QRC extraction.
+	For postRoute effortLevel low extraction, the coupling_c_th value will be used only when the -capFilterMode parameter of the setExtractRCMode command is set to relAndCoup or relOrCoup. Default value of -capFilterMode parameter in postRoute extraction effortLevel low is relOnly.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'standard'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'low'.
+Updating process node dependent CCOpt properties for the 250nm process node.
+**WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+**WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+**WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+**WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+**WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+This command "restoreDesign /home/rjridle/fabcds/par/DBS/signoff.enc.dat ..." required an extra checkout of license tpsxl.
+Additional license(s) checked out: 1 'Tempus_Timing_Signoff_XL' license(s)
+addRing command will ignore shorts while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will consider rows while creating rings.
+The ring targets are set to core/block ring wires.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-2773):	The via resistance between layers M0 and M1 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+Type 'man IMPEXT-2773' for more detail.
+**WARN: (IMPEXT-2773):	The via resistance between layers M1 and M2 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+Type 'man IMPEXT-2773' for more detail.
+**WARN: (IMPEXT-2773):	The via resistance between layers M2 and M3 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+Type 'man IMPEXT-2773' for more detail.
+**WARN: (IMPEXT-2766):	The sheet resistance for layer M1 is not defined in the cap table. Therefore, the LEF value 0.09 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+**WARN: (IMPEXT-2766):	The sheet resistance for layer M2 is not defined in the cap table. Therefore, the LEF value 0.09 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+**WARN: (IMPEXT-2766):	The sheet resistance for layer M3 is not defined in the cap table. Therefore, the LEF value 0.05 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+Summary of Active RC-Corners : 
+ 
+ Analysis View: setup_func
+    RC-Corner Name        : rc_typ
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from Cap Table]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from Cap Table]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+ 
+ Analysis View: hold_func
+    RC-Corner Name        : rc_typ
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from Cap Table]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from Cap Table]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+*Info: initialize multi-corner CTS.
+Reading timing constraints file '/home/rjridle/fabcds/par/DBS/signoff.enc.dat/mmmc/modes/setup_func_mode/setup_func_mode.sdc' ...
+Current (total cpu=0:00:11.7, real=0:00:12.0, peak res=644.4M, current mem=644.4M)
+riscv
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=661.8M, current mem=661.8M)
+Current (total cpu=0:00:11.8, real=0:00:12.0, peak res=661.8M, current mem=661.8M)
+Total number of combinational cells: 26
+Total number of sequential cells: 4
+Total number of tristate cells: 2
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUFX2 BUFX4 CLKBUF1
+Total number of usable buffers: 3
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: INVX2 INVX1 INVX4 INVX8
+Total number of usable inverters: 4
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: CLKBUF2 CLKBUF3
+Total number of identified usable delay cells: 2
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+% Begin Load floorplan data ... (date=07/17 13:30:59, mem=663.3M)
+Reading floorplan file - /home/rjridle/fabcds/par/DBS/signoff.enc.dat/riscv.fp.gz (mem = 755.4M).
+% Begin Load floorplan data ... (date=07/17 13:30:59, mem=663.4M)
+*info: reset 18553 existing net BottomPreferredLayer and AvoidDetour
+Deleting old partition specification.
+Set FPlanBox to (0 0 2908800 2892000)
+Horizontal Layer M1 offset = 1500 (derived)
+Vertical Layer M2 offset = 1200 (derived)
+ ... processed partition successfully.
+Reading binary special route file /home/rjridle/fabcds/par/DBS/signoff.enc.dat/riscv.fp.spr.gz (Created by Innovus v17.11-s080_1 on Fri Jul 17 13:30:18 2020, version: 1)
+There are 95 nets with weight being set
+There are 95 nets with bottomPreferredRoutingLayer being set
+There are 95 nets with avoidDetour being set
+Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+% End Load floorplan data ... (date=07/17 13:30:59, total cpu=0:00:00.0, real=0:00:00.0, peak res=665.4M, current mem=665.4M)
+% End Load floorplan data ... (date=07/17 13:30:59, total cpu=0:00:00.1, real=0:00:00.0, peak res=665.4M, current mem=665.4M)
+% Begin Load SymbolTable ... (date=07/17 13:30:59, mem=665.4M)
+% End Load SymbolTable ... (date=07/17 13:30:59, total cpu=0:00:00.2, real=0:00:00.0, peak res=679.0M, current mem=679.0M)
+% Begin Load placement data ... (date=07/17 13:30:59, mem=669.4M)
+Reading placement file - /home/rjridle/fabcds/par/DBS/signoff.enc.dat/riscv.place.gz.
+*** Checked 2 GNC rules.
+*** applyConnectGlobalNets disabled.
+** Reading stdCellPlacement_binary (Created by Innovus v17.11-s080_1 on Fri Jul 17 13:30:19 2020, version# 1) ...
+*** Checked 2 GNC rules.
+*** applyConnectGlobalNets disabled.
+*** Completed restorePlace (cpu=0:00:00.1 real=0:00:00.0 mem=765.4M) ***
+Total net length = 3.417e+06 (1.830e+06 1.587e+06) (ext = 3.292e+04)
+% End Load placement data ... (date=07/17 13:30:59, total cpu=0:00:00.1, real=0:00:00.0, peak res=681.8M, current mem=681.8M)
+*** Checked 2 GNC rules.
+*** Applying global-net connections...
+*** Applied 2 GNC rules (cpu = 0:00:00.0)
+% Begin Load routing data ... (date=07/17 13:30:59, mem=682.3M)
+Reading routing file - /home/rjridle/fabcds/par/DBS/signoff.enc.dat/riscv.route.gz.
+Reading Innovus routing data (Created by Innovus v17.11-s080_1 on Fri Jul 17 13:30:19 2020 Format: 16.2) ...
+Suppress "**WARN ..." messages.
+Un-suppress "**WARN ..." messages.
+*** Total 18521 nets are successfully restored.
+*** Completed restoreRoute (cpu=0:00:00.2 real=0:00:00.0 mem=805.4M) ***
+% End Load routing data ... (date=07/17 13:30:59, total cpu=0:00:00.2, real=0:00:00.0, peak res=722.9M, current mem=722.9M)
+Loading Drc markers ...
+... 88156 markers are loaded ...
+... 41117 geometry drc markers are loaded ...
+... 0 antenna drc markers are loaded ...
+Reading property file /home/rjridle/fabcds/par/DBS/signoff.enc.dat/riscv.prop
+*** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=815.4M) ***
+Set Default Input Pin Transition as 0.1 ps.
+**WARN: (GLOBAL-100):	Global 'timing_enable_default_delay_arc' has become obsolete. It will be removed in the next release.
+Initializing multi-corner resistance tables ...
+% Begin Load power constraints ... (date=07/17 13:31:00, mem=736.1M)
+'set_default_switching_activity' finished successfully.
+% End Load power constraints ... (date=07/17 13:31:00, total cpu=0:00:00.0, real=0:00:00.0, peak res=736.2M, current mem=736.2M)
+Start generating vias ...
+#Skip building auto via since it is not turned on.
+Via generation completed.
+% Begin load AAE data ... (date=07/17 13:31:00, mem=739.8M)
+AAE DB initialization (MEM=846.973 CPU=0:00:00.1 REAL=0:00:00.0) 
+**WARN: (IMPESI-621):	Timing window restoration data eosdb.dat not found. PBA-SI results may not match in save/restore flow.
+% End load AAE data ... (date=07/17 13:31:00, total cpu=0:00:00.1, real=0:00:00.0, peak res=741.9M, current mem=741.9M)
+Restoring CCOpt config...
+  Extracting original clock gating for clk...
+    clock_tree clk contains 1024 sinks and 0 clock gates.
+    Extraction for clk complete.
+  Extracting original clock gating for clk done.
+Restoring CCOpt config done.
+Total number of combinational cells: 26
+Total number of sequential cells: 4
+Total number of tristate cells: 2
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUFX2 BUFX4 CLKBUF1
+Total number of usable buffers: 3
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: INVX2 INVX1 INVX4 INVX8
+Total number of usable inverters: 4
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: CLKBUF2 CLKBUF3
+Total number of identified usable delay cells: 2
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+#% End load design ... (date=07/17 13:31:00, total cpu=0:00:02.7, real=0:00:02.0, peak res=745.9M, current mem=745.9M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-108            1  There is no overlap layer defined in any...
+WARNING   IMPFP-710            1  File version %s is too old.              
+WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+WARNING   IMPTS-124            2  Timing library description of pin '%s' i...
+WARNING   IMPEXT-2766          3  The sheet resistance for layer %s is not...
+WARNING   IMPEXT-2773          3  The via resistance between layers %s and...
+WARNING   IMPCK-8086           4  The command %s is obsolete and will be r...
+WARNING   IMPVL-159           68  Pin '%s' of cell '%s' is defined in LEF ...
+WARNING   IMPESI-621           1  Timing window restoration data eosdb.dat...
+WARNING   IMPPP-556            2  A SAMENET rule between different layers ...
+WARNING   IMPPP-557            3  A single-layer VIARULE GENERATE for turn...
+WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+WARNING   GLOBAL-100           2  Global '%s' has become obsolete. It will...
+WARNING   TECHLIB-436         20  Attribute '%s' on '%s' pin '%s' of cell ...
+*** Message Summary: 113 warning(s), 0 error(s)
+
+<CMD> win
+<CMD> pan -316.943 -688.124
+<CMD> pan 31.023 -15.190
+<CMD> pan 29.310 2.032
+<CMD> pan 20.325 1.712
+<CMD> setLayerPreference instanceCell -isVisible 0
+<CMD> setLayerPreference instanceFunction -isVisible 0
+<CMD> setLayerPreference instanceStatus -isVisible 0
+<CMD> setLayerPreference allM0 -isVisible 0
+<CMD> setLayerPreference allM1Cont -isVisible 0
+<CMD> setLayerPreference allM1 -isVisible 0
+<CMD> setLayerPreference allM2Cont -isVisible 0
+<CMD> setLayerPreference allM2 -isVisible 0
+<CMD> setLayerPreference allM3Cont -isVisible 0
+<CMD> setLayerPreference allM3 -isVisible 0
+<CMD> setLayerPreference allM0 -isVisible 1
+<CMD> pan 154.302 369.836
+<CMD> pan 483.811 311.717
+<CMD> setLayerPreference ioRow -isVisible 0
+<CMD> setLayerPreference stdRow -isVisible 0
+<CMD> setLayerPreference obstruct -isVisible 0
+<CMD> setLayerPreference screen -isVisible 0
+<CMD> setLayerPreference macroOnly -isVisible 0
+<CMD> setLayerPreference layerBlk -isVisible 0
+<CMD> setLayerPreference fillBlk -isVisible 0
+<CMD> setLayerPreference trimBlk -isVisible 0
+<CMD> setLayerPreference drcRegion -isVisible 0
+<CMD> setLayerPreference blockHalo -isVisible 0
+<CMD> setLayerPreference routingHalo -isVisible 0
+<CMD> setLayerPreference lithoHalo -isVisible 0
+<CMD> setLayerPreference blkLink -isVisible 0
+<CMD> setLayerPreference pinObj -isVisible 1
+<CMD> setLayerPreference cellBlkgObj -isVisible 1
+<CMD> setLayerPreference layoutObj -isVisible 1
+<CMD> setLayerPreference pinObj -isVisible 0
+<CMD> setLayerPreference cellBlkgObj -isVisible 0
+<CMD> setLayerPreference layoutObj -isVisible 0
+<CMD> setLayerPreference hinst -isVisible 0
+<CMD> setLayerPreference guide -isVisible 0
+<CMD> setLayerPreference fence -isVisible 0
+<CMD> setLayerPreference region -isVisible 0
+<CMD> setLayerPreference partition -isVisible 0
+<CMD> setLayerPreference overlapMacro -isVisible 1
+<CMD> setLayerPreference overlapGuide -isVisible 1
+<CMD> setLayerPreference overlapBlk -isVisible 1
+<CMD> setLayerPreference relFPlan -isVisible 0
+<CMD> setLayerPreference sdpGroup -isVisible 0
+<CMD> setLayerPreference sdpConnect -isVisible 0
+<CMD> setLayerPreference sizeBlkg -isVisible 0
+<CMD> setLayerPreference resizeFPLine1 -isVisible 0
+<CMD> setLayerPreference resizeFPLine2 -isVisible 0
+<CMD> setLayerPreference congTag -isVisible 0
+<CMD> setLayerPreference ioSlot -isVisible 0
+<CMD> setLayerPreference overlapMacro -isVisible 0
+<CMD> setLayerPreference overlapGuide -isVisible 0
+<CMD> setLayerPreference overlapBlk -isVisible 0
+<CMD> setLayerPreference datapath -isVisible 0
+<CMD> setLayerPreference routeGuide -isVisible 0
+<CMD> setLayerPreference ptnPinBlk -isVisible 0
+<CMD> setLayerPreference ptnFeed -isVisible 0
+<CMD> setLayerPreference routeGuide -isVisible 1
+<CMD> setLayerPreference ptnPinBlk -isVisible 1
+<CMD> setLayerPreference ptnFeed -isVisible 1
+<CMD> setLayerPreference routeGuide -isVisible 0
+<CMD> setLayerPreference ptnPinBlk -isVisible 0
+<CMD> setLayerPreference ptnFeed -isVisible 0
+<CMD> setLayerPreference netRect -isVisible 1
+<CMD> setLayerPreference substrateNoise -isVisible 1
+<CMD> setLayerPreference pwrdm -isVisible 0
+<CMD> setLayerPreference netRect -isVisible 0
+<CMD> setLayerPreference substrateNoise -isVisible 0
+<CMD> setLayerPreference powerNet -isVisible 0
+<CMD> setLayerPreference net -isVisible 0
+<CMD> setLayerPreference power -isVisible 0
+<CMD> setLayerPreference pgPower -isVisible 0
+<CMD> setLayerPreference pgGround -isVisible 0
+<CMD> setLayerPreference clock -isVisible 0
+<CMD> setLayerPreference shield -isVisible 0
+<CMD> setLayerPreference unknowState -isVisible 0
+<CMD> setLayerPreference metalFill -isVisible 0
+<CMD> setLayerPreference wire -isVisible 0
+<CMD> setLayerPreference via -isVisible 0
+<CMD> setLayerPreference patch -isVisible 0
+<CMD> setLayerPreference trim -isVisible 0
+<CMD> setLayerPreference allM0 -isVisible 1
+<CMD> setLayerPreference allM1Cont -isVisible 1
+<CMD> setLayerPreference allM1 -isVisible 1
+<CMD> setLayerPreference allM2Cont -isVisible 1
+<CMD> setLayerPreference allM2 -isVisible 1
+<CMD> setLayerPreference allM3Cont -isVisible 1
+<CMD> setLayerPreference allM3 -isVisible 1
+<CMD> setLayerPreference allM0 -isVisible 0
+<CMD> setLayerPreference allM1Cont -isVisible 0
+<CMD> setLayerPreference allM1 -isVisible 0
+<CMD> setLayerPreference allM2Cont -isVisible 0
+<CMD> setLayerPreference allM2 -isVisible 0
+<CMD> setLayerPreference allM3Cont -isVisible 0
+<CMD> setLayerPreference allM3 -isVisible 0
+<CMD> setLayerPreference bump -isVisible 0
+<CMD> setLayerPreference bumpBack -isVisible 0
+<CMD> setLayerPreference bumpConnect -isVisible 0
+<CMD> setLayerPreference gdsii -isVisible 1
+<CMD> setLayerPreference portNum -isVisible 1
+<CMD> setLayerPreference gdsii -isVisible 0
+<CMD> setLayerPreference term -isVisible 0
+<CMD> setLayerPreference violation -isVisible 0
+<CMD> setLayerPreference busguide -isVisible 0
+<CMD> setLayerPreference aggress -isVisible 0
+<CMD> setLayerPreference text -isVisible 0
+<CMD> setLayerPreference pinText -isVisible 0
+<CMD> setLayerPreference flightLine -isVisible 0
+<CMD> setLayerPreference portNum -isVisible 0
+<CMD> setLayerPreference dpt -isVisible 0
+<CMD> setLayerPreference violation -isVisible 1
+<CMD> setLayerPreference violation -isVisible 0
+<CMD> setLayerPreference ioRow -isVisible 1
+<CMD> setLayerPreference ioSlot -isVisible 1
+<CMD> setLayerPreference relFPlan -isVisible 1
+<CMD> setLayerPreference sdpGroup -isVisible 1
+<CMD> setLayerPreference sdpConnect -isVisible 1
+<CMD> setLayerPreference sizeBlkg -isVisible 1
+<CMD> setLayerPreference resizeFPLine1 -isVisible 1
+<CMD> setLayerPreference resizeFPLine2 -isVisible 1
+<CMD> setLayerPreference congTag -isVisible 1
+<CMD> setLayerPreference overlapMacro -isVisible 1
+<CMD> setLayerPreference overlapGuide -isVisible 1
+<CMD> setLayerPreference overlapBlk -isVisible 1
+<CMD> setLayerPreference datapath -isVisible 1
+<CMD> setLayerPreference hinst -isVisible 1
+<CMD> setLayerPreference guide -isVisible 1
+<CMD> setLayerPreference fence -isVisible 1
+<CMD> setLayerPreference region -isVisible 1
+<CMD> setLayerPreference partition -isVisible 1
+<CMD> setLayerPreference pinObj -isVisible 1
+<CMD> setLayerPreference cellBlkgObj -isVisible 1
+<CMD> setLayerPreference layoutObj -isVisible 1
+<CMD> setLayerPreference obstruct -isVisible 1
+<CMD> setLayerPreference screen -isVisible 1
+<CMD> setLayerPreference macroOnly -isVisible 1
+<CMD> setLayerPreference layerBlk -isVisible 1
+<CMD> setLayerPreference fillBlk -isVisible 1
+<CMD> setLayerPreference trimBlk -isVisible 1
+<CMD> setLayerPreference drcRegion -isVisible 1
+<CMD> setLayerPreference blockHalo -isVisible 1
+<CMD> setLayerPreference routingHalo -isVisible 1
+<CMD> setLayerPreference lithoHalo -isVisible 1
+<CMD> setLayerPreference blkLink -isVisible 1
+<CMD> setLayerPreference stdRow -isVisible 1
+<CMD> setLayerPreference sitePattern -isVisible 1
+<CMD> setLayerPreference macroSitePattern -isVisible 1
+<CMD> setLayerPreference stdRow -isVisible 0
+<CMD> setLayerPreference ioRow -isVisible 0
+<CMD> setLayerPreference sitePattern -isVisible 0
+<CMD> setLayerPreference macroSitePattern -isVisible 0
+<CMD> setLayerPreference ioSlot -isVisible 0
+<CMD> setLayerPreference ioSlot -isVisible 1
+<CMD> pan -488.564 1108.206
+<CMD> pan 98.872 148.308
+<CMD> setLayerPreference ioSlot -isVisible 0
+<CMD> setLayerPreference ioSlot -isVisible 1
+<CMD> setLayerPreference ioSlot -isVisible 0
+<CMD> setLayerPreference overlapMacro -isVisible 0
+<CMD> setLayerPreference overlapGuide -isVisible 0
+<CMD> setLayerPreference overlapBlk -isVisible 0
+<CMD> setLayerPreference datapath -isVisible 0
+<CMD> setLayerPreference congTag -isVisible 0
+<CMD> setLayerPreference resizeFPLine2 -isVisible 0
+<CMD> setLayerPreference resizeFPLine1 -isVisible 0
+<CMD> setLayerPreference sizeBlkg -isVisible 0
+<CMD> setLayerPreference relFPlan -isVisible 0
+<CMD> setLayerPreference sdpGroup -isSelectable 0
+<CMD> setLayerPreference sdpConnect -isSelectable 0
+<CMD> setLayerPreference sizeBlkg -isSelectable 0
+<CMD> setLayerPreference congTag -isSelectable 0
+<CMD> setLayerPreference ioSlot -isSelectable 0
+<CMD> setLayerPreference datapath -isSelectable 0
+<CMD> setLayerPreference trackObj -isVisible 1
+<CMD> setLayerPreference nonPrefTrackObj -isVisible 1
+<CMD> setLayerPreference trackObj -isVisible 0
+<CMD> setLayerPreference nonPrefTrackObj -isVisible 0
+<CMD> setLayerPreference net -isVisible 1
+<CMD> setLayerPreference power -isVisible 1
+<CMD> setLayerPreference pgPower -isVisible 1
+<CMD> setLayerPreference pgGround -isVisible 1
+<CMD> setLayerPreference clock -isVisible 1
+<CMD> setLayerPreference via -isVisible 1
+<CMD> setLayerPreference wire -isVisible 1
+<CMD> setLayerPreference metalFill -isVisible 1
+<CMD> setLayerPreference metalFill -isVisible 0
+<CMD> setLayerPreference metalFill -isVisible 1
+<CMD> setLayerPreference allM0 -isVisible 1
+<CMD> setLayerPreference gdsii -isVisible 1
+<CMD> setLayerPreference term -isVisible 1
+<CMD> setLayerPreference violation -isVisible 1
+<CMD> setLayerPreference busguide -isVisible 1
+<CMD> setLayerPreference aggress -isVisible 1
+<CMD> setLayerPreference text -isVisible 1
+<CMD> setLayerPreference pinText -isVisible 1
+<CMD> setLayerPreference flightLine -isVisible 1
+<CMD> setLayerPreference portNum -isVisible 1
+<CMD> setLayerPreference dpt -isVisible 1
+<CMD> setLayerPreference gdsii -isVisible 0
+<CMD> setLayerPreference term -isVisible 0
+<CMD> setLayerPreference violation -isVisible 0
+<CMD> setLayerPreference busguide -isVisible 0
+<CMD> setLayerPreference aggress -isVisible 0
+<CMD> setLayerPreference text -isVisible 0
+<CMD> setLayerPreference pinText -isVisible 0
+<CMD> setLayerPreference flightLine -isVisible 0
+<CMD> setLayerPreference portNum -isVisible 0
+<CMD> setLayerPreference dpt -isVisible 0
+<CMD> setLayerPreference gdsii -isVisible 1
+<CMD> setLayerPreference term -isVisible 1
+<CMD> setLayerPreference violation -isVisible 1
+<CMD> setLayerPreference violation -isVisible 0
+<CMD> setLayerPreference busguide -isVisible 1
+<CMD> setLayerPreference aggress -isVisible 1
+<CMD> setLayerPreference text -isVisible 1
+<CMD> setLayerPreference pinText -isVisible 1
+<CMD> setLayerPreference flightLine -isVisible 1
+<CMD> setLayerPreference portNum -isVisible 1
+<CMD> setLayerPreference dpt -isVisible 1
+<CMD> setLayerPreference allM3 -isVisible 1
+<CMD> setLayerPreference allM3 -isVisible 0
+<CMD> setLayerPreference trackObj -isVisible 1
+<CMD> setLayerPreference nonPrefTrackObj -isVisible 1
+<CMD> setLayerPreference groupmain_Congestion -isVisible 1
+<CMD> setLayerPreference routeCongest -isVisible 1
+<CMD> setLayerPreference congChan -isVisible 1
+<CMD> setLayerPreference groupmain_Congestion -isVisible 0
+<CMD> setLayerPreference routeCongest -isVisible 0
+<CMD> setLayerPreference congChan -isVisible 0
+<CMD> setLayerPreference powerNet -isVisible 1
+<CMD> setLayerPreference substrateNoise -isVisible 1
+<CMD> setLayerPreference netRect -isVisible 1
+<CMD> setLayerPreference pwrdm -isVisible 1
+<CMD> setLayerPreference ptnFeed -isVisible 1
+<CMD> setLayerPreference ptnPinBlk -isVisible 1
+<CMD> setLayerPreference routeGuide -isVisible 1
+<CMD> setLayerPreference datapath -isVisible 1
+<CMD> setLayerPreference overlapBlk -isVisible 1
+<CMD> setLayerPreference overlapGuide -isVisible 1
+<CMD> setLayerPreference overlapMacro -isVisible 1
+<CMD> setLayerPreference ioSlot -isVisible 1
+<CMD> setLayerPreference congTag -isVisible 1
+<CMD> setLayerPreference resizeFPLine2 -isVisible 1
+<CMD> setLayerPreference resizeFPLine1 -isVisible 1
+<CMD> setLayerPreference sizeBlkg -isVisible 1
+<CMD> setLayerPreference relFPlan -isVisible 1
+<CMD> setLayerPreference macroSitePattern -isVisible 1
+<CMD> setLayerPreference sitePattern -isVisible 1
+<CMD> setLayerPreference ioRow -isVisible 1
+<CMD> setLayerPreference stdRow -isVisible 1
+<CMD> setLayerPreference stdRow -isVisible 0
+<CMD> setLayerPreference instanceStatus -isVisible 1
+<CMD> setLayerPreference place -isVisible 1
+<CMD> setLayerPreference fixed -isVisible 1
+<CMD> setLayerPreference cover -isVisible 1
+<CMD> setLayerPreference softfix -isVisible 1
+<CMD> setLayerPreference unplace -isVisible 1
+<CMD> setLayerPreference instanceFunction -isVisible 1
+<CMD> setLayerPreference flop -isVisible 1
+<CMD> setLayerPreference pwrswt -isVisible 1
+<CMD> setLayerPreference isolation -isVisible 1
+<CMD> setLayerPreference shift -isVisible 1
+<CMD> setLayerPreference funcother -isVisible 1
+<CMD> setLayerPreference instanceCell -isVisible 1
+<CMD> setLayerPreference block -isVisible 1
+<CMD> setLayerPreference stdCell -isVisible 1
+<CMD> setLayerPreference coverCell -isVisible 1
+<CMD> setLayerPreference phyCell -isVisible 1
+<CMD> setLayerPreference io -isVisible 1
+<CMD> setLayerPreference areaIo -isVisible 1
+<CMD> setLayerPreference blackBox -isVisible 1
+<CMD> setLayerPreference allM1Cont -isVisible 1
+<CMD> setLayerPreference allM1 -isVisible 1
+<CMD> setLayerPreference allM0 -isVisible 0
+<CMD> setLayerPreference allM1Cont -isVisible 0
+<CMD> setLayerPreference allM1 -isVisible 0
+<CMD> setLayerPreference allM1 -isVisible 1
+<CMD> setLayerPreference block -isVisible 0
+<CMD> setLayerPreference block -isVisible 1
+<CMD> setLayerPreference instanceCell -isVisible 0
+<CMD> setLayerPreference block -isVisible 0
+<CMD> setLayerPreference stdCell -isVisible 0
+<CMD> setLayerPreference coverCell -isVisible 0
+<CMD> setLayerPreference phyCell -isVisible 0
+<CMD> setLayerPreference io -isVisible 0
+<CMD> setLayerPreference areaIo -isVisible 0
+<CMD> setLayerPreference blackBox -isVisible 0
+<CMD> setLayerPreference instanceCell -isVisible 1
+<CMD> setLayerPreference block -isVisible 1
+<CMD> setLayerPreference stdCell -isVisible 1
+<CMD> setLayerPreference coverCell -isVisible 1
+<CMD> setLayerPreference phyCell -isVisible 1
+<CMD> setLayerPreference io -isVisible 1
+<CMD> setLayerPreference areaIo -isVisible 1
+<CMD> setLayerPreference blackBox -isVisible 1
+<CMD> setLayerPreference blackBox -isVisible 0
+<CMD> setLayerPreference blackBox -isVisible 1
+<CMD> setLayerPreference areaIo -isVisible 0
+<CMD> setLayerPreference areaIo -isVisible 1
+<CMD> setLayerPreference block -isVisible 0
+<CMD> setLayerPreference stdCell -isVisible 0
+<CMD> setLayerPreference coverCell -isVisible 0
+<CMD> setLayerPreference phyCell -isVisible 0
+<CMD> setLayerPreference io -isVisible 0
+<CMD> setLayerPreference areaIo -isVisible 0
+<CMD> setLayerPreference allM1 -isVisible 0
+<CMD> setLayerPreference areaIo -isVisible 1
+<CMD> setLayerPreference io -isVisible 1
+<CMD> setLayerPreference phyCell -isVisible 1
+<CMD> setLayerPreference coverCell -isVisible 1
+<CMD> setLayerPreference stdCell -isVisible 1
+<CMD> setLayerPreference block -isVisible 1
+<CMD> setLayerPreference stdCell -isVisible 0
+<CMD> setLayerPreference allM1Cont -isVisible 1
+<CMD> setLayerPreference allM1Cont -isVisible 0
+<CMD> setLayerPreference allM1 -isVisible 1
+<CMD> pan 35.190 0.174
+**ERROR: (IMPSYT-6000):	No Object Selected.
+<CMD> setLayerPreference via -isVisible 0
+<CMD> setLayerPreference via -isVisible 1
+<CMD> setLayerPreference wire -isVisible 0
+<CMD> setLayerPreference wire -isVisible 1
+<CMD> setLayerPreference metalFill -isVisible 0
+<CMD> setLayerPreference metalFill -isVisible 1
+<CMD> setLayerPreference shield -isVisible 1
+<CMD> setLayerPreference unknowState -isVisible 1
+<CMD> setLayerPreference patch -isVisible 1
+<CMD> setLayerPreference trim -isVisible 1
+<CMD> setLayerPreference shield -isVisible 0
+<CMD> setLayerPreference unknowState -isVisible 0
+<CMD> setLayerPreference metalFill -isVisible 0
+<CMD> setLayerPreference wire -isVisible 0
+<CMD> setLayerPreference via -isVisible 0
+<CMD> setLayerPreference patch -isVisible 0
+<CMD> setLayerPreference trim -isVisible 0
+<CMD> setLayerPreference wire -isVisible 1
+<CMD> setLayerPreference via -isVisible 1
+<CMD> setLayerPreference clock -isVisible 0
+<CMD> setLayerPreference pgGround -isVisible 0
+<CMD> setLayerPreference pgPower -isVisible 0
+<CMD> setLayerPreference pgPower -isVisible 1
+<CMD> setLayerPreference power -isVisible 0
+<CMD> setLayerPreference net -isVisible 0
+<CMD> setLayerPreference net -isVisible 1
+<CMD> setLayerPreference power -isVisible 1
+<CMD> setLayerPreference pgGround -isVisible 1
+<CMD> setLayerPreference clock -isVisible 1
+<CMD> setLayerPreference power -isVisible 0
+<CMD> setLayerPreference power -isVisible 1
+<CMD> setLayerPreference power -isVisible 0
+<CMD> setLayerPreference net -isVisible 0
+<CMD> setLayerPreference power -isVisible 1
+<CMD> setLayerPreference net -isVisible 1
+<CMD> setLayerPreference clock -isVisible 0
+<CMD> setLayerPreference pgGround -isVisible 0
+<CMD> setLayerPreference power -isVisible 0
+<CMD> setLayerPreference power -isVisible 1
+<CMD> setLayerPreference net -isVisible 0
+<CMD> setLayerPreference net -isVisible 1
+<CMD> setLayerPreference wire -isVisible 0
+<CMD> setLayerPreference via -isVisible 0
+<CMD> setLayerPreference wire -isVisible 1
+<CMD> setLayerPreference via -isVisible 1
+<CMD> setLayerPreference flightLine -isVisible 0
+<CMD> setLayerPreference portNum -isVisible 0
+<CMD> setLayerPreference dpt -isVisible 0
+<CMD> setLayerPreference pinText -isVisible 0
+<CMD> setLayerPreference text -isVisible 0
+<CMD> setLayerPreference aggress -isVisible 0
+<CMD> setLayerPreference text -isVisible 1
+<CMD> setLayerPreference busguide -isVisible 0
+<CMD> setLayerPreference term -isVisible 0
+<CMD> setLayerPreference gdsii -isVisible 0
+<CMD> setLayerPreference block -isVisible 0
+<CMD> setLayerPreference block -isVisible 1
+<CMD> setLayerPreference coverCell -isVisible 0
+<CMD> setLayerPreference stdCell -isVisible 1
+<CMD> setLayerPreference stdCell -isVisible 0
+<CMD> setLayerPreference coverCell -isVisible 1
+<CMD> setLayerPreference coverCell -isVisible 0
+<CMD> setLayerPreference phyCell -isVisible 0
+<CMD> setLayerPreference io -isVisible 0
+<CMD> setLayerPreference areaIo -isVisible 0
+<CMD> setLayerPreference blackBox -isVisible 0
+<CMD> setLayerPreference instanceFunction -isVisible 0
+<CMD> setLayerPreference flop -isVisible 0
+<CMD> setLayerPreference pwrswt -isVisible 0
+<CMD> setLayerPreference isolation -isVisible 0
+<CMD> setLayerPreference shift -isVisible 0
+<CMD> setLayerPreference funcother -isVisible 0
+<CMD> setLayerPreference instanceStatus -isVisible 0
+<CMD> setLayerPreference place -isVisible 0
+<CMD> setLayerPreference fixed -isVisible 0
+<CMD> setLayerPreference cover -isVisible 0
+<CMD> setLayerPreference softfix -isVisible 0
+<CMD> setLayerPreference unplace -isVisible 0
+<CMD> setLayerPreference hinst -isVisible 0
+<CMD> setLayerPreference guide -isVisible 0
+<CMD> setLayerPreference fence -isVisible 0
+<CMD> setLayerPreference region -isVisible 0
+<CMD> setLayerPreference partition -isVisible 0
+<CMD> setLayerPreference pinObj -isVisible 0
+<CMD> setLayerPreference cellBlkgObj -isVisible 0
+<CMD> setLayerPreference layoutObj -isVisible 0
+<CMD> setLayerPreference obstruct -isVisible 0
+<CMD> setLayerPreference screen -isVisible 0
+<CMD> setLayerPreference macroOnly -isVisible 0
+<CMD> setLayerPreference layerBlk -isVisible 0
+<CMD> setLayerPreference fillBlk -isVisible 0
+<CMD> setLayerPreference trimBlk -isVisible 0
+<CMD> setLayerPreference drcRegion -isVisible 0
+<CMD> setLayerPreference blockHalo -isVisible 0
+<CMD> setLayerPreference routingHalo -isVisible 0
+<CMD> setLayerPreference lithoHalo -isVisible 0
+<CMD> setLayerPreference blkLink -isVisible 0
+<CMD> setLayerPreference ioRow -isVisible 0
+<CMD> setLayerPreference sitePattern -isVisible 0
+<CMD> setLayerPreference macroSitePattern -isVisible 0
+<CMD> setLayerPreference relFPlan -isVisible 0
+<CMD> setLayerPreference sdpGroup -isVisible 0
+<CMD> setLayerPreference sdpConnect -isVisible 0
+<CMD> setLayerPreference sizeBlkg -isVisible 0
+<CMD> setLayerPreference resizeFPLine1 -isVisible 0
+<CMD> setLayerPreference resizeFPLine2 -isVisible 0
+<CMD> setLayerPreference congTag -isVisible 0
+<CMD> setLayerPreference ioSlot -isVisible 0
+<CMD> setLayerPreference overlapMacro -isVisible 0
+<CMD> setLayerPreference overlapGuide -isVisible 0
+<CMD> setLayerPreference overlapBlk -isVisible 0
+<CMD> setLayerPreference datapath -isVisible 0
+<CMD> setLayerPreference relFPlan -isVisible 1
+<CMD> setLayerPreference sdpGroup -isVisible 1
+<CMD> setLayerPreference sdpConnect -isVisible 1
+<CMD> setLayerPreference sizeBlkg -isVisible 1
+<CMD> setLayerPreference resizeFPLine1 -isVisible 1
+<CMD> setLayerPreference resizeFPLine2 -isVisible 1
+<CMD> setLayerPreference congTag -isVisible 1
+<CMD> setLayerPreference ioSlot -isVisible 1
+<CMD> setLayerPreference overlapMacro -isVisible 1
+<CMD> setLayerPreference overlapGuide -isVisible 1
+<CMD> setLayerPreference overlapBlk -isVisible 1
+<CMD> setLayerPreference datapath -isVisible 1
+<CMD> setLayerPreference relFPlan -isVisible 0
+<CMD> setLayerPreference sdpGroup -isVisible 0
+<CMD> setLayerPreference sdpConnect -isVisible 0
+<CMD> setLayerPreference sizeBlkg -isVisible 0
+<CMD> setLayerPreference resizeFPLine1 -isVisible 0
+<CMD> setLayerPreference resizeFPLine2 -isVisible 0
+<CMD> setLayerPreference congTag -isVisible 0
+<CMD> setLayerPreference ioSlot -isVisible 0
+<CMD> setLayerPreference overlapMacro -isVisible 0
+<CMD> setLayerPreference overlapGuide -isVisible 0
+<CMD> setLayerPreference overlapBlk -isVisible 0
+<CMD> setLayerPreference datapath -isVisible 0
+<CMD> setLayerPreference routeGuide -isVisible 0
+<CMD> setLayerPreference ptnPinBlk -isVisible 0
+<CMD> setLayerPreference ptnFeed -isVisible 0
+<CMD> setLayerPreference pwrdm -isVisible 0
+<CMD> setLayerPreference netRect -isVisible 0
+<CMD> setLayerPreference substrateNoise -isVisible 0
+<CMD> setLayerPreference powerNet -isVisible 0
+<CMD> setLayerPreference trackObj -isVisible 0
+<CMD> setLayerPreference nonPrefTrackObj -isVisible 0
+<CMD> setLayerPreference trackObj -isVisible 1
+<CMD> setLayerPreference trackObj -isVisible 0
+<CMD> setLayerPreference nonPrefTrackObj -isVisible 1
+<CMD> setLayerPreference nonPrefTrackObj -isVisible 0
+<CMD> setLayerPreference pinDensityMap -isVisible 1
+<CMD> setPinDensityMapMode -gridInRow 10 -threshold 0.5 -displayStep 0.05
+<CMD> setLayerPreference pinDensityMap -color {#ffffff #fff3f3 #ffe7e7 #ffdbdb #ffcfcf #ffc3c3 #ffb8b8 #ffacac #ffa0a0 #ff9494 #ff8888 #ff7d7d #ff7171 #ff6565 #ff5959 #ff4d4d #ff4242 #ff3636 #ff2a2a #ff1e1e #ff1212 #ff0606 #ff0500 #ff1100 #ff1e00 #ff2a00 #ff3700 #ff4300 #ff5000 #ff5c00 #ff6900 #ff7600 #ff8200 #ff8f00 #ff9b00 #ffa800 #ffb400 #ffc100 #ffcd00 #ffda00 #ffe700 #fff300 #fdfe00 #f2f800 #e6f200 #daec00 #cee600 #c2e000 #b7db00 #abd500 #9fcf00 #93c900 #87c300 #7cbd00 #70b700 #64b100 #58ab00 #4ca500 #409f00 #359a00 #299400 #1d8e00 #118800 #058200 #008205 #008811 #008e1d #009429 #009a35 #009f40 #00a54c #00ab58 #00b164 #00b770 #00bd7c #00c387 #00c993 #00cf9f #00d5ab #00dbb7 #00e0c2 #00e6ce #00ecda #00f2e6 #00f8f2 #00fefd #00f3ff #00e7ff #00daff #00cdff #00c1ff #00b4ff #00a8ff #009bff #008fff #0082ff #0076ff #0069ff #005cff #0050ff #0043ff #0037ff #002aff #001eff #0011ff #0005ff #0000fa #0000f3 #0000ec #0000e5 #0000de #0000d7 #0000d0 #0000c9 #0000c2 #0000bb #0000b3 #0000ac #0000a5 #00009e #000097 #000090 #000089 #000082 #00007b #000074 #00006d #000066}
+<CMD> reportPinDensityMap
+*** Starting report pin density ***
+default core: bins with pin density >   0.5 =   47 % (47 / 100)
+bin size: 125 sites by 10 row(s). total 100 bins ( 10 by 10 )
+  pin density range     #bins    %
+     0.5 -   0.55          31     31
+    0.55 -    0.6          14     14
+     0.6 -   0.65           2      2
+  total                    47     47
+
+<CMD> setLayerPreference densityMap -isVisible 1
+<CMD> pan -647.068 -111.992
+<CMD> pan -42.841 -54.351
+**ERROR: (IMPSYT-6000):	No Object Selected.
+**ERROR: (IMPSYT-6000):	No Object Selected.
+<CMD> pan 0.363 -7.385
+<CMD> selectWire 21.6000 1820.1000 2887.2000 1821.9000 1 VDD
+<CMD> deselectAll
+<CMD> selectWire 2511.1500 1831.0500 2512.0500 1837.9500 1 n16096
+<CMD> setLayerPreference violation -isVisible 1
+<CMD> pan 438.500 74.708
+<CMD> pan -16.882 -11.094
+<CMD> pan -0.695 -12.448
+<CMD> deselectAll
+<CMD> selectMarker 21.0000 1730.1000 2887.8000 1731.9000 -1 3 7
+<CMD> setLayerPreference violation -isVisible 1
+<CMD> violationBrowser -all -no_display_false
+<CMD> zoomBox -1412.4 296.7 4321.2 3165.3
+<CMD> zoomBox -1412.4 296.7 4321.2 3165.3
+<CMD> pan -0.181 -17.822
+<CMD> pan -4.939 -29.782
+<CMD> deselectAll
+<CMD> selectMarker 21.0000 1520.1000 2887.8000 1521.9000 -1 3 7
+<CMD> redraw
+<CMD> zoomBox -1412.4 86.7 4321.2 2955.3
+<CMD> zoomBox -1412.4 86.7 4321.2 2955.3
+<CMD> deselectAll
+<CMD> setLayerPreference allM2Cont -isVisible 1
+<CMD> setLayerPreference allM2Cont -isVisible 0
+<CMD> setLayerPreference allM2 -isVisible 1
+<CMD> pan 1.556 -8.890
+<CMD> selectMarker 1650.0000 100.0000 1750.0000 200.0000 2 6 0
+<CMD> redraw
+<CMD> zoomBox 1600.0 50.0 1800.0 250.0
+<CMD> zoomBox 1600.0 50.0 1800.0 250.0
+<CMD> pan 0.647 -12.530
+<CMD> pan 13.295 -2.235
+<CMD> pan 29.324 7.331
+<CMD> deselectAll
+<CMD> selectMarker 1600.0000 100.0000 1700.0000 200.0000 2 6 0
+<CMD> redraw
+<CMD> zoomBox 1550.0 50.0 1750.0 250.0
+<CMD> zoomBox 1550.0 50.0 1750.0 250.0
+<CMD> redraw
+
+*** Memory Usage v#1 (Current mem = 1092.879M, initial mem = 183.406M) ***
+*** Message Summary: 113 warning(s), 6 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:59.2, real=0:06:49, mem=1092.9M) ---

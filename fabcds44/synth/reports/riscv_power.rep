@@ -1,0 +1,50 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : riscv
+Version: M-2016.12-SP1
+Date   : Tue Aug 25 12:15:34 2020
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  = 80.899582 mW   (91%)
+  Net Switching Power  = 8.069909 mW    (9%)
+                         ---------
+Total Dynamic Power    = 88.969490 mW  (100%)
+
+Cell Leakage Power     = 680.3077 nW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad           0.000000          0.000000          0.000000          0.000000  (   0.00%)
+memory           0.000000          0.000000          0.000000          0.000000  (   0.00%)
+black_box        0.000000          0.000000          0.000000          0.000000  (   0.00%)
+clock_network    0.000000          0.000000          0.000000          0.000000  (   0.00%)
+register        74.875435        8.837353e-02        249.103363         74.964073
+                                                                                 (  84.26%)
+sequential       0.000000          0.000000          0.000000          0.000000  (   0.00%)
+combinational    6.024163          7.981550        431.204315         14.006173  (  15.74%)
+--------------------------------------------------------------------------------------------------
+Total           80.899597 mW       8.069923 mW     680.307678 nW      88.970245 mW
+1

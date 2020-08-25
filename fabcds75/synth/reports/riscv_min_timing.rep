@@ -1,0 +1,48 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : riscv
+Version: M-2016.12-SP1
+Date   : Tue Aug 25 11:47:44 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: PVT_1P8V_25C   Library: s8_osu130_TT_1P8_25C.ccs
+Wire Load Model Mode: top
+
+  Startpoint: rf_reg[1][4]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: rf_reg[1][4]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)              0.000000   0.000000
+  clock network delay (propagated)     0.000000   0.000000
+  rf_reg[1][4]/CK (DFFXL)              0.000000 # 0.000000 r
+  rf_reg[1][4]/Q (DFFXL)               0.239808   0.239808 r
+  U13572/Y (NAND2XL)                   0.035114   0.274921 f
+  U13573/Y (OAI21XL)                   0.044952   0.319873 r
+  rf_reg[1][4]/D (DFFXL)               0.000000   0.319873 r
+  data arrival time                               0.319873
+
+  clock clock (rise edge)              0.000000   0.000000
+  clock network delay (propagated)     0.000000   0.000000
+  clock uncertainty                    1.000000   1.000000
+  rf_reg[1][4]/CK (DFFXL)              0.000000   1.000000 r
+  library hold time                    -0.054166  0.945834
+  data required time                              0.945834
+  -----------------------------------------------------------
+  data required time                              0.945834
+  data arrival time                               -0.319873
+  -----------------------------------------------------------
+  slack (VIOLATED)                                -0.625960
+
+
+1

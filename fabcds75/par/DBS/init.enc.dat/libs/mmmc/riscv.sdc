@@ -1,0 +1,1 @@
+/home/rjridle/fabs/fabcds20/synth/mapped/riscv.sdc

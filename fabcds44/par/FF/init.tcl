@@ -1,0 +1,8 @@
+set init_layout_view ""
+set init_abstract_name ""
+set init_verilog "/home/rjridle/fabs/fabcds30/synth/mapped/riscv.vh"
+set init_mmmc_file "/home/rjridle/fabs/fabcds30/par/FF/view_definition.tcl"
+set init_lef_file "/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lef"
+set init_top_cell "riscv"
+set init_gnd_net "VSS"
+set init_pwr_net "VDD"

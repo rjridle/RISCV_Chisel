@@ -1,0 +1,34 @@
+ 
+****************************************
+Report : hierarchy
+Design : riscv
+Version: M-2016.12-SP1
+Date   : Tue Aug 25 12:18:07 2020
+****************************************
+
+Attributes:
+    r - licensed design
+
+riscv              r
+    ADDFX1           s8_osu130_TT_1P8_25C.ccs
+    ADDHXL           s8_osu130_TT_1P8_25C.ccs
+    AND2X1           s8_osu130_TT_1P8_25C.ccs
+    AND2XL           s8_osu130_TT_1P8_25C.ccs
+    AOI21XL          s8_osu130_TT_1P8_25C.ccs
+    BUFX1            s8_osu130_TT_1P8_25C.ccs
+    BUFXL            s8_osu130_TT_1P8_25C.ccs
+    CLKINVX1         s8_osu130_TT_1P8_25C.ccs
+    CLKINVX2         s8_osu130_TT_1P8_25C.ccs
+    DFFXL            s8_osu130_TT_1P8_25C.ccs
+    DLY1             s8_osu130_TT_1P8_25C.ccs
+    INVXL            s8_osu130_TT_1P8_25C.ccs
+    NAND2X1          s8_osu130_TT_1P8_25C.ccs
+    NAND2XL          s8_osu130_TT_1P8_25C.ccs
+    NAND3XL          s8_osu130_TT_1P8_25C.ccs
+    NOR2X1           s8_osu130_TT_1P8_25C.ccs
+    NOR2XL           s8_osu130_TT_1P8_25C.ccs
+    OAI21XL          s8_osu130_TT_1P8_25C.ccs
+    OR2X1            s8_osu130_TT_1P8_25C.ccs
+    TIEHI            s8_osu130_TT_1P8_25C.ccs
+    XNOR2XL          s8_osu130_TT_1P8_25C.ccs
+1

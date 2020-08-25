@@ -1,0 +1,51 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : riscv
+Version: M-2016.12-SP1
+Date   : Tue Aug 25 12:18:07 2020
+****************************************
+
+
+Library(s) Used:
+
+    s8_osu130_TT_1P8_25C.ccs (File: /home/rjridle/osugooglelib/outputs/s8_osu130_TT_1P8_25C.ccs.db)
+
+
+Operating Conditions: PVT_1P8V_25C   Library: s8_osu130_TT_1P8_25C.ccs
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.8  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  = 1.356553 mW   (85%)
+  Net Switching Power  = 236.365463 uW   (15%)
+                         ---------
+Total Dynamic Power    = 1.592918 mW  (100%)
+
+Cell Leakage Power     =   3.9773 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad           0.000000          0.000000          0.000000          0.000000  (   0.00%)
+memory           0.000000          0.000000          0.000000          0.000000  (   0.00%)
+black_box        0.000000          0.000000          0.000000          0.000000  (   0.00%)
+clock_network    0.000000          0.000000          0.000000          0.000000  (   0.00%)
+register         1.306267        3.451248e-03        2.437281e+03          1.312155
+                                                                                 (  82.17%)
+sequential       0.000000          0.000000          0.000000          0.000000  (   0.00%)
+combinational  5.028691e-02          0.232913        1.539980e+03          0.284740
+                                                                                 (  17.83%)
+--------------------------------------------------------------------------------------------------
+Total            1.356554 mW       0.236364 mW     3.977261e+03 nW       1.596895 mW
+1

@@ -1,0 +1,370 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Fri Aug  7 14:41:05 2020                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v19.15-s075_1 (64bit) 07/02/2020 18:24 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: NanoRoute 19.15-s075_1 NR200630-1046/19_15-UB (database version 18.20, 510.7.1) {superthreading v1.53}
+#@(#)CDS: AAE 19.15-s016 (64bit) 07/02/2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: CTE 19.15-s034_1 () Jul  2 2020 10:12:29 ( )
+#@(#)CDS: SYNTECH 19.15-s013_1 () Jul  1 2020 08:44:53 ( )
+#@(#)CDS: CPE v19.15-s065
+#@(#)CDS: IQuantus/TQuantus 19.1.3-s260 (64bit) Thu May 28 10:57:28 PDT 2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getVersion
+restoreDesign /home/rjridle/fabcds30/par/DBS/signoff.enc.dat riscv
+win
+zoomBox 2309.41000 1878.37100 2587.50000 1507.58400
+zoomBox 2461.21400 1684.12400 2479.96100 1643.50500
+zoomBox 2476.32100 1666.61000 2479.45900 1657.82400
+zoomOut
+uiSetTool addWire
+setEditMode -type regular
+uiSetTool addWire
+uiSetTool select
+uiSetTool addWire
+zoomBox 2437.48400 1614.87600 2500.19500 1697.10500
+uiSetTool select
+setLayerPreference node_layer -isVisible 0
+setLayerPreference metal2 -isVisible 1
+zoomBox 2473.51700 1665.80700 2480.67700 1654.25800
+selectMarker 2477.5500 1660.0500 2478.4500 1660.9500 2 1 6
+zoomOut
+setLayerPreference via -isVisible 1
+setLayerPreference via2 -isVisible 1
+setLayerPreference metal1 -isVisible 1
+setLayerPreference cc -isVisible 1
+setLayerPreference cc -isVisible 0
+deselectAll
+selectWire 2475.1500 1660.0500 2480.8500 1660.9500 2 FE_RN_4265
+setEditMode -nets FE_RN_4265
+uiSetTool addWire
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+setEditMode -width_horizontal 0.900
+setEditMode -width_vertical 0.900
+setEditMode -spacing_horizontal 0.900
+setEditMode -spacing_vertical 0.900
+setEditMode -spacing 0.900
+editAddRoute 2475.95 1656.87
+editAddRoute 2481.06 1656.48
+editCommitRoute 2481.06 1656.48
+undo
+zoomBox 2477.21900 1660.12900 2483.10700 1648.54800
+zoomOut
+setLayerPreference pinObj -isVisible 1
+setLayerPreference layoutObj -isVisible 1
+setLayerPreference layoutObj -isVisible 0
+setLayerPreference cellBlkgObj -isVisible 1
+setLayerPreference metal3 -isVisible 1
+setLayerPreference metal3 -isVisible 0
+zoomBox 2473.50300 1664.97600 2482.18800 1655.16800
+zoomOut
+uiSetTool select
+zoomBox 2471.87200 1663.76700 2482.57200 1654.07400
+deselectAll
+selectInst U20993_dup2
+deselectAll
+selectInst U20993_dup2
+deselectAll
+selectWire 2475.1500 1660.0500 2480.8500 1660.9500 2 FE_RN_4265
+panPage 0 1
+panPage 0 1
+panPage 0 -1
+panPage 0 -1
+panPage 1 0
+panPage 0 1
+panPage 0 -1
+panPage 0 -1
+panPage -1 0
+panPage 0 1
+panPage 1 0
+panPage 0 1
+panPage -1 0
+panPage 1 0
+panPage -1 0
+deselectAll
+selectInst U20993_dup2
+panPage 0 -1
+panPage 0 -1
+panPage 1 0
+panPage 0 1
+panPage -1 0
+deselectAll
+selectInst FE_PSC1015_FE_OCPN22694_n19171
+deselectAll
+selectWire 2477.5500 1648.0500 2478.4500 1663.9500 2 FE_RN_3036
+zoomBox 2463.13700 1643.24900 2487.25400 1674.87200
+deselectAll
+selectInst U20993_dup2
+zoomBox 2475.57300 1661.85900 2479.17100 1658.12800
+zoomOut
+deselectAll
+selectWire 2475.1500 1660.0500 2480.8500 1660.9500 2 FE_RN_4265
+deselectAll
+selectWire 40.8000 1661.1000 5959.2000 1662.9000 1 VDD
+deselectAll
+selectWire 2477.5500 1648.0500 2478.4500 1663.9500 2 FE_RN_3036
+setLayerPreference metal3 -isVisible 1
+setLayerPreference metal3 -isVisible 0
+deselectAll
+selectWire 2477.5500 1648.0500 2478.4500 1663.9500 2 FE_RN_3036
+panPage 0 -1
+panPage 0 -1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 1 0
+panPage 0 -1
+panPage -1 0
+deselectAll
+selectWire 2479.9500 1663.0500 2483.2500 1663.9500 2 FE_RN_4265
+deselectAll
+selectInst U21026_dup
+uiSetTool addWire
+setEditMode -layer_horizontal metal2
+panPage 1 0
+panPage -1 0
+uiSetTool select
+uiSetTool select
+deselectAll
+selectWire 2479.9500 1663.0500 2483.2500 1663.9500 2 FE_RN_4265
+deleteSelectedFromFPlan
+selectWire 2479.9500 1660.0500 2480.8500 1663.9500 2 FE_RN_4265
+deleteSelectedFromFPlan
+selectWire 2475.1500 1660.0500 2480.8500 1660.9500 2 FE_RN_4265
+deleteSelectedFromFPlan
+selectInst FE_PSC1015_FE_OCPN22694_n19171
+uiSetTool addWire
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+editAddRoute 2475.79 1660.74
+editAddRoute 2475.55 1664.74
+editAddRoute 2475.59 1665.29
+editCommitRoute 2475.59 1665.29
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+editAddRoute 2475.89 1665.11
+editAddRoute 2479.85 1665.17
+editCommitRoute 2479.85 1665.17
+undo
+undo
+zoomBox 2468.32200 1651.44200 2485.90000 1674.49100
+zoomBox 2466.67000 1648.85400 2487.35100 1675.97100
+zoomBox 2475.46800 1669.53400 2476.83900 1665.91600
+zoomOut
+zoomOut
+uiSetTool select
+zoomBox 2474.71200 1669.14200 2477.41100 1662.14500
+zoomOut
+deselectAll
+selectWire 2472.7500 1666.0500 2478.4500 1666.9500 2 FE_RN_3842
+setEditMode -nets FE_RN_3842
+deselectAll
+selectWire 2472.7500 1666.0500 2478.4500 1666.9500 2 FE_RN_3842
+deleteSelectedFromFPlan
+uiSetTool addWire
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+editAddRoute 2473.48 1666.47
+editAddRoute 2474.36 1667.8
+editAddRoute 2478.05 1667.88
+editCommitRoute 2478.05 1667.88
+undo
+setEditMode -type special
+uiSetTool addWire
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+editAddRoute 2473.66 1666.65
+editAddRoute 2473.69 1667.86
+editAddRoute 2478.34 1668.24
+editCommitRoute 2478.34 1668.24
+undo
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+editAddRoute 2473.57 1666.2
+editAddRoute 2473.57 1667.24
+editAddRoute 2478.17 1668.09
+editCommitRoute 2478.17 1668.09
+uiSetTool select
+selectWire 2475.1500 1645.0500 2476.0500 1660.9500 2 FE_RN_4265
+setEditMode -nets FE_RN_4265
+deselectAll
+selectInst U20993_dup2
+deselectAll
+selectInst U20993_dup2
+deselectAll
+selectInst FE_PSC1015_FE_OCPN22694_n19171
+uiSetTool addWire
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+editAddRoute 2475.69 1660.66
+editAddRoute 2475.51 1664.91
+editAddRoute 2482.91 1665.2
+editCommitRoute 2482.91 1665.2
+uiSetTool select
+deselectAll
+selectWire 2482.3500 1663.0500 2483.2500 1669.9500 2 FE_RN_4265
+uiSetTool move
+zoomBox 2481.47000 1665.85000 2483.38700 1661.81100
+uiSetTool select
+deselectAll
+selectInst U21026_dup
+deselectAll
+selectInst U21026_dup
+uiSetTool move
+editStretch y 1.345 low -no_conn 1
+zoomOut
+editStretch y 3.438 low -no_conn 1
+deselectAll
+selectInst U21026_dup
+setObjFPlanBox Instance U21026_dup 2477.311 1658.273 2484.511 1688.273
+editStretch y -3.2 low -no_conn 1
+zoomOut
+zoomBox 2476.63300 1666.99600 2479.03200 1662.60500
+zoomOut
+uiSetTool select
+deselectAll
+selectInst U21026_dup
+uiSetTool cutWire
+zoomOut
+zoomBox 2479.74800 1672.18300 2482.52300 1660.47000
+editCutWire -only_visible_wires -line { 2481.867 1663.744 2481.867 1669.123 }
+uiSetTool select
+deselectAll
+selectWire 2475.1500 1664.4000 2481.9000 1665.3000 2 FE_RN_4265
+deselectAll
+selectWire 2481.9000 1664.4000 2483.2500 1665.3000 2 FE_RN_4265
+deselectAll
+selectWire 2475.1500 1664.4000 2481.9000 1665.3000 2 FE_RN_4265
+deselectAll
+selectWire 2481.9000 1664.4000 2483.2500 1665.3000 2 FE_RN_4265
+deselectAll
+selectWire 2475.1500 1664.4000 2481.9000 1665.3000 2 FE_RN_4265
+deselectAll
+selectWire 2481.9000 1664.4000 2483.2500 1665.3000 2 FE_RN_4265
+deselectAll
+selectWire 2475.1500 1664.4000 2481.9000 1665.3000 2 FE_RN_4265
+deselectAll
+selectWire 2481.9000 1664.4000 2483.2500 1665.3000 2 FE_RN_4265
+deleteSelectedFromFPlan
+selectVia 2479.5000 1665.6000 2481.3000 1667.4000 3 FE_OCPN23422_FE_OFN23568_n19473
+undo
+undo
+deselectAll
+selectInst U21026_dup
+zoomOut
+zoomOut
+zoomOut
+zoomOut
+zoomOut
+zoomOut
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false -displayByLayer
+violationBrowserDelete -tool Verify
+violationBrowserClose
+deselectAll
+selectInst U12323
+panPage 1 0
+panPage 0 1
+panPage 1 0
+panPage 0 1
+zoomBox 4703.45300 5818.33400 5806.81700 4762.94200
+panPage 1 0
+zoomBox 5438.82600 5686.87400 5820.83700 5223.58300
+zoomBox 5546.46400 5645.88200 5625.96200 5507.99200
+zoomBox 5562.87700 5613.54000 5579.91900 5582.36000
+zoomBox 5569.23000 5604.60600 5574.35400 5595.32200
+setLayerPreference metal1 -isVisible 0
+setLayerPreference metal1 -isVisible 1
+setLayerPreference metal1 -isVisible 0
+setLayerPreference metal3 -isVisible 1
+deselectAll
+selectInst FE_PSBC632_FE_OFN529_n5497
+panPage 1 0
+panPage 1 0
+zoomOut
+setEditMode -type regular
+setEditMode -layer_horizontal metal3
+deselectAll
+selectWire 5573.2500 5601.7500 5581.9500 5603.2500 3 FE_PSBN23769_FE_OFN529_n5497
+setEditMode -nets {}
+setEditMode -nets FE_PSBN23769_FE_OFN529_n5497
+deselectAll
+selectInst FE_PSBC632_FE_OFN529_n5497
+deselectAll
+selectWire 5573.2500 5601.7500 5581.9500 5603.2500 3 FE_PSBN23769_FE_OFN529_n5497
+deleteSelectedFromFPlan
+selectInst FE_PSBC632_FE_OFN529_n5497
+uiSetTool addWire
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+setEditMode -width_horizontal 1.500
+editAddRoute 5574.1 5602.74
+editAddRoute 5581.5 5602.62
+editCommitRoute 5581.5 5602.62
+panPage 0 -1
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+editAddRoute 5574.34 5587.29
+panPage 1 0
+editAddRoute 5587.05 5587.22
+editAddRoute 5588.18 5596.88
+panPage 0 -1
+panPage 1 0
+zoomOut
+editAddRoute 5598.58 5595.16
+editAddRoute 5597.41 5563.48
+editAddRoute 5573.35 5563.71
+editAddRoute 5563.02 5564.65
+editAddRoute 5563.14 5574.86
+editAddRoute 5574.64 5576.62
+editCommitRoute 5574.64 5576.62
+undo
+undo
+undo
+uiSetTool select
+deselectAll
+selectInst FE_PSBC632_FE_OFN529_n5497
+zoomOut
+fit
+deselectAll
+setEditMode -layer_horizontal metal1
+setEditMode -layer_horizontal metal2
+setEditMode -layer_horizontal metal3
+setEditMode -layer_horizontal metal2
+zoomBox 672.37600 2872.37600 113.26000 879.00500
+zoomBox 313.13900 1952.57400 380.23700 1415.78900
+uiSetTool addWire
+getEditMode -quiet -force_patch
+getEditMode -quiet -layer_horizontal
+getEditMode -quiet -layer_vertical
+setEditMode -width_horizontal 0.900
+editAddRoute 282.319 1602.5
+editAddRoute 415.574 1600.99
+editAddRoute 409.551 1760.6
+editAddRoute 336.524 1749.3
+editAddRoute 319.209 1568.62
+editAddRoute 293.612 1629.6
+editAddRoute 289.095 1728.22
+editAddRoute 387.718 1728.22
+editAddRoute 381.696 1680.04
+editCommitRoute 381.696 1680.04
+undo
+zoomOut
+uiSetTool select
+fit

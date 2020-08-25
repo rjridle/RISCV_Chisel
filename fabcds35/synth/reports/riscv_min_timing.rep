@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : riscv
 Version: M-2016.12-SP1
-Date   : Fri Aug 21 15:36:50 2020
+Date   : Tue Aug 25 11:41:53 2020
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -14,9 +14,9 @@ Date   : Fri Aug 21 15:36:50 2020
 Operating Conditions: PVT_1P8V_25C   Library: s8_osu130_TT_1P8_25C.ccs
 Wire Load Model Mode: top
 
-  Startpoint: rf_reg[1][12]
+  Startpoint: pcReg_reg[25]
               (rising edge-triggered flip-flop clocked by clock)
-  Endpoint: rf_reg[1][12]
+  Endpoint: pcReg_reg[25]
             (rising edge-triggered flip-flop clocked by clock)
   Path Group: clock
   Path Type: min
@@ -25,25 +25,24 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   clock clock (rise edge)              0.000000   0.000000
   clock network delay (propagated)     0.000000   0.000000
-  rf_reg[1][12]/CK (DFFXL)             0.000000 # 0.000000 r
-  rf_reg[1][12]/QN (DFFXL)             0.156504   0.156504 f
-  rf_reg[1][12]/Q (DFFXL)              0.086712   0.243216 r
-  U14499/Y (NAND2XL)                   0.046022   0.289239 f
-  U22587/Y (OAI21XL)                   0.045710   0.334948 r
-  rf_reg[1][12]/D (DFFXL)              0.000000   0.334948 r
-  data arrival time                               0.334948
+  pcReg_reg[25]/CK (DFFXL)             0.000000 # 0.000000 r
+  pcReg_reg[25]/QN (DFFXL)             0.174344   0.174344 f
+  U11418/Y (AOI21XL)                   0.071271   0.245615 r
+  U11419/Y (OAI21XL)                   0.034704   0.280319 f
+  pcReg_reg[25]/D (DFFXL)              0.000000   0.280319 f
+  data arrival time                               0.280319
 
   clock clock (rise edge)              0.000000   0.000000
   clock network delay (propagated)     0.000000   0.000000
   clock uncertainty                    1.000000   1.000000
-  rf_reg[1][12]/CK (DFFXL)             0.000000   1.000000 r
-  library hold time                    -0.054170  0.945830
-  data required time                              0.945830
+  pcReg_reg[25]/CK (DFFXL)             0.000000   1.000000 r
+  library hold time                    -0.085957  0.914043
+  data required time                              0.914043
   -----------------------------------------------------------
-  data required time                              0.945830
-  data arrival time                               -0.334948
+  data required time                              0.914043
+  data arrival time                               -0.280319
   -----------------------------------------------------------
-  slack (VIOLATED)                                -0.610882
+  slack (VIOLATED)                                -0.633723
 
 
 1

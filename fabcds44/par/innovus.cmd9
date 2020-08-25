@@ -1,0 +1,270 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Fri Jul 17 16:08:12 2020                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v17.11-s080_1 (64bit) 08/04/2017 11:13 (Linux 2.6.18-194.el5)
+#@(#)CDS: NanoRoute 17.11-s080_1 NR170721-2155/17_11-UB (database version 2.30, 390.7.1) {superthreading v1.44}
+#@(#)CDS: AAE 17.11-s034 (64bit) 08/04/2017 (Linux 2.6.18-194.el5)
+#@(#)CDS: CTE 17.11-s053_1 () Aug  1 2017 23:31:41 ( )
+#@(#)CDS: SYNTECH 17.11-s012_1 () Jul 21 2017 02:29:12 ( )
+#@(#)CDS: CPE v17.11-s095
+#@(#)CDS: IQRC/TQRC 16.1.1-s215 (64bit) Thu Jul  6 20:18:10 PDT 2017 (Linux 2.6.18-194.el5)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getVersion
+getDrawView
+loadWorkspace -name Physical
+restoreDesign /home/rjridle/fabcds/par/DBS/signoff.enc.dat riscv
+win
+selectMarker 2800.0000 2100.0000 2900.0000 2200.0000 3 6 0
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false
+zoomBox 2750.0 2050.0 2950.0 2250.0
+zoomBox 2750.0 2050.0 2950.0 2250.0
+setLayerPreference violation -isVisible 0
+pan -36.961 -24.641
+deselectAll
+selectWire 2429.2500 456.7500 2639.5500 458.2500 3 n15122
+pan 694.313 -329.354
+pan 0.680 -8.351
+setLayerPreference violation -isVisible 1
+setLayerPreference violation -isVisible 0
+setLayerPreference allM0 -isVisible 0
+setLayerPreference allM0 -isVisible 1
+setLayerPreference M0 -isVisible 1
+setLayerPreference M0Track -isVisible 1
+setLayerPreference M0Pin -isVisible 1
+setLayerPreference M0RB -isVisible 1
+setLayerPreference M0Vio -isVisible 1
+setLayerPreference M0Patch -isVisible 1
+pan -26.707 222.555
+pan -497.475 -41.893
+pan -27.169 -4.908
+pan -654.647 282.807
+deselectAll
+pan 4.222 -4.664
+setLayerPreference block -isVisible 0
+setLayerPreference coverCell -isVisible 0
+setLayerPreference phyCell -isVisible 0
+setLayerPreference io -isVisible 0
+setLayerPreference areaIo -isVisible 0
+setLayerPreference blackBox -isVisible 0
+setLayerPreference hinst -isVisible 0
+setLayerPreference guide -isVisible 0
+setLayerPreference fence -isVisible 0
+setLayerPreference region -isVisible 0
+setLayerPreference partition -isVisible 0
+setLayerPreference instanceStatus -isVisible 0
+setLayerPreference place -isVisible 0
+setLayerPreference fixed -isVisible 0
+setLayerPreference cover -isVisible 0
+setLayerPreference softfix -isVisible 0
+setLayerPreference unplace -isVisible 0
+setLayerPreference instanceFunction -isVisible 0
+setLayerPreference flop -isVisible 0
+setLayerPreference pwrswt -isVisible 0
+setLayerPreference isolation -isVisible 0
+setLayerPreference shift -isVisible 0
+setLayerPreference funcother -isVisible 0
+setLayerPreference instanceFunction -isVisible 1
+setLayerPreference flop -isVisible 1
+setLayerPreference pwrswt -isVisible 1
+setLayerPreference isolation -isVisible 1
+setLayerPreference shift -isVisible 1
+setLayerPreference funcother -isVisible 1
+setLayerPreference instanceFunction -isVisible 0
+setLayerPreference flop -isVisible 0
+setLayerPreference pwrswt -isVisible 0
+setLayerPreference isolation -isVisible 0
+setLayerPreference shift -isVisible 0
+setLayerPreference funcother -isVisible 0
+setLayerPreference pinObj -isVisible 1
+setLayerPreference cellBlkgObj -isVisible 1
+setLayerPreference layoutObj -isVisible 1
+setLayerPreference pinObj -isVisible 0
+setLayerPreference cellBlkgObj -isVisible 0
+setLayerPreference layoutObj -isVisible 0
+setLayerPreference obstruct -isVisible 0
+setLayerPreference screen -isVisible 0
+setLayerPreference macroOnly -isVisible 0
+setLayerPreference layerBlk -isVisible 0
+setLayerPreference fillBlk -isVisible 0
+setLayerPreference trimBlk -isVisible 0
+setLayerPreference drcRegion -isVisible 0
+setLayerPreference blockHalo -isVisible 0
+setLayerPreference routingHalo -isVisible 0
+setLayerPreference lithoHalo -isVisible 0
+setLayerPreference blkLink -isVisible 0
+setLayerPreference sitePattern -isVisible 1
+setLayerPreference macroSitePattern -isVisible 1
+setLayerPreference stdRow -isVisible 0
+setLayerPreference ioRow -isVisible 0
+setLayerPreference sitePattern -isVisible 0
+setLayerPreference macroSitePattern -isVisible 0
+setLayerPreference overlapMacro -isVisible 1
+setLayerPreference overlapGuide -isVisible 1
+setLayerPreference overlapBlk -isVisible 1
+setLayerPreference relFPlan -isVisible 0
+setLayerPreference sdpGroup -isVisible 0
+setLayerPreference sdpConnect -isVisible 0
+setLayerPreference sizeBlkg -isVisible 0
+setLayerPreference resizeFPLine1 -isVisible 0
+setLayerPreference resizeFPLine2 -isVisible 0
+setLayerPreference congTag -isVisible 0
+setLayerPreference ioSlot -isVisible 0
+setLayerPreference overlapMacro -isVisible 0
+setLayerPreference overlapGuide -isVisible 0
+setLayerPreference overlapBlk -isVisible 0
+setLayerPreference datapath -isVisible 0
+setLayerPreference routeGuide -isVisible 0
+setLayerPreference ptnPinBlk -isVisible 0
+setLayerPreference ptnFeed -isVisible 0
+setLayerPreference netRect -isVisible 1
+setLayerPreference substrateNoise -isVisible 1
+setLayerPreference pwrdm -isVisible 0
+setLayerPreference netRect -isVisible 0
+setLayerPreference substrateNoise -isVisible 0
+setLayerPreference powerNet -isVisible 0
+setLayerPreference net -isVisible 0
+setLayerPreference power -isVisible 0
+setLayerPreference pgPower -isVisible 0
+setLayerPreference pgGround -isVisible 0
+setLayerPreference clock -isVisible 0
+setLayerPreference net -isVisible 1
+setLayerPreference power -isVisible 1
+setLayerPreference pgPower -isVisible 1
+setLayerPreference pgGround -isVisible 1
+setLayerPreference clock -isVisible 1
+setLayerPreference shield -isVisible 0
+setLayerPreference unknowState -isVisible 0
+setLayerPreference metalFill -isVisible 0
+setLayerPreference wire -isVisible 0
+setLayerPreference via -isVisible 0
+setLayerPreference patch -isVisible 0
+setLayerPreference trim -isVisible 0
+setLayerPreference shield -isVisible 1
+setLayerPreference unknowState -isVisible 1
+setLayerPreference metalFill -isVisible 1
+setLayerPreference wire -isVisible 1
+setLayerPreference via -isVisible 1
+setLayerPreference patch -isVisible 1
+setLayerPreference trim -isVisible 1
+setLayerPreference allM0 -isVisible 0
+setLayerPreference allM1Cont -isVisible 0
+setLayerPreference allM1 -isVisible 0
+setLayerPreference allM2Cont -isVisible 0
+setLayerPreference allM2 -isVisible 0
+setLayerPreference allM3Cont -isVisible 0
+setLayerPreference allM3 -isVisible 0
+setLayerPreference allM0 -isVisible 1
+setLayerPreference allM1Cont -isVisible 1
+setLayerPreference allM1 -isVisible 1
+setLayerPreference allM2Cont -isVisible 1
+setLayerPreference allM2 -isVisible 1
+setLayerPreference allM3Cont -isVisible 1
+setLayerPreference allM3 -isVisible 1
+setLayerPreference allM1Cont -isVisible 0
+setLayerPreference allM1 -isVisible 0
+setLayerPreference allM2Cont -isVisible 0
+setLayerPreference allM2 -isVisible 0
+setLayerPreference allM3Cont -isVisible 0
+setLayerPreference allM3 -isVisible 0
+pan -228.094 -190.483
+pan -1388.136 -1010.982
+setLayerPreference trackObj -isVisible 1
+setLayerPreference nonPrefTrackObj -isVisible 1
+setLayerPreference densityMap -isVisible 1
+setLayerPreference pinDensityMap -isVisible 1
+setLayerPreference timingMap -isVisible 1
+setLayerPreference metalDensityMap -isVisible 1
+setLayerPreference powerDensity -isVisible 1
+setLayerPreference groupmain_Congestion -isVisible 1
+::fit main.layout.win
+setLayerPreference densityMap -isVisible 0
+setLayerPreference pinDensityMap -isVisible 0
+setLayerPreference timingMap -isVisible 0
+setLayerPreference metalDensityMap -isVisible 0
+setLayerPreference powerDensity -isVisible 0
+setLayerPreference groupmain_Congestion -isVisible 0
+setLayerPreference pwrdm -isVisible 1
+setLayerPreference netRect -isVisible 1
+setLayerPreference substrateNoise -isVisible 1
+setLayerPreference powerNet -isVisible 1
+setLayerPreference routeGuide -isVisible 1
+setLayerPreference ptnPinBlk -isVisible 1
+setLayerPreference ptnFeed -isVisible 1
+setLayerPreference relFPlan -isVisible 1
+setLayerPreference sdpGroup -isVisible 1
+setLayerPreference sdpConnect -isVisible 1
+setLayerPreference sizeBlkg -isVisible 1
+setLayerPreference resizeFPLine1 -isVisible 1
+setLayerPreference resizeFPLine2 -isVisible 1
+setLayerPreference congTag -isVisible 1
+setLayerPreference ioSlot -isVisible 1
+setLayerPreference overlapMacro -isVisible 1
+setLayerPreference overlapGuide -isVisible 1
+setLayerPreference overlapBlk -isVisible 1
+setLayerPreference datapath -isVisible 1
+setLayerPreference stdRow -isVisible 1
+setLayerPreference ioRow -isVisible 1
+setLayerPreference sitePattern -isVisible 1
+setLayerPreference macroSitePattern -isVisible 1
+setLayerPreference obstruct -isVisible 1
+setLayerPreference screen -isVisible 1
+setLayerPreference macroOnly -isVisible 1
+setLayerPreference layerBlk -isVisible 1
+setLayerPreference fillBlk -isVisible 1
+setLayerPreference trimBlk -isVisible 1
+setLayerPreference drcRegion -isVisible 1
+setLayerPreference blockHalo -isVisible 1
+setLayerPreference routingHalo -isVisible 1
+setLayerPreference lithoHalo -isVisible 1
+setLayerPreference blkLink -isVisible 1
+setLayerPreference pinObj -isVisible 1
+setLayerPreference cellBlkgObj -isVisible 1
+setLayerPreference layoutObj -isVisible 1
+setLayerPreference hinst -isVisible 1
+setLayerPreference guide -isVisible 1
+setLayerPreference fence -isVisible 1
+setLayerPreference region -isVisible 1
+setLayerPreference partition -isVisible 1
+setLayerPreference instanceStatus -isVisible 1
+setLayerPreference place -isVisible 1
+setLayerPreference fixed -isVisible 1
+setLayerPreference cover -isVisible 1
+setLayerPreference softfix -isVisible 1
+setLayerPreference unplace -isVisible 1
+setLayerPreference instanceFunction -isVisible 1
+setLayerPreference flop -isVisible 1
+setLayerPreference pwrswt -isVisible 1
+setLayerPreference isolation -isVisible 1
+setLayerPreference shift -isVisible 1
+setLayerPreference funcother -isVisible 1
+selectInst U16963
+pan -2.988 -3.129
+setLayerPreference allM1Cont -isVisible 1
+setLayerPreference allM1 -isVisible 1
+pan 0.872 11.401
+setLayerPreference allM2Cont -isVisible 1
+setLayerPreference allM2 -isVisible 1
+pan 0.724 -0.441
+setLayerPreference allM3Cont -isVisible 1
+setLayerPreference allM3Cont -isVisible 0
+setLayerPreference allM2Cont -isVisible 0
+setLayerPreference allM2Cont -isVisible 1
+setLayerPreference allM3 -isVisible 1
+setLayerPreference allM3Cont -isVisible 1
+setLayerPreference allM3 -isVisible 0
+setLayerPreference allM2 -isVisible 0
+setLayerPreference allM1 -isVisible 0
+setLayerPreference allM2Cont -isVisible 0
+setLayerPreference allM1 -isVisible 1
+pan 0.238 3.216
+deselectAll
+selectInst FE_PHC420_rf_4_23
+deselectAll
+selectInst U16963

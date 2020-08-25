@@ -3,7 +3,7 @@
 Report : constraint
 Design : riscv
 Version: M-2016.12-SP1
-Date   : Fri Aug 21 15:36:51 2020
+Date   : Tue Aug 25 11:41:53 2020
 ****************************************
 
 
@@ -26,11 +26,11 @@ Date   : Fri Aug 21 15:36:51 2020
                                                    Weighted
     Group (min_delay/hold)       Cost     Weight     Cost
     -----------------------------------------------------
-    clock                    612.768066
-                                       1.000000  612.768066
+    clock                    621.316162
+                                       1.000000  621.316162
     default                  0.000000  1.000000  0.000000
     -----------------------------------------------------
-    min_delay/hold                               612.768066
+    min_delay/hold                               621.316162
 
 
     Constraint                                       Cost
@@ -42,9 +42,9 @@ Date   : Fri Aug 21 15:36:51 2020
     max_delay/setup                              0.000000 (MET)
     sequential_clock_pulse_width                 0.000000 (MET)
     critical_range                               0.000000 (MET)
-    min_delay/hold                               612.768066
+    min_delay/hold                               621.316162
                                                           (VIOLATED)
-    max_leakage_power                            8598.488281
+    max_leakage_power                            4120.573730
                                                           (VIOLATED)
 
 

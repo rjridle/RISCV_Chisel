@@ -1,0 +1,1338 @@
+[08/17 16:01:56      0s] 
+[08/17 16:01:56      0s] Cadence Innovus(TM) Implementation System.
+[08/17 16:01:56      0s] Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+[08/17 16:01:56      0s] 
+[08/17 16:01:56      0s] Version:	v19.15-s075_1, built Thu Jul 2 18:24:05 PDT 2020
+[08/17 16:01:56      0s] Options:	-init fab20 
+[08/17 16:01:56      0s] Date:		Mon Aug 17 16:01:56 2020
+[08/17 16:01:56      0s] Host:		rivendell.ecen.okstate.edu (x86_64 w/Linux 2.6.32-754.25.1.el6.x86_64) (6cores*12cpus*Intel(R) Xeon(R) CPU E5-4617 0 @ 2.90GHz 15360KB)
+[08/17 16:01:56      0s] OS:		Red Hat Enterprise Linux Server release 6.10 (Santiago)
+[08/17 16:01:56      0s] 
+[08/17 16:01:56      0s] License:
+[08/17 16:01:56      0s] 		invs	Innovus Implementation System	19.1	checkout succeeded
+[08/17 16:01:56      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[08/17 16:02:10     13s] @(#)CDS: Innovus v19.15-s075_1 (64bit) 07/02/2020 18:24 (Linux 2.6.32-431.11.2.el6.x86_64)
+[08/17 16:02:10     13s] @(#)CDS: NanoRoute 19.15-s075_1 NR200630-1046/19_15-UB (database version 18.20, 510.7.1) {superthreading v1.53}
+[08/17 16:02:10     13s] @(#)CDS: AAE 19.15-s016 (64bit) 07/02/2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+[08/17 16:02:10     13s] @(#)CDS: CTE 19.15-s034_1 () Jul  2 2020 10:12:29 ( )
+[08/17 16:02:10     13s] @(#)CDS: SYNTECH 19.15-s013_1 () Jul  1 2020 08:44:53 ( )
+[08/17 16:02:10     13s] @(#)CDS: CPE v19.15-s065
+[08/17 16:02:10     13s] @(#)CDS: IQuantus/TQuantus 19.1.3-s260 (64bit) Thu May 28 10:57:28 PDT 2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+[08/17 16:02:10     13s] @(#)CDS: OA 22.60-s011 Tue Jun 16 12:27:00 2020
+[08/17 16:02:10     13s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[08/17 16:02:10     13s] @(#)CDS: RCDB 11.14.18
+[08/17 16:02:10     13s] @(#)CDS: STYLUS 19.10-s018_1 (06/12/2020 04:43 PDT)
+[08/17 16:02:10     13s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_33837_rivendell.ecen.okstate.edu_rjridle_jUpx89.
+
+[08/17 16:02:10     13s] Change the soft stacksize limit to 0.2%RAM (258 mbytes). Set global soft_stack_size_limit to change the value.
+[08/17 16:02:11     14s] 
+[08/17 16:02:11     14s] **INFO:  MMMC transition support version v31-84 
+[08/17 16:02:11     14s] 
+[08/17 16:02:11     14s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[08/17 16:02:11     14s] <CMD> suppressMessage ENCEXT-2799
+[08/17 16:02:11     14s] <CMD> getVersion
+[08/17 16:02:11     14s] Sourcing file "fab20" ...
+[08/17 16:02:11     14s] <CMD> is_common_ui_mode
+[08/17 16:02:11     14s] <CMD> restoreDesign /home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat riscv
+[08/17 16:02:11     14s] #% Begin load design ... (date=08/17 16:02:11, mem=474.8M)
+[08/17 16:02:11     14s] Set Default Input Pin Transition as 0.1 ps.
+[08/17 16:02:11     14s] Loading design 'riscv' saved by 'Innovus' '19.15-s075_1' on 'Sun Aug 16 20:36:12 2020'.
+[08/17 16:02:11     14s] % Begin Load MMMC data ... (date=08/17 16:02:11, mem=477.1M)
+[08/17 16:02:11     14s] % End Load MMMC data ... (date=08/17 16:02:11, total cpu=0:00:00.0, real=0:00:00.0, peak res=477.3M, current mem=477.3M)
+[08/17 16:02:11     14s] 
+[08/17 16:02:11     14s] Loading LEF file /home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/lef/osu05_stdcells.lef ...
+[08/17 16:02:11     14s] **WARN: (IMPLF-108):	There is no overlap layer defined in any LEF file
+[08/17 16:02:11     14s] so you are unable to create rectilinear partition in a hierarchical flow.
+[08/17 16:02:11     14s] Set DBUPerIGU to M2 pitch 2400.
+[08/17 16:02:11     14s] 
+[08/17 16:02:11     14s] viaInitial starts at Mon Aug 17 16:02:11 2020
+**WARN: (IMPPP-556):	A SAMENET rule between different layers for a 4 layer technology is probably a mistake. Stacked vias will be difficult to create and probably will not be what expected. Check if this rule can be removed from the technology file: SAMENET cc via 0.150000 ;
+[08/17 16:02:11     14s] **WARN: (IMPPP-556):	A SAMENET rule between different layers for a 4 layer technology is probably a mistake. Stacked vias will be difficult to create and probably will not be what expected. Check if this rule can be removed from the technology file: SAMENET via via2 0.150000 ;
+[08/17 16:02:11     14s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN1 GENERATE.
+[08/17 16:02:11     14s] Type 'man IMPPP-557' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN2 GENERATE.
+[08/17 16:02:11     14s] Type 'man IMPPP-557' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN3 GENERATE.
+[08/17 16:02:11     14s] Type 'man IMPPP-557' for more detail.
+[08/17 16:02:11     14s] viaInitial ends at Mon Aug 17 16:02:11 2020
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[08/17 16:02:11     14s] Loading view definition file from /home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/viewDefinition.tcl
+[08/17 16:02:11     14s] Reading libs_tt timing library '/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib' ...
+[08/17 16:02:11     14s] Read 39 cells in library 'osu05_stdcells' 
+[08/17 16:02:11     14s] Ending "PreSetAnalysisView" (total cpu=0:00:00.1, real=0:00:00.0, peak res=515.9M, current mem=489.0M)
+[08/17 16:02:11     14s] *** End library_loading (cpu=0.00min, real=0.00min, mem=20.0M, fe_cpu=0.25min, fe_real=0.25min, fe_mem=796.1M) ***
+[08/17 16:02:11     14s] % Begin Load netlist data ... (date=08/17 16:02:11, mem=489.0M)
+[08/17 16:02:11     14s] *** Begin netlist parsing (mem=796.1M) ***
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'YPAD' of cell 'PADGND' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'PADGND' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'YPAD' of cell 'PADVDD' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'PADVDD' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'XNOR2X1' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'XNOR2X1' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'TBUFX2' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'TBUFX2' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'TBUFX1' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'TBUFX1' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'OR2X2' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'OR2X2' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'OR2X1' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'OR2X1' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'OAI22X1' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'OAI22X1' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'OAI21X1' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'OAI21X1' is defined in LEF but not in the timing library.
+[08/17 16:02:11     14s] Type 'man IMPVL-159' for more detail.
+[08/17 16:02:11     14s] **WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+[08/17 16:02:11     14s] To increase the message display limit, refer to the product command reference manual.
+[08/17 16:02:11     14s] Created 39 new cells from 1 timing libraries.
+[08/17 16:02:11     14s] Reading netlist ...
+[08/17 16:02:11     14s] Backslashed names will retain backslash and a trailing blank character.
+[08/17 16:02:11     14s] Reading verilogBinary netlist '/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/riscv.v.bin'
+[08/17 16:02:11     14s] Reading binary database version 2 in 1-threaded mode
+[08/17 16:02:11     15s] 
+[08/17 16:02:11     15s] *** Memory Usage v#1 (Current mem = 810.121M, initial mem = 287.395M) ***
+[08/17 16:02:11     15s] *** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=810.1M) ***
+[08/17 16:02:11     15s] % End Load netlist data ... (date=08/17 16:02:11, total cpu=0:00:00.1, real=0:00:00.0, peak res=498.3M, current mem=498.3M)
+[08/17 16:02:11     15s] Set top cell to riscv.
+[08/17 16:02:11     15s] **WARN: (IMPTS-124):	Timing library description of pin 'YPAD' is missing from cell 'PADGND' in timing library 'osu05_stdcells'.
+[08/17 16:02:11     15s] **WARN: (IMPTS-124):	Timing library description of pin 'YPAD' is missing from cell 'PADVDD' in timing library 'osu05_stdcells'.
+[08/17 16:02:11     15s] Hooked 39 DB cells to tlib cells.
+[08/17 16:02:12     15s] Ending "BindLib:" (total cpu=0:00:00.0, real=0:00:01.0, peak res=500.5M, current mem=500.5M)
+[08/17 16:02:12     15s] Starting recursive module instantiation check.
+[08/17 16:02:12     15s] No recursion found.
+[08/17 16:02:12     15s] Building hierarchical netlist for Cell riscv ...
+[08/17 16:02:12     15s] *** Netlist is unique.
+[08/17 16:02:12     15s] Setting Std. cell height to 30000 DBU (smallest netlist inst).
+[08/17 16:02:12     15s] ** info: there are 41 modules.
+[08/17 16:02:12     15s] ** info: there are 31964 stdCell insts.
+[08/17 16:02:12     15s] 
+[08/17 16:02:12     15s] *** Memory Usage v#1 (Current mem = 848.543M, initial mem = 287.395M) ***
+[08/17 16:02:12     15s] *info: set bottom ioPad orient R0
+[08/17 16:02:12     15s] Reading IO assignment file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" ...
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 9: Pad: c01 NW
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 11: Pad: c02 NE
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 13: Pad: c03 SE
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 15: Pad: c04 SW
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 20: Pad: p39 N
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 22: Pad: p38 N
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 24: Pad: p37 N
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 26: Pad: p36 N
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 28: Pad: p35 N
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 30: Pad: p34 N
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 32: Pad: p33 N
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 34: Pad: p32 N
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 36: Pad: p31 N
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 38: Pad: p30 N
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 43: Pad: p29 W
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 45: Pad: p28 W
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 47: Pad: p27 W
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 49: Pad: p26 W
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 51: Pad: p25 W
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 53: Pad: p24 W
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 55: Pad: p23 W
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 57: Pad: p22 W
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 59: Pad: p21 W
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 61: Pad: p20 W
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 66: Pad: p19 S
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 68: Pad: p18 S
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 70: Pad: p17 S
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 72: Pad: p16 S
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 74: Pad: p15 S
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 76: Pad: p14 S
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 78: Pad: p13 S
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 80: Pad: p12 S
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 82: Pad: p11 S
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 84: Pad: p10 S
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 89: Pad: p09 E
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 91: Pad: p08 E
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 93: Pad: p07 E
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 95: Pad: p06 E
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 97: Pad: p05 E
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 99: Pad: p04 E
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 101: Pad: p03 E
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 103: Pad: p02 E
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 105: Pad: p01 E
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **Warn: ignored IO file "/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/libs/iofile/encounter.io" line 107: Pad: p00 E
+  Reason: unable to determine object from name.
+[08/17 16:02:12     15s] **WARN: (IMPFP-710):	File version 0 is too old.
+[08/17 16:02:12     15s] IO file version '0' is too old, will try to place io cell any way.
+[08/17 16:02:12     15s] **WARN: (IMPFP-3961):	The techSite 'IO' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[08/17 16:02:12     15s] Type 'man IMPFP-3961' for more detail.
+[08/17 16:02:12     15s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[08/17 16:02:12     15s] Type 'man IMPFP-3961' for more detail.
+[08/17 16:02:12     15s] Horizontal Layer M1 offset = 1500 (derived)
+[08/17 16:02:12     15s] Vertical Layer M2 offset = 1200 (derived)
+[08/17 16:02:12     15s] Set Default Net Delay as 1000 ps.
+[08/17 16:02:12     15s] Set Default Net Load as 0.5 pF. 
+[08/17 16:02:12     15s] Set Default Input Pin Transition as 0.1 ps.
+[08/17 16:02:12     15s] Loading preference file /home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/gui.pref.tcl ...
+[08/17 16:02:12     15s] ##  Process: 250           (User Set)               
+[08/17 16:02:12     15s] ##     Node: (not set)                           
+[08/17 16:02:12     15s] 
+##  Check design process and node:  
+##  Design tech node is not set.
+
+[08/17 16:02:12     15s] Applying the recommended capacitance filtering threshold values for 250nm process node: total_c_th=5, relative_c_th=0.03 and coupling_c_th=3.
+[08/17 16:02:12     15s] 	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+[08/17 16:02:12     15s] 	For postRoute effortLevel low extraction, the coupling_c_th value will be used only when the -capFilterMode parameter of the setExtractRCMode command is set to relAndCoup or relOrCoup. Default value of -capFilterMode parameter in postRoute extraction effortLevel low is relOnly.
+[08/17 16:02:12     15s] 	The accuracy mode for postRoute effortLevel low extraction will be set to 'standard'.
+[08/17 16:02:12     15s] 	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'low'.
+[08/17 16:02:12     15s] **WARN: (IMPOPT-7177):	Option medium in 'setOptMode -usefulSkewCCOpt' is deprecated. It still works, but it will be removed in the future release.
+[08/17 16:02:12     15s] **WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+[08/17 16:02:12     15s] **WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+[08/17 16:02:12     15s] **WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+[08/17 16:02:12     15s] **WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+[08/17 16:02:12     15s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[08/17 16:02:12     15s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[08/17 16:02:12     15s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[08/17 16:02:12     15s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[08/17 16:02:12     15s] **WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+[08/17 16:02:12     15s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[08/17 16:02:12     15s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[08/17 16:02:12     15s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[08/17 16:02:12     15s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[08/17 16:02:12     16s] This command "restoreDesign /home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat ..." required an extra checkout of license tpsxl.
+[08/17 16:02:12     16s] Additional license(s) checked out: 1 'Tempus_Timing_Signoff_XL' license(s)
+[08/17 16:02:12     16s] addRing command will ignore shorts while creating rings.
+[08/17 16:02:12     16s] addRing command will disallow rings to go over rows.
+[08/17 16:02:12     16s] addRing command will consider rows while creating rings.
+[08/17 16:02:12     16s] The ring targets are set to core/block ring wires.
+[08/17 16:02:13     16s] Extraction setup Delayed 
+[08/17 16:02:13     16s] *Info: initialize multi-corner CTS.
+[08/17 16:02:13     16s] Ending "SetAnalysisView" (total cpu=0:00:00.0, real=0:00:00.0, peak res=759.0M, current mem=578.5M)
+[08/17 16:02:13     16s] Reading timing constraints file '/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/mmmc/modes/setup_func_mode/setup_func_mode.sdc' ...
+[08/17 16:02:13     16s] Current (total cpu=0:00:16.9, real=0:00:17.0, peak res=759.0M, current mem=750.9M)
+[08/17 16:02:13     16s] INFO (CTE): Constraints read successfully.
+[08/17 16:02:13     16s] Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=770.1M, current mem=770.1M)
+[08/17 16:02:13     16s] Current (total cpu=0:00:17.0, real=0:00:17.0, peak res=770.1M, current mem=770.1M)
+[08/17 16:02:13     16s] Reading latency file '/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/mmmc/views/setup_func/latency.sdc' ...
+[08/17 16:02:13     16s] Reading latency file '/home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/mmmc/views/hold_func/latency.sdc' ...
+[08/17 16:02:13     17s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[08/17 16:02:13     17s] Creating Cell Server ...(0, 1, 1, 1)
+[08/17 16:02:13     17s] Summary for sequential cells identification: 
+[08/17 16:02:13     17s]   Identified SBFF number: 3
+[08/17 16:02:13     17s]   Identified MBFF number: 0
+[08/17 16:02:13     17s]   Identified SB Latch number: 0
+[08/17 16:02:13     17s]   Identified MB Latch number: 0
+[08/17 16:02:13     17s]   Not identified SBFF number: 0
+[08/17 16:02:13     17s]   Not identified MBFF number: 0
+[08/17 16:02:13     17s]   Not identified SB Latch number: 0
+[08/17 16:02:13     17s]   Not identified MB Latch number: 0
+[08/17 16:02:13     17s]   Number of sequential cells which are not FFs: 1
+[08/17 16:02:13     17s] Total number of combinational cells: 26
+[08/17 16:02:13     17s] Total number of sequential cells: 4
+[08/17 16:02:13     17s] Total number of tristate cells: 2
+[08/17 16:02:13     17s] Total number of level shifter cells: 0
+[08/17 16:02:13     17s] Total number of power gating cells: 0
+[08/17 16:02:13     17s] Total number of isolation cells: 0
+[08/17 16:02:13     17s] Total number of power switch cells: 0
+[08/17 16:02:13     17s] Total number of pulse generator cells: 0
+[08/17 16:02:13     17s] Total number of always on buffers: 0
+[08/17 16:02:13     17s] Total number of retention cells: 0
+[08/17 16:02:13     17s] List of usable buffers: BUFX2 BUFX4 CLKBUF1
+[08/17 16:02:13     17s] Total number of usable buffers: 3
+[08/17 16:02:13     17s] List of unusable buffers:
+[08/17 16:02:13     17s] Total number of unusable buffers: 0
+[08/17 16:02:13     17s] List of usable inverters: INVX2 INVX1 INVX4 INVX8
+[08/17 16:02:13     17s] Total number of usable inverters: 4
+[08/17 16:02:13     17s] List of unusable inverters:
+[08/17 16:02:13     17s] Total number of unusable inverters: 0
+[08/17 16:02:13     17s] List of identified usable delay cells: CLKBUF2 CLKBUF3
+[08/17 16:02:13     17s] Total number of identified usable delay cells: 2
+[08/17 16:02:13     17s] List of identified unusable delay cells:
+[08/17 16:02:13     17s] Total number of identified unusable delay cells: 0
+[08/17 16:02:13     17s] Creating Cell Server, finished. 
+[08/17 16:02:13     17s] 
+[08/17 16:02:13     17s] Deleting Cell Server ...
+[08/17 16:02:13     17s] % Begin Load MMMC data post ... (date=08/17 16:02:13, mem=791.1M)
+[08/17 16:02:13     17s] % End Load MMMC data post ... (date=08/17 16:02:13, total cpu=0:00:00.0, real=0:00:00.0, peak res=791.1M, current mem=791.1M)
+[08/17 16:02:13     17s] Reading floorplan file - /home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/riscv.fp.gz (mem = 1130.0M).
+[08/17 16:02:13     17s] % Begin Load floorplan data ... (date=08/17 16:02:13, mem=791.2M)
+[08/17 16:02:14     17s] *info: reset 32468 existing net BottomPreferredLayer and AvoidDetour
+[08/17 16:02:14     17s] net ignore based on current view = 0
+[08/17 16:02:14     17s] Deleting old partition specification.
+[08/17 16:02:14     17s] Set FPlanBox to (0 0 6000000 6000000)
+[08/17 16:02:14     17s] **WARN: (IMPFP-3961):	The techSite 'IO' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[08/17 16:02:14     17s] Type 'man IMPFP-3961' for more detail.
+[08/17 16:02:14     17s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[08/17 16:02:14     17s] Type 'man IMPFP-3961' for more detail.
+[08/17 16:02:14     17s] Horizontal Layer M1 offset = 1500 (derived)
+[08/17 16:02:14     17s] Vertical Layer M2 offset = 1200 (derived)
+[08/17 16:02:14     17s]  ... processed partition successfully.
+[08/17 16:02:14     17s] Reading binary special route file /home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/riscv.fp.spr.gz (Created by Innovus v19.15-s075_1 on Sun Aug 16 20:36:09 2020, version: 1)
+[08/17 16:02:14     17s] Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=793.2M, current mem=793.2M)
+[08/17 16:02:14     17s] There are 180 nets with weight being set
+[08/17 16:02:14     17s] There are 69 nets with bottomPreferredRoutingLayer being set
+[08/17 16:02:14     17s] There are 180 nets with avoidDetour being set
+[08/17 16:02:14     17s] Extracting standard cell pins and blockage ...... 
+[08/17 16:02:14     17s] Pin and blockage extraction finished
+[08/17 16:02:14     17s] % End Load floorplan data ... (date=08/17 16:02:14, total cpu=0:00:00.1, real=0:00:01.0, peak res=793.9M, current mem=793.9M)
+[08/17 16:02:14     17s] Reading congestion map file /home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/riscv.route.congmap.gz ...
+[08/17 16:02:14     17s] % Begin Load SymbolTable ... (date=08/17 16:02:14, mem=794.1M)
+[08/17 16:02:14     17s] Suppress "**WARN ..." messages.
+[08/17 16:02:14     17s] routingBox: (0 0) (6000000 6000000)
+[08/17 16:02:14     17s] coreBox:    (40800 42000) (5959200 5958000)
+[08/17 16:02:14     17s] Un-suppress "**WARN ..." messages.
+[08/17 16:02:15     17s] % End Load SymbolTable ... (date=08/17 16:02:15, total cpu=0:00:00.6, real=0:00:01.0, peak res=814.7M, current mem=814.7M)
+[08/17 16:02:15     17s] Loading place ...
+[08/17 16:02:15     17s] % Begin Load placement data ... (date=08/17 16:02:15, mem=814.7M)
+[08/17 16:02:15     17s] Reading placement file - /home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/riscv.place.gz.
+[08/17 16:02:15     18s] ** Reading stdCellPlacement_binary (Created by Innovus v19.15-s075_1 on Sun Aug 16 20:36:10 2020, version# 2) ...
+[08/17 16:02:16     19s] Read Views for adaptive view pruning ...
+[08/17 16:02:16     19s] Read 0 views from Binary DB for adaptive view pruning
+[08/17 16:02:16     19s] *** Checked 2 GNC rules.
+[08/17 16:02:16     19s] *** applyConnectGlobalNets disabled.
+[08/17 16:02:16     19s] *** Completed restorePlace (cpu=0:00:01.7 real=0:00:01.0 mem=1227.8M) ***
+[08/17 16:02:16     19s] Total net length = 4.990e+06 (2.463e+06 2.528e+06) (ext = 4.675e+04)
+[08/17 16:02:16     19s] % End Load placement data ... (date=08/17 16:02:16, total cpu=0:00:01.7, real=0:00:01.0, peak res=902.1M, current mem=899.6M)
+[08/17 16:02:16     19s] Reading PG file /home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/riscv.pg.gz
+[08/17 16:02:16     19s] *** Completed restorePGFile (cpu=0:00:00.1 real=0:00:00.0 mem=1229.8M) ***
+[08/17 16:02:16     19s] % Begin Load routing data ... (date=08/17 16:02:16, mem=905.7M)
+[08/17 16:02:16     19s] Reading routing file - /home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/riscv.route.gz.
+[08/17 16:02:17     19s] Reading Innovus routing data (Created by Innovus v19.15-s075_1 on Sun Aug 16 20:36:10 2020 Format: 19.1) ...
+[08/17 16:02:17     19s] *** Total 32436 nets are successfully restored.
+[08/17 16:02:17     19s] *** Completed restoreRoute (cpu=0:00:00.3 real=0:00:01.0 mem=1267.8M) ***
+[08/17 16:02:17     19s] % End Load routing data ... (date=08/17 16:02:17, total cpu=0:00:00.3, real=0:00:01.0, peak res=944.4M, current mem=943.8M)
+[08/17 16:02:17     19s] Loading Drc markers ...
+[08/17 16:02:17     20s] ... 29067 markers are loaded ...
+[08/17 16:02:17     20s] ... 2 geometry drc markers are loaded ...
+[08/17 16:02:17     20s] ... 0 antenna drc markers are loaded ...
+[08/17 16:02:17     20s] TAT_INFO: restoreCongMap REAL = 0 : CPU = 0 : MEM = 0.
+[08/17 16:02:17     20s] Reading property file /home/rjridle/risc-v-chisel/fabcds20/par/fab20.dat/riscv.prop
+[08/17 16:02:17     20s] *** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=1278.8M) ***
+[08/17 16:02:17     20s] Set Default Input Pin Transition as 0.1 ps.
+[08/17 16:02:18     20s] pesRestorePreRouteExtractionData::readRCCornerMetaData, could not read file: ˜ÜNk‰
+[08/17 16:02:18     20s] Extraction setup Started 
+[08/17 16:02:18     20s] Initializing multi-corner RC extraction with 1 active RC Corners ...
+[08/17 16:02:18     20s] **WARN: (IMPEXT-2773):	The via resistance between layers M0 and M1 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+[08/17 16:02:18     20s] Type 'man IMPEXT-2773' for more detail.
+[08/17 16:02:18     20s] **WARN: (IMPEXT-2773):	The via resistance between layers M1 and M2 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+[08/17 16:02:18     20s] Type 'man IMPEXT-2773' for more detail.
+[08/17 16:02:18     20s] **WARN: (IMPEXT-2773):	The via resistance between layers M2 and M3 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+[08/17 16:02:18     20s] Type 'man IMPEXT-2773' for more detail.
+[08/17 16:02:18     20s] **WARN: (IMPEXT-2766):	The sheet resistance for layer M1 is not defined in the cap table. Therefore, the LEF value 0.09 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+[08/17 16:02:18     20s] **WARN: (IMPEXT-2766):	The sheet resistance for layer M2 is not defined in the cap table. Therefore, the LEF value 0.09 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+[08/17 16:02:18     20s] **WARN: (IMPEXT-2766):	The sheet resistance for layer M3 is not defined in the cap table. Therefore, the LEF value 0.05 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+[08/17 16:02:18     20s] Summary of Active RC-Corners : 
+[08/17 16:02:18     20s]  
+[08/17 16:02:18     20s]  Analysis View: setup_func
+[08/17 16:02:18     20s]     RC-Corner Name        : rc_typ
+[08/17 16:02:18     20s]     RC-Corner Index       : 0
+[08/17 16:02:18     20s]     RC-Corner Temperature : 25 Celsius
+[08/17 16:02:18     20s]     RC-Corner Cap Table   : ''
+[08/17 16:02:18     20s]     RC-Corner PreRoute Res Factor         : 1
+[08/17 16:02:18     20s]     RC-Corner PreRoute Cap Factor         : 1
+[08/17 16:02:18     20s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[08/17 16:02:18     20s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[08/17 16:02:18     20s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[08/17 16:02:18     20s]     RC-Corner PreRoute Clock Res Factor   : 1
+[08/17 16:02:18     20s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from Cap Table]
+[08/17 16:02:18     20s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[08/17 16:02:18     20s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[08/17 16:02:18     20s]  
+[08/17 16:02:18     20s]  Analysis View: hold_func
+[08/17 16:02:18     20s]     RC-Corner Name        : rc_typ
+[08/17 16:02:18     20s]     RC-Corner Index       : 0
+[08/17 16:02:18     20s]     RC-Corner Temperature : 25 Celsius
+[08/17 16:02:18     20s]     RC-Corner Cap Table   : ''
+[08/17 16:02:18     20s]     RC-Corner PreRoute Res Factor         : 1
+[08/17 16:02:18     20s]     RC-Corner PreRoute Cap Factor         : 1
+[08/17 16:02:18     20s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[08/17 16:02:18     20s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[08/17 16:02:18     20s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[08/17 16:02:18     20s]     RC-Corner PreRoute Clock Res Factor   : 1
+[08/17 16:02:18     20s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from Cap Table]
+[08/17 16:02:18     20s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[08/17 16:02:18     20s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[08/17 16:02:18     20s] LayerId::1 widthSet size::2
+[08/17 16:02:18     20s] LayerId::2 widthSet size::7
+[08/17 16:02:18     20s] LayerId::3 widthSet size::5
+[08/17 16:02:18     20s] Initializing multi-corner resistance tables ...
+[08/17 16:02:18     20s] Preroute length aware model : LLS: 2-1 ; HLS: 4-3 ; rDens: 0.445766 ; uaWl: 1.000000 ; uaWlH: 0.942928 ; aWlH: 0.000000 ; Pmax: 0.934600 ; wcR: 1.000000 ; newSi: 0.097500 ; pMod: 77 ; 
+[08/17 16:02:18     20s] Start generating vias ...
+[08/17 16:02:18     20s] #Skip building auto via since it is not turned on.
+[08/17 16:02:18     20s] Via generation completed.
+[08/17 16:02:18     20s] % Begin Load power constraints ... (date=08/17 16:02:18, mem=965.9M)
+[08/17 16:02:18     20s] % End Load power constraints ... (date=08/17 16:02:18, total cpu=0:00:00.0, real=0:00:00.0, peak res=966.1M, current mem=966.1M)
+[08/17 16:02:18     20s] % Begin load AAE data ... (date=08/17 16:02:18, mem=966.1M)
+[08/17 16:02:19     21s] AAE DB initialization (MEM=1313.71 CPU=0:00:00.2 REAL=0:00:01.0) 
+[08/17 16:02:19     21s] % End load AAE data ... (date=08/17 16:02:19, total cpu=0:00:00.7, real=0:00:01.0, peak res=975.5M, current mem=975.5M)
+[08/17 16:02:19     21s] Restoring CCOpt config...
+[08/17 16:02:19     21s] Creating Cell Server ...(0, 0, 0, 0)
+[08/17 16:02:19     21s] Summary for sequential cells identification: 
+[08/17 16:02:19     21s]   Identified SBFF number: 3
+[08/17 16:02:19     21s]   Identified MBFF number: 0
+[08/17 16:02:19     21s]   Identified SB Latch number: 0
+[08/17 16:02:19     21s]   Identified MB Latch number: 0
+[08/17 16:02:19     21s]   Not identified SBFF number: 0
+[08/17 16:02:19     21s]   Not identified MBFF number: 0
+[08/17 16:02:19     21s]   Not identified SB Latch number: 0
+[08/17 16:02:19     21s]   Not identified MB Latch number: 0
+[08/17 16:02:19     21s]   Number of sequential cells which are not FFs: 1
+[08/17 16:02:19     21s]  Visiting view : setup_func
+[08/17 16:02:19     21s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:02:19     21s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:02:19     21s]  Visiting view : hold_func
+[08/17 16:02:19     21s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:02:19     21s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:02:19     21s]  Setting StdDelay to 92.80
+[08/17 16:02:19     21s] Creating Cell Server, finished. 
+[08/17 16:02:19     21s] 
+[08/17 16:02:19     21s]   Extracting original clock gating for clk...
+[08/17 16:02:19     21s]     clock_tree clk contains 1024 sinks and 0 clock gates.
+[08/17 16:02:19     21s]     Extraction for clk complete.
+[08/17 16:02:19     21s]   Extracting original clock gating for clk done.
+[08/17 16:02:19     21s]   The skew group clk/setup_func_mode was created. It contains 1024 sinks and 1 sources.
+[08/17 16:02:19     21s]   The skew group clk/setup_func_mode was created. It contains 1024 sinks and 1 sources.
+[08/17 16:02:19     21s] Restoring CCOpt config done.
+[08/17 16:02:19     21s] Deleting Cell Server ...
+[08/17 16:02:19     21s] Creating Cell Server ...(0, 1, 1, 1)
+[08/17 16:02:19     21s] Summary for sequential cells identification: 
+[08/17 16:02:19     21s]   Identified SBFF number: 3
+[08/17 16:02:19     21s]   Identified MBFF number: 0
+[08/17 16:02:19     21s]   Identified SB Latch number: 0
+[08/17 16:02:19     21s]   Identified MB Latch number: 0
+[08/17 16:02:19     21s]   Not identified SBFF number: 0
+[08/17 16:02:19     21s]   Not identified MBFF number: 0
+[08/17 16:02:19     21s]   Not identified SB Latch number: 0
+[08/17 16:02:19     21s]   Not identified MB Latch number: 0
+[08/17 16:02:19     21s]   Number of sequential cells which are not FFs: 1
+[08/17 16:02:19     21s] Total number of combinational cells: 26
+[08/17 16:02:19     21s] Total number of sequential cells: 4
+[08/17 16:02:19     21s] Total number of tristate cells: 2
+[08/17 16:02:19     21s] Total number of level shifter cells: 0
+[08/17 16:02:19     21s] Total number of power gating cells: 0
+[08/17 16:02:19     21s] Total number of isolation cells: 0
+[08/17 16:02:19     21s] Total number of power switch cells: 0
+[08/17 16:02:19     21s] Total number of pulse generator cells: 0
+[08/17 16:02:19     21s] Total number of always on buffers: 0
+[08/17 16:02:19     21s] Total number of retention cells: 0
+[08/17 16:02:19     21s] List of usable buffers: BUFX2 BUFX4 CLKBUF1
+[08/17 16:02:19     21s] Total number of usable buffers: 3
+[08/17 16:02:19     21s] List of unusable buffers:
+[08/17 16:02:19     21s] Total number of unusable buffers: 0
+[08/17 16:02:19     21s] List of usable inverters: INVX2 INVX1 INVX4 INVX8
+[08/17 16:02:19     21s] Total number of usable inverters: 4
+[08/17 16:02:19     21s] List of unusable inverters:
+[08/17 16:02:19     21s] Total number of unusable inverters: 0
+[08/17 16:02:19     21s] List of identified usable delay cells: CLKBUF2 CLKBUF3
+[08/17 16:02:19     21s] Total number of identified usable delay cells: 2
+[08/17 16:02:19     21s] List of identified unusable delay cells:
+[08/17 16:02:19     21s] Total number of identified unusable delay cells: 0
+[08/17 16:02:19     21s] Creating Cell Server, finished. 
+[08/17 16:02:19     21s] 
+[08/17 16:02:19     21s] Deleting Cell Server ...
+[08/17 16:02:19     21s] **WARN: (IMPCTE-107):	The following globals have been obsoleted since version 19.15-s075_1. They will be removed in the next release. 
+[08/17 16:02:19     21s] timing_enable_default_delay_arc
+[08/17 16:02:19     21s] #% End load design ... (date=08/17 16:02:19, total cpu=0:00:07.3, real=0:00:08.0, peak res=979.5M, current mem=961.8M)
+[08/17 16:02:19     21s] 
+[08/17 16:02:19     21s] *** Summary of all messages that are not suppressed in this session:
+[08/17 16:02:19     21s] Severity  ID               Count  Summary                                  
+[08/17 16:02:19     21s] WARNING   IMPLF-108            1  There is no overlap layer defined in any...
+[08/17 16:02:19     21s] WARNING   IMPFP-710            1  File version %s is too old.              
+[08/17 16:02:19     21s] WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+[08/17 16:02:19     21s] WARNING   IMPTS-124            2  Timing library description of pin '%s' i...
+[08/17 16:02:19     21s] WARNING   IMPEXT-2766          3  The sheet resistance for layer %s is not...
+[08/17 16:02:19     21s] WARNING   IMPEXT-2773          3  The via resistance between layers %s and...
+[08/17 16:02:19     21s] WARNING   IMPCK-8086           4  The command %s is obsolete and will be r...
+[08/17 16:02:19     21s] WARNING   IMPVL-159           68  Pin '%s' of cell '%s' is defined in LEF ...
+[08/17 16:02:19     21s] WARNING   IMPPP-556            2  A SAMENET rule between different layers ...
+[08/17 16:02:19     21s] WARNING   IMPPP-557            3  A single-layer VIARULE GENERATE for turn...
+[08/17 16:02:19     21s] WARNING   IMPOPT-7177          1  Option %s in 'setOptMode -usefulSkewCCOp...
+[08/17 16:02:19     21s] WARNING   IMPCTE-107           1  The following globals have been obsolete...
+[08/17 16:02:19     21s] WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+[08/17 16:02:19     21s] *** Message Summary: 94 warning(s), 0 error(s)
+[08/17 16:02:19     21s] 
+[08/17 16:09:29     41s] <CMD> win
+[08/17 16:09:33     42s] <CMD> zoomBox -461.75600 -183.20300 12641.37600 6522.00800
+[08/17 16:09:34     43s] <CMD> pan -1363.10400 -202.07800
+[08/17 16:09:37     44s] <CMD> pan -55.15500 1381.64400
+[08/17 16:22:42     87s] <CMD> getAnalysisMode -checkType
+[08/17 16:22:42     87s] -checkType setup                           # enums={setup hold}, default=setup, user setting
+[08/17 16:22:48     88s] <CMD> get_time_unit
+[08/17 16:22:48     88s] <CMD> report_timing -machine_readable -max_paths 10000 -max_slack 0.75 -path_exceptions all -late > top.mtarpt
+[08/17 16:22:48     88s] AAE_INFO: deleting EosDB with nrNets = 32469 and DB nrNets = 32468 for siMode signoff -analysisType aae 
+[08/17 16:22:48     88s] AAE DB initialization (MEM=1399.57 CPU=0:00:00.3 REAL=0:00:00.0) 
+[08/17 16:22:48     88s] Starting SI iteration 1 using Infinite Timing Windows
+[08/17 16:22:48     88s] #################################################################################
+[08/17 16:22:48     88s] # Design Stage: PostRoute
+[08/17 16:22:48     88s] # Design Name: riscv
+[08/17 16:22:48     88s] # Design Mode: 250nm
+[08/17 16:22:48     88s] # Analysis Mode: MMMC OCV 
+[08/17 16:22:48     88s] # Parasitics Mode: No SPEF/RCDB
+[08/17 16:22:48     88s] # Signoff Settings: SI On 
+[08/17 16:22:48     88s] #################################################################################
+[08/17 16:22:48     88s] Extraction called for design 'riscv' of instances=387769 and nets=32468 using extraction engine 'postRoute' at effort level 'low' .
+[08/17 16:22:48     88s] PostRoute (effortLevel low) RC Extraction called for design riscv.
+[08/17 16:22:48     88s] RC Extraction called in multi-corner(1) mode.
+[08/17 16:22:48     88s] **WARN: (IMPEXT-6197):	The Cap table file is not specified. This will result in lower parasitic accuracy when using preRoute extraction or postRoute extraction with effort level 'low'. It is recommended to generate the Cap table file using the 'generateCapTbl' command and specify it before extraction using 'create_rc_corner/update_rc_corner -cap_table'.
+[08/17 16:22:48     88s] Type 'man IMPEXT-6197' for more detail.
+[08/17 16:22:49     88s] **WARN: (IMPEXT-3032):	Because the cap table file was not provided, it will be created internally with the following process info:
+[08/17 16:22:49     88s] * Layer Id             : 1 - M1
+[08/17 16:22:49     88s]       Thickness        : 0.6
+[08/17 16:22:49     88s]       Min Width        : 0.9
+[08/17 16:22:49     88s]       Layer Dielectric : 4.1
+[08/17 16:22:49     88s] * Layer Id             : 2 - M2
+[08/17 16:22:49     88s]       Thickness        : 0.6
+[08/17 16:22:49     88s]       Min Width        : 0.9
+[08/17 16:22:49     88s]       Layer Dielectric : 4.1
+[08/17 16:22:49     88s] * Layer Id             : 3 - M3
+[08/17 16:22:49     88s]       Thickness        : 1
+[08/17 16:22:49     88s]       Min Width        : 1.5
+[08/17 16:22:49     88s]       Layer Dielectric : 4.1
+[08/17 16:22:49     88s] extractDetailRC Option : -outfile /tmp/innovus_temp_33837_rivendell.ecen.okstate.edu_rjridle_jUpx89/riscv_33837_2mmk4Y.rcdb.d  -basic
+[08/17 16:22:49     88s] RC Mode: PostRoute -effortLevel low [Basic CapTable, LEF Resistances]
+[08/17 16:22:49     88s]       RC Corner Indexes            0   
+[08/17 16:22:49     88s] Capacitance Scaling Factor   : 1.00000 
+[08/17 16:22:49     88s] Coupling Cap. Scaling Factor : 1.00000 
+[08/17 16:22:49     88s] Resistance Scaling Factor    : 1.00000 
+[08/17 16:22:49     88s] Clock Cap. Scaling Factor    : 1.00000 
+[08/17 16:22:49     88s] Clock Res. Scaling Factor    : 1.00000 
+[08/17 16:22:49     88s] Shrink Factor                : 1.00000
+[08/17 16:22:49     89s] LayerId::1 widthSet size::2
+[08/17 16:22:49     89s] LayerId::2 widthSet size::7
+[08/17 16:22:49     89s] LayerId::3 widthSet size::5
+[08/17 16:22:49     89s] Initializing multi-corner resistance tables ...
+[08/17 16:22:49     89s] Preroute length aware model : LLS: 2-1 ; HLS: 4-3 ; rDens: 0.445766 ; uaWl: 1.000000 ; uaWlH: 0.942928 ; aWlH: 0.000000 ; Pmax: 0.934600 ; wcR: 1.000000 ; newSi: 0.097500 ; pMod: 77 ; 
+[08/17 16:22:49     89s] Checking LVS Completed (CPU Time= 0:00:00.1  MEM= 1409.6M)
+[08/17 16:22:49     89s] Creating parasitic data file '/tmp/innovus_temp_33837_rivendell.ecen.okstate.edu_rjridle_jUpx89/riscv_33837_2mmk4Y.rcdb.d' for storing RC.
+[08/17 16:22:49     89s] **WARN: (IMPEXT-2882):	Unable to find the resistance for via 'M2_M1' in Cap table or LEF or OA files. The default value of 4.0 ohms is being assigned. To avoid this, check the Cap table and LEF and OA files, provide the resistance and read the files again.
+[08/17 16:22:49     89s] **WARN: (IMPEXT-2882):	Unable to find the resistance for via 'M3_M2' in Cap table or LEF or OA files. The default value of 4.0 ohms is being assigned. To avoid this, check the Cap table and LEF and OA files, provide the resistance and read the files again.
+[08/17 16:22:49     89s] Extracted 10.0005% (CPU Time= 0:00:00.6  MEM= 1473.6M)
+[08/17 16:22:49     89s] Extracted 20.0004% (CPU Time= 0:00:00.9  MEM= 1474.6M)
+[08/17 16:22:50     90s] Extracted 30.0003% (CPU Time= 0:00:01.1  MEM= 1481.6M)
+[08/17 16:22:50     90s] Extracted 40.0005% (CPU Time= 0:00:01.4  MEM= 1484.6M)
+[08/17 16:22:50     90s] Extracted 50.0004% (CPU Time= 0:00:01.7  MEM= 1487.6M)
+[08/17 16:22:51     90s] Extracted 60.0003% (CPU Time= 0:00:02.0  MEM= 1489.6M)
+[08/17 16:22:51     91s] Extracted 70.0005% (CPU Time= 0:00:02.2  MEM= 1490.6M)
+[08/17 16:22:51     91s] Extracted 80.0004% (CPU Time= 0:00:02.5  MEM= 1491.6M)
+[08/17 16:22:51     91s] Extracted 90.0004% (CPU Time= 0:00:02.9  MEM= 1493.6M)
+[08/17 16:22:52     92s] Extracted 100% (CPU Time= 0:00:03.4  MEM= 1494.6M)
+[08/17 16:22:52     92s] Number of Extracted Resistors     : 530913
+[08/17 16:22:52     92s] Number of Extracted Ground Cap.   : 562858
+[08/17 16:22:52     92s] Number of Extracted Coupling Cap. : 1773188
+[08/17 16:22:52     92s] Opening parasitic data file '/tmp/innovus_temp_33837_rivendell.ecen.okstate.edu_rjridle_jUpx89/riscv_33837_2mmk4Y.rcdb.d' for reading (mem: 1462.582M)
+[08/17 16:22:52     92s] Filtering XCap in 'relativeOnly' mode using values relative_c_threshold=0.03 and total_c_threshold=5fF.
+[08/17 16:22:52     92s] Checking LVS Completed (CPU Time= 0:00:00.1  MEM= 1462.6M)
+[08/17 16:22:52     92s] Creating parasitic data file '/tmp/innovus_temp_33837_rivendell.ecen.okstate.edu_rjridle_jUpx89/riscv_33837_2mmk4Y.rcdb_Filter.rcdb.d' for storing RC.
+[08/17 16:22:53     92s] Closing parasitic data file '/tmp/innovus_temp_33837_rivendell.ecen.okstate.edu_rjridle_jUpx89/riscv_33837_2mmk4Y.rcdb.d': 32434 access done (mem: 1462.582M)
+[08/17 16:22:53     92s] Lumped Parasitic Loading Started (total cpu=0:00:00.0, real=0:00:00.0, current mem=1462.582M)
+[08/17 16:22:53     92s] Opening parasitic data file '/tmp/innovus_temp_33837_rivendell.ecen.okstate.edu_rjridle_jUpx89/riscv_33837_2mmk4Y.rcdb.d' for reading (mem: 1462.582M)
+[08/17 16:22:53     92s] processing rcdb (/tmp/innovus_temp_33837_rivendell.ecen.okstate.edu_rjridle_jUpx89/riscv_33837_2mmk4Y.rcdb.d) for hinst (top) of cell (riscv);
+[08/17 16:22:53     93s] Closing parasitic data file '/tmp/innovus_temp_33837_rivendell.ecen.okstate.edu_rjridle_jUpx89/riscv_33837_2mmk4Y.rcdb.d': 0 access done (mem: 1462.582M)
+[08/17 16:22:53     93s] Lumped Parasitic Loading Completed (total cpu=0:00:00.6, real=0:00:00.0, current mem=1462.582M)
+[08/17 16:22:53     93s] PostRoute (effortLevel low) RC Extraction DONE (CPU Time: 0:00:04.6  Real Time: 0:00:05.0  MEM: 1462.582M)
+[08/17 16:22:54     94s] AAE_INFO: 1 threads acquired from CTE.
+[08/17 16:22:54     94s] Setting infinite Tws ...
+[08/17 16:22:54     94s] First Iteration Infinite Tw... 
+[08/17 16:22:54     94s] Calculate early delays in OCV mode...
+[08/17 16:22:54     94s] Calculate late delays in OCV mode...
+[08/17 16:22:54     94s] Topological Sorting (REAL = 0:00:00.0, MEM = 1462.6M, InitMEM = 1462.6M)
+[08/17 16:22:54     94s] Start delay calculation (fullDC) (1 T). (MEM=1462.58)
+[08/17 16:22:54     94s] LayerId::1 widthSet size::2
+[08/17 16:22:54     94s] LayerId::2 widthSet size::7
+[08/17 16:22:54     94s] LayerId::3 widthSet size::5
+[08/17 16:22:54     94s] Initializing multi-corner resistance tables ...
+[08/17 16:22:54     94s] Preroute length aware model : LLS: 2-1 ; HLS: 4-3 ; rDens: 0.445766 ; uaWl: 1.000000 ; uaWlH: 0.942928 ; aWlH: 0.000000 ; Pmax: 0.934600 ; wcR: 1.000000 ; newSi: 0.097500 ; pMod: 77 ; 
+[08/17 16:22:55     94s] Start AAE Lib Loading. (MEM=1474.19)
+[08/17 16:22:55     94s] End AAE Lib Loading. (MEM=1483.73 CPU=0:00:00.0 Real=0:00:00.0)
+[08/17 16:22:55     95s] End AAE Lib Interpolated Model. (MEM=1483.73 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:22:55     95s] Opening parasitic data file '/tmp/innovus_temp_33837_rivendell.ecen.okstate.edu_rjridle_jUpx89/riscv_33837_2mmk4Y.rcdb.d' for reading (mem: 1493.270M)
+[08/17 16:22:55     95s] RC Database In Completed (CPU Time= 0:00:00.0  Real Time=0:00:00.0  MEM= 1493.3M)
+[08/17 16:23:05    105s] AAE_INFO-618: Total number of nets in the design is 32468,  100.0 percent of the nets selected for SI analysis
+[08/17 16:23:05    105s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[08/17 16:23:05    105s] End delay calculation. (MEM=1568.95 CPU=0:00:09.8 REAL=0:00:10.0)
+[08/17 16:23:05    105s] End delay calculation (fullDC). (MEM=1560.95 CPU=0:00:10.8 REAL=0:00:11.0)
+[08/17 16:23:05    105s] esiiDumpWaveformsThread is successfull 1 
+[08/17 16:23:05    105s] Save waveform /tmp/innovus_temp_33837_rivendell.ecen.okstate.edu_rjridle_jUpx89/.AAE_MY03BP/.AAE_33837/waveform.data in separate thread...
+[08/17 16:23:05    105s] Finish pthread dumping compressed waveforms.
+[08/17 16:23:05    105s] *** CDM Built up (cpu=0:00:16.5  real=0:00:17.0  mem= 1571.0M) ***
+[08/17 16:23:06    106s] Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 1571.0M)
+[08/17 16:23:06    106s] Add other clocks and setupCteToAAEClockMapping during iter 1
+[08/17 16:23:06    106s] Loading CTE timing window is completed (CPU = 0:00:00.2, REAL = 0:00:00.0, MEM = 1571.0M)
+[08/17 16:23:06    106s] Starting SI iteration 2
+[08/17 16:23:06    106s] Calculate early delays in OCV mode...
+[08/17 16:23:06    106s] Calculate late delays in OCV mode...
+[08/17 16:23:06    106s] Start delay calculation (fullDC) (1 T). (MEM=1555.07)
+[08/17 16:23:07    107s] End AAE Lib Interpolated Model. (MEM=1555.07 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:23:10    110s] AAE_INFO-618: Total number of nets in the design is 32468,  10.1 percent of the nets selected for SI analysis
+[08/17 16:23:10    110s] End delay calculation. (MEM=1593.23 CPU=0:00:03.3 REAL=0:00:03.0)
+[08/17 16:23:10    110s] End delay calculation (fullDC). (MEM=1593.23 CPU=0:00:03.5 REAL=0:00:04.0)
+[08/17 16:23:10    110s] *** CDM Built up (cpu=0:00:03.5  real=0:00:04.0  mem= 1593.2M) ***
+[08/17 16:23:15    115s] <CMD> load_timing_debug_report -name default_report top.mtarpt
+[08/17 16:23:15    115s] Parsing file top.mtarpt...
+[08/17 16:23:17    117s] Creating Cell Server ...(0, 0, 0, 0)
+[08/17 16:23:17    117s] Summary for sequential cells identification: 
+[08/17 16:23:17    117s]   Identified SBFF number: 3
+[08/17 16:23:17    117s]   Identified MBFF number: 0
+[08/17 16:23:17    117s]   Identified SB Latch number: 0
+[08/17 16:23:17    117s]   Identified MB Latch number: 0
+[08/17 16:23:17    117s]   Not identified SBFF number: 0
+[08/17 16:23:17    117s]   Not identified MBFF number: 0
+[08/17 16:23:17    117s]   Not identified SB Latch number: 0
+[08/17 16:23:17    117s]   Not identified MB Latch number: 0
+[08/17 16:23:17    117s]   Number of sequential cells which are not FFs: 1
+[08/17 16:23:17    117s]  Visiting view : setup_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Visiting view : hold_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Setting StdDelay to 92.80
+[08/17 16:23:17    117s] Creating Cell Server, finished. 
+[08/17 16:23:17    117s] 
+[08/17 16:23:17    117s] Deleting Cell Server ...
+[08/17 16:23:17    117s] Creating Cell Server ...(0, 0, 0, 0)
+[08/17 16:23:17    117s] Summary for sequential cells identification: 
+[08/17 16:23:17    117s]   Identified SBFF number: 3
+[08/17 16:23:17    117s]   Identified MBFF number: 0
+[08/17 16:23:17    117s]   Identified SB Latch number: 0
+[08/17 16:23:17    117s]   Identified MB Latch number: 0
+[08/17 16:23:17    117s]   Not identified SBFF number: 0
+[08/17 16:23:17    117s]   Not identified MBFF number: 0
+[08/17 16:23:17    117s]   Not identified SB Latch number: 0
+[08/17 16:23:17    117s]   Not identified MB Latch number: 0
+[08/17 16:23:17    117s]   Number of sequential cells which are not FFs: 1
+[08/17 16:23:17    117s]  Visiting view : setup_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Visiting view : hold_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Setting StdDelay to 92.80
+[08/17 16:23:17    117s] Creating Cell Server, finished. 
+[08/17 16:23:17    117s] 
+[08/17 16:23:17    117s] Deleting Cell Server ...
+[08/17 16:23:17    117s] Creating Cell Server ...(0, 0, 0, 0)
+[08/17 16:23:17    117s] Summary for sequential cells identification: 
+[08/17 16:23:17    117s]   Identified SBFF number: 3
+[08/17 16:23:17    117s]   Identified MBFF number: 0
+[08/17 16:23:17    117s]   Identified SB Latch number: 0
+[08/17 16:23:17    117s]   Identified MB Latch number: 0
+[08/17 16:23:17    117s]   Not identified SBFF number: 0
+[08/17 16:23:17    117s]   Not identified MBFF number: 0
+[08/17 16:23:17    117s]   Not identified SB Latch number: 0
+[08/17 16:23:17    117s]   Not identified MB Latch number: 0
+[08/17 16:23:17    117s]   Number of sequential cells which are not FFs: 1
+[08/17 16:23:17    117s]  Visiting view : setup_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Visiting view : hold_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Setting StdDelay to 92.80
+[08/17 16:23:17    117s] Creating Cell Server, finished. 
+[08/17 16:23:17    117s] 
+[08/17 16:23:17    117s] Deleting Cell Server ...
+[08/17 16:23:17    117s] Creating Cell Server ...(0, 0, 0, 0)
+[08/17 16:23:17    117s] Summary for sequential cells identification: 
+[08/17 16:23:17    117s]   Identified SBFF number: 3
+[08/17 16:23:17    117s]   Identified MBFF number: 0
+[08/17 16:23:17    117s]   Identified SB Latch number: 0
+[08/17 16:23:17    117s]   Identified MB Latch number: 0
+[08/17 16:23:17    117s]   Not identified SBFF number: 0
+[08/17 16:23:17    117s]   Not identified MBFF number: 0
+[08/17 16:23:17    117s]   Not identified SB Latch number: 0
+[08/17 16:23:17    117s]   Not identified MB Latch number: 0
+[08/17 16:23:17    117s]   Number of sequential cells which are not FFs: 1
+[08/17 16:23:17    117s]  Visiting view : setup_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Visiting view : hold_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Setting StdDelay to 92.80
+[08/17 16:23:17    117s] Creating Cell Server, finished. 
+[08/17 16:23:17    117s] 
+[08/17 16:23:17    117s] Deleting Cell Server ...
+[08/17 16:23:17    117s] Creating Cell Server ...(0, 0, 0, 0)
+[08/17 16:23:17    117s] Summary for sequential cells identification: 
+[08/17 16:23:17    117s]   Identified SBFF number: 3
+[08/17 16:23:17    117s]   Identified MBFF number: 0
+[08/17 16:23:17    117s]   Identified SB Latch number: 0
+[08/17 16:23:17    117s]   Identified MB Latch number: 0
+[08/17 16:23:17    117s]   Not identified SBFF number: 0
+[08/17 16:23:17    117s]   Not identified MBFF number: 0
+[08/17 16:23:17    117s]   Not identified SB Latch number: 0
+[08/17 16:23:17    117s]   Not identified MB Latch number: 0
+[08/17 16:23:17    117s]   Number of sequential cells which are not FFs: 1
+[08/17 16:23:17    117s]  Visiting view : setup_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Visiting view : hold_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Setting StdDelay to 92.80
+[08/17 16:23:17    117s] Creating Cell Server, finished. 
+[08/17 16:23:17    117s] 
+[08/17 16:23:17    117s] Deleting Cell Server ...
+[08/17 16:23:17    117s] Creating Cell Server ...(0, 0, 0, 0)
+[08/17 16:23:17    117s] Summary for sequential cells identification: 
+[08/17 16:23:17    117s]   Identified SBFF number: 3
+[08/17 16:23:17    117s]   Identified MBFF number: 0
+[08/17 16:23:17    117s]   Identified SB Latch number: 0
+[08/17 16:23:17    117s]   Identified MB Latch number: 0
+[08/17 16:23:17    117s]   Not identified SBFF number: 0
+[08/17 16:23:17    117s]   Not identified MBFF number: 0
+[08/17 16:23:17    117s]   Not identified SB Latch number: 0
+[08/17 16:23:17    117s]   Not identified MB Latch number: 0
+[08/17 16:23:17    117s]   Number of sequential cells which are not FFs: 1
+[08/17 16:23:17    117s]  Visiting view : setup_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Visiting view : hold_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Setting StdDelay to 92.80
+[08/17 16:23:17    117s] Creating Cell Server, finished. 
+[08/17 16:23:17    117s] 
+[08/17 16:23:17    117s] Deleting Cell Server ...
+[08/17 16:23:17    117s] Creating Cell Server ...(0, 0, 0, 0)
+[08/17 16:23:17    117s] Summary for sequential cells identification: 
+[08/17 16:23:17    117s]   Identified SBFF number: 3
+[08/17 16:23:17    117s]   Identified MBFF number: 0
+[08/17 16:23:17    117s]   Identified SB Latch number: 0
+[08/17 16:23:17    117s]   Identified MB Latch number: 0
+[08/17 16:23:17    117s]   Not identified SBFF number: 0
+[08/17 16:23:17    117s]   Not identified MBFF number: 0
+[08/17 16:23:17    117s]   Not identified SB Latch number: 0
+[08/17 16:23:17    117s]   Not identified MB Latch number: 0
+[08/17 16:23:17    117s]   Number of sequential cells which are not FFs: 1
+[08/17 16:23:17    117s]  Visiting view : setup_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Visiting view : hold_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Setting StdDelay to 92.80
+[08/17 16:23:17    117s] Creating Cell Server, finished. 
+[08/17 16:23:17    117s] 
+[08/17 16:23:17    117s] Deleting Cell Server ...
+[08/17 16:23:17    117s] Creating Cell Server ...(0, 0, 0, 0)
+[08/17 16:23:17    117s] Summary for sequential cells identification: 
+[08/17 16:23:17    117s]   Identified SBFF number: 3
+[08/17 16:23:17    117s]   Identified MBFF number: 0
+[08/17 16:23:17    117s]   Identified SB Latch number: 0
+[08/17 16:23:17    117s]   Identified MB Latch number: 0
+[08/17 16:23:17    117s]   Not identified SBFF number: 0
+[08/17 16:23:17    117s]   Not identified MBFF number: 0
+[08/17 16:23:17    117s]   Not identified SB Latch number: 0
+[08/17 16:23:17    117s]   Not identified MB Latch number: 0
+[08/17 16:23:17    117s]   Number of sequential cells which are not FFs: 1
+[08/17 16:23:17    117s]  Visiting view : setup_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Visiting view : hold_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Setting StdDelay to 92.80
+[08/17 16:23:17    117s] Creating Cell Server, finished. 
+[08/17 16:23:17    117s] 
+[08/17 16:23:17    117s] Deleting Cell Server ...
+[08/17 16:23:17    117s] Creating Cell Server ...(0, 0, 0, 0)
+[08/17 16:23:17    117s] Summary for sequential cells identification: 
+[08/17 16:23:17    117s]   Identified SBFF number: 3
+[08/17 16:23:17    117s]   Identified MBFF number: 0
+[08/17 16:23:17    117s]   Identified SB Latch number: 0
+[08/17 16:23:17    117s]   Identified MB Latch number: 0
+[08/17 16:23:17    117s]   Not identified SBFF number: 0
+[08/17 16:23:17    117s]   Not identified MBFF number: 0
+[08/17 16:23:17    117s]   Not identified SB Latch number: 0
+[08/17 16:23:17    117s]   Not identified MB Latch number: 0
+[08/17 16:23:17    117s]   Number of sequential cells which are not FFs: 1
+[08/17 16:23:17    117s]  Visiting view : setup_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Visiting view : hold_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Setting StdDelay to 92.80
+[08/17 16:23:17    117s] Creating Cell Server, finished. 
+[08/17 16:23:17    117s] 
+[08/17 16:23:17    117s] Deleting Cell Server ...
+[08/17 16:23:17    117s] Creating Cell Server ...(0, 0, 0, 0)
+[08/17 16:23:17    117s] Summary for sequential cells identification: 
+[08/17 16:23:17    117s]   Identified SBFF number: 3
+[08/17 16:23:17    117s]   Identified MBFF number: 0
+[08/17 16:23:17    117s]   Identified SB Latch number: 0
+[08/17 16:23:17    117s]   Identified MB Latch number: 0
+[08/17 16:23:17    117s]   Not identified SBFF number: 0
+[08/17 16:23:17    117s]   Not identified MBFF number: 0
+[08/17 16:23:17    117s]   Not identified SB Latch number: 0
+[08/17 16:23:17    117s]   Not identified MB Latch number: 0
+[08/17 16:23:17    117s]   Number of sequential cells which are not FFs: 1
+[08/17 16:23:17    117s]  Visiting view : setup_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Visiting view : hold_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Setting StdDelay to 92.80
+[08/17 16:23:17    117s] Creating Cell Server, finished. 
+[08/17 16:23:17    117s] 
+[08/17 16:23:17    117s] Deleting Cell Server ...
+[08/17 16:23:17    117s] Creating Cell Server ...(0, 0, 0, 0)
+[08/17 16:23:17    117s] Summary for sequential cells identification: 
+[08/17 16:23:17    117s]   Identified SBFF number: 3
+[08/17 16:23:17    117s]   Identified MBFF number: 0
+[08/17 16:23:17    117s]   Identified SB Latch number: 0
+[08/17 16:23:17    117s]   Identified MB Latch number: 0
+[08/17 16:23:17    117s]   Not identified SBFF number: 0
+[08/17 16:23:17    117s]   Not identified MBFF number: 0
+[08/17 16:23:17    117s]   Not identified SB Latch number: 0
+[08/17 16:23:17    117s]   Not identified MB Latch number: 0
+[08/17 16:23:17    117s]   Number of sequential cells which are not FFs: 1
+[08/17 16:23:17    117s]  Visiting view : setup_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Visiting view : hold_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Setting StdDelay to 92.80
+[08/17 16:23:17    117s] Creating Cell Server, finished. 
+[08/17 16:23:17    117s] 
+[08/17 16:23:17    117s] Deleting Cell Server ...
+[08/17 16:23:17    117s] Creating Cell Server ...(0, 0, 0, 0)
+[08/17 16:23:17    117s] Summary for sequential cells identification: 
+[08/17 16:23:17    117s]   Identified SBFF number: 3
+[08/17 16:23:17    117s]   Identified MBFF number: 0
+[08/17 16:23:17    117s]   Identified SB Latch number: 0
+[08/17 16:23:17    117s]   Identified MB Latch number: 0
+[08/17 16:23:17    117s]   Not identified SBFF number: 0
+[08/17 16:23:17    117s]   Not identified MBFF number: 0
+[08/17 16:23:17    117s]   Not identified SB Latch number: 0
+[08/17 16:23:17    117s]   Not identified MB Latch number: 0
+[08/17 16:23:17    117s]   Number of sequential cells which are not FFs: 1
+[08/17 16:23:17    117s]  Visiting view : setup_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Visiting view : hold_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Setting StdDelay to 92.80
+[08/17 16:23:17    117s] Creating Cell Server, finished. 
+[08/17 16:23:17    117s] 
+[08/17 16:23:17    117s] Deleting Cell Server ...
+[08/17 16:23:17    117s] Creating Cell Server ...(0, 0, 0, 0)
+[08/17 16:23:17    117s] Summary for sequential cells identification: 
+[08/17 16:23:17    117s]   Identified SBFF number: 3
+[08/17 16:23:17    117s]   Identified MBFF number: 0
+[08/17 16:23:17    117s]   Identified SB Latch number: 0
+[08/17 16:23:17    117s]   Identified MB Latch number: 0
+[08/17 16:23:17    117s]   Not identified SBFF number: 0
+[08/17 16:23:17    117s]   Not identified MBFF number: 0
+[08/17 16:23:17    117s]   Not identified SB Latch number: 0
+[08/17 16:23:17    117s]   Not identified MB Latch number: 0
+[08/17 16:23:17    117s]   Number of sequential cells which are not FFs: 1
+[08/17 16:23:17    117s]  Visiting view : setup_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Visiting view : hold_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Setting StdDelay to 92.80
+[08/17 16:23:17    117s] Creating Cell Server, finished. 
+[08/17 16:23:17    117s] 
+[08/17 16:23:17    117s] Deleting Cell Server ...
+[08/17 16:23:17    117s] Creating Cell Server ...(0, 0, 0, 0)
+[08/17 16:23:17    117s] Summary for sequential cells identification: 
+[08/17 16:23:17    117s]   Identified SBFF number: 3
+[08/17 16:23:17    117s]   Identified MBFF number: 0
+[08/17 16:23:17    117s]   Identified SB Latch number: 0
+[08/17 16:23:17    117s]   Identified MB Latch number: 0
+[08/17 16:23:17    117s]   Not identified SBFF number: 0
+[08/17 16:23:17    117s]   Not identified MBFF number: 0
+[08/17 16:23:17    117s]   Not identified SB Latch number: 0
+[08/17 16:23:17    117s]   Not identified MB Latch number: 0
+[08/17 16:23:17    117s]   Number of sequential cells which are not FFs: 1
+[08/17 16:23:17    117s]  Visiting view : setup_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Visiting view : hold_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Setting StdDelay to 92.80
+[08/17 16:23:17    117s] Creating Cell Server, finished. 
+[08/17 16:23:17    117s] 
+[08/17 16:23:17    117s] Deleting Cell Server ...
+[08/17 16:23:17    117s] Creating Cell Server ...(0, 0, 0, 0)
+[08/17 16:23:17    117s] Summary for sequential cells identification: 
+[08/17 16:23:17    117s]   Identified SBFF number: 3
+[08/17 16:23:17    117s]   Identified MBFF number: 0
+[08/17 16:23:17    117s]   Identified SB Latch number: 0
+[08/17 16:23:17    117s]   Identified MB Latch number: 0
+[08/17 16:23:17    117s]   Not identified SBFF number: 0
+[08/17 16:23:17    117s]   Not identified MBFF number: 0
+[08/17 16:23:17    117s]   Not identified SB Latch number: 0
+[08/17 16:23:17    117s]   Not identified MB Latch number: 0
+[08/17 16:23:17    117s]   Number of sequential cells which are not FFs: 1
+[08/17 16:23:17    117s]  Visiting view : setup_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Visiting view : hold_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Setting StdDelay to 92.80
+[08/17 16:23:17    117s] Creating Cell Server, finished. 
+[08/17 16:23:17    117s] 
+[08/17 16:23:17    117s] Deleting Cell Server ...
+[08/17 16:23:17    117s] Creating Cell Server ...(0, 0, 0, 0)
+[08/17 16:23:17    117s] Summary for sequential cells identification: 
+[08/17 16:23:17    117s]   Identified SBFF number: 3
+[08/17 16:23:17    117s]   Identified MBFF number: 0
+[08/17 16:23:17    117s]   Identified SB Latch number: 0
+[08/17 16:23:17    117s]   Identified MB Latch number: 0
+[08/17 16:23:17    117s]   Not identified SBFF number: 0
+[08/17 16:23:17    117s]   Not identified MBFF number: 0
+[08/17 16:23:17    117s]   Not identified SB Latch number: 0
+[08/17 16:23:17    117s]   Not identified MB Latch number: 0
+[08/17 16:23:17    117s]   Number of sequential cells which are not FFs: 1
+[08/17 16:23:17    117s]  Visiting view : setup_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Visiting view : hold_func
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/17 16:23:17    117s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/17 16:23:17    117s]  Setting StdDelay to 92.80
+[08/17 16:23:17    117s] Creating Cell Server, finished. 
+[08/17 16:23:17    117s] 
+[08/17 16:23:17    117s] Deleting Cell Server ...
+[08/17 16:24:54    127s] <CMD> redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
+[08/17 16:24:54    127s] <CMD> timeDesign -signoff -pathReports -drvReports -slackReports -numPaths 50 -prefix riscv_signOff -outDir timingReports
+[08/17 16:24:54    127s] The setDelayCalMode -SIAware true is set. Running Signoff AAE-SI Analysis.
+[08/17 16:24:54    127s]  Reset EOS DB
+[08/17 16:24:54    127s] Ignoring AAE DB Resetting ...
+[08/17 16:24:54    127s] **WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+[08/17 16:24:54    127s] **WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+[08/17 16:24:54    127s] **WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+[08/17 16:24:54    127s] Closing parasitic data file '/tmp/innovus_temp_33837_rivendell.ecen.okstate.edu_rjridle_jUpx89/riscv_33837_2mmk4Y.rcdb.d': 32434 access done (mem: 1589.773M)
+[08/17 16:24:54    127s] **WARN: (IMPEXT-3493):	The design extraction status has been reset by set_analysis_view/update_rc_corner or setExtractRCMode  command. The parasitic data can be regenerated either by extracting the design using the extractRC command or by loading the SPEF or RCDB file(s). To prevent resetting of the extraction status, avoid changing extraction modes.
+[08/17 16:24:54    127s] Type 'man IMPEXT-3493' for more detail.
+[08/17 16:24:54    127s] Extraction called for design 'riscv' of instances=387769 and nets=32468 using extraction engine 'postRoute' at effort level 'signoff' .
+[08/17 16:24:54    127s] **ERROR: (IMPEXT-3491):	Extraction failed because Quantus QRC technology file(s) are not specified for all the active RC corners in the MMMC set up. This is mandatory for medium or high or signoff effortLevel postRoute extraction. If all files are unavailable, set 'setExtractRCMode -effortLevel low'. Ideally specify the technology file for each RC corner using the -qx_tech_file option of the create_rc_corner or update_rc_corner commands.
+Extraction called for design 'riscv' of instances=387769 and nets=32468 using extraction engine 'postRoute' at effort level 'signoff' .
+[08/17 16:24:54    127s] **ERROR: (IMPEXT-3491):	Extraction failed because Quantus QRC technology file(s) are not specified for all the active RC corners in the MMMC set up. This is mandatory for medium or high or signoff effortLevel postRoute extraction. If all files are unavailable, set 'setExtractRCMode -effortLevel low'. Ideally specify the technology file for each RC corner using the -qx_tech_file option of the create_rc_corner or update_rc_corner commands.
+Starting delay calculation for Setup views
+[08/17 16:24:54    127s] AAE_INFO: deleting EosDB with nrNets = 32469 and DB nrNets = 32468 for siMode signoff -analysisType aae 
+[08/17 16:24:54    127s] AAE DB initialization (MEM=1587.77 CPU=0:00:00.1 REAL=0:00:00.0) 
+[08/17 16:24:54    127s] Starting SI iteration 1 using Infinite Timing Windows
+[08/17 16:24:55    127s] #################################################################################
+[08/17 16:24:55    127s] # Design Stage: PostRoute
+[08/17 16:24:55    127s] # Design Name: riscv
+[08/17 16:24:55    127s] # Design Mode: 250nm
+[08/17 16:24:55    127s] # Analysis Mode: MMMC OCV 
+[08/17 16:24:55    127s] # Parasitics Mode: No SPEF/RCDB
+[08/17 16:24:55    127s] # Signoff Settings: SI On 
+[08/17 16:24:55    127s] #################################################################################
+[08/17 16:24:55    127s] Extraction called for design 'riscv' of instances=387769 and nets=32468 using extraction engine 'postRoute' at effort level 'signoff' .
+[08/17 16:24:55    127s] **ERROR: (IMPEXT-3491):	Extraction failed because Quantus QRC technology file(s) are not specified for all the active RC corners in the MMMC set up. This is mandatory for medium or high or signoff effortLevel postRoute extraction. If all files are unavailable, set 'setExtractRCMode -effortLevel low'. Ideally specify the technology file for each RC corner using the -qx_tech_file option of the create_rc_corner or update_rc_corner commands.
+AAE_INFO: 1 threads acquired from CTE.
+[08/17 16:24:55    128s] Setting infinite Tws ...
+[08/17 16:24:55    128s] First Iteration Infinite Tw... 
+[08/17 16:24:55    128s] Calculate early delays in OCV mode...
+[08/17 16:24:55    128s] Calculate late delays in OCV mode...
+[08/17 16:24:56    128s] Topological Sorting (REAL = 0:00:01.0, MEM = 1587.8M, InitMEM = 1587.8M)
+[08/17 16:24:56    128s] Start delay calculation (fullDC) (1 T). (MEM=1587.77)
+[08/17 16:24:56    128s] **WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+[08/17 16:24:56    129s] Start AAE Lib Loading. (MEM=1599.38)
+[08/17 16:24:56    129s] End AAE Lib Loading. (MEM=1599.38 CPU=0:00:00.0 Real=0:00:00.0)
+[08/17 16:24:56    129s] End AAE Lib Interpolated Model. (MEM=1599.38 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:24:56    129s]  Report initialization with DMWrite ... (0, Worst)
+[08/17 16:24:56    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_instr[24]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:56    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_instr[24]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:56    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_instr[13]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:56    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_instr[13]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:56    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_instr[12]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:56    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_instr[12]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:56    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_instr[7]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:56    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_instr[7]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:57    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_pc[3]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:57    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_pc[3]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:57    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_pc[2]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:57    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_pc[2]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:57    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_pc[21]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:57    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_pc[21]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:57    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_pc[19]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:57    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_pc[19]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:57    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_pc[17]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:57    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_pc[17]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:57    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_pc[15]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:24:57    129s] **WARN: (IMPESI-3014):	The RC network is incomplete for net io_pc[15]. As a result, a lumped model will be used during delay calculation which may compromise timing accuracy. To resolve this, check parasitics for completeness, re-extraction may be required.
+[08/17 16:25:05    138s] Total number of fetched objects 32462
+[08/17 16:25:05    138s] AAE_INFO-618: Total number of nets in the design is 32468,  100.0 percent of the nets selected for SI analysis
+[08/17 16:25:05    138s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[08/17 16:25:05    138s] End delay calculation. (MEM=1645.54 CPU=0:00:08.4 REAL=0:00:09.0)
+[08/17 16:25:05    138s] End delay calculation (fullDC). (MEM=1637.54 CPU=0:00:09.3 REAL=0:00:09.0)
+[08/17 16:25:05    138s] esiiDumpWaveformsThread is successfull 1 
+[08/17 16:25:05    138s] Save waveform /tmp/innovus_temp_33837_rivendell.ecen.okstate.edu_rjridle_jUpx89/.AAE_qAYcXB/.AAE_33837/waveform.data in separate thread...
+[08/17 16:25:05    138s] Finish pthread dumping compressed waveforms.
+[08/17 16:25:05    138s] *** CDM Built up (cpu=0:00:10.3  real=0:00:10.0  mem= 1647.5M) ***
+[08/17 16:25:06    139s] Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 1647.5M)
+[08/17 16:25:06    139s] Add other clocks and setupCteToAAEClockMapping during iter 1
+[08/17 16:25:06    139s] Loading CTE timing window is completed (CPU = 0:00:00.3, REAL = 0:00:00.0, MEM = 1647.5M)
+[08/17 16:25:06    139s] Starting SI iteration 2
+[08/17 16:25:07    139s] Calculate early delays in OCV mode...
+[08/17 16:25:07    139s] Calculate late delays in OCV mode...
+[08/17 16:25:07    139s] Start delay calculation (fullDC) (1 T). (MEM=1608.66)
+[08/17 16:25:07    139s] **WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+[08/17 16:25:07    140s] End AAE Lib Interpolated Model. (MEM=1608.66 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:25:07    140s]  Report initialization with DMUpdate ... (1, Worst)
+[08/17 16:25:07    140s] Glitch Analysis: View setup_func -- Total Number of Nets Skipped = 0. 
+[08/17 16:25:07    140s] Glitch Analysis: View setup_func -- Total Number of Nets Analyzed = 32462. 
+[08/17 16:25:07    140s] Total number of fetched objects 32462
+[08/17 16:25:07    140s] AAE_INFO-618: Total number of nets in the design is 32468,  1.3 percent of the nets selected for SI analysis
+[08/17 16:25:07    140s] End delay calculation. (MEM=1646.82 CPU=0:00:00.4 REAL=0:00:00.0)
+[08/17 16:25:07    140s] End delay calculation (fullDC). (MEM=1646.82 CPU=0:00:00.6 REAL=0:00:00.0)
+[08/17 16:25:07    140s] *** CDM Built up (cpu=0:00:00.6  real=0:00:00.0  mem= 1646.8M) ***
+[08/17 16:25:08    140s] *** Done Building Timing Graph (cpu=0:00:13.4 real=0:00:14.0 totSessionCpu=0:02:21 mem=1646.8M)
+[08/17 16:25:08    141s] Effort level <high> specified for reg2reg path_group
+[08/17 16:25:08    141s] End AAE Lib Interpolated Model. (MEM=1610.82 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:25:08    141s]  Report initialization with DMUpdate ... (1, Worst)
+[08/17 16:25:08    141s] Begin: glitch net info
+[08/17 16:25:08    141s] glitch slack range: number of glitch nets
+[08/17 16:25:08    141s] glitch slack < -0.32 : 0
+[08/17 16:25:08    141s] -0.32 < glitch slack < -0.28 : 0
+[08/17 16:25:08    141s] -0.28 < glitch slack < -0.24 : 0
+[08/17 16:25:08    141s] -0.24 < glitch slack < -0.2 : 0
+[08/17 16:25:08    141s] -0.2 < glitch slack < -0.16 : 0
+[08/17 16:25:08    141s] -0.16 < glitch slack < -0.12 : 0
+[08/17 16:25:08    141s] -0.12 < glitch slack < -0.08 : 0
+[08/17 16:25:08    141s] -0.08 < glitch slack < -0.04 : 0
+[08/17 16:25:08    141s] -0.04 < glitch slack : 0
+[08/17 16:25:08    141s] End: glitch net info
+[08/17 16:25:09    142s] OPERPROF: Starting spInitSiteArr at level 1, MEM:1655.8M
+[08/17 16:25:09    142s] OPERPROF:   Starting spiInitFpSiteArr at level 2, MEM:1655.8M
+[08/17 16:25:09    142s] Use non-trimmed site array because memory saving is not enough.
+[08/17 16:25:09    142s] OPERPROF:     Starting RoutingBlockageFromWireViaStBox at level 3, MEM:1657.7M
+[08/17 16:25:09    142s] OPERPROF:     Finished RoutingBlockageFromWireViaStBox at level 3, CPU:0.000, REAL:0.000, MEM:1657.7M
+[08/17 16:25:09    142s] OPERPROF:   Finished spiInitFpSiteArr at level 2, CPU:0.050, REAL:0.048, MEM:1657.7M
+[08/17 16:25:09    142s] OPERPROF: Finished spInitSiteArr at level 1, CPU:0.130, REAL:0.128, MEM:1657.7M
+[08/17 16:25:09    142s] OPERPROF: Starting spSiteCleanup(true) at level 1, MEM:1657.7M
+[08/17 16:25:09    142s] OPERPROF: Finished spSiteCleanup(true) at level 1, CPU:0.000, REAL:0.000, MEM:1655.8M
+[08/17 16:25:09    142s] AAE_INFO: deleting EosDB with nrNets = 32469 and DB nrNets = 32468 for siMode signoff -analysisType aae 
+[08/17 16:25:09    142s] AAE DB initialization (MEM=1655.82 CPU=0:00:00.1 REAL=0:00:00.0) 
+[08/17 16:25:09    142s] Starting SI iteration 1 using Infinite Timing Windows
+[08/17 16:25:10    143s] #################################################################################
+[08/17 16:25:10    143s] # Design Stage: PostRoute
+[08/17 16:25:10    143s] # Design Name: riscv
+[08/17 16:25:10    143s] # Design Mode: 250nm
+[08/17 16:25:10    143s] # Analysis Mode: MMMC OCV 
+[08/17 16:25:10    143s] # Parasitics Mode: No SPEF/RCDB
+[08/17 16:25:10    143s] # Signoff Settings: SI On 
+[08/17 16:25:10    143s] #################################################################################
+[08/17 16:25:10    143s] Extraction called for design 'riscv' of instances=387769 and nets=32468 using extraction engine 'postRoute' at effort level 'signoff' .
+[08/17 16:25:10    143s] **ERROR: (IMPEXT-3491):	Extraction failed because Quantus QRC technology file(s) are not specified for all the active RC corners in the MMMC set up. This is mandatory for medium or high or signoff effortLevel postRoute extraction. If all files are unavailable, set 'setExtractRCMode -effortLevel low'. Ideally specify the technology file for each RC corner using the -qx_tech_file option of the create_rc_corner or update_rc_corner commands.
+AAE_INFO: 1 threads acquired from CTE.
+[08/17 16:25:10    143s] Setting infinite Tws ...
+[08/17 16:25:10    143s] First Iteration Infinite Tw... 
+[08/17 16:25:10    143s] Calculate early delays in OCV mode...
+[08/17 16:25:10    143s] Calculate late delays in OCV mode...
+[08/17 16:25:10    143s] Topological Sorting (REAL = 0:00:00.0, MEM = 1655.8M, InitMEM = 1655.8M)
+[08/17 16:25:10    143s] Start delay calculation (fullDC) (1 T). (MEM=1655.82)
+[08/17 16:25:10    143s] **WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+[08/17 16:25:10    143s] Start AAE Lib Loading. (MEM=1655.82)
+[08/17 16:25:10    143s] End AAE Lib Loading. (MEM=1655.82 CPU=0:00:00.0 Real=0:00:00.0)
+[08/17 16:25:10    143s] End AAE Lib Interpolated Model. (MEM=1655.82 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:25:10    143s]  Report initialization with DMWrite ... (0, Worst)
+[08/17 16:25:19    152s] Total number of fetched objects 32462
+[08/17 16:25:19    152s] AAE_INFO-618: Total number of nets in the design is 32468,  100.0 percent of the nets selected for SI analysis
+[08/17 16:25:19    152s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[08/17 16:25:19    152s] End delay calculation. (MEM=1701.98 CPU=0:00:08.3 REAL=0:00:08.0)
+[08/17 16:25:19    152s] End delay calculation (fullDC). (MEM=1693.98 CPU=0:00:09.2 REAL=0:00:09.0)
+[08/17 16:25:19    152s] esiiDumpWaveformsThread is successfull 1 
+[08/17 16:25:19    152s] Save waveform /tmp/innovus_temp_33837_rivendell.ecen.okstate.edu_rjridle_jUpx89/.AAE_K4unq3/.AAE_33837/waveform.data in separate thread...
+[08/17 16:25:19    152s] Finish pthread dumping compressed waveforms.
+[08/17 16:25:19    152s] *** CDM Built up (cpu=0:00:09.4  real=0:00:09.0  mem= 1704.0M) ***
+[08/17 16:25:20    153s] Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 1704.0M)
+[08/17 16:25:20    153s] Add other clocks and setupCteToAAEClockMapping during iter 1
+[08/17 16:25:21    153s] Loading CTE timing window is completed (CPU = 0:00:00.3, REAL = 0:00:01.0, MEM = 1704.0M)
+[08/17 16:25:21    153s] Starting SI iteration 2
+[08/17 16:25:21    154s] Calculate early delays in OCV mode...
+[08/17 16:25:21    154s] Calculate late delays in OCV mode...
+[08/17 16:25:21    154s] Start delay calculation (fullDC) (1 T). (MEM=1637.98)
+[08/17 16:25:21    154s] **WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+[08/17 16:25:21    154s] End AAE Lib Interpolated Model. (MEM=1637.98 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:25:21    154s]  Report initialization with DMUpdate ... (1, Worst)
+[08/17 16:25:21    154s] Glitch Analysis: View setup_func -- Total Number of Nets Skipped = 0. 
+[08/17 16:25:21    154s] Glitch Analysis: View setup_func -- Total Number of Nets Analyzed = 32462. 
+[08/17 16:25:21    154s] Total number of fetched objects 32462
+[08/17 16:25:21    154s] AAE_INFO-618: Total number of nets in the design is 32468,  1.3 percent of the nets selected for SI analysis
+[08/17 16:25:21    154s] End delay calculation. (MEM=1676.14 CPU=0:00:00.4 REAL=0:00:00.0)
+[08/17 16:25:21    154s] End delay calculation (fullDC). (MEM=1676.14 CPU=0:00:00.6 REAL=0:00:00.0)
+[08/17 16:25:21    154s] *** CDM Built up (cpu=0:00:00.7  real=0:00:00.0  mem= 1676.1M) ***
+[08/17 16:25:22    155s] AAE_INFO: deleting EosDB with nrNets = 32469 and DB nrNets = 32468 for siMode signoff -analysisType aae 
+[08/17 16:25:22    155s] AAE DB initialization (MEM=1676.14 CPU=0:00:00.1 REAL=0:00:00.0) 
+[08/17 16:25:22    155s] Starting SI iteration 1 using Infinite Timing Windows
+[08/17 16:25:22    155s] #################################################################################
+[08/17 16:25:22    155s] # Design Stage: PostRoute
+[08/17 16:25:22    155s] # Design Name: riscv
+[08/17 16:25:22    155s] # Design Mode: 250nm
+[08/17 16:25:22    155s] # Analysis Mode: MMMC OCV 
+[08/17 16:25:22    155s] # Parasitics Mode: No SPEF/RCDB
+[08/17 16:25:22    155s] # Signoff Settings: SI On 
+[08/17 16:25:22    155s] #################################################################################
+[08/17 16:25:22    155s] Extraction called for design 'riscv' of instances=387769 and nets=32468 using extraction engine 'postRoute' at effort level 'signoff' .
+[08/17 16:25:22    155s] **ERROR: (IMPEXT-3491):	Extraction failed because Quantus QRC technology file(s) are not specified for all the active RC corners in the MMMC set up. This is mandatory for medium or high or signoff effortLevel postRoute extraction. If all files are unavailable, set 'setExtractRCMode -effortLevel low'. Ideally specify the technology file for each RC corner using the -qx_tech_file option of the create_rc_corner or update_rc_corner commands.
+AAE_INFO: 1 threads acquired from CTE.
+[08/17 16:25:22    155s] Setting infinite Tws ...
+[08/17 16:25:22    155s] First Iteration Infinite Tw... 
+[08/17 16:25:22    155s] Calculate early delays in OCV mode...
+[08/17 16:25:22    155s] Calculate late delays in OCV mode...
+[08/17 16:25:23    155s] Topological Sorting (REAL = 0:00:01.0, MEM = 1676.1M, InitMEM = 1676.1M)
+[08/17 16:25:23    155s] Start delay calculation (fullDC) (1 T). (MEM=1676.14)
+[08/17 16:25:23    155s] **WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+[08/17 16:25:23    156s] Start AAE Lib Loading. (MEM=1676.14)
+[08/17 16:25:23    156s] End AAE Lib Loading. (MEM=1676.14 CPU=0:00:00.0 Real=0:00:00.0)
+[08/17 16:25:23    156s] End AAE Lib Interpolated Model. (MEM=1676.14 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:25:23    156s]  Report initialization with DMWrite ... (0, Worst)
+[08/17 16:25:32    165s] Total number of fetched objects 32462
+[08/17 16:25:32    165s] AAE_INFO-618: Total number of nets in the design is 32468,  100.0 percent of the nets selected for SI analysis
+[08/17 16:25:32    165s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[08/17 16:25:32    165s] End delay calculation. (MEM=1684.14 CPU=0:00:08.4 REAL=0:00:09.0)
+[08/17 16:25:32    165s] End delay calculation (fullDC). (MEM=1676.14 CPU=0:00:09.2 REAL=0:00:09.0)
+[08/17 16:25:32    165s] esiiDumpWaveformsThread is successfull 1 
+[08/17 16:25:32    165s] Save waveform /tmp/innovus_temp_33837_rivendell.ecen.okstate.edu_rjridle_jUpx89/.AAE_Sb86iQ/.AAE_33837/waveform.data in separate thread...
+[08/17 16:25:32    165s] Finish pthread dumping compressed waveforms.
+[08/17 16:25:32    165s] *** CDM Built up (cpu=0:00:09.4  real=0:00:10.0  mem= 1686.1M) ***
+[08/17 16:25:33    166s] Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 1686.1M)
+[08/17 16:25:33    166s] Add other clocks and setupCteToAAEClockMapping during iter 1
+[08/17 16:25:33    166s] Loading CTE timing window is completed (CPU = 0:00:00.3, REAL = 0:00:00.0, MEM = 1686.1M)
+[08/17 16:25:33    166s] Starting SI iteration 2
+[08/17 16:25:33    166s] Calculate early delays in OCV mode...
+[08/17 16:25:33    166s] Calculate late delays in OCV mode...
+[08/17 16:25:33    166s] Start delay calculation (fullDC) (1 T). (MEM=1648.14)
+[08/17 16:25:33    166s] **WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+[08/17 16:25:34    167s] End AAE Lib Interpolated Model. (MEM=1648.14 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:25:34    167s]  Report initialization with DMUpdate ... (1, Worst)
+[08/17 16:25:34    167s] Glitch Analysis: View setup_func -- Total Number of Nets Skipped = 0. 
+[08/17 16:25:34    167s] Glitch Analysis: View setup_func -- Total Number of Nets Analyzed = 32462. 
+[08/17 16:25:34    167s] Total number of fetched objects 32462
+[08/17 16:25:34    167s] AAE_INFO-618: Total number of nets in the design is 32468,  1.3 percent of the nets selected for SI analysis
+[08/17 16:25:34    167s] End delay calculation. (MEM=1686.3 CPU=0:00:00.4 REAL=0:00:00.0)
+[08/17 16:25:34    167s] End delay calculation (fullDC). (MEM=1686.3 CPU=0:00:00.6 REAL=0:00:01.0)
+[08/17 16:25:34    167s] *** CDM Built up (cpu=0:00:00.6  real=0:00:01.0  mem= 1686.3M) ***
+[08/17 16:25:35    168s] **ERROR: (IMPEXT-3491):	Extraction failed because Quantus QRC technology file(s) are not specified for all the active RC corners in the MMMC set up. This is mandatory for medium or high or signoff effortLevel postRoute extraction. If all files are unavailable, set 'setExtractRCMode -effortLevel low'. Ideally specify the technology file for each RC corner using the -qx_tech_file option of the create_rc_corner or update_rc_corner commands.
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+[08/17 16:25:36    169s] Start AAE Lib Loading. (MEM=1648.3)
+[08/17 16:25:36    169s] End AAE Lib Loading. (MEM=1648.3 CPU=0:00:00.0 Real=0:00:00.0)
+[08/17 16:25:36    169s] End AAE Lib Interpolated Model. (MEM=1648.3 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:25:36    169s]  Report initialization with DMWrite ... (0, Worst)
+[08/17 16:25:44    177s] Total number of fetched objects 32462
+[08/17 16:25:44    177s] AAE_INFO-618: Total number of nets in the design is 32468,  100.0 percent of the nets selected for SI analysis
+[08/17 16:25:44    177s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[08/17 16:25:44    177s] End delay calculation. (MEM=1703.99 CPU=0:00:08.3 REAL=0:00:08.0)
+[08/17 16:25:46    179s] **WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+[08/17 16:25:46    179s] End AAE Lib Interpolated Model. (MEM=1657 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:25:46    179s]  Report initialization with DMUpdate ... (1, Worst)
+[08/17 16:25:47    180s] Glitch Analysis: View setup_func -- Total Number of Nets Skipped = 0. 
+[08/17 16:25:47    180s] Glitch Analysis: View setup_func -- Total Number of Nets Analyzed = 32462. 
+[08/17 16:25:47    180s] Total number of fetched objects 32462
+[08/17 16:25:47    180s] AAE_INFO-618: Total number of nets in the design is 32468,  1.3 percent of the nets selected for SI analysis
+[08/17 16:25:47    180s] End delay calculation. (MEM=1695.15 CPU=0:00:00.4 REAL=0:00:01.0)
+[08/17 16:25:48    181s] **ERROR: (IMPEXT-3491):	Extraction failed because Quantus QRC technology file(s) are not specified for all the active RC corners in the MMMC set up. This is mandatory for medium or high or signoff effortLevel postRoute extraction. If all files are unavailable, set 'setExtractRCMode -effortLevel low'. Ideally specify the technology file for each RC corner using the -qx_tech_file option of the create_rc_corner or update_rc_corner commands.
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+[08/17 16:25:48    181s] Start AAE Lib Loading. (MEM=1659.16)
+[08/17 16:25:48    181s] End AAE Lib Loading. (MEM=1659.16 CPU=0:00:00.0 Real=0:00:00.0)
+[08/17 16:25:48    181s] End AAE Lib Interpolated Model. (MEM=1659.16 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:25:48    181s]  Report initialization with DMWrite ... (0, Worst)
+[08/17 16:25:57    190s] Total number of fetched objects 32462
+[08/17 16:25:57    190s] AAE_INFO-618: Total number of nets in the design is 32468,  100.0 percent of the nets selected for SI analysis
+[08/17 16:25:57    190s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[08/17 16:25:57    190s] End delay calculation. (MEM=1714.85 CPU=0:00:08.3 REAL=0:00:08.0)
+[08/17 16:25:59    192s] **WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+[08/17 16:25:59    192s] End AAE Lib Interpolated Model. (MEM=1667.86 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:25:59    192s]  Report initialization with DMUpdate ... (1, Worst)
+[08/17 16:25:59    192s] Glitch Analysis: View setup_func -- Total Number of Nets Skipped = 0. 
+[08/17 16:25:59    192s] Glitch Analysis: View setup_func -- Total Number of Nets Analyzed = 32462. 
+[08/17 16:25:59    192s] Total number of fetched objects 32462
+[08/17 16:25:59    192s] AAE_INFO-618: Total number of nets in the design is 32468,  1.3 percent of the nets selected for SI analysis
+[08/17 16:25:59    192s] End delay calculation. (MEM=1706.01 CPU=0:00:00.4 REAL=0:00:00.0)
+[08/17 16:26:01    194s] **ERROR: (IMPEXT-3491):	Extraction failed because Quantus QRC technology file(s) are not specified for all the active RC corners in the MMMC set up. This is mandatory for medium or high or signoff effortLevel postRoute extraction. If all files are unavailable, set 'setExtractRCMode -effortLevel low'. Ideally specify the technology file for each RC corner using the -qx_tech_file option of the create_rc_corner or update_rc_corner commands.
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+[08/17 16:26:01    194s] Start AAE Lib Loading. (MEM=1668.01)
+[08/17 16:26:01    194s] End AAE Lib Loading. (MEM=1668.01 CPU=0:00:00.0 Real=0:00:00.0)
+[08/17 16:26:01    194s] End AAE Lib Interpolated Model. (MEM=1668.01 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:26:01    194s]  Report initialization with DMWrite ... (0, Worst)
+[08/17 16:26:10    203s] Total number of fetched objects 32462
+[08/17 16:26:10    203s] AAE_INFO-618: Total number of nets in the design is 32468,  100.0 percent of the nets selected for SI analysis
+[08/17 16:26:10    203s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[08/17 16:26:10    203s] End delay calculation. (MEM=1723.71 CPU=0:00:08.3 REAL=0:00:09.0)
+[08/17 16:26:12    205s] **WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+[08/17 16:26:12    205s] End AAE Lib Interpolated Model. (MEM=1678.71 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:26:12    205s]  Report initialization with DMUpdate ... (1, Worst)
+[08/17 16:26:12    205s] Glitch Analysis: View setup_func -- Total Number of Nets Skipped = 0. 
+[08/17 16:26:12    205s] Glitch Analysis: View setup_func -- Total Number of Nets Analyzed = 32462. 
+[08/17 16:26:12    205s] Total number of fetched objects 32462
+[08/17 16:26:12    205s] AAE_INFO-618: Total number of nets in the design is 32468,  1.3 percent of the nets selected for SI analysis
+[08/17 16:26:12    205s] End delay calculation. (MEM=1716.87 CPU=0:00:00.4 REAL=0:00:00.0)
+[08/17 16:26:14    207s] **ERROR: (IMPEXT-3491):	Extraction failed because Quantus QRC technology file(s) are not specified for all the active RC corners in the MMMC set up. This is mandatory for medium or high or signoff effortLevel postRoute extraction. If all files are unavailable, set 'setExtractRCMode -effortLevel low'. Ideally specify the technology file for each RC corner using the -qx_tech_file option of the create_rc_corner or update_rc_corner commands.
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+[08/17 16:26:14    207s] Start AAE Lib Loading. (MEM=1678.87)
+[08/17 16:26:14    207s] End AAE Lib Loading. (MEM=1678.87 CPU=0:00:00.0 Real=0:00:00.0)
+[08/17 16:26:14    207s] End AAE Lib Interpolated Model. (MEM=1678.87 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:26:14    207s]  Report initialization with DMWrite ... (0, Worst)
+[08/17 16:26:23    216s] Total number of fetched objects 32462
+[08/17 16:26:23    216s] AAE_INFO-618: Total number of nets in the design is 32468,  100.0 percent of the nets selected for SI analysis
+[08/17 16:26:23    216s] End Timing Check Calculation. (CPU Time=0:00:00.1, Real Time=0:00:00.0)
+[08/17 16:26:23    216s] End delay calculation. (MEM=1734.56 CPU=0:00:08.4 REAL=0:00:08.0)
+[08/17 16:26:26    219s] **WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+[08/17 16:26:26    219s] End AAE Lib Interpolated Model. (MEM=1688.57 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:26:26    219s]  Report initialization with DMUpdate ... (1, Worst)
+[08/17 16:26:27    220s] Glitch Analysis: View setup_func -- Total Number of Nets Skipped = 0. 
+[08/17 16:26:27    220s] Glitch Analysis: View setup_func -- Total Number of Nets Analyzed = 32462. 
+[08/17 16:26:27    220s] Total number of fetched objects 32462
+[08/17 16:26:27    220s] AAE_INFO-618: Total number of nets in the design is 32468,  1.3 percent of the nets selected for SI analysis
+[08/17 16:26:27    220s] End delay calculation. (MEM=1726.72 CPU=0:00:00.4 REAL=0:00:01.0)
+[08/17 16:26:28    221s] **ERROR: (IMPEXT-3491):	Extraction failed because Quantus QRC technology file(s) are not specified for all the active RC corners in the MMMC set up. This is mandatory for medium or high or signoff effortLevel postRoute extraction. If all files are unavailable, set 'setExtractRCMode -effortLevel low'. Ideally specify the technology file for each RC corner using the -qx_tech_file option of the create_rc_corner or update_rc_corner commands.
+**WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+[08/17 16:26:29    222s] Start AAE Lib Loading. (MEM=1761.06)
+[08/17 16:26:29    222s] End AAE Lib Loading. (MEM=1761.06 CPU=0:00:00.0 Real=0:00:00.0)
+[08/17 16:26:29    222s] End AAE Lib Interpolated Model. (MEM=1761.06 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:26:29    222s]  Report initialization with DMWrite ... (0, Worst)
+[08/17 16:26:38    231s] Total number of fetched objects 32462
+[08/17 16:26:38    231s] AAE_INFO-618: Total number of nets in the design is 32468,  100.0 percent of the nets selected for SI analysis
+[08/17 16:26:38    231s] End Timing Check Calculation. (CPU Time=0:00:00.5, Real Time=0:00:00.0)
+[08/17 16:26:38    231s] End delay calculation. (MEM=1769.06 CPU=0:00:08.9 REAL=0:00:09.0)
+[08/17 16:26:41    235s] **WARN: (IMPESI-2017):	There is no coupling capacitance found in the design. Use 'setDelayCalMode -siAware false' to perform base delay analysis. SI analysis requires the parasitics database to contain coupling capacitance. To perform SI analysis, use 'setExtractRCMode -coupled true' prior to extraction or load a SPEF with coupling capacitance and re-run. If the design is small and does not have any coupling, this message can be ignored.
+[08/17 16:26:42    235s] End AAE Lib Interpolated Model. (MEM=1733.06 CPU Time=0:00:00.0, Real Time=0:00:00.0)
+[08/17 16:26:42    235s]  Report initialization with DMUpdate ... (1, Worst)
+[08/17 16:26:42    235s] Glitch Analysis: View setup_func -- Total Number of Nets Skipped = 0. 
+[08/17 16:26:42    235s] Glitch Analysis: View setup_func -- Total Number of Nets Analyzed = 32462. 
+[08/17 16:26:42    235s] Total number of fetched objects 32462
+[08/17 16:26:42    235s] AAE_INFO-618: Total number of nets in the design is 32468,  1.3 percent of the nets selected for SI analysis
+[08/17 16:26:42    235s] End delay calculation. (MEM=1771.22 CPU=0:00:00.4 REAL=0:00:00.0)
+[08/17 16:26:44    237s] 
+------------------------------------------------------------
+          timeDesign Summary                             
+------------------------------------------------------------
+
+Setup views included:
+ setup_func 
+
++--------------------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg | default |
++--------------------+---------+---------+---------+
+|           WNS (ns):| -1.038  | -0.856  | -1.038  |
+|           TNS (ns):|-112.373 | -66.564 |-112.373 |
+|    Violating Paths:|   282   |   215   |   282   |
+|          All Paths:|  1121   |  1024   |  1121   |
++--------------------+---------+---------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |      1 (1)       |   -1.348   |      1 (1)       |
+|   max_tran     |      0 (0)       |   0.000    |      0 (0)       |
+|   max_fanout   |      0 (0)       |     0      |      0 (0)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 26.759%
+       (100.000% with Fillers)
+Total number of glitch violations: 0
+------------------------------------------------------------
+Total CPU time: 110.06 sec
+[08/17 16:26:44    237s] Total Real time: 110.0 sec
+[08/17 16:26:44    237s] Total Memory Usage: 1714.136719 Mbytes
+[08/17 16:26:44    237s] Reset AAE Options
+[08/17 16:26:44    237s] **WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+[08/17 16:26:44    237s] **WARN: (GLOBAL-100):	Global 'timing_enable_backward_compatible_default_input_delay_mode' has become obsolete. It will be removed in the next release.
+[08/17 16:26:44    237s] 
+[08/17 16:26:44    237s] =============================================================================================
+[08/17 16:26:44    237s]  Final TAT Report for timeDesign
+[08/17 16:26:44    237s] =============================================================================================
+[08/17 16:26:44    237s]  Step Name                  Count        Real  (       % )      Step Total Real / CPU  Scale
+[08/17 16:26:44    237s] ---------------------------------------------------------------------------------------------
+[08/17 16:26:44    237s] [ ExtractRC              ]      2   0:00:00.0  (   0.0 % )     0:00:00.0 /  0:00:00.0    0.0
+[08/17 16:26:44    237s] [ TimingUpdate           ]      2   0:00:00.9  (   0.8 % )     0:00:13.9 /  0:00:13.9    1.0
+[08/17 16:26:44    237s] [ FullDelayCalc          ]      1   0:00:13.0  (  11.8 % )     0:00:13.0 /  0:00:13.0    1.0
+[08/17 16:26:44    237s] [ OptSummaryReport       ]      1   0:00:00.5  (   0.4 % )     0:01:35.7 /  0:01:35.5    1.0
+[08/17 16:26:44    237s] [ TimingReport           ]      1   0:00:00.0  (   0.0 % )     0:00:25.3 /  0:00:25.4    1.0
+[08/17 16:26:44    237s] [ DrvReport              ]      1   0:00:00.5  (   0.4 % )     0:00:16.3 /  0:00:15.8    1.0
+[08/17 16:26:44    237s] [ GenerateReports        ]      1   0:00:53.1  (  48.1 % )     0:00:53.1 /  0:00:53.3    1.0
+[08/17 16:26:44    237s] [ ReportTranViolation    ]      1   0:00:00.2  (   0.2 % )     0:00:00.2 /  0:00:00.2    1.0
+[08/17 16:26:44    237s] [ ReportCapViolation     ]      1   0:00:00.2  (   0.2 % )     0:00:00.2 /  0:00:00.2    1.0
+[08/17 16:26:44    237s] [ ReportFanoutViolation  ]      1   0:00:00.1  (   0.1 % )     0:00:00.1 /  0:00:00.1    1.0
+[08/17 16:26:44    237s] [ ReportLenViolation     ]      2   0:00:00.0  (   0.0 % )     0:00:00.0 /  0:00:00.0    0.0
+[08/17 16:26:44    237s] [ ReportGlitchViolation  ]      1   0:00:00.3  (   0.2 % )     0:00:00.3 /  0:00:00.3    1.0
+[08/17 16:26:44    237s] [ GenerateDrvReportData  ]      1   0:00:15.3  (  13.9 % )     0:00:15.3 /  0:00:15.3    1.0
+[08/17 16:26:44    237s] [ ReportAnalysisSummary  ]      2   0:00:25.3  (  22.9 % )     0:00:25.3 /  0:00:25.4    1.0
+[08/17 16:26:44    237s] [ MISC                   ]          0:00:01.0  (   0.9 % )     0:00:01.0 /  0:00:01.0    1.0
+[08/17 16:26:44    237s] ---------------------------------------------------------------------------------------------
+[08/17 16:26:44    237s]  timeDesign TOTAL                   0:01:50.4  ( 100.0 % )     0:01:50.4 /  0:01:50.1    1.0
+[08/17 16:26:44    237s] ---------------------------------------------------------------------------------------------
+[08/17 16:26:44    237s] 
+[08/17 16:26:44    237s] Info: pop threads available for lower-level modules during optimization.
+[08/17 16:39:42    275s] <CMD> zoomBox -1253.61900 96.90300 9884.04500 3746.94900
+[08/17 16:39:43    275s] <CMD> pan -1506.90000 2549.34500
+[08/17 16:39:47    277s] <CMD> pan 1017.99500 3024.85600
+[08/17 16:39:48    278s] <CMD> zoomBox -3093.41600 -227.32600 10009.71900 6477.88600

@@ -1,0 +1,872 @@
+[07/17 16:08:02      0s] 
+[07/17 16:08:02      0s] Cadence Innovus(TM) Implementation System.
+[07/17 16:08:02      0s] Copyright 2017 Cadence Design Systems, Inc. All rights reserved worldwide.
+[07/17 16:08:02      0s] 
+[07/17 16:08:02      0s] Version:	v17.11-s080_1, built Fri Aug 4 11:13:11 PDT 2017
+[07/17 16:08:02      0s] Options:	-init DBS/signoff.enc 
+[07/17 16:08:02      0s] Date:		Fri Jul 17 16:08:02 2020
+[07/17 16:08:02      0s] Host:		rivendell.ecen.okstate.edu (x86_64 w/Linux 2.6.32-754.25.1.el6.x86_64) (6cores*12cpus*Intel(R) Xeon(R) CPU E5-4617 0 @ 2.90GHz 15360KB)
+[07/17 16:08:02      0s] OS:		Red Hat Enterprise Linux Server release 6.10 (Santiago)
+[07/17 16:08:02      0s] 
+[07/17 16:08:02      0s] License:
+[07/17 16:08:02      0s] 		invs	Innovus Implementation System	17.1	checkout succeeded
+[07/17 16:08:02      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[07/17 16:08:12      9s] @(#)CDS: Innovus v17.11-s080_1 (64bit) 08/04/2017 11:13 (Linux 2.6.18-194.el5)
+[07/17 16:08:12      9s] @(#)CDS: NanoRoute 17.11-s080_1 NR170721-2155/17_11-UB (database version 2.30, 390.7.1) {superthreading v1.44}
+[07/17 16:08:12      9s] @(#)CDS: AAE 17.11-s034 (64bit) 08/04/2017 (Linux 2.6.18-194.el5)
+[07/17 16:08:12      9s] @(#)CDS: CTE 17.11-s053_1 () Aug  1 2017 23:31:41 ( )
+[07/17 16:08:12      9s] @(#)CDS: SYNTECH 17.11-s012_1 () Jul 21 2017 02:29:12 ( )
+[07/17 16:08:12      9s] @(#)CDS: CPE v17.11-s095
+[07/17 16:08:12      9s] @(#)CDS: IQRC/TQRC 16.1.1-s215 (64bit) Thu Jul  6 20:18:10 PDT 2017 (Linux 2.6.18-194.el5)
+[07/17 16:08:12      9s] @(#)CDS: OA 22.50-p063 Fri Feb  3 19:45:13 2017
+[07/17 16:08:12      9s] @(#)CDS: SGN 10.10-p124 (19-Aug-2014) (64 bit executable)
+[07/17 16:08:12      9s] @(#)CDS: RCDB 11.10
+[07/17 16:08:12      9s] --- Running on rivendell.ecen.okstate.edu (x86_64 w/Linux 2.6.32-754.25.1.el6.x86_64) (6cores*12cpus*Intel(R) Xeon(R) CPU E5-4617 0 @ 2.90GHz 15360KB) ---
+[07/17 16:08:12      9s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_34463_rivendell.ecen.okstate.edu_rjridle_9JSQy3.
+
+[07/17 16:08:12      9s] Change the soft stacksize limit to 0.2%RAM (258 mbytes). Set global soft_stack_size_limit to change the value.
+[07/17 16:08:12     10s] 
+[07/17 16:08:12     10s] **INFO:  MMMC transition support version v31-84 
+[07/17 16:08:12     10s] 
+[07/17 16:08:12     10s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[07/17 16:08:12     10s] <CMD> suppressMessage ENCEXT-2799
+[07/17 16:08:12     10s] <CMD> getVersion
+[07/17 16:08:13     10s] <CMD> getDrawView
+[07/17 16:08:13     10s] <CMD> loadWorkspace -name Physical
+[07/17 16:08:13     10s] Sourcing file "DBS/signoff.enc" ...
+[07/17 16:08:13     10s] <CMD> restoreDesign /home/rjridle/fabcds/par/DBS/signoff.enc.dat riscv
+[07/17 16:08:13     10s] #% Begin load design ... (date=07/17 16:08:13, mem=443.2M)
+[07/17 16:08:13     10s] Set Default Input Pin Transition as 0.1 ps.
+[07/17 16:08:13     10s] **WARN: (GLOBAL-100):	Global 'timing_enable_default_delay_arc' has become obsolete. It will be removed in the next release.
+[07/17 16:08:13     10s] % Begin Load MMMC data ... (date=07/17 16:08:13, mem=444.8M)
+[07/17 16:08:13     10s] % End Load MMMC data ... (date=07/17 16:08:13, total cpu=0:00:00.0, real=0:00:00.0, peak res=445.0M, current mem=445.0M)
+[07/17 16:08:13     10s] 
+[07/17 16:08:13     10s] Loading LEF file /home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/lef/osu05_stdcells.lef ...
+[07/17 16:08:13     10s] **WARN: (IMPLF-108):	There is no overlap layer defined in any LEF file
+[07/17 16:08:13     10s] so you are unable to create rectilinear partition in a hierarchical flow.
+[07/17 16:08:13     10s] Set DBUPerIGU to M2 pitch 2400.
+[07/17 16:08:13     10s] 
+[07/17 16:08:13     10s] viaInitial starts at Fri Jul 17 16:08:13 2020
+**WARN: (IMPPP-556):	A SAMENET rule between different layers for a 4 layer technology is probably a mistake. Stacked vias will be difficult to create and probably will not be what expected. Check if this rule can be removed from the technology file: SAMENET cc via 0.150 ;
+[07/17 16:08:13     10s] **WARN: (IMPPP-556):	A SAMENET rule between different layers for a 4 layer technology is probably a mistake. Stacked vias will be difficult to create and probably will not be what expected. Check if this rule can be removed from the technology file: SAMENET via via2 0.150 ;
+[07/17 16:08:13     10s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN1 GENERATE.
+[07/17 16:08:13     10s] Type 'man IMPPP-557' for more detail.
+[07/17 16:08:13     10s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN2 GENERATE.
+[07/17 16:08:13     10s] Type 'man IMPPP-557' for more detail.
+[07/17 16:08:13     10s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN3 GENERATE.
+[07/17 16:08:13     10s] Type 'man IMPPP-557' for more detail.
+[07/17 16:08:13     10s] viaInitial ends at Fri Jul 17 16:08:13 2020
+Loading view definition file from /home/rjridle/fabcds/par/DBS/signoff.enc.dat/viewDefinition.tcl
+[07/17 16:08:13     10s] Reading libs_tt timing library '/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib' ...
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AND2X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AND2X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AND2X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AND2X2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AND2X2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AND2X2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AOI21X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AOI21X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'C' of cell 'AOI21X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AOI21X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'C' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'D' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AOI22X1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'BUFX2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'BUFX2' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'BUFX4' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'BUFX4' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] **WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'CLKBUF1' is not defined in the library. (File /classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib)
+[07/17 16:08:13     10s] Message <TECHLIB-436> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[07/17 16:08:13     10s] Read 39 cells in library 'osu05_stdcells' 
+[07/17 16:08:13     10s] *** End library_loading (cpu=0.00min, real=0.00min, mem=20.9M, fe_cpu=0.18min, fe_real=0.18min, fe_mem=526.4M) ***
+[07/17 16:08:13     10s] % Begin Load netlist data ... (date=07/17 16:08:13, mem=479.9M)
+[07/17 16:08:13     10s] *** Begin netlist parsing (mem=526.4M) ***
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'YPAD' of cell 'PADGND' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'PADGND' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'YPAD' of cell 'PADVDD' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'PADVDD' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'XNOR2X1' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'XNOR2X1' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'TBUFX2' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'TBUFX2' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'TBUFX1' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'TBUFX1' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'OR2X2' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'OR2X2' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'OR2X1' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'OR2X1' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'OAI22X1' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'OAI22X1' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'OAI21X1' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'OAI21X1' is defined in LEF but not in the timing library.
+[07/17 16:08:13     10s] **WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+[07/17 16:08:13     10s] To increase the message display limit, refer to the product command reference manual.
+[07/17 16:08:13     10s] Created 39 new cells from 1 timing libraries.
+[07/17 16:08:13     10s] Reading netlist ...
+[07/17 16:08:13     10s] Backslashed names will retain backslash and a trailing blank character.
+[07/17 16:08:13     10s] Reading verilogBinary netlist '/home/rjridle/fabcds/par/DBS/signoff.enc.dat/riscv.v.bin'
+[07/17 16:08:13     10s] Reading binary database version 1
+[07/17 16:08:13     10s] 
+[07/17 16:08:13     10s] *** Memory Usage v#1 (Current mem = 536.363M, initial mem = 183.406M) ***
+[07/17 16:08:13     10s] *** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=536.4M) ***
+[07/17 16:08:13     10s] % End Load netlist data ... (date=07/17 16:08:13, total cpu=0:00:00.0, real=0:00:00.0, peak res=479.9M, current mem=463.7M)
+[07/17 16:08:13     10s] Set top cell to riscv.
+[07/17 16:08:13     10s] **WARN: (IMPTS-124):	Timing library description of pin 'YPAD' is missing from cell 'PADGND' in timing library 'osu05_stdcells'.
+[07/17 16:08:13     10s] **WARN: (IMPTS-124):	Timing library description of pin 'YPAD' is missing from cell 'PADVDD' in timing library 'osu05_stdcells'.
+[07/17 16:08:13     11s] Hooked 39 DB cells to tlib cells.
+[07/17 16:08:13     11s] Starting recursive module instantiation check.
+[07/17 16:08:13     11s] No recursion found.
+[07/17 16:08:13     11s] Building hierarchical netlist for Cell riscv ...
+[07/17 16:08:13     11s] *** Netlist is unique.
+[07/17 16:08:13     11s] ** info: there are 41 modules.
+[07/17 16:08:13     11s] ** info: there are 17209 stdCell insts.
+[07/17 16:08:13     11s] 
+[07/17 16:08:13     11s] *** Memory Usage v#1 (Current mem = 569.785M, initial mem = 183.406M) ***
+[07/17 16:08:13     11s] *info: set bottom ioPad orient R0
+[07/17 16:08:13     11s] Reading IO assignment file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" ...
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 9: Pad: c01 NW
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 11: Pad: c02 NE
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 13: Pad: c03 SE
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 15: Pad: c04 SW
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 20: Pad: p39 N
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 22: Pad: p38 N
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 24: Pad: p37 N
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 26: Pad: p36 N
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 28: Pad: p35 N
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 30: Pad: p34 N
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 32: Pad: p33 N
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 34: Pad: p32 N
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 36: Pad: p31 N
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 38: Pad: p30 N
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 43: Pad: p29 W
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 45: Pad: p28 W
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 47: Pad: p27 W
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 49: Pad: p26 W
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 51: Pad: p25 W
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 53: Pad: p24 W
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 55: Pad: p23 W
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 57: Pad: p22 W
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 59: Pad: p21 W
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 61: Pad: p20 W
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 66: Pad: p19 S
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 68: Pad: p18 S
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 70: Pad: p17 S
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 72: Pad: p16 S
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 74: Pad: p15 S
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 76: Pad: p14 S
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 78: Pad: p13 S
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 80: Pad: p12 S
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 82: Pad: p11 S
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 84: Pad: p10 S
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 89: Pad: p09 E
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 91: Pad: p08 E
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 93: Pad: p07 E
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 95: Pad: p06 E
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 97: Pad: p05 E
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 99: Pad: p04 E
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 101: Pad: p03 E
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 103: Pad: p02 E
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 105: Pad: p01 E
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **Warn: ignored IO file "/home/rjridle/fabcds/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 107: Pad: p00 E
+  Reason: unable to determine object from name.
+[07/17 16:08:13     11s] **WARN: (IMPFP-710):	File version 0 is too old.
+[07/17 16:08:13     11s] IO file version '0' is too old, will try to place io cell any way.
+[07/17 16:08:13     11s] **WARN: (IMPFP-3961):	The techSite 'IO' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[07/17 16:08:13     11s] Type 'man IMPFP-3961' for more detail.
+[07/17 16:08:13     11s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[07/17 16:08:13     11s] Type 'man IMPFP-3961' for more detail.
+[07/17 16:08:13     11s] Horizontal Layer M1 offset = 1500 (derived)
+[07/17 16:08:13     11s] Vertical Layer M2 offset = 1200 (derived)
+[07/17 16:08:13     11s] Set Default Net Delay as 1000 ps.
+[07/17 16:08:13     11s] Set Default Net Load as 0.5 pF. 
+[07/17 16:08:13     11s] Set Default Input Pin Transition as 0.1 ps.
+[07/17 16:08:13     11s] Loading preference file /home/rjridle/fabcds/par/DBS/signoff.enc.dat/gui.pref.tcl ...
+[07/17 16:08:13     11s] Applying the recommended capacitance filtering threshold values for 250nm process node: total_c_th=5, relative_c_th=0.03 and coupling_c_th=3.
+[07/17 16:08:13     11s] 	These values will be used by all post-route extraction engines, including tQuantus, IQRC and Quantus QRC extraction.
+[07/17 16:08:13     11s] 	For postRoute effortLevel low extraction, the coupling_c_th value will be used only when the -capFilterMode parameter of the setExtractRCMode command is set to relAndCoup or relOrCoup. Default value of -capFilterMode parameter in postRoute extraction effortLevel low is relOnly.
+[07/17 16:08:13     11s] 	The accuracy mode for postRoute effortLevel low extraction will be set to 'standard'.
+[07/17 16:08:13     11s] 	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'low'.
+[07/17 16:08:13     11s] Updating process node dependent CCOpt properties for the 250nm process node.
+[07/17 16:08:13     11s] **WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+[07/17 16:08:13     11s] **WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+[07/17 16:08:13     11s] **WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+[07/17 16:08:13     11s] **WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+[07/17 16:08:13     11s] **WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+[07/17 16:08:14     11s] This command "restoreDesign /home/rjridle/fabcds/par/DBS/signoff.enc.dat ..." required an extra checkout of license tpsxl.
+[07/17 16:08:14     11s] Additional license(s) checked out: 1 'Tempus_Timing_Signoff_XL' license(s)
+[07/17 16:08:14     11s] addRing command will ignore shorts while creating rings.
+[07/17 16:08:14     11s] addRing command will disallow rings to go over rows.
+[07/17 16:08:14     11s] addRing command will consider rows while creating rings.
+[07/17 16:08:14     11s] The ring targets are set to core/block ring wires.
+[07/17 16:08:14     11s] Extraction setup Started 
+[07/17 16:08:14     11s] Initializing multi-corner RC extraction with 1 active RC Corners ...
+[07/17 16:08:14     11s] **WARN: (IMPEXT-2773):	The via resistance between layers M0 and M1 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+[07/17 16:08:14     11s] Type 'man IMPEXT-2773' for more detail.
+[07/17 16:08:14     11s] **WARN: (IMPEXT-2773):	The via resistance between layers M1 and M2 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+[07/17 16:08:14     11s] Type 'man IMPEXT-2773' for more detail.
+[07/17 16:08:14     11s] **WARN: (IMPEXT-2773):	The via resistance between layers M2 and M3 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+[07/17 16:08:14     11s] Type 'man IMPEXT-2773' for more detail.
+[07/17 16:08:14     11s] **WARN: (IMPEXT-2766):	The sheet resistance for layer M1 is not defined in the cap table. Therefore, the LEF value 0.09 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+[07/17 16:08:14     11s] **WARN: (IMPEXT-2766):	The sheet resistance for layer M2 is not defined in the cap table. Therefore, the LEF value 0.09 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+[07/17 16:08:14     11s] **WARN: (IMPEXT-2766):	The sheet resistance for layer M3 is not defined in the cap table. Therefore, the LEF value 0.05 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+[07/17 16:08:14     11s] Summary of Active RC-Corners : 
+[07/17 16:08:14     11s]  
+[07/17 16:08:14     11s]  Analysis View: setup_func
+[07/17 16:08:14     11s]     RC-Corner Name        : rc_typ
+[07/17 16:08:14     11s]     RC-Corner Index       : 0
+[07/17 16:08:14     11s]     RC-Corner Temperature : 25 Celsius
+[07/17 16:08:14     11s]     RC-Corner Cap Table   : ''
+[07/17 16:08:14     11s]     RC-Corner PreRoute Res Factor         : 1
+[07/17 16:08:14     11s]     RC-Corner PreRoute Cap Factor         : 1
+[07/17 16:08:14     11s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[07/17 16:08:14     11s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[07/17 16:08:14     11s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[07/17 16:08:14     11s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from Cap Table]
+[07/17 16:08:14     11s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from Cap Table]
+[07/17 16:08:14     11s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[07/17 16:08:14     11s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[07/17 16:08:14     11s]  
+[07/17 16:08:14     11s]  Analysis View: hold_func
+[07/17 16:08:14     11s]     RC-Corner Name        : rc_typ
+[07/17 16:08:14     11s]     RC-Corner Index       : 0
+[07/17 16:08:14     11s]     RC-Corner Temperature : 25 Celsius
+[07/17 16:08:14     11s]     RC-Corner Cap Table   : ''
+[07/17 16:08:14     11s]     RC-Corner PreRoute Res Factor         : 1
+[07/17 16:08:14     11s]     RC-Corner PreRoute Cap Factor         : 1
+[07/17 16:08:14     11s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[07/17 16:08:14     11s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[07/17 16:08:14     11s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[07/17 16:08:14     11s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from Cap Table]
+[07/17 16:08:14     11s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from Cap Table]
+[07/17 16:08:14     11s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[07/17 16:08:14     11s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[07/17 16:08:14     11s] *Info: initialize multi-corner CTS.
+[07/17 16:08:14     11s] Reading timing constraints file '/home/rjridle/fabcds/par/DBS/signoff.enc.dat/mmmc/modes/setup_func_mode/setup_func_mode.sdc' ...
+[07/17 16:08:14     11s] Current (total cpu=0:00:11.7, real=0:00:12.0, peak res=638.4M, current mem=638.4M)
+[07/17 16:08:14     11s] INFO (CTE): Constraints read successfully.
+[07/17 16:08:14     11s] Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=655.8M, current mem=655.8M)
+[07/17 16:08:14     11s] Current (total cpu=0:00:11.8, real=0:00:12.0, peak res=655.8M, current mem=655.8M)
+[07/17 16:08:14     11s] Creating Cell Server ...(0, 1, 1, 1)
+[07/17 16:08:14     11s] Summary for sequential cells identification: 
+[07/17 16:08:14     11s]   Identified SBFF number: 3
+[07/17 16:08:14     11s]   Identified MBFF number: 0
+[07/17 16:08:14     11s]   Identified SB Latch number: 0
+[07/17 16:08:14     11s]   Identified MB Latch number: 0
+[07/17 16:08:14     11s]   Not identified SBFF number: 0
+[07/17 16:08:14     11s]   Not identified MBFF number: 0
+[07/17 16:08:14     11s]   Not identified SB Latch number: 0
+[07/17 16:08:14     11s]   Not identified MB Latch number: 0
+[07/17 16:08:14     11s]   Number of sequential cells which are not FFs: 1
+[07/17 16:08:14     11s] Total number of combinational cells: 26
+[07/17 16:08:14     11s] Total number of sequential cells: 4
+[07/17 16:08:14     11s] Total number of tristate cells: 2
+[07/17 16:08:14     11s] Total number of level shifter cells: 0
+[07/17 16:08:14     11s] Total number of power gating cells: 0
+[07/17 16:08:14     11s] Total number of isolation cells: 0
+[07/17 16:08:14     11s] Total number of power switch cells: 0
+[07/17 16:08:14     11s] Total number of pulse generator cells: 0
+[07/17 16:08:14     11s] Total number of always on buffers: 0
+[07/17 16:08:14     11s] Total number of retention cells: 0
+[07/17 16:08:14     11s] List of usable buffers: BUFX2 BUFX4 CLKBUF1
+[07/17 16:08:14     11s] Total number of usable buffers: 3
+[07/17 16:08:14     11s] List of unusable buffers:
+[07/17 16:08:14     11s] Total number of unusable buffers: 0
+[07/17 16:08:14     11s] List of usable inverters: INVX2 INVX1 INVX4 INVX8
+[07/17 16:08:14     11s] Total number of usable inverters: 4
+[07/17 16:08:14     11s] List of unusable inverters:
+[07/17 16:08:14     11s] Total number of unusable inverters: 0
+[07/17 16:08:14     11s] List of identified usable delay cells: CLKBUF2 CLKBUF3
+[07/17 16:08:14     11s] Total number of identified usable delay cells: 2
+[07/17 16:08:14     11s] List of identified unusable delay cells:
+[07/17 16:08:14     11s] Total number of identified unusable delay cells: 0
+[07/17 16:08:14     11s] Creating Cell Server, finished. 
+[07/17 16:08:14     11s] 
+[07/17 16:08:14     11s] Deleting Cell Server ...
+[07/17 16:08:14     11s] % Begin Load floorplan data ... (date=07/17 16:08:14, mem=657.4M)
+[07/17 16:08:14     11s] Reading floorplan file - /home/rjridle/fabcds/par/DBS/signoff.enc.dat/riscv.fp.gz (mem = 754.3M).
+[07/17 16:08:14     11s] % Begin Load floorplan data ... (date=07/17 16:08:14, mem=657.4M)
+[07/17 16:08:14     11s] *info: reset 17671 existing net BottomPreferredLayer and AvoidDetour
+[07/17 16:08:14     11s] Deleting old partition specification.
+[07/17 16:08:14     11s] Set FPlanBox to (0 0 4000800 3999000)
+[07/17 16:08:14     11s] Horizontal Layer M1 offset = 1500 (derived)
+[07/17 16:08:14     11s] Vertical Layer M2 offset = 1200 (derived)
+[07/17 16:08:14     11s]  ... processed partition successfully.
+[07/17 16:08:14     11s] Reading binary special route file /home/rjridle/fabcds/par/DBS/signoff.enc.dat/riscv.fp.spr.gz (Created by Innovus v17.11-s080_1 on Fri Jul 17 14:31:20 2020, version: 1)
+[07/17 16:08:14     11s] There are 103 nets with weight being set
+[07/17 16:08:14     11s] There are 103 nets with bottomPreferredRoutingLayer being set
+[07/17 16:08:14     11s] There are 103 nets with avoidDetour being set
+[07/17 16:08:14     11s] Extracting standard cell pins and blockage ...... 
+[07/17 16:08:14     11s] Pin and blockage extraction finished
+[07/17 16:08:14     11s] % End Load floorplan data ... (date=07/17 16:08:14, total cpu=0:00:00.0, real=0:00:00.0, peak res=659.4M, current mem=659.4M)
+[07/17 16:08:14     11s] % End Load floorplan data ... (date=07/17 16:08:14, total cpu=0:00:00.1, real=0:00:00.0, peak res=659.4M, current mem=659.4M)
+[07/17 16:08:14     11s] % Begin Load SymbolTable ... (date=07/17 16:08:14, mem=659.4M)
+[07/17 16:08:14     12s] % End Load SymbolTable ... (date=07/17 16:08:14, total cpu=0:00:00.2, real=0:00:00.0, peak res=670.2M, current mem=670.2M)
+[07/17 16:08:14     12s] % Begin Load placement data ... (date=07/17 16:08:14, mem=667.7M)
+[07/17 16:08:14     12s] Reading placement file - /home/rjridle/fabcds/par/DBS/signoff.enc.dat/riscv.place.gz.
+[07/17 16:08:14     12s] *** Checked 2 GNC rules.
+[07/17 16:08:14     12s] *** applyConnectGlobalNets disabled.
+[07/17 16:08:14     12s] ** Reading stdCellPlacement_binary (Created by Innovus v17.11-s080_1 on Fri Jul 17 14:31:20 2020, version# 1) ...
+[07/17 16:08:14     12s] *** Checked 2 GNC rules.
+[07/17 16:08:14     12s] *** applyConnectGlobalNets disabled.
+[07/17 16:08:14     12s] *** Completed restorePlace (cpu=0:00:00.3 real=0:00:00.0 mem=789.8M) ***
+[07/17 16:08:14     12s] Total net length = 3.656e+06 (1.671e+06 1.985e+06) (ext = 4.588e+04)
+[07/17 16:08:14     12s] % End Load placement data ... (date=07/17 16:08:14, total cpu=0:00:00.3, real=0:00:00.0, peak res=700.8M, current mem=700.8M)
+[07/17 16:08:14     12s] *** Checked 2 GNC rules.
+[07/17 16:08:14     12s] *** Applying global-net connections...
+[07/17 16:08:14     12s] *** Applied 2 GNC rules (cpu = 0:00:00.0)
+[07/17 16:08:14     12s] % Begin Load routing data ... (date=07/17 16:08:14, mem=701.5M)
+[07/17 16:08:14     12s] Reading routing file - /home/rjridle/fabcds/par/DBS/signoff.enc.dat/riscv.route.gz.
+[07/17 16:08:14     12s] Reading Innovus routing data (Created by Innovus v17.11-s080_1 on Fri Jul 17 14:31:21 2020 Format: 16.2) ...
+[07/17 16:08:14     12s] Suppress "**WARN ..." messages.
+[07/17 16:08:14     12s] routingBox: (0 0) (4000800 3999000)
+[07/17 16:08:14     12s] coreBox:    (40800 42000) (3960000 3957000)
+[07/17 16:08:14     12s] Un-suppress "**WARN ..." messages.
+[07/17 16:08:15     12s] *** Total 17639 nets are successfully restored.
+[07/17 16:08:15     12s] *** Completed restoreRoute (cpu=0:00:00.2 real=0:00:01.0 mem=830.8M) ***
+[07/17 16:08:15     12s] % End Load routing data ... (date=07/17 16:08:15, total cpu=0:00:00.2, real=0:00:01.0, peak res=744.9M, current mem=744.9M)
+[07/17 16:08:15     12s] Loading Drc markers ...
+[07/17 16:08:15     12s] ... 10934 markers are loaded ...
+[07/17 16:08:15     12s] ... 0 geometry drc markers are loaded ...
+[07/17 16:08:15     12s] ... 0 antenna drc markers are loaded ...
+[07/17 16:08:15     12s] Reading property file /home/rjridle/fabcds/par/DBS/signoff.enc.dat/riscv.prop
+[07/17 16:08:15     12s] *** Completed restoreProperty (cpu=0:00:00.0 real=0:00:00.0 mem=830.8M) ***
+[07/17 16:08:15     12s] Set Default Input Pin Transition as 0.1 ps.
+[07/17 16:08:15     12s] **WARN: (GLOBAL-100):	Global 'timing_enable_default_delay_arc' has become obsolete. It will be removed in the next release.
+[07/17 16:08:15     12s] Initializing multi-corner resistance tables ...
+[07/17 16:08:15     13s] % Begin Load power constraints ... (date=07/17 16:08:15, mem=743.3M)
+[07/17 16:08:15     13s] % End Load power constraints ... (date=07/17 16:08:15, total cpu=0:00:00.0, real=0:00:00.0, peak res=743.4M, current mem=743.4M)
+[07/17 16:08:15     13s] Start generating vias ...
+[07/17 16:08:15     13s] #Skip building auto via since it is not turned on.
+[07/17 16:08:15     13s] Via generation completed.
+[07/17 16:08:15     13s] % Begin load AAE data ... (date=07/17 16:08:15, mem=736.1M)
+[07/17 16:08:15     13s] AAE DB initialization (MEM=859.379 CPU=0:00:00.1 REAL=0:00:00.0) 
+[07/17 16:08:15     13s] % End load AAE data ... (date=07/17 16:08:15, total cpu=0:00:00.1, real=0:00:00.0, peak res=741.1M, current mem=741.1M)
+[07/17 16:08:15     13s] Restoring CCOpt config...
+[07/17 16:08:15     13s] Creating Cell Server ...(0, 0, 0, 0)
+[07/17 16:08:15     13s] Summary for sequential cells identification: 
+[07/17 16:08:15     13s]   Identified SBFF number: 3
+[07/17 16:08:15     13s]   Identified MBFF number: 0
+[07/17 16:08:15     13s]   Identified SB Latch number: 0
+[07/17 16:08:15     13s]   Identified MB Latch number: 0
+[07/17 16:08:15     13s]   Not identified SBFF number: 0
+[07/17 16:08:15     13s]   Not identified MBFF number: 0
+[07/17 16:08:15     13s]   Not identified SB Latch number: 0
+[07/17 16:08:15     13s]   Not identified MB Latch number: 0
+[07/17 16:08:15     13s]   Number of sequential cells which are not FFs: 1
+[07/17 16:08:15     13s] Creating Cell Server, finished. 
+[07/17 16:08:15     13s] 
+[07/17 16:08:15     13s] 
+[07/17 16:08:15     13s]  View setup_func  Weighted 0 StdDelay unweighted 92.80, weightedFactor 1.000 
+[07/17 16:08:15     13s]   
+[07/17 16:08:15     13s]  View hold_func  Weighted 0 StdDelay unweighted 92.80, weightedFactor 1.000 
+[07/17 16:08:15     13s]     Extracting original clock gating for clk...
+[07/17 16:08:15     13s]     clock_tree clk contains 1024 sinks and 0 clock gates.
+[07/17 16:08:15     13s]     Extraction for clk complete.
+[07/17 16:08:15     13s]   Extracting original clock gating for clk done.
+[07/17 16:08:15     13s] Restoring CCOpt config done.
+[07/17 16:08:15     13s] Deleting Cell Server ...
+[07/17 16:08:15     13s] Creating Cell Server ...(0, 1, 1, 1)
+[07/17 16:08:15     13s] Summary for sequential cells identification: 
+[07/17 16:08:15     13s]   Identified SBFF number: 3
+[07/17 16:08:15     13s]   Identified MBFF number: 0
+[07/17 16:08:15     13s]   Identified SB Latch number: 0
+[07/17 16:08:15     13s]   Identified MB Latch number: 0
+[07/17 16:08:15     13s]   Not identified SBFF number: 0
+[07/17 16:08:15     13s]   Not identified MBFF number: 0
+[07/17 16:08:15     13s]   Not identified SB Latch number: 0
+[07/17 16:08:15     13s]   Not identified MB Latch number: 0
+[07/17 16:08:15     13s]   Number of sequential cells which are not FFs: 1
+[07/17 16:08:15     13s] Total number of combinational cells: 26
+[07/17 16:08:15     13s] Total number of sequential cells: 4
+[07/17 16:08:15     13s] Total number of tristate cells: 2
+[07/17 16:08:15     13s] Total number of level shifter cells: 0
+[07/17 16:08:15     13s] Total number of power gating cells: 0
+[07/17 16:08:15     13s] Total number of isolation cells: 0
+[07/17 16:08:15     13s] Total number of power switch cells: 0
+[07/17 16:08:15     13s] Total number of pulse generator cells: 0
+[07/17 16:08:15     13s] Total number of always on buffers: 0
+[07/17 16:08:15     13s] Total number of retention cells: 0
+[07/17 16:08:15     13s] List of usable buffers: BUFX2 BUFX4 CLKBUF1
+[07/17 16:08:15     13s] Total number of usable buffers: 3
+[07/17 16:08:15     13s] List of unusable buffers:
+[07/17 16:08:15     13s] Total number of unusable buffers: 0
+[07/17 16:08:15     13s] List of usable inverters: INVX2 INVX1 INVX4 INVX8
+[07/17 16:08:15     13s] Total number of usable inverters: 4
+[07/17 16:08:15     13s] List of unusable inverters:
+[07/17 16:08:15     13s] Total number of unusable inverters: 0
+[07/17 16:08:15     13s] List of identified usable delay cells: CLKBUF2 CLKBUF3
+[07/17 16:08:15     13s] Total number of identified usable delay cells: 2
+[07/17 16:08:15     13s] List of identified unusable delay cells:
+[07/17 16:08:15     13s] Total number of identified unusable delay cells: 0
+[07/17 16:08:15     13s] Creating Cell Server, finished. 
+[07/17 16:08:15     13s] 
+[07/17 16:08:15     13s] Deleting Cell Server ...
+[07/17 16:08:15     13s] #% End load design ... (date=07/17 16:08:15, total cpu=0:00:02.6, real=0:00:02.0, peak res=753.0M, current mem=753.0M)
+[07/17 16:08:15     13s] 
+[07/17 16:08:15     13s] *** Summary of all messages that are not suppressed in this session:
+[07/17 16:08:15     13s] Severity  ID               Count  Summary                                  
+[07/17 16:08:15     13s] WARNING   IMPLF-108            1  There is no overlap layer defined in any...
+[07/17 16:08:15     13s] WARNING   IMPFP-710            1  File version %s is too old.              
+[07/17 16:08:15     13s] WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+[07/17 16:08:15     13s] WARNING   IMPTS-124            2  Timing library description of pin '%s' i...
+[07/17 16:08:15     13s] WARNING   IMPEXT-2766          3  The sheet resistance for layer %s is not...
+[07/17 16:08:15     13s] WARNING   IMPEXT-2773          3  The via resistance between layers %s and...
+[07/17 16:08:15     13s] WARNING   IMPCK-8086           4  The command %s is obsolete and will be r...
+[07/17 16:08:15     13s] WARNING   IMPVL-159           68  Pin '%s' of cell '%s' is defined in LEF ...
+[07/17 16:08:15     13s] WARNING   IMPPP-556            2  A SAMENET rule between different layers ...
+[07/17 16:08:15     13s] WARNING   IMPPP-557            3  A single-layer VIARULE GENERATE for turn...
+[07/17 16:08:15     13s] WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+[07/17 16:08:15     13s] WARNING   GLOBAL-100           2  Global '%s' has become obsolete. It will...
+[07/17 16:08:15     13s] WARNING   TECHLIB-436         20  Attribute '%s' on '%s' pin '%s' of cell ...
+[07/17 16:08:15     13s] *** Message Summary: 112 warning(s), 0 error(s)
+[07/17 16:08:15     13s] 
+[07/17 16:08:27     13s] <CMD> win
+[07/17 16:08:46     15s] <CMD> selectMarker 2800.0000 2100.0000 2900.0000 2200.0000 3 6 0
+[07/17 16:08:46     15s] <CMD> setLayerPreference violation -isVisible 1
+[07/17 16:08:46     15s] <CMD> violationBrowser -all -no_display_false
+[07/17 16:08:46     15s] <CMD> zoomBox 2750.0 2050.0 2950.0 2250.0
+[07/17 16:08:46     15s] <CMD> zoomBox 2750.0 2050.0 2950.0 2250.0
+[07/17 16:08:58     16s] <CMD> setLayerPreference violation -isVisible 0
+[07/17 16:09:08     18s] <CMD> pan -36.961 -24.641
+[07/17 16:20:34     51s] <CMD> deselectAll
+[07/17 16:20:34     51s] <CMD> selectWire 2429.2500 456.7500 2639.5500 458.2500 3 n15122
+[07/17 16:20:44     54s] <CMD> pan 694.313 -329.354
+[07/17 16:23:12     63s] <CMD> pan 0.680 -8.351
+[07/17 16:23:15     63s] <CMD> setLayerPreference violation -isVisible 1
+[07/17 16:23:16     63s] <CMD> setLayerPreference violation -isVisible 0
+[07/17 16:23:17     63s] <CMD> setLayerPreference allM0 -isVisible 0
+[07/17 16:23:18     63s] <CMD> setLayerPreference allM0 -isVisible 1
+[07/17 16:23:21     63s] <CMD> setLayerPreference M0 -isVisible 1
+[07/17 16:23:21     63s] <CMD> setLayerPreference M0Track -isVisible 1
+[07/17 16:23:21     63s] <CMD> setLayerPreference M0Pin -isVisible 1
+[07/17 16:23:21     63s] <CMD> setLayerPreference M0RB -isVisible 1
+[07/17 16:23:21     63s] <CMD> setLayerPreference M0Vio -isVisible 1
+[07/17 16:23:21     63s] <CMD> setLayerPreference M0Patch -isVisible 1
+[07/17 16:23:57     66s] <CMD> pan -26.707 222.555
+[07/17 16:24:01     67s] <CMD> pan -497.475 -41.893
+[07/17 16:25:10     72s] <CMD> pan -27.169 -4.908
+[07/17 16:25:18     75s] <CMD> pan -654.647 282.807
+[07/17 16:35:30    106s] <CMD> deselectAll
+[07/17 19:25:46    695s] <CMD> pan 4.222 -4.664
+[07/17 19:26:45    701s] <CMD> setLayerPreference block -isVisible 0
+[07/17 19:26:47    701s] <CMD> setLayerPreference coverCell -isVisible 0
+[07/17 19:26:47    701s] <CMD> setLayerPreference phyCell -isVisible 0
+[07/17 19:26:48    701s] <CMD> setLayerPreference io -isVisible 0
+[07/17 19:26:50    701s] <CMD> setLayerPreference areaIo -isVisible 0
+[07/17 19:26:51    701s] <CMD> setLayerPreference blackBox -isVisible 0
+[07/17 19:26:53    702s] <CMD> setLayerPreference hinst -isVisible 0
+[07/17 19:26:53    702s] <CMD> setLayerPreference guide -isVisible 0
+[07/17 19:26:53    702s] <CMD> setLayerPreference fence -isVisible 0
+[07/17 19:26:53    702s] <CMD> setLayerPreference region -isVisible 0
+[07/17 19:26:53    702s] <CMD> setLayerPreference partition -isVisible 0
+[07/17 19:26:53    702s] <CMD> setLayerPreference instanceStatus -isVisible 0
+[07/17 19:26:53    702s] <CMD> setLayerPreference place -isVisible 0
+[07/17 19:26:53    702s] <CMD> setLayerPreference fixed -isVisible 0
+[07/17 19:26:53    702s] <CMD> setLayerPreference cover -isVisible 0
+[07/17 19:26:53    702s] <CMD> setLayerPreference softfix -isVisible 0
+[07/17 19:26:53    702s] <CMD> setLayerPreference unplace -isVisible 0
+[07/17 19:26:55    702s] <CMD> setLayerPreference instanceFunction -isVisible 0
+[07/17 19:26:55    702s] <CMD> setLayerPreference flop -isVisible 0
+[07/17 19:26:55    702s] <CMD> setLayerPreference pwrswt -isVisible 0
+[07/17 19:26:55    702s] <CMD> setLayerPreference isolation -isVisible 0
+[07/17 19:26:55    702s] <CMD> setLayerPreference shift -isVisible 0
+[07/17 19:26:55    702s] <CMD> setLayerPreference funcother -isVisible 0
+[07/17 19:26:56    702s] <CMD> setLayerPreference instanceFunction -isVisible 1
+[07/17 19:26:56    702s] <CMD> setLayerPreference flop -isVisible 1
+[07/17 19:26:56    702s] <CMD> setLayerPreference pwrswt -isVisible 1
+[07/17 19:26:56    702s] <CMD> setLayerPreference isolation -isVisible 1
+[07/17 19:26:56    702s] <CMD> setLayerPreference shift -isVisible 1
+[07/17 19:26:56    702s] <CMD> setLayerPreference funcother -isVisible 1
+[07/17 19:26:57    702s] <CMD> setLayerPreference instanceFunction -isVisible 0
+[07/17 19:26:57    702s] <CMD> setLayerPreference flop -isVisible 0
+[07/17 19:26:57    702s] <CMD> setLayerPreference pwrswt -isVisible 0
+[07/17 19:26:57    702s] <CMD> setLayerPreference isolation -isVisible 0
+[07/17 19:26:57    702s] <CMD> setLayerPreference shift -isVisible 0
+[07/17 19:26:57    702s] <CMD> setLayerPreference funcother -isVisible 0
+[07/17 19:26:58    702s] <CMD> setLayerPreference pinObj -isVisible 1
+[07/17 19:26:58    702s] <CMD> setLayerPreference cellBlkgObj -isVisible 1
+[07/17 19:26:58    702s] <CMD> setLayerPreference layoutObj -isVisible 1
+[07/17 19:26:58    702s] <CMD> setLayerPreference pinObj -isVisible 0
+[07/17 19:26:58    702s] <CMD> setLayerPreference cellBlkgObj -isVisible 0
+[07/17 19:26:58    702s] <CMD> setLayerPreference layoutObj -isVisible 0
+[07/17 19:26:59    702s] <CMD> setLayerPreference obstruct -isVisible 0
+[07/17 19:26:59    702s] <CMD> setLayerPreference screen -isVisible 0
+[07/17 19:26:59    702s] <CMD> setLayerPreference macroOnly -isVisible 0
+[07/17 19:26:59    702s] <CMD> setLayerPreference layerBlk -isVisible 0
+[07/17 19:26:59    702s] <CMD> setLayerPreference fillBlk -isVisible 0
+[07/17 19:26:59    702s] <CMD> setLayerPreference trimBlk -isVisible 0
+[07/17 19:26:59    702s] <CMD> setLayerPreference drcRegion -isVisible 0
+[07/17 19:26:59    702s] <CMD> setLayerPreference blockHalo -isVisible 0
+[07/17 19:26:59    702s] <CMD> setLayerPreference routingHalo -isVisible 0
+[07/17 19:26:59    702s] <CMD> setLayerPreference lithoHalo -isVisible 0
+[07/17 19:26:59    702s] <CMD> setLayerPreference blkLink -isVisible 0
+[07/17 19:27:00    702s] <CMD> setLayerPreference sitePattern -isVisible 1
+[07/17 19:27:00    702s] <CMD> setLayerPreference macroSitePattern -isVisible 1
+[07/17 19:27:01    702s] <CMD> setLayerPreference stdRow -isVisible 0
+[07/17 19:27:01    702s] <CMD> setLayerPreference ioRow -isVisible 0
+[07/17 19:27:01    702s] <CMD> setLayerPreference sitePattern -isVisible 0
+[07/17 19:27:01    702s] <CMD> setLayerPreference macroSitePattern -isVisible 0
+[07/17 19:27:02    702s] <CMD> setLayerPreference overlapMacro -isVisible 1
+[07/17 19:27:02    702s] <CMD> setLayerPreference overlapGuide -isVisible 1
+[07/17 19:27:02    702s] <CMD> setLayerPreference overlapBlk -isVisible 1
+[07/17 19:27:03    703s] <CMD> setLayerPreference relFPlan -isVisible 0
+[07/17 19:27:03    703s] <CMD> setLayerPreference sdpGroup -isVisible 0
+[07/17 19:27:03    703s] <CMD> setLayerPreference sdpConnect -isVisible 0
+[07/17 19:27:03    703s] <CMD> setLayerPreference sizeBlkg -isVisible 0
+[07/17 19:27:03    703s] <CMD> setLayerPreference resizeFPLine1 -isVisible 0
+[07/17 19:27:03    703s] <CMD> setLayerPreference resizeFPLine2 -isVisible 0
+[07/17 19:27:03    703s] <CMD> setLayerPreference congTag -isVisible 0
+[07/17 19:27:03    703s] <CMD> setLayerPreference ioSlot -isVisible 0
+[07/17 19:27:03    703s] <CMD> setLayerPreference overlapMacro -isVisible 0
+[07/17 19:27:03    703s] <CMD> setLayerPreference overlapGuide -isVisible 0
+[07/17 19:27:03    703s] <CMD> setLayerPreference overlapBlk -isVisible 0
+[07/17 19:27:03    703s] <CMD> setLayerPreference datapath -isVisible 0
+[07/17 19:27:03    703s] <CMD> setLayerPreference routeGuide -isVisible 0
+[07/17 19:27:03    703s] <CMD> setLayerPreference ptnPinBlk -isVisible 0
+[07/17 19:27:03    703s] <CMD> setLayerPreference ptnFeed -isVisible 0
+[07/17 19:27:05    703s] <CMD> setLayerPreference netRect -isVisible 1
+[07/17 19:27:05    703s] <CMD> setLayerPreference substrateNoise -isVisible 1
+[07/17 19:27:06    703s] <CMD> setLayerPreference pwrdm -isVisible 0
+[07/17 19:27:06    703s] <CMD> setLayerPreference netRect -isVisible 0
+[07/17 19:27:06    703s] <CMD> setLayerPreference substrateNoise -isVisible 0
+[07/17 19:27:06    703s] <CMD> setLayerPreference powerNet -isVisible 0
+[07/17 19:27:07    703s] <CMD> setLayerPreference net -isVisible 0
+[07/17 19:27:07    703s] <CMD> setLayerPreference power -isVisible 0
+[07/17 19:27:07    703s] <CMD> setLayerPreference pgPower -isVisible 0
+[07/17 19:27:07    703s] <CMD> setLayerPreference pgGround -isVisible 0
+[07/17 19:27:07    703s] <CMD> setLayerPreference clock -isVisible 0
+[07/17 19:27:09    703s] <CMD> setLayerPreference net -isVisible 1
+[07/17 19:27:09    703s] <CMD> setLayerPreference power -isVisible 1
+[07/17 19:27:09    703s] <CMD> setLayerPreference pgPower -isVisible 1
+[07/17 19:27:09    703s] <CMD> setLayerPreference pgGround -isVisible 1
+[07/17 19:27:09    703s] <CMD> setLayerPreference clock -isVisible 1
+[07/17 19:27:12    703s] <CMD> setLayerPreference shield -isVisible 0
+[07/17 19:27:12    703s] <CMD> setLayerPreference unknowState -isVisible 0
+[07/17 19:27:12    703s] <CMD> setLayerPreference metalFill -isVisible 0
+[07/17 19:27:12    703s] <CMD> setLayerPreference wire -isVisible 0
+[07/17 19:27:12    703s] <CMD> setLayerPreference via -isVisible 0
+[07/17 19:27:12    703s] <CMD> setLayerPreference patch -isVisible 0
+[07/17 19:27:12    703s] <CMD> setLayerPreference trim -isVisible 0
+[07/17 19:27:13    704s] <CMD> setLayerPreference shield -isVisible 1
+[07/17 19:27:13    704s] <CMD> setLayerPreference unknowState -isVisible 1
+[07/17 19:27:13    704s] <CMD> setLayerPreference metalFill -isVisible 1
+[07/17 19:27:13    704s] <CMD> setLayerPreference wire -isVisible 1
+[07/17 19:27:13    704s] <CMD> setLayerPreference via -isVisible 1
+[07/17 19:27:13    704s] <CMD> setLayerPreference patch -isVisible 1
+[07/17 19:27:13    704s] <CMD> setLayerPreference trim -isVisible 1
+[07/17 19:27:16    704s] <CMD> setLayerPreference allM0 -isVisible 0
+[07/17 19:27:16    704s] <CMD> setLayerPreference allM1Cont -isVisible 0
+[07/17 19:27:16    704s] <CMD> setLayerPreference allM1 -isVisible 0
+[07/17 19:27:16    704s] <CMD> setLayerPreference allM2Cont -isVisible 0
+[07/17 19:27:16    704s] <CMD> setLayerPreference allM2 -isVisible 0
+[07/17 19:27:16    704s] <CMD> setLayerPreference allM3Cont -isVisible 0
+[07/17 19:27:16    704s] <CMD> setLayerPreference allM3 -isVisible 0
+[07/17 19:27:17    704s] <CMD> setLayerPreference allM0 -isVisible 1
+[07/17 19:27:17    704s] <CMD> setLayerPreference allM1Cont -isVisible 1
+[07/17 19:27:17    704s] <CMD> setLayerPreference allM1 -isVisible 1
+[07/17 19:27:17    704s] <CMD> setLayerPreference allM2Cont -isVisible 1
+[07/17 19:27:17    704s] <CMD> setLayerPreference allM2 -isVisible 1
+[07/17 19:27:17    704s] <CMD> setLayerPreference allM3Cont -isVisible 1
+[07/17 19:27:17    704s] <CMD> setLayerPreference allM3 -isVisible 1
+[07/17 19:27:18    704s] <CMD> setLayerPreference allM1Cont -isVisible 0
+[07/17 19:27:19    704s] <CMD> setLayerPreference allM1 -isVisible 0
+[07/17 19:27:20    704s] <CMD> setLayerPreference allM2Cont -isVisible 0
+[07/17 19:27:22    704s] <CMD> setLayerPreference allM2 -isVisible 0
+[07/17 19:27:23    704s] <CMD> setLayerPreference allM3Cont -isVisible 0
+[07/17 19:27:24    704s] <CMD> setLayerPreference allM3 -isVisible 0
+[07/17 19:27:26    705s] <CMD> pan -228.094 -190.483
+[07/17 19:27:28    705s] <CMD> pan -1388.136 -1010.982
+[07/17 19:27:32    706s] <CMD> setLayerPreference trackObj -isVisible 1
+[07/17 19:27:32    706s] <CMD> setLayerPreference nonPrefTrackObj -isVisible 1
+[07/17 19:27:33    706s] <CMD> setLayerPreference densityMap -isVisible 1
+[07/17 19:27:33    706s] <CMD> setLayerPreference pinDensityMap -isVisible 1
+[07/17 19:27:33    706s] <CMD> setLayerPreference timingMap -isVisible 1
+[07/17 19:27:33    706s] <CMD> setLayerPreference metalDensityMap -isVisible 1
+[07/17 19:27:33    706s] <CMD> setLayerPreference powerDensity -isVisible 1
+[07/17 19:27:33    706s] <CMD> setLayerPreference groupmain_Congestion -isVisible 1
+[07/17 19:27:33    706s] <CMD> ::fit main.layout.win
+[07/17 19:27:34    706s] <CMD> setLayerPreference densityMap -isVisible 0
+[07/17 19:27:34    706s] <CMD> setLayerPreference pinDensityMap -isVisible 0
+[07/17 19:27:34    706s] <CMD> setLayerPreference timingMap -isVisible 0
+[07/17 19:27:34    706s] <CMD> setLayerPreference metalDensityMap -isVisible 0
+[07/17 19:27:34    706s] <CMD> setLayerPreference powerDensity -isVisible 0
+[07/17 19:27:34    706s] <CMD> setLayerPreference groupmain_Congestion -isVisible 0
+[07/17 19:27:35    706s] <CMD> setLayerPreference pwrdm -isVisible 1
+[07/17 19:27:35    706s] <CMD> setLayerPreference netRect -isVisible 1
+[07/17 19:27:35    706s] <CMD> setLayerPreference substrateNoise -isVisible 1
+[07/17 19:27:35    706s] <CMD> setLayerPreference powerNet -isVisible 1
+[07/17 19:27:36    706s] <CMD> setLayerPreference routeGuide -isVisible 1
+[07/17 19:27:36    706s] <CMD> setLayerPreference ptnPinBlk -isVisible 1
+[07/17 19:27:36    706s] <CMD> setLayerPreference ptnFeed -isVisible 1
+[07/17 19:27:37    706s] <CMD> setLayerPreference relFPlan -isVisible 1
+[07/17 19:27:37    706s] <CMD> setLayerPreference sdpGroup -isVisible 1
+[07/17 19:27:37    706s] <CMD> setLayerPreference sdpConnect -isVisible 1
+[07/17 19:27:37    706s] <CMD> setLayerPreference sizeBlkg -isVisible 1
+[07/17 19:27:37    706s] <CMD> setLayerPreference resizeFPLine1 -isVisible 1
+[07/17 19:27:37    706s] <CMD> setLayerPreference resizeFPLine2 -isVisible 1
+[07/17 19:27:37    706s] <CMD> setLayerPreference congTag -isVisible 1
+[07/17 19:27:37    706s] <CMD> setLayerPreference ioSlot -isVisible 1
+[07/17 19:27:37    706s] <CMD> setLayerPreference overlapMacro -isVisible 1
+[07/17 19:27:37    706s] <CMD> setLayerPreference overlapGuide -isVisible 1
+[07/17 19:27:37    706s] <CMD> setLayerPreference overlapBlk -isVisible 1
+[07/17 19:27:37    706s] <CMD> setLayerPreference datapath -isVisible 1
+[07/17 19:27:38    706s] <CMD> setLayerPreference stdRow -isVisible 1
+[07/17 19:27:38    706s] <CMD> setLayerPreference ioRow -isVisible 1
+[07/17 19:27:38    706s] <CMD> setLayerPreference sitePattern -isVisible 1
+[07/17 19:27:38    706s] <CMD> setLayerPreference macroSitePattern -isVisible 1
+[07/17 19:27:41    707s] <CMD> setLayerPreference obstruct -isVisible 1
+[07/17 19:27:41    707s] <CMD> setLayerPreference screen -isVisible 1
+[07/17 19:27:41    707s] <CMD> setLayerPreference macroOnly -isVisible 1
+[07/17 19:27:41    707s] <CMD> setLayerPreference layerBlk -isVisible 1
+[07/17 19:27:41    707s] <CMD> setLayerPreference fillBlk -isVisible 1
+[07/17 19:27:41    707s] <CMD> setLayerPreference trimBlk -isVisible 1
+[07/17 19:27:41    707s] <CMD> setLayerPreference drcRegion -isVisible 1
+[07/17 19:27:41    707s] <CMD> setLayerPreference blockHalo -isVisible 1
+[07/17 19:27:41    707s] <CMD> setLayerPreference routingHalo -isVisible 1
+[07/17 19:27:41    707s] <CMD> setLayerPreference lithoHalo -isVisible 1
+[07/17 19:27:41    707s] <CMD> setLayerPreference blkLink -isVisible 1
+[07/17 19:27:42    707s] <CMD> setLayerPreference pinObj -isVisible 1
+[07/17 19:27:42    707s] <CMD> setLayerPreference cellBlkgObj -isVisible 1
+[07/17 19:27:42    707s] <CMD> setLayerPreference layoutObj -isVisible 1
+[07/17 19:27:43    707s] <CMD> setLayerPreference hinst -isVisible 1
+[07/17 19:27:43    707s] <CMD> setLayerPreference guide -isVisible 1
+[07/17 19:27:43    707s] <CMD> setLayerPreference fence -isVisible 1
+[07/17 19:27:43    707s] <CMD> setLayerPreference region -isVisible 1
+[07/17 19:27:43    707s] <CMD> setLayerPreference partition -isVisible 1
+[07/17 19:27:43    707s] <CMD> setLayerPreference instanceStatus -isVisible 1
+[07/17 19:27:43    707s] <CMD> setLayerPreference place -isVisible 1
+[07/17 19:27:43    707s] <CMD> setLayerPreference fixed -isVisible 1
+[07/17 19:27:43    707s] <CMD> setLayerPreference cover -isVisible 1
+[07/17 19:27:43    707s] <CMD> setLayerPreference softfix -isVisible 1
+[07/17 19:27:43    707s] <CMD> setLayerPreference unplace -isVisible 1
+[07/17 19:27:44    707s] <CMD> setLayerPreference instanceFunction -isVisible 1
+[07/17 19:27:44    707s] <CMD> setLayerPreference flop -isVisible 1
+[07/17 19:27:44    707s] <CMD> setLayerPreference pwrswt -isVisible 1
+[07/17 19:27:44    707s] <CMD> setLayerPreference isolation -isVisible 1
+[07/17 19:27:44    707s] <CMD> setLayerPreference shift -isVisible 1
+[07/17 19:27:44    707s] <CMD> setLayerPreference funcother -isVisible 1
+[07/17 19:27:50    708s] <CMD> selectInst U16963
+[07/17 19:27:50    708s] Set RLRP Inst: U16963
+[07/17 19:27:50    708s] Set RLRP Inst: U16963
+[07/17 19:27:53    708s] Set RLRP Inst: U16963
+[07/17 19:27:53    708s] Set RLRP Inst: U16963
+[07/17 19:27:54    708s] Set RLRP Inst: U16963
+[07/17 19:27:54    708s] Set RLRP Inst: U16963
+[07/17 19:27:54    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    708s] Set RLRP Inst: U16963
+[07/17 19:27:55    709s] Set RLRP Inst: U16963
+[07/17 19:27:55    709s] Set RLRP Inst: U16963
+[07/17 19:27:55    709s] Set RLRP Inst: U16963
+[07/17 19:27:55    709s] <CMD> pan -2.988 -3.129
+[07/17 19:27:55    709s] Set RLRP Inst: U16963
+[07/17 19:27:56    709s] Set RLRP Inst: U16963
+[07/17 19:27:56    709s] Set RLRP Inst: U16963
+[07/17 19:27:57    709s] Set RLRP Inst: U16963
+[07/17 19:27:59    709s] <CMD> setLayerPreference allM1Cont -isVisible 1
+[07/17 19:27:59    709s] Set RLRP Inst: U16963
+[07/17 19:28:00    709s] <CMD> setLayerPreference allM1 -isVisible 1
+[07/17 19:28:00    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:04    709s] Set RLRP Inst: U16963
+[07/17 19:28:05    709s] Set RLRP Inst: U16963
+[07/17 19:28:05    709s] Set RLRP Inst: U16963
+[07/17 19:28:05    709s] <CMD> pan 0.872 11.401
+[07/17 19:28:05    709s] Set RLRP Inst: U16963
+[07/17 19:28:08    709s] <CMD> setLayerPreference allM2Cont -isVisible 1
+[07/17 19:28:08    709s] Set RLRP Inst: U16963
+[07/17 19:28:09    710s] <CMD> setLayerPreference allM2 -isVisible 1
+[07/17 19:28:09    710s] Set RLRP Inst: U16963
+[07/17 19:28:11    710s] Set RLRP Inst: U16963
+[07/17 19:28:11    710s] Set RLRP Inst: U16963
+[07/17 19:28:11    710s] Set RLRP Inst: U16963
+[07/17 19:28:12    710s] Set RLRP Inst: U16963
+[07/17 19:28:12    710s] Set RLRP Inst: U16963
+[07/17 19:28:12    710s] Set RLRP Inst: U16963
+[07/17 19:28:12    710s] Set RLRP Inst: U16963
+[07/17 19:28:12    710s] Set RLRP Inst: U16963
+[07/17 19:28:12    710s] Set RLRP Inst: U16963
+[07/17 19:28:12    710s] Set RLRP Inst: U16963
+[07/17 19:28:12    710s] Set RLRP Inst: U16963
+[07/17 19:28:12    710s] Set RLRP Inst: U16963
+[07/17 19:28:12    710s] Set RLRP Inst: U16963
+[07/17 19:28:12    710s] Set RLRP Inst: U16963
+[07/17 19:28:12    710s] Set RLRP Inst: U16963
+[07/17 19:28:13    710s] Set RLRP Inst: U16963
+[07/17 19:28:13    710s] Set RLRP Inst: U16963
+[07/17 19:28:13    710s] Set RLRP Inst: U16963
+[07/17 19:28:13    710s] Set RLRP Inst: U16963
+[07/17 19:28:13    710s] Set RLRP Inst: U16963
+[07/17 19:28:13    710s] Set RLRP Inst: U16963
+[07/17 19:28:13    710s] Set RLRP Inst: U16963
+[07/17 19:28:13    710s] Set RLRP Inst: U16963
+[07/17 19:28:13    710s] Set RLRP Inst: U16963
+[07/17 19:28:13    710s] Set RLRP Inst: U16963
+[07/17 19:28:13    710s] <CMD> pan 0.724 -0.441
+[07/17 19:28:13    710s] Set RLRP Inst: U16963
+[07/17 19:28:13    710s] Set RLRP Inst: U16963
+[07/17 19:28:13    710s] Set RLRP Inst: U16963
+[07/17 19:28:14    710s] Set RLRP Inst: U16963
+[07/17 19:28:14    710s] Set RLRP Inst: U16963
+[07/17 19:28:15    710s] <CMD> setLayerPreference allM3Cont -isVisible 1
+[07/17 19:28:15    710s] Set RLRP Inst: U16963
+[07/17 19:28:17    710s] <CMD> setLayerPreference allM3Cont -isVisible 0
+[07/17 19:28:17    710s] Set RLRP Inst: U16963
+[07/17 19:28:19    710s] <CMD> setLayerPreference allM2Cont -isVisible 0
+[07/17 19:28:19    710s] Set RLRP Inst: U16963
+[07/17 19:28:19    710s] <CMD> setLayerPreference allM2Cont -isVisible 1
+[07/17 19:28:19    710s] Set RLRP Inst: U16963
+[07/17 19:28:21    710s] <CMD> setLayerPreference allM3 -isVisible 1
+[07/17 19:28:21    710s] Set RLRP Inst: U16963
+[07/17 19:28:22    710s] <CMD> setLayerPreference allM3Cont -isVisible 1
+[07/17 19:28:22    710s] Set RLRP Inst: U16963
+[07/17 19:28:27    711s] <CMD> setLayerPreference allM3 -isVisible 0
+[07/17 19:28:27    711s] Set RLRP Inst: U16963
+[07/17 19:28:30    711s] <CMD> setLayerPreference allM2 -isVisible 0
+[07/17 19:28:30    711s] Set RLRP Inst: U16963
+[07/17 19:28:33    711s] <CMD> setLayerPreference allM1 -isVisible 0
+[07/17 19:28:33    711s] Set RLRP Inst: U16963
+[07/17 19:28:35    711s] <CMD> setLayerPreference allM2Cont -isVisible 0
+[07/17 19:28:35    711s] Set RLRP Inst: U16963
+[07/17 19:28:37    711s] <CMD> setLayerPreference allM1 -isVisible 1
+[07/17 19:28:37    711s] Set RLRP Inst: U16963
+[07/17 19:28:38    711s] Set RLRP Inst: U16963
+[07/17 19:28:39    711s] Set RLRP Inst: U16963
+[07/17 19:28:39    711s] Set RLRP Inst: U16963
+[07/17 19:28:44    712s] Set RLRP Inst: U16963
+[07/17 19:28:45    712s] Set RLRP Inst: U16963
+[07/17 19:28:46    712s] Set RLRP Inst: U16963
+[07/17 19:28:48    712s] Set RLRP Inst: U16963
+[07/17 19:28:49    712s] Set RLRP Inst: U16963
+[07/17 19:28:49    712s] Set RLRP Inst: U16963
+[07/17 19:28:49    712s] Set RLRP Inst: U16963
+[07/17 19:28:49    712s] Set RLRP Inst: U16963
+[07/17 19:28:49    712s] Set RLRP Inst: U16963
+[07/17 19:28:49    712s] Set RLRP Inst: U16963
+[07/17 19:28:49    712s] Set RLRP Inst: U16963
+[07/17 19:28:49    712s] <CMD> pan 0.238 3.216
+[07/17 19:28:49    712s] Set RLRP Inst: U16963
+[07/17 19:28:49    712s] Set RLRP Inst: U16963
+[07/17 19:28:51    712s] <CMD> deselectAll
+[07/17 19:28:51    712s] <CMD> selectInst FE_PHC420_rf_4_23
+[07/17 19:28:51    712s] Set RLRP Inst: FE_PHC420_rf_4_23
+[07/17 19:28:51    712s] Set RLRP Inst: FE_PHC420_rf_4_23
+[07/17 19:28:57    713s] <CMD> deselectAll
+[07/17 19:28:57    713s] <CMD> selectInst U16963
+[07/17 19:28:57    713s] Set RLRP Inst: U16963
+[07/17 19:28:57    713s] Set RLRP Inst: U16963
+[07/18 12:50:16   4368s] 
+[07/18 12:50:16   4368s] *** Memory Usage v#1 (Current mem = 1222.348M, initial mem = 183.406M) ***
+[07/18 12:50:16   4368s] 
+[07/18 12:50:16   4368s] *** Summary of all messages that are not suppressed in this session:
+[07/18 12:50:16   4368s] Severity  ID               Count  Summary                                  
+[07/18 12:50:16   4368s] WARNING   IMPLF-108            1  There is no overlap layer defined in any...
+[07/18 12:50:16   4368s] WARNING   IMPFP-710            1  File version %s is too old.              
+[07/18 12:50:16   4368s] WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+[07/18 12:50:16   4368s] WARNING   IMPTS-124            2  Timing library description of pin '%s' i...
+[07/18 12:50:16   4368s] WARNING   IMPEXT-2766          3  The sheet resistance for layer %s is not...
+[07/18 12:50:16   4368s] WARNING   IMPEXT-2773          3  The via resistance between layers %s and...
+[07/18 12:50:16   4368s] WARNING   IMPCK-8086           4  The command %s is obsolete and will be r...
+[07/18 12:50:16   4368s] WARNING   IMPVL-159           68  Pin '%s' of cell '%s' is defined in LEF ...
+[07/18 12:50:16   4368s] WARNING   IMPPP-556            2  A SAMENET rule between different layers ...
+[07/18 12:50:16   4368s] WARNING   IMPPP-557            3  A single-layer VIARULE GENERATE for turn...
+[07/18 12:50:16   4368s] WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+[07/18 12:50:16   4368s] WARNING   GLOBAL-100           2  Global '%s' has become obsolete. It will...
+[07/18 12:50:16   4368s] WARNING   TECHLIB-436         20  Attribute '%s' on '%s' pin '%s' of cell ...
+[07/18 12:50:16   4368s] *** Message Summary: 112 warning(s), 0 error(s)
+[07/18 12:50:16   4368s] 
+[07/18 12:50:16   4368s] --- Ending "Innovus" (totcpu=1:12:49, real=20:42:14, mem=1222.3M) ---

@@ -67,24 +67,24 @@ Presto compilation completed successfully.
 Elaborated 1 design.
 Current design is now 'riscv'.
 Information: Building the design 'datapath'. (HDL-193)
-Warning:  ./hdl/top.v:379: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:382: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:385: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:387: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:388: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:389: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:404: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:408: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:409: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:410: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:411: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:423: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:436: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:439: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:440: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1301: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1304: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1307: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1309: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1310: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1311: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1326: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1330: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1331: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1332: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1333: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1345: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1359: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1362: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1363: signed to unsigned assignment occurs. (VER-318)
 
 Inferred memory devices in process
-	in routine datapath line 478 in file
+	in routine datapath line 1401 in file
 		'./hdl/top.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -97,7 +97,7 @@ Presto compilation completed successfully.
 Information: Building the design 'regfile'. (HDL-193)
 
 Inferred memory devices in process
-	in routine regfile line 80 in file
+	in routine regfile line 275 in file
 		'./hdl/top.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -108,50 +108,46 @@ Statistics for MUX_OPs
 ======================================================
 | block name/line  | Inputs | Outputs | # sel inputs |
 ======================================================
-|    regfile/31    |   32   |   32    |      5       |
-|    regfile/33    |   32   |   32    |      5       |
+|   regfile/129    |   32   |   32    |      5       |
+|   regfile/131    |   32   |   32    |      5       |
 ======================================================
 Presto compilation completed successfully.
 Information: Building the design 'alu'. (HDL-193)
-Warning:  ./hdl/top.v:148: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:149: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:151: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:152: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:154: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:155: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:156: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:160: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:162: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:167: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:169: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:170: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:173: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:176: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:178: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:180: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:181: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:182: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:183: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:184: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:185: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:186: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:187: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:188: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:189: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:190: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:191: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:192: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:193: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:194: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:196: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1074: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1075: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1077: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1078: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1080: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1081: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1082: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1086: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1088: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1093: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1095: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1096: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1100: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1102: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1103: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1104: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1105: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1106: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1107: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1108: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1109: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1110: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1111: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1112: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1113: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1114: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1116: signed to unsigned assignment occurs. (VER-318)
 Presto compilation completed successfully.
 Information: Building the design 'extend'. (HDL-193)
-Warning:  ./hdl/top.v:219: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:222: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:225: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:226: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:227: signed to unsigned assignment occurs. (VER-318)
-Warning:  ./hdl/top.v:228: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1139: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1142: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1145: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1146: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1147: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./hdl/top.v:1148: signed to unsigned assignment occurs. (VER-318)
 Presto compilation completed successfully.
 1
 # Set the current_design 
@@ -273,9 +269,6 @@ Information: State dependent leakage is now switched from on to off.
   Processing 'riscv'
 Information: Added key list 'DesignWare' to design 'riscv'. (DDB-72)
  Implement Synthetic for 'riscv'.
-  Processing 'riscv_DW_div_tc_J1_0'
-  Processing 'riscv_DW01_absval_J1_0'
-  Processing 'riscv_DW01_inc_J1_0'
 
   Updating timing information
 Information: Updating design information... (UID-85)
@@ -319,259 +312,10 @@ Information: The register 'rf_reg[0][31]' is a constant and will be removed. (OP
 
   Beginning Mapping Optimizations  (Ultra High effort)
   -------------------------------
-  Building model 'DW01_NAND2'
-  Building model 'DW01_absval_width33' (cla)
-  Building model 'DW01_absval_width33' (cla)
-  Structuring 'riscv_DW_div_tc_0'
-  Mapping 'riscv_DW_div_tc_0'
-  Structuring 'riscv_DW01_absval_0'
-  Mapping 'riscv_DW01_absval_0'
-  Structuring 'riscv_DW01_inc_0'
-  Mapping 'riscv_DW01_inc_0'
-  Mapping 'DW01_add'
-  Mapping 'DW01_add'
-  Mapping 'DW01_add'
-  Mapping 'DW01_add'
-  Mapping 'riscv_DW01_add_50'
-  Mapping 'riscv_DW01_add_51'
-  Mapping 'riscv_DW01_add_52'
-  Mapping 'riscv_DW01_add_53'
-  Mapping 'riscv_DW01_add_54'
-  Mapping 'riscv_DW01_add_55'
-  Mapping 'riscv_DW01_add_56'
-  Mapping 'riscv_DW01_add_57'
-  Mapping 'riscv_DW01_add_58'
-  Mapping 'riscv_DW01_add_59'
-  Mapping 'riscv_DW01_add_60'
-  Mapping 'riscv_DW01_add_61'
-  Mapping 'riscv_DW01_add_62'
-  Mapping 'riscv_DW01_add_63'
-  Mapping 'riscv_DW01_add_64'
-  Mapping 'riscv_DW01_add_65'
-  Mapping 'riscv_DW01_add_66'
-  Mapping 'riscv_DW01_add_67'
-  Mapping 'riscv_DW01_add_68'
-  Mapping 'riscv_DW01_add_69'
-  Mapping 'riscv_DW01_add_70'
-  Mapping 'riscv_DW01_add_71'
-  Mapping 'riscv_DW01_add_72'
-  Mapping 'riscv_DW01_add_73'
-  Mapping 'riscv_DW01_add_74'
-  Mapping 'riscv_DW01_add_75'
-  Mapping 'riscv_DW01_add_76'
-  Mapping 'riscv_DW01_add_77'
-  Mapping 'riscv_DW_inc_0'
-  Building model 'DW01_absval_width33' (cla)
-  Building model 'DW01_absval_width33' (cla)
-  Structuring 'riscv_DW_div_tc_1'
-  Mapping 'riscv_DW_div_tc_1'
-  Structuring 'riscv_DW01_absval_1'
-  Mapping 'riscv_DW01_absval_1'
-  Structuring 'riscv_DW01_inc_1'
-  Mapping 'riscv_DW01_inc_1'
-  Mapping 'riscv_DW01_add_78'
-  Mapping 'DW01_add'
-  Mapping 'DW01_add'
-  Mapping 'DW01_add'
-  Mapping 'DW01_add'
-  Mapping 'DW01_add'
-  Mapping 'DW01_add'
-  Mapping 'riscv_DW01_add_79'
-  Mapping 'riscv_DW01_add_80'
-  Mapping 'riscv_DW01_add_81'
-  Mapping 'riscv_DW01_add_82'
-  Mapping 'riscv_DW01_add_83'
-  Mapping 'riscv_DW01_add_84'
-  Mapping 'riscv_DW01_add_85'
-  Mapping 'riscv_DW01_add_86'
-  Mapping 'riscv_DW01_add_87'
-  Mapping 'riscv_DW01_add_88'
-  Mapping 'riscv_DW01_add_89'
-  Mapping 'riscv_DW01_add_90'
-  Mapping 'riscv_DW01_add_91'
-  Mapping 'riscv_DW01_add_92'
-  Mapping 'riscv_DW01_add_93'
-  Mapping 'riscv_DW01_add_94'
-  Mapping 'riscv_DW01_add_95'
-  Mapping 'riscv_DW01_add_96'
-  Mapping 'riscv_DW01_add_97'
-  Mapping 'riscv_DW01_add_98'
-  Mapping 'riscv_DW01_add_99'
-  Mapping 'riscv_DW01_add_100'
-  Mapping 'riscv_DW01_add_101'
-  Mapping 'riscv_DW01_add_102'
-  Mapping 'riscv_DW01_add_103'
-  Mapping 'riscv_DW01_add_104'
-  Mapping 'riscv_DW01_add_105'
-  Mapping 'riscv_DW01_add_106'
-  Mapping 'riscv_DW01_add_107'
-  Mapping 'riscv_DW01_add_108'
-  Mapping 'riscv_DW01_add_109'
-  Mapping 'riscv_DW01_add_110'
-  Mapping 'riscv_DW01_add_111'
-  Mapping 'riscv_DW01_add_112'
-  Mapping 'riscv_DW01_add_113'
-  Mapping 'riscv_DW01_add_114'
-  Mapping 'riscv_DW01_add_115'
-  Mapping 'riscv_DW01_add_116'
-  Mapping 'riscv_DW01_add_117'
-  Mapping 'riscv_DW01_add_118'
-  Mapping 'riscv_DW01_add_119'
-  Mapping 'riscv_DW01_add_120'
-  Mapping 'riscv_DW_inc_2'
-  Building model 'DW01_absval_width33' (cla)
-  Building model 'DW01_absval_width33' (cla)
-  Structuring 'riscv_DW_div_tc_2'
-  Mapping 'riscv_DW_div_tc_2'
-  Structuring 'riscv_DW01_absval_2'
-  Mapping 'riscv_DW01_absval_2'
-  Structuring 'riscv_DW01_inc_2'
-  Mapping 'riscv_DW01_inc_2'
-  Mapping 'riscv_DW01_add_121'
-  Mapping 'riscv_DW01_add_122'
-  Mapping 'riscv_DW01_add_123'
-  Mapping 'riscv_DW01_sub_0'
-  Mapping 'riscv_DW01_add_124'
-  Mapping 'riscv_DW01_add_125'
-  Mapping 'riscv_DW01_add_126'
-  Mapping 'riscv_DW01_add_127'
-  Mapping 'riscv_DW01_add_128'
-  Mapping 'riscv_DW01_add_129'
-  Mapping 'riscv_DW01_add_130'
-  Mapping 'riscv_DW01_add_131'
-  Mapping 'riscv_DW01_add_132'
-  Mapping 'riscv_DW01_add_133'
-  Mapping 'riscv_DW01_add_134'
-  Mapping 'riscv_DW01_add_135'
-  Mapping 'riscv_DW01_add_136'
-  Mapping 'riscv_DW01_add_137'
-  Mapping 'riscv_DW01_add_138'
-  Mapping 'riscv_DW01_add_139'
-  Mapping 'riscv_DW01_add_140'
-  Mapping 'riscv_DW01_add_141'
-  Mapping 'riscv_DW01_add_142'
-  Mapping 'riscv_DW01_add_143'
-  Mapping 'riscv_DW01_add_144'
-  Mapping 'riscv_DW01_add_145'
-  Mapping 'riscv_DW01_add_146'
-  Mapping 'riscv_DW01_add_147'
-  Mapping 'riscv_DW01_add_148'
-  Mapping 'riscv_DW01_add_149'
-  Mapping 'riscv_DW01_add_150'
-  Mapping 'riscv_DW01_add_151'
-  Mapping 'riscv_DW01_add_152'
-  Mapping 'riscv_DW01_add_153'
-  Mapping 'riscv_DW01_add_154'
-  Mapping 'riscv_DW01_add_155'
-  Mapping 'riscv_DW01_add_156'
-  Mapping 'riscv_DW01_add_157'
-  Mapping 'riscv_DW01_add_158'
-  Mapping 'riscv_DW01_add_159'
-  Mapping 'riscv_DW01_add_160'
-  Mapping 'riscv_DW01_add_161'
-  Mapping 'riscv_DW01_add_162'
-  Mapping 'riscv_DW01_add_163'
-  Mapping 'riscv_DW01_add_164'
-  Mapping 'riscv_DW01_add_165'
-  Mapping 'riscv_DW01_add_166'
-  Mapping 'riscv_DW01_add_167'
-  Mapping 'riscv_DW01_add_168'
-  Mapping 'riscv_DW01_add_169'
-  Mapping 'riscv_DW01_add_170'
-  Mapping 'riscv_DW01_add_171'
-  Mapping 'riscv_DW01_add_172'
-  Mapping 'riscv_DW01_add_173'
-  Mapping 'riscv_DW01_add_174'
-  Mapping 'riscv_DW01_add_175'
-  Mapping 'riscv_DW01_add_176'
-  Mapping 'riscv_DW01_add_177'
-  Mapping 'riscv_DW01_add_178'
-  Mapping 'riscv_DW01_add_179'
-  Mapping 'riscv_DW01_add_180'
-  Mapping 'riscv_DW01_add_181'
-  Mapping 'riscv_DW01_add_182'
-  Mapping 'riscv_DW01_add_183'
-  Mapping 'riscv_DW01_add_184'
-  Mapping 'riscv_DW01_add_185'
-  Mapping 'riscv_DW01_add_186'
-  Mapping 'riscv_DW01_add_187'
-  Mapping 'riscv_DW01_add_188'
-  Mapping 'riscv_DW01_add_189'
-  Mapping 'riscv_DW01_add_190'
-  Mapping 'riscv_DW01_add_191'
-  Mapping 'riscv_DW01_add_192'
-  Mapping 'riscv_DW01_add_193'
-  Mapping 'riscv_DW01_add_194'
-  Mapping 'riscv_DW01_add_195'
-  Mapping 'riscv_DW01_add_196'
-  Mapping 'riscv_DW01_add_197'
-  Mapping 'riscv_DW01_add_198'
-  Mapping 'riscv_DW01_add_199'
-  Mapping 'riscv_DW01_add_200'
-  Mapping 'riscv_DW_inc_4'
-  Building model 'DW01_absval_width33' (cla)
-  Building model 'DW01_absval_width33' (cla)
-  Structuring 'riscv_DW_div_tc_3'
-  Mapping 'riscv_DW_div_tc_3'
-  Structuring 'riscv_DW01_absval_3'
-  Mapping 'riscv_DW01_absval_3'
-  Structuring 'riscv_DW01_inc_3'
-  Mapping 'riscv_DW01_inc_3'
-  Mapping 'riscv_DW01_add_201'
-  Mapping 'DW01_add'
-  Mapping 'DW01_add'
-  Mapping 'DW01_add'
-  Mapping 'DW01_add'
-  Mapping 'DW01_add'
-  Mapping 'DW01_add'
-  Mapping 'riscv_DW01_add_202'
-  Mapping 'riscv_DW01_add_203'
-  Mapping 'riscv_DW01_add_204'
-  Mapping 'riscv_DW01_add_205'
-  Mapping 'riscv_DW01_add_206'
-  Mapping 'riscv_DW01_add_207'
-  Mapping 'riscv_DW01_add_208'
-  Mapping 'riscv_DW01_add_209'
-  Mapping 'riscv_DW01_add_210'
-  Mapping 'riscv_DW01_add_211'
-  Mapping 'riscv_DW01_add_212'
-  Mapping 'riscv_DW01_add_213'
-  Mapping 'riscv_DW01_add_214'
-  Mapping 'riscv_DW01_add_215'
-  Mapping 'riscv_DW01_add_216'
-  Mapping 'riscv_DW01_add_217'
-  Mapping 'riscv_DW01_add_218'
-  Mapping 'riscv_DW01_add_219'
-  Mapping 'riscv_DW01_add_220'
-  Mapping 'riscv_DW01_add_221'
-  Mapping 'riscv_DW01_add_222'
-  Mapping 'riscv_DW01_add_223'
-  Mapping 'riscv_DW01_add_224'
-  Mapping 'riscv_DW01_add_225'
-  Mapping 'riscv_DW01_add_226'
-  Mapping 'riscv_DW01_add_227'
-  Mapping 'riscv_DW01_add_228'
-  Mapping 'riscv_DW01_add_229'
-  Mapping 'riscv_DW01_add_230'
-  Mapping 'riscv_DW01_add_231'
-  Mapping 'riscv_DW01_add_232'
-  Mapping 'riscv_DW01_add_233'
-  Mapping 'riscv_DW01_add_234'
-  Mapping 'riscv_DW01_add_235'
-  Mapping 'riscv_DW01_add_236'
-  Mapping 'riscv_DW01_add_237'
-  Mapping 'riscv_DW01_add_238'
-  Mapping 'riscv_DW01_add_239'
-  Mapping 'riscv_DW01_add_240'
-  Mapping 'riscv_DW01_add_241'
-  Mapping 'riscv_DW01_add_242'
-  Mapping 'riscv_DW01_add_243'
-  Mapping 'riscv_DW_inc_6'
-  Mapping 'riscv_DW_div_tc_3'
-  Mapping Optimization (Phase 1)
 
   Beginning Constant Register Removal
   -----------------------------------
+Information: The register 'pcReg_reg[0]' is a constant and will be removed. (OPT-1206)
 
   Beginning Global Optimizations
   ------------------------------
@@ -607,7 +351,6 @@ Information: The register 'rf_reg[0][31]' is a constant and will be removed. (OP
   Global Optimization (Phase 28)
   Global Optimization (Phase 29)
   Global Optimization (Phase 30)
-  Mapping 'riscv_DP_OP_258J1_122_7128_0'
 Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
 Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
 Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
@@ -623,37 +366,48 @@ Information: Input delay ('rise') on clock port 'clock' will be added to the clo
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:02:47   31514.6      0.00       0.0       0.0                           12735.3369      0.00  
-    0:02:47   31514.6      0.00       0.0       0.0                           12735.3369      0.00  
-    0:02:47   31514.6      0.00       0.0       0.0                           12735.3369      0.00  
-    0:02:47   31495.6      0.00       0.0       0.0                           12720.2197      0.00  
-Information: The register 'pcReg_reg[0]' is a constant and will be removed. (OPT-1206)
+    0:00:24   13789.6      0.00       0.0       0.2                           4893.7393      0.00  
+    0:00:24   13789.6      0.00       0.0       0.2                           4893.7393      0.00  
+    0:00:24   13789.6      0.00       0.0       0.2                           4893.7393      0.00  
+    0:00:24   13789.6      0.00       0.0       0.2                           4893.7393      0.00  
 
   Beginning WLM Backend Optimization
   --------------------------------------
-    0:04:10   29748.3      0.00       0.0       0.0                           11792.2422      0.00  
-    0:04:16   29282.9      0.00       0.0       0.0                           11444.1406      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
+    0:00:29   13737.9      0.00       0.0       0.1                           4838.6045      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+    0:00:31   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:32   13737.9      0.00       0.0       0.0                           4361.1631      0.00  
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+    0:00:32   13739.8      0.00       0.0       0.0                           4361.2446      0.00  
+    0:00:32   13739.8      0.00       0.0       0.0                           4361.2446      0.00  
 
 
   Beginning Leakage Power Optimization  (max_leakage_power 0)
@@ -663,10 +417,7 @@ Information: The register 'pcReg_reg[0]' is a constant and will be removed. (OPT
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:04:21   29274.0      0.00       0.0       0.0                           11009.2715      0.00  
-  Global Optimization (Phase 31)
-  Global Optimization (Phase 32)
-  Global Optimization (Phase 33)
+    0:00:32   13739.8      0.00       0.0       0.0                           4361.2446      0.00  
   Global Optimization (Phase 34)
   Global Optimization (Phase 35)
   Global Optimization (Phase 36)
@@ -678,44 +429,42 @@ Information: The register 'pcReg_reg[0]' is a constant and will be removed. (OPT
   Global Optimization (Phase 42)
   Global Optimization (Phase 43)
   Global Optimization (Phase 44)
-  Global Optimization (Phase 45)
-    0:04:31   29059.8      0.00       0.0       0.0                           9438.7090      0.00  
-    0:04:31   29059.8      0.00       0.0       0.0                           9438.7090      0.00  
-    0:04:31   29059.8      0.00       0.0       0.0                           9438.7090      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
-    0:04:33   29059.5      0.00       0.0       0.0                           9411.7021      0.00  
+    0:00:32   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:32   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:32   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
+    0:00:33   13737.3      0.00       0.0       0.0                           4110.8389      0.00  
 
                                   TOTAL                                                            
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:04:33   29060.2      0.00       0.0       0.0                           9411.8574      0.00  
-    0:04:36   28694.0      0.01       0.1       0.0                           8625.5879      0.00  
-    0:04:36   28694.0      0.00       0.0       0.0                           8626.2686      0.00  
-    0:04:36   28694.0      0.00       0.0       0.0                           8626.2686      0.00  
-    0:04:37   28693.7      0.00       0.0       0.0                           8628.0225      0.00  
-    0:04:41   28669.3      0.00       0.0       0.0                           8592.3340      0.00  
-    0:04:41   28669.3      0.00       0.0       0.0                           8592.3340      0.00  
-    0:04:41   28670.0      0.00       0.0       0.0                           8592.4893      0.00  
-    0:04:41   28670.0      0.00       0.0       0.0                           8592.4893      0.00  
-    0:04:43   28660.5      0.00       0.0       0.0                           8575.6074      0.00  
+    0:00:33   13738.0      0.00       0.0       0.0                           4110.9937      0.00  
+    0:00:33   13738.0      0.00       0.0       0.0                           4110.9937      0.00  
+    0:00:33   13738.0      0.00       0.0       0.0                           4110.9937      0.00  
+    0:00:33   13738.0      0.00       0.0       0.0                           4110.9937      0.00  
+    0:00:33   13738.0      0.00       0.0       0.0                           4110.9937      0.00  
+    0:00:34   13734.0      0.00       0.0       0.0                           4108.8018      0.00  
+    0:00:34   13734.0      0.00       0.0       0.0                           4108.8018      0.00  
+    0:00:34   13734.7      0.00       0.0       0.0                           4108.9570      0.00  
+    0:00:34   13734.7      0.00       0.0       0.0                           4108.9570      0.00  
 Loading db file '/home/rjridle/osugooglelib/outputs/s8_osu130_TT_1P8_25C.ccs.db'
 
 

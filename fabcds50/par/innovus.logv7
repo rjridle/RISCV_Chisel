@@ -1,0 +1,13 @@
+[07/17 16:07:25      0s] 
+[07/17 16:07:25      0s] Cadence Innovus(TM) Implementation System.
+[07/17 16:07:25      0s] Copyright 2017 Cadence Design Systems, Inc. All rights reserved worldwide.
+[07/17 16:07:25      0s] 
+[07/17 16:07:25      0s] Version:	v17.11-s080_1, built Fri Aug 4 11:13:11 PDT 2017
+[07/17 16:07:25      0s] Options:	DBS/signoff.enc 
+[07/17 16:07:25      0s] Date:		Fri Jul 17 16:07:25 2020
+[07/17 16:07:25      0s] Host:		rivendell.ecen.okstate.edu (x86_64 w/Linux 2.6.32-754.25.1.el6.x86_64) (6cores*12cpus*Intel(R) Xeon(R) CPU E5-4617 0 @ 2.90GHz 15360KB)
+[07/17 16:07:25      0s] OS:		Red Hat Enterprise Linux Server release 6.10 (Santiago)
+[07/17 16:07:25      0s] 
+[07/17 16:07:25      0s] License:
+[07/17 16:07:25      0s] **ERROR: (IMPLIC-68):	Unknown argument: DBS/signoff.enc.
+	Run "innovus -help" for valid option/argument.

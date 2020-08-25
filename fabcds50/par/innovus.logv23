@@ -1,0 +1,1224 @@
+[08/10 10:28:20      0s] 
+[08/10 10:28:20      0s] Cadence Innovus(TM) Implementation System.
+[08/10 10:28:20      0s] Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+[08/10 10:28:20      0s] 
+[08/10 10:28:20      0s] Version:	v19.15-s075_1, built Thu Jul 2 18:24:05 PDT 2020
+[08/10 10:28:20      0s] Options:	-init DBS/signoff.enc 
+[08/10 10:28:20      0s] Date:		Mon Aug 10 10:28:20 2020
+[08/10 10:28:20      0s] Host:		rivendell.ecen.okstate.edu (x86_64 w/Linux 2.6.32-754.25.1.el6.x86_64) (6cores*12cpus*Intel(R) Xeon(R) CPU E5-4617 0 @ 2.90GHz 15360KB)
+[08/10 10:28:20      0s] OS:		Red Hat Enterprise Linux Server release 6.10 (Santiago)
+[08/10 10:28:20      0s] 
+[08/10 10:28:20      0s] License:
+[08/10 10:28:20      0s] 		invs	Innovus Implementation System	19.1	checkout succeeded
+[08/10 10:28:20      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[08/10 10:28:32     12s] @(#)CDS: Innovus v19.15-s075_1 (64bit) 07/02/2020 18:24 (Linux 2.6.32-431.11.2.el6.x86_64)
+[08/10 10:28:32     12s] @(#)CDS: NanoRoute 19.15-s075_1 NR200630-1046/19_15-UB (database version 18.20, 510.7.1) {superthreading v1.53}
+[08/10 10:28:32     12s] @(#)CDS: AAE 19.15-s016 (64bit) 07/02/2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+[08/10 10:28:32     12s] @(#)CDS: CTE 19.15-s034_1 () Jul  2 2020 10:12:29 ( )
+[08/10 10:28:32     12s] @(#)CDS: SYNTECH 19.15-s013_1 () Jul  1 2020 08:44:53 ( )
+[08/10 10:28:32     12s] @(#)CDS: CPE v19.15-s065
+[08/10 10:28:32     12s] @(#)CDS: IQuantus/TQuantus 19.1.3-s260 (64bit) Thu May 28 10:57:28 PDT 2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+[08/10 10:28:32     12s] @(#)CDS: OA 22.60-s011 Tue Jun 16 12:27:00 2020
+[08/10 10:28:32     12s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[08/10 10:28:32     12s] @(#)CDS: RCDB 11.14.18
+[08/10 10:28:32     12s] @(#)CDS: STYLUS 19.10-s018_1 (06/12/2020 04:43 PDT)
+[08/10 10:28:32     12s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_106878_rivendell.ecen.okstate.edu_rjridle_4Gtt3T.
+
+[08/10 10:28:32     12s] Change the soft stacksize limit to 0.2%RAM (258 mbytes). Set global soft_stack_size_limit to change the value.
+[08/10 10:28:33     13s] 
+[08/10 10:28:33     13s] **INFO:  MMMC transition support version v31-84 
+[08/10 10:28:33     13s] 
+[08/10 10:28:33     13s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[08/10 10:28:33     13s] <CMD> suppressMessage ENCEXT-2799
+[08/10 10:28:33     13s] <CMD> getVersion
+[08/10 10:28:33     13s] Sourcing file "DBS/signoff.enc" ...
+[08/10 10:28:33     13s] <CMD> is_common_ui_mode
+[08/10 10:28:33     13s] <CMD> restoreDesign /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat riscv
+[08/10 10:28:33     13s] #% Begin load design ... (date=08/10 10:28:33, mem=516.8M)
+[08/10 10:28:33     13s] Set Default Input Pin Transition as 0.1 ps.
+[08/10 10:28:33     13s] Loading design 'riscv' saved by 'Innovus' '19.15-s075_1' on 'Fri Aug 7 16:52:31 2020'.
+[08/10 10:28:33     13s] % Begin Load MMMC data ... (date=08/10 10:28:33, mem=519.1M)
+[08/10 10:28:33     13s] % End Load MMMC data ... (date=08/10 10:28:33, total cpu=0:00:00.0, real=0:00:00.0, peak res=519.2M, current mem=519.2M)
+[08/10 10:28:33     13s] 
+[08/10 10:28:33     13s] Loading LEF file /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/lef/osu05_stdcells.lef ...
+[08/10 10:28:33     13s] **WARN: (IMPLF-108):	There is no overlap layer defined in any LEF file
+[08/10 10:28:33     13s] so you are unable to create rectilinear partition in a hierarchical flow.
+[08/10 10:28:33     13s] Set DBUPerIGU to M2 pitch 2400.
+[08/10 10:28:33     13s] 
+[08/10 10:28:33     13s] viaInitial starts at Mon Aug 10 10:28:33 2020
+**WARN: (IMPPP-556):	A SAMENET rule between different layers for a 4 layer technology is probably a mistake. Stacked vias will be difficult to create and probably will not be what expected. Check if this rule can be removed from the technology file: SAMENET cc via 0.150000 ;
+[08/10 10:28:33     13s] **WARN: (IMPPP-556):	A SAMENET rule between different layers for a 4 layer technology is probably a mistake. Stacked vias will be difficult to create and probably will not be what expected. Check if this rule can be removed from the technology file: SAMENET via via2 0.150000 ;
+[08/10 10:28:33     13s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN1 GENERATE.
+[08/10 10:28:33     13s] Type 'man IMPPP-557' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN2 GENERATE.
+[08/10 10:28:33     13s] Type 'man IMPPP-557' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURN3 GENERATE.
+[08/10 10:28:33     13s] Type 'man IMPPP-557' for more detail.
+[08/10 10:28:33     13s] viaInitial ends at Mon Aug 10 10:28:33 2020
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[08/10 10:28:33     13s] Loading view definition file from /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/viewDefinition.tcl
+[08/10 10:28:33     13s] Reading libs_tt timing library '/classes/ecen4303F19/osu_soc_3.0/lib/ami05/lib/osu05_stdcells.lib' ...
+[08/10 10:28:33     13s] Read 39 cells in library 'osu05_stdcells' 
+[08/10 10:28:33     13s] Ending "PreSetAnalysisView" (total cpu=0:00:00.1, real=0:00:00.0, peak res=557.8M, current mem=530.9M)
+[08/10 10:28:33     13s] *** End library_loading (cpu=0.00min, real=0.00min, mem=20.0M, fe_cpu=0.23min, fe_real=0.22min, fe_mem=796.1M) ***
+[08/10 10:28:33     13s] % Begin Load netlist data ... (date=08/10 10:28:33, mem=530.9M)
+[08/10 10:28:33     13s] *** Begin netlist parsing (mem=796.1M) ***
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'YPAD' of cell 'PADGND' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'PADGND' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'YPAD' of cell 'PADVDD' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'PADVDD' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'XNOR2X1' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'XNOR2X1' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'TBUFX2' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'TBUFX2' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'TBUFX1' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'TBUFX1' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'OR2X2' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'OR2X2' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'OR2X1' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'OR2X1' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'OAI22X1' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'OAI22X1' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'gnd' of cell 'OAI21X1' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (IMPVL-159):	Pin 'vdd' of cell 'OAI21X1' is defined in LEF but not in the timing library.
+[08/10 10:28:33     13s] Type 'man IMPVL-159' for more detail.
+[08/10 10:28:33     13s] **WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+[08/10 10:28:33     13s] To increase the message display limit, refer to the product command reference manual.
+[08/10 10:28:33     13s] Created 39 new cells from 1 timing libraries.
+[08/10 10:28:33     13s] Reading netlist ...
+[08/10 10:28:33     13s] Backslashed names will retain backslash and a trailing blank character.
+[08/10 10:28:33     13s] Reading verilogBinary netlist '/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/riscv.v.bin'
+[08/10 10:28:33     13s] Reading binary database version 2 in 1-threaded mode
+[08/10 10:28:33     13s] 
+[08/10 10:28:33     13s] *** Memory Usage v#1 (Current mem = 810.121M, initial mem = 287.395M) ***
+[08/10 10:28:33     13s] *** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=810.1M) ***
+[08/10 10:28:33     13s] % End Load netlist data ... (date=08/10 10:28:33, total cpu=0:00:00.1, real=0:00:00.0, peak res=540.2M, current mem=540.2M)
+[08/10 10:28:33     13s] Set top cell to riscv.
+[08/10 10:28:34     13s] **WARN: (IMPTS-124):	Timing library description of pin 'YPAD' is missing from cell 'PADGND' in timing library 'osu05_stdcells'.
+[08/10 10:28:34     13s] **WARN: (IMPTS-124):	Timing library description of pin 'YPAD' is missing from cell 'PADVDD' in timing library 'osu05_stdcells'.
+[08/10 10:28:34     13s] Hooked 39 DB cells to tlib cells.
+[08/10 10:28:34     13s] Ending "BindLib:" (total cpu=0:00:00.0, real=0:00:00.0, peak res=542.4M, current mem=542.4M)
+[08/10 10:28:34     13s] Starting recursive module instantiation check.
+[08/10 10:28:34     13s] No recursion found.
+[08/10 10:28:34     13s] Building hierarchical netlist for Cell riscv ...
+[08/10 10:28:34     13s] *** Netlist is unique.
+[08/10 10:28:34     13s] Setting Std. cell height to 30000 DBU (smallest netlist inst).
+[08/10 10:28:34     13s] ** info: there are 41 modules.
+[08/10 10:28:34     13s] ** info: there are 31964 stdCell insts.
+[08/10 10:28:34     13s] 
+[08/10 10:28:34     13s] *** Memory Usage v#1 (Current mem = 848.543M, initial mem = 287.395M) ***
+[08/10 10:28:34     13s] *info: set bottom ioPad orient R0
+[08/10 10:28:34     13s] Reading IO assignment file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" ...
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 9: Pad: c01 NW
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 11: Pad: c02 NE
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 13: Pad: c03 SE
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 15: Pad: c04 SW
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 20: Pad: p39 N
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 22: Pad: p38 N
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 24: Pad: p37 N
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 26: Pad: p36 N
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 28: Pad: p35 N
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 30: Pad: p34 N
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 32: Pad: p33 N
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 34: Pad: p32 N
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 36: Pad: p31 N
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 38: Pad: p30 N
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 43: Pad: p29 W
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 45: Pad: p28 W
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 47: Pad: p27 W
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 49: Pad: p26 W
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 51: Pad: p25 W
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 53: Pad: p24 W
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 55: Pad: p23 W
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 57: Pad: p22 W
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 59: Pad: p21 W
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 61: Pad: p20 W
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 66: Pad: p19 S
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 68: Pad: p18 S
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 70: Pad: p17 S
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 72: Pad: p16 S
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 74: Pad: p15 S
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 76: Pad: p14 S
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 78: Pad: p13 S
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 80: Pad: p12 S
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 82: Pad: p11 S
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 84: Pad: p10 S
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 89: Pad: p09 E
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 91: Pad: p08 E
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 93: Pad: p07 E
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 95: Pad: p06 E
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 97: Pad: p05 E
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 99: Pad: p04 E
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 101: Pad: p03 E
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 103: Pad: p02 E
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 105: Pad: p01 E
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **Warn: ignored IO file "/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/libs/iofile/encounter.io" line 107: Pad: p00 E
+  Reason: unable to determine object from name.
+[08/10 10:28:34     13s] **WARN: (IMPFP-710):	File version 0 is too old.
+[08/10 10:28:34     13s] IO file version '0' is too old, will try to place io cell any way.
+[08/10 10:28:34     13s] **WARN: (IMPFP-3961):	The techSite 'IO' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[08/10 10:28:34     13s] Type 'man IMPFP-3961' for more detail.
+[08/10 10:28:34     13s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[08/10 10:28:34     13s] Type 'man IMPFP-3961' for more detail.
+[08/10 10:28:34     13s] Horizontal Layer M1 offset = 1500 (derived)
+[08/10 10:28:34     13s] Vertical Layer M2 offset = 1200 (derived)
+[08/10 10:28:34     13s] Set Default Net Delay as 1000 ps.
+[08/10 10:28:34     13s] Set Default Net Load as 0.5 pF. 
+[08/10 10:28:34     13s] Set Default Input Pin Transition as 0.1 ps.
+[08/10 10:28:34     14s] Loading preference file /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/gui.pref.tcl ...
+[08/10 10:28:34     14s] ##  Process: 250           (User Set)               
+[08/10 10:28:34     14s] ##     Node: (not set)                           
+[08/10 10:28:34     14s] 
+##  Check design process and node:  
+##  Design tech node is not set.
+
+[08/10 10:28:34     14s] Applying the recommended capacitance filtering threshold values for 250nm process node: total_c_th=5, relative_c_th=0.03 and coupling_c_th=3.
+[08/10 10:28:34     14s] 	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+[08/10 10:28:34     14s] 	For postRoute effortLevel low extraction, the coupling_c_th value will be used only when the -capFilterMode parameter of the setExtractRCMode command is set to relAndCoup or relOrCoup. Default value of -capFilterMode parameter in postRoute extraction effortLevel low is relOnly.
+[08/10 10:28:34     14s] 	The accuracy mode for postRoute effortLevel low extraction will be set to 'standard'.
+[08/10 10:28:34     14s] 	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'low'.
+[08/10 10:28:34     14s] **WARN: (IMPOPT-7177):	Option medium in 'setOptMode -usefulSkewCCOpt' is deprecated. It still works, but it will be removed in the future release.
+[08/10 10:28:34     14s] **WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+[08/10 10:28:34     14s] **WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+[08/10 10:28:34     14s] **WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+[08/10 10:28:34     14s] **WARN: (IMPCK-8086):	The command setCTSMode is obsolete and will be removed in the next release. This command still works in this release, but by the next release you must transition to the CCOpt-based CTS flow.
+[08/10 10:28:34     14s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[08/10 10:28:34     14s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[08/10 10:28:34     14s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[08/10 10:28:34     14s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[08/10 10:28:34     14s] **WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+[08/10 10:28:34     14s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[08/10 10:28:34     14s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[08/10 10:28:34     14s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[08/10 10:28:34     14s] **WARN: The setCCOptMode/set_ccopt_mode command is obsolete and will be removed in a future release. This command still works in this release, but to avoid this warning and to ensure compatibility with future releases, transition to set_ccopt_property.
+[08/10 10:28:34     14s] This command "restoreDesign /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat ..." required an extra checkout of license tpsxl.
+[08/10 10:28:34     14s] Additional license(s) checked out: 1 'Tempus_Timing_Signoff_XL' license(s)
+[08/10 10:28:34     14s] addRing command will ignore shorts while creating rings.
+[08/10 10:28:34     14s] addRing command will disallow rings to go over rows.
+[08/10 10:28:34     14s] addRing command will consider rows while creating rings.
+[08/10 10:28:34     14s] The ring targets are set to core/block ring wires.
+[08/10 10:28:34     14s] Extraction setup Delayed 
+[08/10 10:28:34     14s] *Info: initialize multi-corner CTS.
+[08/10 10:28:34     14s] Ending "SetAnalysisView" (total cpu=0:00:00.0, real=0:00:00.0, peak res=800.4M, current mem=620.0M)
+[08/10 10:28:34     14s] Reading timing constraints file '/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/mmmc/modes/setup_func_mode/setup_func_mode.sdc' ...
+[08/10 10:28:34     14s] Current (total cpu=0:00:14.7, real=0:00:14.0, peak res=800.4M, current mem=792.4M)
+[08/10 10:28:34     14s] INFO (CTE): Constraints read successfully.
+[08/10 10:28:35     14s] Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:01.0, peak res=811.7M, current mem=811.7M)
+[08/10 10:28:35     14s] Current (total cpu=0:00:14.8, real=0:00:15.0, peak res=811.7M, current mem=811.7M)
+[08/10 10:28:35     14s] Reading latency file '/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/mmmc/views/setup_func/latency.sdc' ...
+[08/10 10:28:35     14s] Reading latency file '/home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/mmmc/views/hold_func/latency.sdc' ...
+[08/10 10:28:35     14s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[08/10 10:28:35     14s] Creating Cell Server ...(0, 1, 1, 1)
+[08/10 10:28:35     14s] Summary for sequential cells identification: 
+[08/10 10:28:35     14s]   Identified SBFF number: 3
+[08/10 10:28:35     14s]   Identified MBFF number: 0
+[08/10 10:28:35     14s]   Identified SB Latch number: 0
+[08/10 10:28:35     14s]   Identified MB Latch number: 0
+[08/10 10:28:35     14s]   Not identified SBFF number: 0
+[08/10 10:28:35     14s]   Not identified MBFF number: 0
+[08/10 10:28:35     14s]   Not identified SB Latch number: 0
+[08/10 10:28:35     14s]   Not identified MB Latch number: 0
+[08/10 10:28:35     14s]   Number of sequential cells which are not FFs: 1
+[08/10 10:28:35     14s] Total number of combinational cells: 26
+[08/10 10:28:35     14s] Total number of sequential cells: 4
+[08/10 10:28:35     14s] Total number of tristate cells: 2
+[08/10 10:28:35     14s] Total number of level shifter cells: 0
+[08/10 10:28:35     14s] Total number of power gating cells: 0
+[08/10 10:28:35     14s] Total number of isolation cells: 0
+[08/10 10:28:35     14s] Total number of power switch cells: 0
+[08/10 10:28:35     14s] Total number of pulse generator cells: 0
+[08/10 10:28:35     14s] Total number of always on buffers: 0
+[08/10 10:28:35     14s] Total number of retention cells: 0
+[08/10 10:28:35     14s] List of usable buffers: BUFX2 BUFX4 CLKBUF1
+[08/10 10:28:35     14s] Total number of usable buffers: 3
+[08/10 10:28:35     14s] List of unusable buffers:
+[08/10 10:28:35     14s] Total number of unusable buffers: 0
+[08/10 10:28:35     14s] List of usable inverters: INVX2 INVX1 INVX4 INVX8
+[08/10 10:28:35     14s] Total number of usable inverters: 4
+[08/10 10:28:35     14s] List of unusable inverters:
+[08/10 10:28:35     14s] Total number of unusable inverters: 0
+[08/10 10:28:35     14s] List of identified usable delay cells: CLKBUF2 CLKBUF3
+[08/10 10:28:35     14s] Total number of identified usable delay cells: 2
+[08/10 10:28:35     14s] List of identified unusable delay cells:
+[08/10 10:28:35     14s] Total number of identified unusable delay cells: 0
+[08/10 10:28:35     14s] Creating Cell Server, finished. 
+[08/10 10:28:35     14s] 
+[08/10 10:28:35     14s] Deleting Cell Server ...
+[08/10 10:28:35     14s] % Begin Load MMMC data post ... (date=08/10 10:28:35, mem=832.7M)
+[08/10 10:28:35     14s] % End Load MMMC data post ... (date=08/10 10:28:35, total cpu=0:00:00.0, real=0:00:00.0, peak res=832.7M, current mem=832.7M)
+[08/10 10:28:35     14s] Reading floorplan file - /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/riscv.fp.gz (mem = 1130.0M).
+[08/10 10:28:35     14s] % Begin Load floorplan data ... (date=08/10 10:28:35, mem=832.8M)
+[08/10 10:28:35     14s] *info: reset 32468 existing net BottomPreferredLayer and AvoidDetour
+[08/10 10:28:35     14s] net ignore based on current view = 0
+[08/10 10:28:35     14s] Deleting old partition specification.
+[08/10 10:28:35     14s] Set FPlanBox to (0 0 6000000 6000000)
+[08/10 10:28:35     14s] **WARN: (IMPFP-3961):	The techSite 'IO' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[08/10 10:28:35     14s] Type 'man IMPFP-3961' for more detail.
+[08/10 10:28:35     14s] **WARN: (IMPFP-3961):	The techSite 'corner' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[08/10 10:28:35     14s] Type 'man IMPFP-3961' for more detail.
+[08/10 10:28:35     14s] Horizontal Layer M1 offset = 1500 (derived)
+[08/10 10:28:35     14s] Vertical Layer M2 offset = 1200 (derived)
+[08/10 10:28:35     14s]  ... processed partition successfully.
+[08/10 10:28:35     14s] Reading binary special route file /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/riscv.fp.spr.gz (Created by Innovus v19.15-s075_1 on Fri Aug  7 16:52:28 2020, version: 1)
+[08/10 10:28:35     14s] Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=834.8M, current mem=834.8M)
+[08/10 10:28:35     14s] There are 180 nets with weight being set
+[08/10 10:28:35     14s] There are 69 nets with bottomPreferredRoutingLayer being set
+[08/10 10:28:35     14s] There are 180 nets with avoidDetour being set
+[08/10 10:28:35     14s] Extracting standard cell pins and blockage ...... 
+[08/10 10:28:35     14s] Pin and blockage extraction finished
+[08/10 10:28:35     14s] % End Load floorplan data ... (date=08/10 10:28:35, total cpu=0:00:00.1, real=0:00:00.0, peak res=835.5M, current mem=835.5M)
+[08/10 10:28:35     14s] Reading congestion map file /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/riscv.route.congmap.gz ...
+[08/10 10:28:35     14s] % Begin Load SymbolTable ... (date=08/10 10:28:35, mem=835.7M)
+[08/10 10:28:35     14s] Suppress "**WARN ..." messages.
+[08/10 10:28:35     14s] routingBox: (0 0) (6000000 6000000)
+[08/10 10:28:35     14s] coreBox:    (40800 42000) (5959200 5958000)
+[08/10 10:28:35     14s] Un-suppress "**WARN ..." messages.
+[08/10 10:28:35     15s] % End Load SymbolTable ... (date=08/10 10:28:35, total cpu=0:00:00.3, real=0:00:00.0, peak res=856.3M, current mem=856.3M)
+[08/10 10:28:35     15s] Loading place ...
+[08/10 10:28:35     15s] % Begin Load placement data ... (date=08/10 10:28:35, mem=856.3M)
+[08/10 10:28:35     15s] Reading placement file - /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/riscv.place.gz.
+[08/10 10:28:35     15s] ** Reading stdCellPlacement_binary (Created by Innovus v19.15-s075_1 on Fri Aug  7 16:52:28 2020, version# 2) ...
+[08/10 10:28:36     16s] Read Views for adaptive view pruning ...
+[08/10 10:28:36     16s] Read 0 views from Binary DB for adaptive view pruning
+[08/10 10:28:36     16s] *** Checked 2 GNC rules.
+[08/10 10:28:36     16s] *** applyConnectGlobalNets disabled.
+[08/10 10:28:36     16s] *** Completed restorePlace (cpu=0:00:01.2 real=0:00:01.0 mem=1227.8M) ***
+[08/10 10:28:36     16s] Total net length = 4.990e+06 (2.463e+06 2.528e+06) (ext = 4.675e+04)
+[08/10 10:28:37     16s] % End Load placement data ... (date=08/10 10:28:36, total cpu=0:00:01.2, real=0:00:02.0, peak res=944.9M, current mem=941.2M)
+[08/10 10:28:37     16s] Reading PG file /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/riscv.pg.gz
+[08/10 10:28:37     16s] *** Completed restorePGFile (cpu=0:00:00.1 real=0:00:00.0 mem=1229.8M) ***
+[08/10 10:28:37     16s] % Begin Load routing data ... (date=08/10 10:28:37, mem=947.3M)
+[08/10 10:28:37     16s] Reading routing file - /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/riscv.route.gz.
+[08/10 10:28:37     16s] Reading Innovus routing data (Created by Innovus v19.15-s075_1 on Fri Aug  7 16:52:28 2020 Format: 19.1) ...
+[08/10 10:28:37     16s] *** Total 32436 nets are successfully restored.
+[08/10 10:28:37     16s] *** Completed restoreRoute (cpu=0:00:00.2 real=0:00:00.0 mem=1267.8M) ***
+[08/10 10:28:37     16s] % End Load routing data ... (date=08/10 10:28:37, total cpu=0:00:00.3, real=0:00:00.0, peak res=985.9M, current mem=985.5M)
+[08/10 10:28:37     16s] Loading Drc markers ...
+[08/10 10:28:37     16s] ... 29081 markers are loaded ...
+[08/10 10:28:37     16s] ... 4 geometry drc markers are loaded ...
+[08/10 10:28:37     16s] ... 0 antenna drc markers are loaded ...
+[08/10 10:28:37     16s] TAT_INFO: restoreCongMap REAL = 0 : CPU = 0 : MEM = 0.
+[08/10 10:28:37     16s] Reading property file /home/rjridle/fabs/fabcds20/par/DBS/signoff.enc.dat/riscv.prop
+[08/10 10:28:37     17s] *** Completed restoreProperty (cpu=0:00:00.1 real=0:00:00.0 mem=1278.8M) ***
+[08/10 10:28:38     17s] Set Default Input Pin Transition as 0.1 ps.
+[08/10 10:28:38     17s] pesRestorePreRouteExtractionData::readRCCornerMetaData, could not read file: ¨j£™ì
+[08/10 10:28:38     17s] Extraction setup Started 
+[08/10 10:28:38     17s] Initializing multi-corner RC extraction with 1 active RC Corners ...
+[08/10 10:28:38     17s] **WARN: (IMPEXT-2773):	The via resistance between layers M0 and M1 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+[08/10 10:28:38     17s] Type 'man IMPEXT-2773' for more detail.
+[08/10 10:28:38     17s] **WARN: (IMPEXT-2773):	The via resistance between layers M1 and M2 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+[08/10 10:28:38     17s] Type 'man IMPEXT-2773' for more detail.
+[08/10 10:28:38     17s] **WARN: (IMPEXT-2773):	The via resistance between layers M2 and M3 could not be determined from the LEF technology file because the via resistance specification is missing. A default of 4 Ohms will be used as via resistance between these layers.
+[08/10 10:28:38     17s] Type 'man IMPEXT-2773' for more detail.
+[08/10 10:28:38     17s] **WARN: (IMPEXT-2766):	The sheet resistance for layer M1 is not defined in the cap table. Therefore, the LEF value 0.09 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+[08/10 10:28:38     17s] **WARN: (IMPEXT-2766):	The sheet resistance for layer M2 is not defined in the cap table. Therefore, the LEF value 0.09 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+[08/10 10:28:38     17s] **WARN: (IMPEXT-2766):	The sheet resistance for layer M3 is not defined in the cap table. Therefore, the LEF value 0.05 will be used instead. To avoid this message, update the relevant cap table to include the sheet resistance for the specified layer and read it back in.
+[08/10 10:28:38     17s] Summary of Active RC-Corners : 
+[08/10 10:28:38     17s]  
+[08/10 10:28:38     17s]  Analysis View: setup_func
+[08/10 10:28:38     17s]     RC-Corner Name        : rc_typ
+[08/10 10:28:38     17s]     RC-Corner Index       : 0
+[08/10 10:28:38     17s]     RC-Corner Temperature : 25 Celsius
+[08/10 10:28:38     17s]     RC-Corner Cap Table   : ''
+[08/10 10:28:38     17s]     RC-Corner PreRoute Res Factor         : 1
+[08/10 10:28:38     17s]     RC-Corner PreRoute Cap Factor         : 1
+[08/10 10:28:38     17s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[08/10 10:28:38     17s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[08/10 10:28:38     17s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[08/10 10:28:38     17s]     RC-Corner PreRoute Clock Res Factor   : 1
+[08/10 10:28:38     17s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from Cap Table]
+[08/10 10:28:38     17s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[08/10 10:28:38     17s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[08/10 10:28:38     17s]  
+[08/10 10:28:38     17s]  Analysis View: hold_func
+[08/10 10:28:38     17s]     RC-Corner Name        : rc_typ
+[08/10 10:28:38     17s]     RC-Corner Index       : 0
+[08/10 10:28:38     17s]     RC-Corner Temperature : 25 Celsius
+[08/10 10:28:38     17s]     RC-Corner Cap Table   : ''
+[08/10 10:28:38     17s]     RC-Corner PreRoute Res Factor         : 1
+[08/10 10:28:38     17s]     RC-Corner PreRoute Cap Factor         : 1
+[08/10 10:28:38     17s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[08/10 10:28:38     17s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[08/10 10:28:38     17s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[08/10 10:28:38     17s]     RC-Corner PreRoute Clock Res Factor   : 1
+[08/10 10:28:38     17s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from Cap Table]
+[08/10 10:28:38     17s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[08/10 10:28:38     17s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[08/10 10:28:38     17s] LayerId::1 widthSet size::1
+[08/10 10:28:38     17s] LayerId::2 widthSet size::1
+[08/10 10:28:38     17s] LayerId::3 widthSet size::1
+[08/10 10:28:38     17s] Initializing multi-corner resistance tables ...
+[08/10 10:28:38     17s] Preroute length aware model : LLS: 2-1 ; HLS: 4-3 ; rDens: 0.445757 ; uaWl: 1.000000 ; uaWlH: 0.942928 ; aWlH: 0.000000 ; Pmax: 0.934600 ; wcR: 1.000000 ; newSi: 0.097500 ; pMod: 77 ; 
+[08/10 10:28:38     17s] Start generating vias ...
+[08/10 10:28:38     17s] #Skip building auto via since it is not turned on.
+[08/10 10:28:38     17s] Via generation completed.
+[08/10 10:28:38     17s] % Begin Load power constraints ... (date=08/10 10:28:38, mem=1007.7M)
+[08/10 10:28:38     17s] % End Load power constraints ... (date=08/10 10:28:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=1007.9M, current mem=1007.9M)
+[08/10 10:28:38     17s] % Begin load AAE data ... (date=08/10 10:28:38, mem=1007.9M)
+[08/10 10:28:39     18s] AAE DB initialization (MEM=1313.71 CPU=0:00:00.2 REAL=0:00:01.0) 
+[08/10 10:28:39     18s] % End load AAE data ... (date=08/10 10:28:39, total cpu=0:00:00.6, real=0:00:01.0, peak res=1019.0M, current mem=1019.0M)
+[08/10 10:28:39     18s] Restoring CCOpt config...
+[08/10 10:28:39     18s] Creating Cell Server ...(0, 0, 0, 0)
+[08/10 10:28:39     18s] Summary for sequential cells identification: 
+[08/10 10:28:39     18s]   Identified SBFF number: 3
+[08/10 10:28:39     18s]   Identified MBFF number: 0
+[08/10 10:28:39     18s]   Identified SB Latch number: 0
+[08/10 10:28:39     18s]   Identified MB Latch number: 0
+[08/10 10:28:39     18s]   Not identified SBFF number: 0
+[08/10 10:28:39     18s]   Not identified MBFF number: 0
+[08/10 10:28:39     18s]   Not identified SB Latch number: 0
+[08/10 10:28:39     18s]   Not identified MB Latch number: 0
+[08/10 10:28:39     18s]   Number of sequential cells which are not FFs: 1
+[08/10 10:28:39     18s]  Visiting view : setup_func
+[08/10 10:28:39     18s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/10 10:28:39     18s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/10 10:28:39     18s]  Visiting view : hold_func
+[08/10 10:28:39     18s]    : PowerDomain = none : Weighted F : unweighted  = 92.80 (1.000) with rcCorner = 0
+[08/10 10:28:39     18s]    : PowerDomain = none : Weighted F : unweighted  = 65.60 (1.000) with rcCorner = -1
+[08/10 10:28:39     18s]  Setting StdDelay to 92.80
+[08/10 10:28:39     18s] Creating Cell Server, finished. 
+[08/10 10:28:39     18s] 
+[08/10 10:28:39     18s]   Extracting original clock gating for clk...
+[08/10 10:28:39     18s]     clock_tree clk contains 1024 sinks and 0 clock gates.
+[08/10 10:28:39     18s]     Extraction for clk complete.
+[08/10 10:28:39     18s]   Extracting original clock gating for clk done.
+[08/10 10:28:39     18s]   The skew group clk/setup_func_mode was created. It contains 1024 sinks and 1 sources.
+[08/10 10:28:39     18s]   The skew group clk/setup_func_mode was created. It contains 1024 sinks and 1 sources.
+[08/10 10:28:39     18s] Restoring CCOpt config done.
+[08/10 10:28:39     18s] Deleting Cell Server ...
+[08/10 10:28:39     18s] Creating Cell Server ...(0, 1, 1, 1)
+[08/10 10:28:39     18s] Summary for sequential cells identification: 
+[08/10 10:28:39     18s]   Identified SBFF number: 3
+[08/10 10:28:39     18s]   Identified MBFF number: 0
+[08/10 10:28:39     18s]   Identified SB Latch number: 0
+[08/10 10:28:39     18s]   Identified MB Latch number: 0
+[08/10 10:28:39     18s]   Not identified SBFF number: 0
+[08/10 10:28:39     18s]   Not identified MBFF number: 0
+[08/10 10:28:39     18s]   Not identified SB Latch number: 0
+[08/10 10:28:39     18s]   Not identified MB Latch number: 0
+[08/10 10:28:39     18s]   Number of sequential cells which are not FFs: 1
+[08/10 10:28:39     18s] Total number of combinational cells: 26
+[08/10 10:28:39     18s] Total number of sequential cells: 4
+[08/10 10:28:39     18s] Total number of tristate cells: 2
+[08/10 10:28:39     18s] Total number of level shifter cells: 0
+[08/10 10:28:39     18s] Total number of power gating cells: 0
+[08/10 10:28:39     18s] Total number of isolation cells: 0
+[08/10 10:28:39     18s] Total number of power switch cells: 0
+[08/10 10:28:39     18s] Total number of pulse generator cells: 0
+[08/10 10:28:39     18s] Total number of always on buffers: 0
+[08/10 10:28:39     18s] Total number of retention cells: 0
+[08/10 10:28:39     18s] List of usable buffers: BUFX2 BUFX4 CLKBUF1
+[08/10 10:28:39     18s] Total number of usable buffers: 3
+[08/10 10:28:39     18s] List of unusable buffers:
+[08/10 10:28:39     18s] Total number of unusable buffers: 0
+[08/10 10:28:39     18s] List of usable inverters: INVX2 INVX1 INVX4 INVX8
+[08/10 10:28:39     18s] Total number of usable inverters: 4
+[08/10 10:28:39     18s] List of unusable inverters:
+[08/10 10:28:39     18s] Total number of unusable inverters: 0
+[08/10 10:28:39     18s] List of identified usable delay cells: CLKBUF2 CLKBUF3
+[08/10 10:28:39     18s] Total number of identified usable delay cells: 2
+[08/10 10:28:39     18s] List of identified unusable delay cells:
+[08/10 10:28:39     18s] Total number of identified unusable delay cells: 0
+[08/10 10:28:39     18s] Creating Cell Server, finished. 
+[08/10 10:28:39     18s] 
+[08/10 10:28:39     18s] Deleting Cell Server ...
+[08/10 10:28:39     18s] **WARN: (IMPCTE-107):	The following globals have been obsoleted since version 19.15-s075_1. They will be removed in the next release. 
+[08/10 10:28:39     18s] timing_enable_default_delay_arc
+[08/10 10:28:39     18s] #% End load design ... (date=08/10 10:28:39, total cpu=0:00:05.3, real=0:00:06.0, peak res=1023.0M, current mem=1005.2M)
+[08/10 10:28:39     18s] 
+[08/10 10:28:39     18s] *** Summary of all messages that are not suppressed in this session:
+[08/10 10:28:39     18s] Severity  ID               Count  Summary                                  
+[08/10 10:28:39     18s] WARNING   IMPLF-108            1  There is no overlap layer defined in any...
+[08/10 10:28:39     18s] WARNING   IMPFP-710            1  File version %s is too old.              
+[08/10 10:28:39     18s] WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+[08/10 10:28:39     18s] WARNING   IMPTS-124            2  Timing library description of pin '%s' i...
+[08/10 10:28:39     18s] WARNING   IMPEXT-2766          3  The sheet resistance for layer %s is not...
+[08/10 10:28:39     18s] WARNING   IMPEXT-2773          3  The via resistance between layers %s and...
+[08/10 10:28:39     18s] WARNING   IMPCK-8086           4  The command %s is obsolete and will be r...
+[08/10 10:28:39     18s] WARNING   IMPVL-159           68  Pin '%s' of cell '%s' is defined in LEF ...
+[08/10 10:28:39     18s] WARNING   IMPPP-556            2  A SAMENET rule between different layers ...
+[08/10 10:28:39     18s] WARNING   IMPPP-557            3  A single-layer VIARULE GENERATE for turn...
+[08/10 10:28:39     18s] WARNING   IMPOPT-7177          1  Option %s in 'setOptMode -usefulSkewCCOp...
+[08/10 10:28:39     18s] WARNING   IMPCTE-107           1  The following globals have been obsolete...
+[08/10 10:28:39     18s] WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+[08/10 10:28:39     18s] *** Message Summary: 94 warning(s), 0 error(s)
+[08/10 10:28:39     18s] 
+[08/10 10:28:46     19s] <CMD> win
+[08/10 10:28:50     19s] <CMD> setLayerPreference violation -isVisible 1
+[08/10 10:28:50     19s] <CMD> violationBrowser -all -no_display_false -displayByLayer
+[08/10 10:28:53     20s] <CMD_INTERNAL> violationBrowserMarkFalse -tool Verify -type Density
+[08/10 10:28:53     20s] Marked 29077 violation(s) false.
+[08/10 10:28:56     21s] <CMD> selectWire 5794.3500 3298.0500 5795.2500 3754.9500 2 FE_OFN24_n5553
+[08/10 10:28:57     21s] <CMD> zoomBox 739.45300 713.49800 5916.49100 5481.99900
+[08/10 10:28:58     21s] <CMD> zoomBox 1676.14200 1461.47300 5416.55200 4906.71500
+[08/10 10:28:58     21s] <CMD> zoomBox 2292.47500 2002.61000 4994.92200 4491.79800
+[08/10 10:28:58     21s] <CMD> zoomBox 2291.95100 2002.61000 4994.39800 4491.79800
+[08/10 10:28:59     22s] <CMD> zoomBox 2920.60200 2554.36700 4580.24300 4083.04000
+[08/10 10:28:59     22s] <CMD> zoomBox 3198.83900 2799.23900 4397.92900 3903.70500
+[08/10 10:28:59     22s] <CMD> zoomBox 3406.88000 2979.56700 4273.22300 3777.54400
+[08/10 10:29:00     22s] <CMD> zoomBox 3563.62900 3111.74600 4189.56200 3688.28500
+[08/10 10:29:00     22s] <CMD> zoomBox 3722.68900 3239.01800 4107.09100 3593.08600
+[08/10 10:29:00     22s] <CMD> zoomBox 3793.20400 3294.07700 4070.93700 3549.89300
+[08/10 10:29:00     23s] <CMD> zoomBox 3863.56500 3351.09700 4034.12800 3508.20000
+[08/10 10:29:01     23s] <CMD> zoomBox 3905.57400 3386.68700 4010.32100 3483.16800
+[08/10 10:29:01     23s] <CMD> zoomBox 3930.27100 3408.72700 3994.59900 3467.97900
+[08/10 10:29:01     23s] <CMD> zoomBox 3940.96300 3418.65500 3987.44000 3461.46400
+[08/10 10:29:01     23s] <CMD> zoomBox 3951.49500 3429.00400 3980.03800 3455.29500
+[08/10 10:29:02     23s] <CMD> zoomBox 3957.86200 3435.47200 3975.39200 3451.61900
+[08/10 10:29:02     23s] <CMD> zoomBox 3961.83500 3439.41000 3972.60100 3449.32600
+[08/10 10:29:02     23s] <CMD> zoomBox 3963.77100 3441.08300 3971.55000 3448.24800
+[08/10 10:29:05     23s] <CMD> deselectAll
+[08/10 10:29:05     23s] <CMD> selectWire 3965.5500 3445.0500 3971.2500 3445.9500 2 {io_memWriteData[22]}
+[08/10 10:29:09     24s] <CMD> uiSetTool select
+[08/10 10:29:12     24s] <CMD> deselectAll
+[08/10 10:29:12     24s] <CMD> selectWire 3965.5500 3445.0500 3971.2500 3445.9500 2 {io_memWriteData[22]}
+[08/10 10:29:21     25s] <CMD> pan -4.25700 -522.89900
+[08/10 10:29:21     25s] <CMD> zoomBox 3955.90700 3439.06600 3979.07200 3450.92000
+[08/10 10:29:22     25s] <CMD> zoomBox 3950.92100 3436.56200 3982.98300 3452.96900
+[08/10 10:29:27     27s] <CMD> pan 2.77600 -516.13300
+[08/10 10:29:27     27s] <CMD> zoomBox 3956.17500 3436.16200 3983.42800 3450.10800
+[08/10 10:29:33     27s] <CMD> zoomBox 3954.00600 3434.66400 3986.06800 3451.07100
+[08/10 10:29:36     28s] <CMD> pan -1.29200 -514.94600
+[08/10 10:29:40     28s] <CMD> uiSetTool addBusGuide
+[08/10 10:29:42     28s] **ERROR: (IMPSPR-73):	Failed to create bus guide. Must provide a valid net group name!
+<CMD> uiSetTool addWire
+[08/10 10:29:48     29s] <CMD> setEditMode -type regular
+[08/10 10:29:58     30s] <CMD> setEditMode -nets {io_memWriteData[22]}
+[08/10 10:30:08     32s] <CMD> pan 5.76500 -519.20700
+[08/10 10:30:50     35s] <CMD> zoomBox 3959.93400 3434.95000 3983.41800 3448.89600
+[08/10 10:30:51     36s] <CMD> pan -4.58800 -518.78900
+[08/10 10:30:53     36s] <CMD> zoomBox 3955.34600 3438.68400 3982.97400 3455.09100
+[08/10 10:30:53     36s] <CMD> zoomBox 3953.48500 3437.79600 3985.98800 3457.09800
+[08/10 10:30:54     36s] <CMD> zoomBox 3957.95300 3439.51000 3981.43700 3453.45600
+[08/10 10:30:54     37s] <CMD> zoomBox 3959.66600 3440.17300 3979.62800 3452.02800
+[08/10 10:30:57     37s] <CMD> uiSetTool select
+[08/10 10:30:57     37s] <CMD> deselectAll
+[08/10 10:30:57     37s] <CMD> selectWire 3965.5500 3445.0500 3971.2500 3445.9500 2 {io_memWriteData[22]}
+[08/10 10:30:59     37s] <CMD> deleteSelectedFromFPlan
+[08/10 10:31:03     38s] <CMD> zoomSelected
+[08/10 10:31:09     38s] <CMD> undo
+[08/10 10:31:14     39s] <CMD> redo
+[08/10 10:31:23     39s] <CMD> uiSetTool addWire
+[08/10 10:31:24     40s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:31:24     40s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:31:24     40s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:31:24     40s] <CMD> setEditMode -width_horizontal 0.900
+[08/10 10:31:24     40s] <CMD> setEditMode -width_vertical 0.900
+[08/10 10:31:24     40s] <CMD> setEditMode -spacing_horizontal 0.900
+[08/10 10:31:24     40s] <CMD> setEditMode -spacing_vertical 0.900
+[08/10 10:31:24     40s] <CMD> setEditMode -spacing 0.900
+[08/10 10:31:24     40s] <CMD> editAddRoute 3966.1 3446.68
+[08/10 10:31:33     45s] <CMD> editAddRoute 3966.99 3444
+[08/10 10:31:43     49s] <CMD> zoomBox 3958.47300 3439.98900 3981.95900 3453.93600
+[08/10 10:31:43     50s] <CMD> zoomBox 3953.31200 3438.93700 3991.55700 3461.64900
+[08/10 10:31:45     50s] <CMD> pan 4.05600 -521.02100
+[08/10 10:31:54     53s] <CMD> zoomBox 3959.83900 3435.49700 3987.47400 3451.90800
+[08/10 10:31:54     53s] <CMD> zoomBox 3961.62600 3437.81300 3981.59300 3449.67100
+[08/10 10:31:55     53s] <CMD> zoomBox 3962.91500 3439.48600 3977.34300 3448.05400
+[08/10 10:31:57     54s] <CMD> editAddRoute 3966.37 3443.16
+[08/10 10:32:05     56s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:32:05     56s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:32:05     56s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:32:05     56s] <CMD> editAddRoute 3970.53 3445.3
+[08/10 10:32:10     58s] <CMD> zoomBox 3961.75100 3438.97900 3981.72000 3450.83800
+[08/10 10:32:11     59s] <CMD> zoomBox 3964.20600 3440.09300 3978.63400 3448.66100
+[08/10 10:32:15     60s] <CMD> zoomBox 3961.95100 3438.54600 3981.92100 3450.40500
+[08/10 10:32:16     60s] <CMD> zoomBox 3958.83000 3436.41800 3986.47000 3452.83200
+[08/10 10:32:19     61s] <CMD> pan -2.62400 -513.90600
+[08/10 10:32:21     62s] <CMD> pan -1.13800 -505.97800
+[08/10 10:32:22     62s] <CMD> zoomBox 3939.24100 3446.23500 3992.19300 3477.68100
+[08/10 10:32:25     63s] <CMD> pan 0.14700 -485.80100
+[08/10 10:32:25     63s] <CMD> zoomBox 3926.86900 3450.87000 4000.16100 3494.39500
+[08/10 10:32:28     64s] <CMD> pan 2.04600 -502.44100
+[08/10 10:32:30     65s] <CMD> zoomBox 3940.62300 3429.72200 3993.57700 3461.16900
+[08/10 10:32:31     65s] <CMD> zoomBox 3952.51500 3434.89800 3985.03600 3454.21100
+[08/10 10:32:41     67s] <CMD> setEditMode -layer_horizontal metal3
+[08/10 10:32:42     67s] <CMD> setEditMode -width_horizontal 1.500
+[08/10 10:32:46     69s] <CMD> zoomBox 3959.74800 3438.33000 3979.72100 3450.19100
+[08/10 10:32:46     69s] <CMD> zoomBox 3965.25700 3440.94100 3975.68400 3447.13300
+[08/10 10:32:49     69s] <CMD> zoomBox 3965.13100 3439.20400 3979.56300 3447.77500
+[08/10 10:32:50     70s] <CMD> zoomBox 3964.67200 3435.34200 3988.17600 3449.30000
+[08/10 10:32:54     71s] <CMD> editAddRoute 3965.31 3445.38
+[08/10 10:33:04     74s] <CMD> pan -10.21800 -525.24600
+[08/10 10:33:27     79s] <CMD> zoomBox 3960.91400 3441.69600 3975.35000 3450.26900
+[08/10 10:33:28     79s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:33:28     79s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:33:28     79s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:33:28     79s] <CMD> editAddRoute 3970.9 3445.59
+[08/10 10:33:32     80s] <CMD> editAddRoute 3965.29 3445.48
+[08/10 10:33:35     82s] <CMD> zoomBox 3955.50900 3440.04700 3979.01600 3454.00700
+[08/10 10:33:35     82s] <CMD> zoomBox 3942.51600 3436.08200 3987.54700 3462.82400
+[08/10 10:33:37     83s] <CMD> pan 14.51800 -507.78600
+[08/10 10:33:37     83s] <CMD> zoomBox 3949.14000 3431.03700 4011.46700 3468.05000
+[08/10 10:33:37     83s] <CMD> zoomBox 3938.21400 3425.92400 4024.48000 3477.15400
+[08/10 10:33:38     83s] <CMD> zoomBox 3931.26600 3422.67300 4032.75600 3482.94400
+[08/10 10:33:38     83s] <CMD> zoomBox 3902.16200 3409.05700 4067.42200 3507.19800
+[08/10 10:33:38     83s] <CMD> zoomBox 3854.77100 3386.88400 4123.87100 3546.69100
+[08/10 10:33:39     83s] <CMD> zoomBox 3913.47400 3414.97900 4053.94600 3498.40000
+[08/10 10:33:39     83s] <CMD> zoomBox 3944.11500 3429.64300 4017.44600 3473.19100
+[08/10 10:33:40     83s] <CMD> zoomBox 3953.40100 3434.08700 4006.38300 3465.55100
+[08/10 10:33:41     84s] <CMD> gui_select -next -point {3972.738 3441.297}
+[08/10 10:33:42     84s] <CMD> zoomBox 3958.38000 3439.09500 3990.91800 3458.41800
+[08/10 10:33:42     84s] <CMD> zoomBox 3961.46400 3442.10800 3981.44700 3453.97500
+[08/10 10:33:43     84s] <CMD> zoomBox 3962.82600 3443.29400 3977.26400 3451.86800
+[08/10 10:33:43     85s] <CMD> zoomBox 3963.36300 3443.74600 3975.63500 3451.03400
+[08/10 10:33:44     85s] <CMD> pan -1.49000 -519.76200
+[08/10 10:33:45     85s] <CMD> zoomBox 3960.14200 3442.54800 3977.12900 3452.63600
+[08/10 10:33:53     88s] <CMD> zoomBox 3955.19900 3440.61300 3982.86000 3457.04000
+[08/10 10:33:54     88s] <CMD> zoomBox 3952.05400 3439.77800 3984.59700 3459.10400
+[08/10 10:33:55     89s] <CMD> pan -0.77200 -517.38600
+[08/10 10:33:55     89s] <CMD> zoomBox 3958.59900 3437.89600 3978.58400 3449.76400
+[08/10 10:33:56     90s] <CMD> pan -0.61300 -517.38300
+[08/10 10:33:57     90s] <CMD> zoomBox 3959.73600 3443.60900 3974.17500 3452.18400
+[08/10 10:33:59     91s] <CMD> pan 1.81400 -516.65100
+[08/10 10:33:59     91s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:33:59     91s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:33:59     91s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:33:59     91s] <CMD> editAddRoute 3970.84 3445.59
+[08/10 10:34:01     92s] <CMD> uiSetTool select
+[08/10 10:34:02     92s] <CMD> selectWire 3963.6000 3445.0500 3968.8500 3445.9500 1 n7550
+[08/10 10:34:03     92s] <CMD> deselectAll
+[08/10 10:34:03     92s] <CMD> selectWire 3965.5500 3445.0500 3966.4500 3448.9500 2 {io_memWriteData[22]}
+[08/10 10:34:04     92s] <CMD> deselectAll
+[08/10 10:34:04     92s] <CMD> selectWire 3970.3500 3445.0500 3971.2500 3451.9500 2 {io_memWriteData[22]}
+[08/10 10:34:16     93s] <CMD> uiSetTool addWire
+[08/10 10:34:17     94s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:34:17     94s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:34:17     94s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:34:17     94s] <CMD> editAddRoute 3970.85 3445.59
+[08/10 10:34:22     95s] <CMD> editAddRoute 3965.28 3445.57
+[08/10 10:34:23     96s] <CMD> uiSetTool select
+[08/10 10:34:26     96s] <CMD> uiSetTool addWire
+[08/10 10:34:28     97s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:34:28     97s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:34:28     97s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:34:28     97s] <CMD> editAddRoute 3970.83 3445.6
+[08/10 10:34:31     98s] <CMD> editAddRoute 3965.22 3445.55
+[08/10 10:34:31     98s] <CMD> editCommitRoute 3965.22 3445.56
+[08/10 10:34:32     99s] <CMD> uiSetTool select
+[08/10 10:34:34     99s] <CMD> pan -0.83600 -519.87600
+[08/10 10:34:36     99s] <CMD> zoomBox 3953.66700 3439.99600 3977.17800 3453.95800
+[08/10 10:34:36     99s] <CMD> zoomBox 3942.81100 3438.15800 3981.09500 3460.89300
+[08/10 10:34:37     99s] <CMD> zoomBox 3931.99500 3436.13600 3984.98400 3467.60400
+[08/10 10:34:38    100s] <CMD> zoomBox 3915.86100 3432.04600 3989.20200 3475.60000
+[08/10 10:34:38    100s] <CMD> zoomBox 3879.68300 3423.29800 3999.10700 3494.21900
+[08/10 10:34:38    100s] <CMD> zoomBox 3820.77200 3409.05400 4015.23600 3524.53800
+[08/10 10:34:39    100s] <CMD> zoomBox 3762.13400 3394.87600 4031.29000 3554.71700
+[08/10 10:34:39    100s] <CMD> zoomBox 3680.97400 3375.25300 4053.51100 3596.48700
+[08/10 10:34:41    101s] <CMD> pan -66.03300 -394.11100
+[08/10 10:34:41    101s] <CMD> zoomBox 3302.43900 3184.60300 4016.10500 3608.42000
+[08/10 10:34:42    101s] <CMD> zoomBox 2896.26100 3057.36400 4058.35000 3747.48100
+[08/10 10:34:42    101s] <CMD> zoomBox 2710.50600 2999.26100 4077.67000 3811.16400
+[08/10 10:34:43    101s] <CMD> zoomBox 2241.86000 2851.58600 4134.13100 3975.32800
+[08/10 10:34:44    101s] <CMD> zoomBox 1182.08300 2517.21100 4263.33300 4347.03900
+[08/10 10:34:45    102s] <CMD> zoomBox 127.46100 2184.39000 4392.16700 4717.02400
+[08/10 10:34:46    102s] <CMD> zoomBox -2260.48200 1430.79400 4683.88100 5554.76700
+[08/10 10:34:48    104s] <CMD> pan 1129.12500 2285.92700
+[08/10 10:34:50    104s] <CMD> zoomBox -401.14500 682.53000 4616.15800 3662.10100
+[08/10 10:34:50    104s] <CMD> zoomBox 131.29000 1153.75500 3756.29300 3306.49600
+[08/10 10:34:50    105s] <CMD> zoomBox 516.67700 1494.21600 3135.74200 3049.57100
+[08/10 10:34:51    105s] <CMD> zoomBox 796.64100 1736.64800 2688.91500 2860.39200
+[08/10 10:34:51    105s] <CMD> zoomBox 1145.05700 2037.72500 2132.83700 2624.32700
+[08/10 10:34:51    105s] <CMD> zoomBox 1291.88200 2164.60100 1898.50300 2524.84800
+[08/10 10:34:52    105s] <CMD> zoomBox 1421.87200 2277.04900 1691.03400 2436.89300
+[08/10 10:34:52    106s] <CMD> zoomBox 1461.87900 2311.69300 1627.17900 2409.85800
+[08/10 10:34:52    106s] <CMD> zoomBox 1486.43500 2332.98100 1587.95200 2393.26800
+[08/10 10:34:53    106s] <CMD> zoomBox 1496.83400 2342.71100 1570.18100 2386.26900
+[08/10 10:34:53    106s] <CMD> zoomBox 1507.28100 2352.48700 1552.32700 2379.23800
+[08/10 10:34:53    106s] <CMD> zoomBox 1509.68000 2354.81600 1547.97000 2377.55500
+[08/10 10:34:54    106s] <CMD> zoomBox 1514.47300 2360.21400 1537.98900 2374.17900
+[08/10 10:34:54    106s] <CMD> zoomBox 1516.59000 2362.60000 1533.58100 2372.69000
+[08/10 10:34:54    106s] <CMD> zoomBox 1518.71600 2364.99600 1529.15300 2371.19400
+[08/10 10:34:55    106s] <CMD> zoomBox 1517.39300 2363.57500 1531.83900 2372.15400
+[08/10 10:34:55    106s] <CMD> zoomBox 1515.56100 2361.60800 1535.55600 2373.48200
+[08/10 10:35:00    107s] <CMD> pan -1.52100 849.59100
+[08/10 10:35:01    107s] <CMD> zoomBox 1511.16500 2364.25700 1538.83900 2380.69100
+[08/10 10:35:01    107s] <CMD> zoomBox 1507.18800 2363.01000 1545.49200 2385.75700
+[08/10 10:35:06    109s] <CMD> pan -4.83800 855.47500
+[08/10 10:35:16    110s] <CMD> zoomBox 1510.52900 2364.54000 1534.05300 2378.51000
+[08/10 10:35:16    110s] <CMD> zoomBox 1514.13600 2365.37300 1531.13300 2375.46700
+[08/10 10:35:16    110s] <CMD> zoomBox 1515.54500 2365.64700 1529.99300 2374.22700
+[08/10 10:35:17    110s] <CMD> pan 0.25200 848.84200
+[08/10 10:35:31    111s] <CMD> setLayerPreference layoutObj -isVisible 1
+[08/10 10:35:32    111s] <CMD> setLayerPreference pinObj -isVisible 1
+[08/10 10:35:37    111s] <CMD> setLayerPreference node_cell -isVisible 1
+[08/10 10:35:38    111s] <CMD> setLayerPreference node_cell -isVisible 0
+[08/10 10:35:38    111s] <CMD> setLayerPreference node_cell -isVisible 1
+[08/10 10:35:40    112s] <CMD> zoomBox 1510.48200 2362.13200 1534.00800 2376.10300
+[08/10 10:35:40    112s] <CMD> zoomBox 1505.18500 2359.88700 1537.74700 2379.22400
+[08/10 10:35:44    112s] <CMD> pan -1.99900 851.08900
+[08/10 10:35:44    112s] <CMD> zoomBox 1508.85100 2359.02400 1532.37700 2372.99500
+[08/10 10:35:46    112s] <CMD> zoomBox 1511.15300 2360.06800 1531.15100 2371.94400
+[08/10 10:35:47    113s] <CMD> zoomBox 1514.59800 2361.47400 1529.04800 2370.05500
+[08/10 10:35:50    113s] <CMD> pan 1.66400 844.39500
+[08/10 10:35:56    114s] <CMD> pan -0.31200 845.24200
+[08/10 10:35:59    114s] <CMD> deselectAll
+[08/10 10:35:59    114s] <CMD> selectWire 1522.3500 2365.0500 1523.2500 2374.9500 2 FE_OCPN24897_n10116
+[08/10 10:36:01    115s] <CMD> gui_select -rect {1520.35700 2366.60600 1520.35700 2366.49500}
+[08/10 10:36:01    115s] <CMD> deselectAll
+[08/10 10:36:01    115s] <CMD> selectWire 1519.9500 2362.0500 1520.8500 2368.9500 2 FE_OCPN24891_n10093
+[08/10 10:36:16    116s] <CMD> uiSetTool select
+[08/10 10:36:48    118s] <CMD> pan -1.18000 848.91100
+[08/10 10:36:51    119s] <CMD> pan 0.85700 847.64100
+[08/10 10:37:15    121s] <CMD> pan 1.41200 843.25500
+[08/10 10:37:17    121s] <CMD> pan -0.82700 844.05100
+[08/10 10:37:20    121s] <CMD> setLayerPreference layoutObj -isVisible 0
+[08/10 10:37:21    121s] <CMD> setLayerPreference layoutObj -isVisible 1
+[08/10 10:37:22    121s] <CMD> setLayerPreference pinObj -isVisible 0
+[08/10 10:37:23    121s] <CMD> setLayerPreference pinObj -isVisible 1
+[08/10 10:37:24    122s] <CMD> setLayerPreference cellBlkgObj -isVisible 0
+[08/10 10:37:26    122s] <CMD> setLayerPreference cellBlkgObj -isVisible 1
+[08/10 10:37:27    122s] <CMD> setLayerPreference cellBlkgObj -isVisible 0
+[08/10 10:37:30    123s] <CMD> pan -1.84600 847.41900
+[08/10 10:37:31    123s] <CMD> zoomBox 1508.45900 2361.50800 1531.98900 2375.48200
+[08/10 10:37:32    123s] <CMD> zoomBox 1499.69900 2358.81500 1538.01400 2381.56900
+[08/10 10:37:32    123s] <CMD> zoomBox 1495.61200 2357.45100 1540.69000 2384.22100
+[08/10 10:37:39    123s] <CMD> deselectAll
+[08/10 10:37:39    123s] <CMD> selectWire 1517.2500 2370.7500 1626.7500 2372.2500 3 FE_PSBN23331_n10429
+[08/10 10:37:40    124s] <CMD> deselectAll
+[08/10 10:37:40    124s] <CMD> selectWire 1517.2500 2370.7500 1626.7500 2372.2500 3 FE_PSBN23331_n10429
+[08/10 10:37:41    124s] <CMD> zoomBox 1505.00400 2362.37100 1532.68700 2378.81100
+[08/10 10:37:41    124s] <CMD> zoomBox 1512.15900 2366.09300 1526.61000 2374.67500
+[08/10 10:37:42    124s] <CMD> zoomBox 1513.31700 2366.71600 1525.60100 2374.01100
+[08/10 10:37:43    124s] <CMD> zoomBox 1509.87000 2365.52100 1526.87200 2375.61800
+[08/10 10:37:44    124s] <CMD> zoomBox 1505.09800 2363.85800 1528.63100 2377.83300
+[08/10 10:37:45    124s] <CMD> pan 1.16600 862.48700
+[08/10 10:37:49    125s] <CMD> setLayerPreference metal3 -isVisible 0
+[08/10 10:37:51    125s] <CMD> deselectAll
+[08/10 10:37:51    125s] <CMD> selectWire 1517.5500 2371.0500 1520.8500 2371.9500 2 FE_OFN25128_n20599
+[08/10 10:37:53    125s] <CMD> deselectAll
+[08/10 10:37:53    125s] <CMD> selectWire 1517.5500 2371.0500 1520.8500 2371.9500 2 FE_OFN25128_n20599
+[08/10 10:38:03    126s] <CMD> setEditMode -nets FE_OFN25128_n20599
+[08/10 10:38:13    127s] <CMD> deselectAll
+[08/10 10:38:13    127s] <CMD> selectWire 1517.5500 2371.0500 1520.8500 2371.9500 2 FE_OFN25128_n20599
+[08/10 10:38:14    127s] <CMD> viewLast
+[08/10 10:38:16    127s] <CMD> viewLast
+[08/10 10:38:17    127s] <CMD> viewLast
+[08/10 10:38:17    127s] <CMD> viewLast
+[08/10 10:38:18    127s] <CMD> viewLast
+[08/10 10:38:19    127s] <CMD> viewLast
+[08/10 10:38:19    127s] <CMD> viewLast
+[08/10 10:38:19    127s] <CMD> viewLast
+[08/10 10:38:20    127s] <CMD> zoomBox 92746.08300 -26427.38700 1008961.55000 517675.44800
+[08/10 10:38:21    127s] <CMD> zoomBox -109113.04100 -132759.50500 1159005.25400 620324.00400
+[08/10 10:38:21    128s] <CMD> zoomBox -388319.10700 -279931.98600 1366861.92500 762398.13100
+[08/10 10:38:21    128s] <CMD> zoomBox -633631.01300 -481024.45000 1513852.63500 961646.99200
+[08/10 10:38:22    128s] <CMD> zoomBox -789235.26300 -759053.95500 1358248.38500 1237723.12800
+[08/10 10:38:23    128s] <CMD> zoomBox -893417.68900 -472038.07400 1171501.17200 754232.65200
+[08/10 10:38:24    128s] <CMD> zoomBox -762562.64300 -347494.50300 729341.23500 538486.09700
+[08/10 10:38:24    128s] <CMD> zoomBox -640440.99300 -295022.79700 627677.30400 458060.71400
+[08/10 10:38:24    128s] <CMD> zoomBox -448404.69900 -212511.03900 467810.77200 331591.79800
+[08/10 10:38:25    129s] <CMD> zoomBox -377242.95300 -180286.85200 401540.19700 282200.55900
+[08/10 10:38:25    129s] <CMD> zoomBox -266082.93500 -129915.94100 296587.89100 204231.21400
+[08/10 10:38:25    129s] <CMD> zoomBox -190028.13800 -93413.99700 216501.53500 148007.32300
+[08/10 10:38:26    129s] <CMD> zoomBox -115151.07500 -57179.62900 134508.96000 91083.23900
+[08/10 10:38:26    129s] <CMD> zoomBox -69167.20000 -34927.19800 84155.27100 56124.73700
+[08/10 10:38:26    129s] <CMD> zoomBox -40968.63800 -21178.85200 53190.52500 34738.41800
+[08/10 10:38:26    129s] <CMD> zoomBox -23717.40500 -12576.39700 34108.09100 21763.79600
+[08/10 10:38:26    130s] <CMD> zoomBox -13222.47100 -7157.64800 22289.61200 13931.52300
+[08/10 10:38:27    130s] <CMD> zoomBox -6998.92900 -3802.20200 14809.92900 9149.18500
+[08/10 10:38:27    130s] <CMD> zoomBox -3487.09100 -1608.40900 9906.27500 6345.36200
+[08/10 10:38:27    130s] <CMD> zoomBox -1344.80900 -252.35200 6880.39200 4632.25800
+[08/10 10:38:28    131s] <CMD> zoomBox -830.80600 59.32100 6160.61500 4211.24000
+[08/10 10:38:28    131s] <CMD> zoomBox -133.55500 556.19800 4917.74700 3555.95900
+[08/10 10:38:29    131s] <CMD> zoomBox 325.74100 1036.40600 3975.30700 3203.73400
+[08/10 10:38:29    131s] <CMD> zoomBox 658.23200 1384.88400 3295.04400 2950.77900
+[08/10 10:38:30    132s] <CMD> zoomBox 894.06600 1670.45600 2799.16500 2801.81600
+[08/10 10:38:30    132s] <CMD> zoomBox 1066.35300 1871.14900 2442.78700 2688.55700
+[08/10 10:38:30    132s] <CMD> zoomBox 1192.16100 2014.55000 2186.63600 2605.12800
+[08/10 10:38:30    132s] <CMD> zoomBox 1318.55700 2158.35300 1929.29000 2521.04200
+[08/10 10:38:31    132s] <CMD> zoomBox 1397.49500 2244.36300 1772.56200 2467.10000
+[08/10 10:38:31    132s] <CMD> zoomBox 1446.17600 2295.19300 1676.51400 2431.98100
+[08/10 10:38:31    132s] <CMD> zoomBox 1476.07200 2326.45300 1617.52900 2410.45900
+[08/10 10:38:31    132s] <CMD> zoomBox 1489.19300 2340.47800 1591.39600 2401.17200
+[08/10 10:38:32    132s] <CMD> zoomBox 1494.29600 2345.14200 1581.16900 2396.73200
+[08/10 10:38:32    133s] <CMD> zoomBox 1498.47000 2348.32400 1572.31200 2392.17600
+[08/10 10:38:32    133s] <CMD> zoomBox 1501.98700 2350.80500 1564.75300 2388.07900
+[08/10 10:38:32    133s] <CMD> zoomBox 1507.25300 2354.95500 1552.60200 2381.88600
+[08/10 10:38:33    133s] <CMD> zoomBox 1508.81500 2357.12900 1547.36100 2380.02000
+[08/10 10:38:33    133s] <CMD> zoomBox 1511.37600 2363.35000 1535.04900 2377.40800
+[08/10 10:38:35    133s] <CMD> gui_select -rect {1519.07400 2371.46100 1519.17300 2374.61600}
+[08/10 10:38:35    133s] <CMD> deselectAll
+[08/10 10:38:36    134s] <CMD> selectWire 1517.5500 2371.0500 1520.8500 2371.9500 2 FE_OFN25128_n20599
+[08/10 10:38:47    134s] <CMD> deleteSelectedFromFPlan
+[08/10 10:38:50    135s] <CMD> pan -1.45300 859.04400
+[08/10 10:38:52    135s] <CMD> zoomBox 1507.89500 2367.58600 1540.66000 2387.04400
+[08/10 10:38:53    136s] <CMD> pan 0.34300 856.53600
+[08/10 10:38:56    136s] <CMD> panCenter 1508.23800 2383.88900
+[08/10 10:38:57    136s] <CMD> zoomBox 1486.61100 2367.26300 1539.96500 2398.94800
+[08/10 10:38:57    136s] <CMD> zoomBox 1474.16700 2350.89800 1576.37900 2411.59800
+[08/10 10:38:58    136s] <CMD> zoomBox 1457.80700 2329.38500 1624.24500 2428.22600
+[08/10 10:38:58    136s] <CMD> zoomBox 1418.98700 2278.33500 1737.83100 2467.68300
+[08/10 10:38:58    136s] <CMD> zoomBox 1344.62100 2180.53700 1955.42700 2543.27000
+[08/10 10:38:58    136s] <CMD> zoomBox 1246.86400 2051.98100 2241.46200 2642.63200
+[08/10 10:38:59    136s] <CMD> zoomBox 1014.88800 1746.91700 2920.22800 2878.42000
+[08/10 10:38:59    137s] <CMD> zoomBox 709.95100 1345.90400 3812.48200 3188.37000
+[08/10 10:38:59    137s] <CMD> zoomBox 943.66300 1627.68000 3185.24400 2958.86300
+[08/10 10:39:00    137s] <CMD> zoomBox 1039.39600 1729.74800 2944.73900 2861.25300
+[08/10 10:39:00    137s] <CMD> zoomBox 1117.37800 1821.69000 2736.92000 2783.47000
+[08/10 10:39:00    137s] <CMD> zoomBox 1279.60900 2030.58500 2274.21100 2621.23800
+[08/10 10:39:01    138s] <CMD> zoomBox 1379.24000 2158.87200 1990.05000 2521.60700
+[08/10 10:39:01    138s] <CMD> zoomBox 1420.04800 2215.64700 1861.35800 2477.72300
+[08/10 10:39:01    138s] <CMD> zoomBox 1449.53100 2257.56100 1768.37800 2446.91100
+[08/10 10:39:02    138s] <CMD> zoomBox 1486.44200 2310.54400 1652.88200 2409.38600
+[08/10 10:39:02    138s] <CMD> zoomBox 1496.59500 2326.46600 1616.84800 2397.87900
+[08/10 10:39:02    138s] <CMD> zoomBox 1506.08200 2342.91500 1579.93300 2386.77200
+[08/10 10:39:02    138s] <CMD> zoomBox 1510.27100 2350.20800 1563.62900 2381.89500
+[08/10 10:39:03    138s] <CMD> zoomBox 1511.17600 2354.03900 1556.53000 2380.97300
+[08/10 10:39:04    138s] <CMD> pan -7.31100 847.89500
+[08/10 10:39:04    139s] <CMD> zoomBox 1508.26700 2362.52400 1541.03600 2381.98400
+[08/10 10:39:07    139s] <CMD> uiSetTool addWire
+[08/10 10:39:08    139s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:39:08    139s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:39:08    139s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:39:08    139s] <CMD> setLayerPreference metal3/Wire -isVisible 1
+[08/10 10:39:08    139s] <CMD> redraw
+[08/10 10:39:08    139s] <CMD> editAddRoute 1518.24 2371.76
+[08/10 10:39:15    141s] <CMD> editAddRoute 1518.72 2377.96
+[08/10 10:39:20    142s] <CMD> setEditMode -layer_horizontal metal2
+[08/10 10:39:20    142s] <CMD> setEditMode -width_horizontal 0.900
+[08/10 10:39:23    143s] <CMD> zoomBox 1513.12900 2368.35600 1533.25300 2380.30700
+[08/10 10:39:24    143s] <CMD> zoomBox 1515.27200 2370.93200 1529.81300 2379.56700
+[08/10 10:39:25    143s] <CMD> zoomBox 1516.82100 2372.79300 1527.32700 2379.03200
+[08/10 10:39:27    144s] <CMD> zoomBox 1514.12200 2370.51700 1531.22900 2380.67600
+[08/10 10:39:27    144s] <CMD> zoomBox 1509.72600 2366.80300 1537.58200 2383.34600
+[08/10 10:39:34    146s] <CMD> editAddRoute 1518.24 2378.99
+[08/10 10:39:34    146s] <CMD> editCommitRoute 1518.24 2378.99
+[08/10 10:39:35    147s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:39:35    147s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:39:35    147s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:39:35    147s] <CMD> editAddRoute 1518.22 2378.99
+[08/10 10:39:42    149s] <CMD> editAddRoute 1518.9 2378.49
+[08/10 10:39:48    151s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:39:48    151s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:39:48    151s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:39:48    151s] <CMD> editAddRoute 1518.16 2378.95
+[08/10 10:39:52    152s] <CMD> zoomBox 1512.86100 2369.98000 1532.98900 2381.93300
+[08/10 10:39:53    152s] <CMD> zoomBox 1515.12400 2372.27600 1529.66600 2380.91200
+[08/10 10:39:55    153s] <CMD> editAddRoute 1520.88 2378.11
+[08/10 10:39:56    153s] <CMD> editAddRoute 1520.88 2378.11
+[08/10 10:39:56    153s] <CMD> editCommitRoute 1520.88 2378.11
+[08/10 10:40:00    154s] **ERROR: (IMPSYT-6000):	No Object Selected.
+[08/10 10:40:03    154s] <CMD> uiSetTool select
+[08/10 10:40:03    155s] <CMD> selectWire 1517.5500 2377.0500 1518.4500 2379.0000 2 FE_OFN25128_n20599
+[08/10 10:40:05    155s] <CMD> deleteSelectedFromFPlan
+[08/10 10:40:07    155s] <CMD> zoomBox 1512.03500 2369.45800 1535.71600 2383.52100
+[08/10 10:40:08    155s] <CMD> zoomBox 1505.80400 2365.35600 1544.36500 2388.25600
+[08/10 10:40:11    156s] <CMD> pan 0.02600 855.62300
+[08/10 10:40:13    156s] <CMD> selectWire 1519.9500 2371.0500 1520.8500 2377.9500 2 FE_OFN25128_n20599
+[08/10 10:40:14    156s] <CMD> deleteSelectedFromFPlan
+[08/10 10:40:15    156s] <CMD> zoomBox 1508.01800 2363.11000 1540.79500 2382.57500
+[08/10 10:40:16    156s] <CMD> zoomBox 1509.85000 2364.51900 1537.71100 2381.06500
+[08/10 10:40:21    157s] <CMD> selectWire 1502.8500 2367.7500 1530.7500 2369.2500 3 FE_OFN873_n20751
+[08/10 10:40:22    157s] <CMD> zoomBox 1517.80900 2366.53200 1530.17100 2373.87300
+[08/10 10:40:23    157s] <CMD> zoomBox 1520.30200 2367.21000 1527.89500 2371.71900
+[08/10 10:40:25    157s] <CMD> setLayerPreference metal3 -isVisible 1
+[08/10 10:40:26    157s] <CMD> setLayerPreference metal3 -isVisible 0
+[08/10 10:40:27    157s] <CMD> deselectAll
+[08/10 10:40:27    157s] <CMD> selectWire 1519.9500 2368.0500 1525.6500 2368.9500 2 FE_OCPN24891_n10093
+[08/10 10:40:28    157s] <CMD> deleteSelectedFromFPlan
+[08/10 10:40:29    158s] <CMD> zoomBox 1517.88700 2366.45300 1530.25000 2373.79500
+[08/10 10:40:29    158s] <CMD> zoomBox 1515.48300 2365.68300 1532.59600 2375.84600
+[08/10 10:40:31    158s] <CMD> pan -0.47800 852.92200
+[08/10 10:40:32    158s] <CMD> selectWire 1519.9500 2362.0500 1520.8500 2368.9500 2 FE_OCPN24891_n10093
+[08/10 10:40:51    159s] <CMD> setEditMode -nets FE_OCPN24891_n10093
+[08/10 10:41:09    161s] <CMD> setLayerPreference cellBlkgObj -isVisible 1
+[08/10 10:41:12    161s] <CMD> setLayerPreference cellBlkgObj -isVisible 0
+[08/10 10:41:41    163s] <CMD> uiSetTool addWire
+[08/10 10:41:43    164s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:41:43    164s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:41:43    164s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:41:43    164s] <CMD> editAddRoute 1520.43 2368.75
+[08/10 10:41:46    165s] <CMD> editAddRoute 1520.92 2376.14
+[08/10 10:41:56    168s] <CMD> pan -0.09600 848.38400
+[08/10 10:41:58    169s] <CMD> setLayerPreference metal3 -isVisible 1
+[08/10 10:41:59    170s] <CMD> pan -1.05100 853.11400
+[08/10 10:42:00    170s] <CMD> zoomBox 1512.13100 2367.63300 1532.26500 2379.59000
+[08/10 10:42:01    170s] <CMD> zoomBox 1507.57600 2366.61300 1535.44300 2383.16200
+[08/10 10:42:04    171s] <CMD> pan 1.69200 853.26200
+[08/10 10:42:07    171s] <CMD> setLayerPreference cellBlkgObj -isVisible 1
+[08/10 10:42:16    174s] <CMD> pan -2.13900 861.68200
+[08/10 10:42:18    175s] <CMD> pan -0.99200 870.78300
+[08/10 10:42:18    175s] <CMD> zoomBox 1495.50500 2375.67500 1540.88300 2402.62300
+[08/10 10:42:23    176s] <CMD> pan 1.42500 868.04100
+[08/10 10:42:29    178s] <CMD> zoomBox 1505.74300 2366.36700 1538.52900 2385.83700
+[08/10 10:42:30    179s] <CMD> pan 0.11400 857.76400
+[08/10 10:42:32    180s] <CMD> pan 0.16000 849.71100
+[08/10 10:42:38    181s] <CMD> pan 0.06900 858.08500
+[08/10 10:42:43    182s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:42:43    182s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:42:43    182s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:42:43    182s] <CMD> editAddRoute 1520.57 2368.86
+[08/10 10:42:47    183s] <CMD> zoomBox 1508.40300 2365.91000 1536.27100 2382.46000
+[08/10 10:42:48    183s] <CMD> zoomBox 1513.42800 2369.83400 1530.54500 2379.99900
+[08/10 10:42:48    183s] <CMD> zoomBox 1514.62700 2370.77100 1529.17600 2379.41100
+[08/10 10:42:48    183s] <CMD> zoomBox 1516.51800 2372.24100 1527.03000 2378.48400
+[08/10 10:42:49    184s] <CMD> zoomBox 1517.19300 2372.82000 1526.12900 2378.12700
+[08/10 10:42:49    184s] <CMD> zoomBox 1517.75900 2373.31300 1525.35500 2377.82400
+[08/10 10:42:49    184s] <CMD> zoomBox 1518.24000 2373.73100 1524.69700 2377.56600
+[08/10 10:42:57    185s] <CMD> zoomBox 1516.68600 2372.18900 1527.20400 2378.43500
+[08/10 10:42:57    185s] <CMD> zoomBox 1515.97500 2371.48400 1528.35000 2378.83300
+[08/10 10:42:57    185s] <CMD> zoomBox 1515.14000 2370.65500 1529.69900 2379.30100
+[08/10 10:42:58    185s] <CMD> zoomBox 1514.15700 2369.67900 1531.28600 2379.85100
+[08/10 10:43:06    187s] <CMD> uiSetTool select
+[08/10 10:43:09    187s] <CMD> setLayerPreference metal3 -isVisible 0
+[08/10 10:43:12    187s] <CMD> setLayerPreference layoutObj -isVisible 0
+[08/10 10:43:12    187s] <CMD> setLayerPreference layoutObj -isVisible 1
+[08/10 10:43:13    188s] <CMD> setLayerPreference cellBlkgObj -isVisible 0
+[08/10 10:43:15    188s] <CMD> deselectAll
+[08/10 10:43:15    188s] <CMD> selectWire 1517.5500 2377.0500 1520.8500 2377.9500 2 FE_OFN25128_n20599
+[08/10 10:43:29    189s] <CMD> setEditMode -nets FE_OFN25128_n20599
+[08/10 10:43:29    189s] <CMD> deselectAll
+[08/10 10:43:29    189s] <CMD> selectWire 1517.5500 2377.0500 1520.8500 2377.9500 2 FE_OFN25128_n20599
+[08/10 10:43:31    189s] <CMD> zoomBox 1515.77100 2370.99900 1528.14800 2378.34900
+[08/10 10:43:32    189s] <CMD> pan -1.10600 858.66500
+[08/10 10:43:33    189s] <CMD> zoomBox 1513.80500 2374.16200 1528.36700 2382.81000
+[08/10 10:43:33    190s] <CMD> zoomBox 1511.60600 2373.41600 1531.76400 2385.38700
+[08/10 10:43:34    190s] <CMD> deleteSelectedFromFPlan
+[08/10 10:43:40    190s] <CMD> uiSetTool addWire
+[08/10 10:43:41    191s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:43:41    191s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:43:41    191s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:43:41    191s] <CMD> editAddRoute 1518.23 2377.75
+[08/10 10:43:43    191s] <CMD> editAddRoute 1518.23 2378.97
+[08/10 10:43:43    191s] <CMD> editCommitRoute 1518.23 2378.97
+[08/10 10:43:45    192s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:43:45    192s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:43:45    192s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:43:45    192s] <CMD> editAddRoute 1518.22 2378.97
+[08/10 10:43:54    194s] <CMD> pan -0.39400 864.66600
+[08/10 10:43:54    195s] <CMD> zoomBox 1506.43600 2372.71000 1539.26200 2392.20400
+[08/10 10:43:57    196s] <CMD> uiSetTool select
+[08/10 10:43:58    196s] <CMD> selectWire 1519.9500 2377.0500 1520.8500 2419.9500 2 FE_OFN25128_n20599
+[08/10 10:43:59    196s] <CMD> pan -0.48100 875.43700
+[08/10 10:44:00    196s] <CMD> zoomBox 1499.66400 2379.38300 1545.09800 2406.36400
+[08/10 10:44:00    196s] <CMD> zoomBox 1490.94500 2375.91200 1553.83000 2413.25700
+[08/10 10:44:01    196s] <CMD> zoomBox 1485.40000 2373.69700 1559.38200 2417.63200
+[08/10 10:44:02    196s] <CMD> zoomBox 1503.06700 2380.75500 1541.68700 2403.69000
+[08/10 10:44:02    196s] <CMD> zoomBox 1510.51200 2383.70500 1534.23100 2397.79100
+[08/10 10:44:03    197s] <CMD> pan 0.48000 865.03300
+[08/10 10:44:03    197s] <CMD> zoomBox 1512.72200 2377.13600 1532.88500 2389.11000
+[08/10 10:44:04    197s] <CMD> pan -0.25300 862.50000
+[08/10 10:44:09    198s] <CMD> deselectAll
+[08/10 10:44:09    198s] <CMD> selectWire 1519.9500 2377.0500 1520.8500 2419.9500 2 FE_OFN25128_n20599
+[08/10 10:44:20    199s] <CMD> zoomSelected
+[08/10 10:44:22    199s] <CMD> zoomBox 1442.82400 2346.04900 1599.40500 2439.03600
+[08/10 10:44:22    199s] <CMD> zoomBox 1454.77200 2350.40900 1587.86600 2429.44800
+[08/10 10:44:23    199s] <CMD> zoomBox 1464.53700 2353.55700 1577.66800 2420.74100
+[08/10 10:44:24    199s] <CMD> zoomBox 1472.94400 2356.60000 1569.10700 2413.70700
+[08/10 10:44:25    199s] <CMD> zoomBox 1486.55700 2361.90700 1556.03500 2403.16700
+[08/10 10:44:25    199s] <CMD> zoomBox 1496.28300 2366.34600 1546.48200 2396.15700
+[08/10 10:44:25    199s] <CMD> zoomBox 1507.71200 2373.14800 1533.91900 2388.71100
+[08/10 10:44:26    199s] <CMD> zoomBox 1512.42600 2376.23100 1528.52100 2385.78900
+[08/10 10:44:26    199s] <CMD> zoomBox 1515.34200 2378.01100 1525.22800 2383.88200
+[08/10 10:44:26    199s] <CMD> zoomBox 1513.44700 2377.18900 1527.13000 2385.31500
+[08/10 10:44:27    199s] <CMD> zoomBox 1512.25200 2376.65800 1528.35000 2386.21800
+[08/10 10:46:03    205s] <CMD> deselectAll
+[08/10 10:46:03    205s] <CMD> selectInst FE_OCPC5146_n20749
+[08/10 10:46:05    205s] <CMD> uiSetTool cutWire
+[08/10 10:46:08    206s] <CMD> editCutWire -only_visible_wires -line { 1520.138 2379.759 1521.059 2379.759 }
+[08/10 10:46:08    206s] Cut-line is auto-snapped from (1520.138000 2379.759000 1521.059000 2379.759000) to (1520.100000 2379.750000 1521.000000 2379.750000).
+[08/10 10:46:12    207s] <CMD> editCutWire -only_visible_wires -line { 1519.723 2379.68 1521.082 2379.68 }
+[08/10 10:46:12    207s] Cut-line is auto-snapped from (1519.723000 2379.680000 1521.082000 2379.680000) to (1519.650000 2379.750000 1521.150000 2379.750000).
+[08/10 10:46:15    208s] <CMD> uiSetTool select
+[08/10 10:46:16    208s] <CMD> deselectAll
+[08/10 10:46:16    208s] <CMD> selectWire 1519.9500 2377.0500 1520.8500 2380.9500 2 FE_OFN25128_n20599
+[08/10 10:46:19    208s] <CMD> deselectAll
+[08/10 10:46:19    208s] <CMD> selectWire 1519.9500 2380.0500 1520.8500 2419.9500 2 FE_OFN25128_n20599
+[08/10 10:46:27    209s] <CMD> setEditMode -nets {}
+[08/10 10:46:28    209s] <CMD> setEditMode -nets FE_OFN25128_n20599
+[08/10 10:46:29    209s] <CMD> deselectAll
+[08/10 10:46:29    209s] <CMD> selectWire 1519.9500 2377.0500 1520.8500 2380.9500 2 FE_OFN25128_n20599
+[08/10 10:46:30    209s] <CMD> deleteSelectedFromFPlan
+[08/10 10:46:32    209s] <CMD> uiSetTool addWire
+[08/10 10:46:33    210s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:46:33    210s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:46:33    210s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:46:33    210s] <CMD> editAddRoute 1518.06 2378.75
+[08/10 10:46:39    212s] <CMD> setEditMode -type special
+[08/10 10:46:42    212s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:46:42    212s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:46:42    212s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:46:42    212s] <CMD> editAddRoute 1518.02 2378.79
+[08/10 10:46:47    214s] <CMD> zoomBox 1516.37300 2378.14600 1524.77600 2383.13600
+[08/10 10:46:48    214s] <CMD> zoomBox 1515.57700 2377.86800 1525.46300 2383.73900
+[08/10 10:46:51    215s] <CMD> zoomBox 1517.05300 2378.29100 1524.19600 2382.53300
+[08/10 10:46:53    215s] <CMD> zoomBox 1518.55500 2378.58200 1522.94300 2381.18800
+[08/10 10:46:55    216s] <CMD> editAddRoute 1520.84 2379.19
+[08/10 10:47:00    218s] <CMD> zoomBox 1517.43100 2377.64900 1524.57700 2381.89300
+[08/10 10:47:01    219s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:47:01    219s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:47:01    219s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:47:01    219s] <CMD> editAddRoute 1517.97 2378.77
+[08/10 10:47:04    220s] <CMD> editAddRoute 1519.89 2378.83
+[08/10 10:47:07    221s] <CMD> editAddRoute 1520.71 2378.63
+[08/10 10:47:11    222s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:47:11    222s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:47:11    222s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:47:11    222s] <CMD> editAddRoute 1520.35 2380.32
+[08/10 10:47:16    224s] <CMD> editAddRoute 1520.22 2378.55
+[08/10 10:47:20    226s] <CMD> editAddRoute 1517.58 2378.51
+[08/10 10:47:22    227s] <CMD> zoomBox 1516.94100 2377.10400 1528.57800 2384.01500
+[08/10 10:47:27    229s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:47:27    229s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:47:27    229s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:47:27    229s] <CMD> editAddRoute 1520.48 2380.27
+[08/10 10:47:30    231s] <CMD> editAddRoute 1519.95 2378.7
+[08/10 10:47:33    232s] <CMD> editAddRoute 1520.36 2378.09
+[08/10 10:47:38    234s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:47:38    234s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:47:38    234s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:47:38    234s] <CMD> editAddRoute 1520.48 2380.34
+[08/10 10:47:45    236s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:47:45    236s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:47:45    236s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:47:45    236s] <CMD> editAddRoute 1518.12 2378.78
+[08/10 10:47:48    238s] <CMD> editAddRoute 1520.37 2378.74
+[08/10 10:47:50    239s] <CMD> editAddRoute 1520.39 2380.08
+[08/10 10:47:50    239s] <CMD> editCommitRoute 1520.39 2380.08
+[08/10 10:47:53    239s] <CMD> uiSetTool select
+[08/10 10:47:55    240s] <CMD> pan -1.91700 857.82400
+[08/10 10:47:55    240s] <CMD> zoomBox 1512.05400 2372.44800 1531.00500 2383.70200
+[08/10 10:47:57    240s] <CMD> pan 1.07100 854.43000
+[08/10 10:47:58    241s] <CMD> pan -0.60900 856.07000
+[08/10 10:47:59    241s] <CMD> pan 0.52900 852.93700
+[08/10 10:48:00    241s] <CMD> selectWire 1519.9500 2362.0500 1520.8500 2368.9500 2 FE_OCPN24891_n10093
+[08/10 10:48:07    242s] <CMD> setEditMode -nets {}
+[08/10 10:48:08    242s] <CMD> setEditMode -nets FE_OCPN24891_n10093
+[08/10 10:48:13    242s] <CMD> uiSetTool addWire
+[08/10 10:48:14    243s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:48:14    243s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:48:14    243s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:48:14    243s] <CMD> editAddRoute 1520.54 2368.77
+[08/10 10:48:15    243s] <CMD> zoomBox 1514.33400 2366.74800 1530.44300 2376.31400
+[08/10 10:48:16    244s] <CMD> pan -0.39400 856.77600
+[08/10 10:48:22    247s] <CMD> editAddRoute 1520.76 2377.2
+[08/10 10:48:24    248s] <CMD> zoomBox 1509.65600 2369.05300 1531.95300 2382.29400
+[08/10 10:48:32    250s] <CMD> pan 2.30300 856.12900
+[08/10 10:48:38    251s] <CMD> getEditMode -quiet -force_patch
+[08/10 10:48:38    251s] <CMD> getEditMode -quiet -layer_horizontal
+[08/10 10:48:38    251s] <CMD> getEditMode -quiet -layer_vertical
+[08/10 10:48:38    251s] <CMD> editAddRoute 1520.58 2368.71
+[08/10 10:48:39    252s] <CMD> editAddRoute 1520.6 2376.72
+[08/10 10:48:43    252s] <CMD> editAddRoute 1525.23 2376.33
+[08/10 10:48:45    253s] <CMD> editAddRoute 1525.39 2368.76
+[08/10 10:48:45    253s] <CMD> editCommitRoute 1525.39 2368.76
+[08/10 10:48:48    254s] <CMD> pan -2.24100 857.10900
+[08/10 10:48:50    255s] <CMD> uiSetTool select
+[08/10 10:48:50    255s] <CMD> deselectAll
+[08/10 10:48:50    255s] <CMD> selectWire 1519.9500 2376.3000 1525.6500 2377.2000 2 FE_OCPN24891_n10093
+[08/10 10:48:51    256s] <CMD> gui_select -rect {1522.67900 2376.78500 1522.72600 2376.21000}
+[08/10 10:48:51    256s] <CMD> deselectAll
+[08/10 10:48:52    256s] <CMD> selectWire 1519.9500 2376.3000 1525.6500 2377.2000 2 FE_OCPN24891_n10093
+[08/10 10:49:23    258s] <CMD> pan 0.79300 861.60600
+[08/10 10:49:23    258s] <CMD> zoomBox 1505.34700 2368.92100 1536.20800 2387.24800
+[08/10 10:49:25    258s] <CMD> pan 3.83400 858.14700
+[08/10 10:49:25    258s] <CMD> deselectAll
+[08/10 10:49:25    258s] <CMD> selectMarker 1522.3500 2368.0500 1523.2500 2368.9500 2 1 6
+[08/10 10:49:45    260s] <CMD> deselectAll
+[08/10 10:49:45    260s] <CMD> selectInst FE_OCPC5146_n20749
+[08/10 10:49:46    260s] <CMD> zoomBox 1497.59600 2358.64800 1547.85000 2388.49200
+[08/10 10:49:46    260s] <CMD> zoomBox 1485.86500 2354.20900 1555.42000 2395.51500
+[08/10 10:49:47    260s] <CMD> zoomBox 1459.51300 2343.87000 1572.77400 2411.13100
+[08/10 10:51:19    265s] <CMD> zoomBox 1406.43300 2328.08400 1590.86200 2437.60900
+[08/10 10:51:20    265s] <CMD> zoomBox 1321.39900 2301.22600 1621.71200 2479.57000
+[08/10 10:51:20    265s] <CMD> zoomBox 1125.00600 2234.76700 1700.31400 2576.41900
+[08/10 10:51:20    266s] <CMD> zoomBox 759.70600 2102.05600 1861.81500 2756.55300
+[08/10 10:51:20    266s] <CMD> zoomBox 281.29200 1927.60400 2075.89300 2993.34400
+[08/10 10:51:21    266s] <CMD> zoomBox -496.93900 1644.14900 2425.27000 3379.52900
+[08/10 10:51:21    266s] <CMD> zoomBox -2341.82200 973.79200 3256.21400 4298.23600
+[08/10 10:51:21    266s] <CMD> zoomBox -4662.64900 119.16900 4452.81900 5532.47200
+[08/10 10:51:21    267s] <CMD> zoomBox -8243.86700 -1287.73700 6599.15100 7526.92300
+[08/10 10:51:23    267s] <CMD> pan 3335.27700 6780.04300
+[08/10 10:51:24    268s] <CMD> setLayerPreference metal3 -isVisible 1
+[08/10 10:51:25    268s] <CMD> zoomBox -2537.25500 -158.87100 8186.82600 6209.72100
+[08/10 10:51:26    269s] <CMD> zoomBox -1583.08900 361.99100 7532.38000 5775.29500
+[08/10 10:51:44    270s] <CMD_INTERNAL> violationBrowserHide -tool NanoRoute -type Geometry -subtype Metal_Short -layertype metal2(2)
+[08/10 10:51:48    270s] <CMD_INTERNAL> violationBrowserShow -tool NanoRoute -type Geometry -subtype Metal_Short -layertype metal2(2)
+[08/10 10:52:23    273s] <CMD_INTERNAL> violationBrowserHide -tool Verify -type Geometry -subtype Short -layertype metal2(2)
+[08/10 10:52:25    273s] <CMD_INTERNAL> violationBrowserHide -tool NanoRoute -type Geometry -subtype Metal_Short -layertype metal2(2)
+[08/10 10:52:29    274s] <CMD_INTERNAL> violationBrowserShow -tool NanoRoute -type Geometry -subtype Metal_Short -layertype metal2(2)
+[08/10 10:52:30    274s] <CMD> zoomBox -38.53400 1225.17700 6547.39400 5136.29000
+[08/10 10:52:30    274s] <CMD> zoomBox 1072.30600 1846.27800 5830.64000 4672.05800
+[08/10 10:52:30    275s] <CMD> zoomBox 1873.04500 2287.65300 5310.94200 4329.27900
+[08/10 10:52:31    275s] <CMD> zoomBox 3170.07500 3003.41000 4466.67700 3773.40900
+[08/10 10:52:31    275s] <CMD> zoomBox 3474.04400 3169.95300 4270.32100 3642.82900
+[08/10 10:52:31    275s] <CMD> zoomBox 3705.38700 3296.64700 4121.04900 3543.49200
+[08/10 10:52:31    275s] <CMD> zoomBox 3802.87600 3350.03700 4058.14400 3501.63000
+[08/10 10:52:32    275s] <CMD> zoomBox 3845.99900 3373.29200 4030.43100 3482.81900
+[08/10 10:52:32    275s] <CMD> zoomBox 3891.13800 3398.32600 4004.40300 3465.58900
+[08/10 10:52:32    276s] <CMD> zoomBox 3919.22700 3415.16100 3988.78700 3456.47000
+[08/10 10:52:32    276s] <CMD> zoomBox 3932.37600 3423.07000 3982.63400 3452.91600
+[08/10 10:52:33    276s] <CMD> zoomBox 3949.65900 3433.78200 3975.89400 3449.36200
+[08/10 10:52:34    276s] <CMD> pan 3.80800 -511.90400
+[08/10 10:52:34    276s] <CMD> zoomBox 3955.47100 3441.17000 3974.42700 3452.42700
+[08/10 10:52:36    276s] <CMD> zoomBox 3959.95900 3442.06900 3973.65600 3450.20300
+[08/10 10:52:37    276s] <CMD> pan 1.02300 -517.72700
+[08/10 10:52:42    277s] <CMD> zoomBox 3963.95700 3443.41200 3972.37000 3448.40800
+[08/10 10:52:42    277s] <CMD> zoomBox 3965.26300 3443.93100 3971.34300 3447.54200
+[08/10 10:52:42    277s] <CMD> zoomBox 3966.48900 3444.46200 3970.22400 3446.68000
+[08/10 10:52:43    277s] <CMD> zoomBox 3967.02400 3444.70100 3969.72500 3446.30500
+[08/10 10:52:45    277s] <CMD> deselectAll
+[08/10 10:52:45    277s] <CMD> selectMarker 3967.9500 3445.0500 3968.8500 3445.9500 2 1 6
+[08/10 10:52:57    278s] <CMD_INTERNAL> violationBrowserMarkFalse -tool NanoRoute
+[08/10 10:52:57    278s] Marked 2 violation(s) false.
+[08/10 10:52:59    278s] <CMD_INTERNAL> violationBrowserMarkFalse -tool Verify
+[08/10 10:52:59    278s] Marked 2 violation(s) false.
+[08/10 10:53:02    278s] <CMD_INTERNAL> violationBrowserClose
+[08/10 10:53:02    278s] <CMD> zoomBox 3965.66200 3443.68900 3970.83600 3446.76200
+[08/10 10:53:03    278s] <CMD> zoomBox 3963.85400 3442.36100 3972.28200 3447.36600
+[08/10 10:53:03    279s] <CMD> zoomBox 3963.02800 3441.75200 3972.94300 3447.64000
+[08/10 10:53:03    279s] <CMD> zoomBox 3960.92000 3440.18400 3974.64400 3448.33400
+[08/10 10:53:05    279s] <CMD> zoomBox 3953.54300 3435.02700 3979.83600 3450.64100
+[08/10 10:53:05    279s] <CMD> zoomBox 3943.84600 3428.24800 3986.66100 3453.67400
+[08/10 10:53:05    279s] <CMD> zoomBox 3928.05700 3417.20900 3997.77400 3458.61100
+[08/10 10:53:05    279s] <CMD> zoomBox 3890.14400 3391.81400 4023.70300 3471.12900
+[08/10 10:53:06    279s] <CMD> zoomBox 3790.70000 3325.26500 4091.71100 3504.02300
+[08/10 10:53:06    279s] <CMD> zoomBox 3678.38000 3250.16400 4168.52600 3541.24200
+[08/10 10:53:06    279s] <CMD> zoomBox 3495.26900 3129.10500 4293.39300 3603.07800
+[08/10 10:53:07    279s] <CMD> zoomBox 3313.00900 3008.89900 4417.68000 3664.91800
+[08/10 10:53:07    279s] <CMD> zoomBox 2716.77200 2633.63400 4832.97700 3890.36100
+[08/10 10:53:07    280s] <CMD> zoomBox 1598.45800 1959.78600 5652.44300 4367.28200
+[08/10 10:53:08    280s] <CMD> zoomBox 124.85300 1060.33600 6726.09300 4980.54200
+[08/10 10:53:08    280s] <CMD> zoomBox -2277.55800 -407.16100 8471.45900 5976.24000
+[08/10 10:53:08    280s] <CMD> zoomBox -7978.51100 -3889.55000 12613.23300 8339.04300
+[08/10 10:53:09    281s] <CMD> zoomBox -4664.82800 -1863.85800 10212.70700 6971.30100
+[08/10 10:53:10    281s] <CMD> zoomBox -3370.70100 -1072.74300 9275.20400 6437.14200
+[08/10 10:53:10    281s] <CMD> zoomBox -2270.69300 -400.29600 8478.32700 5983.10700
+[08/10 10:53:12    283s] <CMD> pan 877.62400 2282.95700
+[08/10 11:17:02    373s] <CMD> zoomBox -5503.38300 -2238.91300 15088.36500 9989.68300
+[08/10 11:17:04    373s] <CMD> zoomBox -2505.52400 -909.33900 10140.38500 6600.54800
+[08/10 11:17:04    373s] <CMD> zoomBox -875.89700 4.09100 8260.77300 5429.98500
+[08/10 11:17:12    374s] **ERROR: Output Library name is missing.
+[08/10 11:17:16    375s] **ERROR: Output Library name is missing.
+[08/10 11:17:37    377s] **ERROR: (IMPOAX-685):	Can't find physical path for OpenAccess design (fab20/riscv/layout). Either library definition file is missing or the library (fab20) entry is not present in library definition file cds.lib.
+<CMD> saveDesign -cellview {fab20 riscv layout}
+[08/10 11:17:37    377s] #% Begin save design ... (date=08/10 11:17:37, mem=1103.1M)
+[08/10 11:17:37    377s] ----- oaOut ---------------------------
+[08/10 11:17:37    377s] Saving OpenAccess database: Lib: fab20, Cell: riscv, View: layout
+[08/10 11:17:37    377s] **ERROR: (IMPOAX-1258):	OpenAccess (OA) based databases cannot be created from LEF based libraries. To save a design database in OA cellview, first covert the LEF libraries to OA form and then reload the design using those OA libraries.
+TIMER: oaOut total process: 0h 0m  0.00s cpu {0h 0m 0s elapsed} Memory = 0.0.
+[08/10 11:17:37    377s] **ERROR: (IMPIMEX-7323):	Could not save design into OA database.
+[08/10 11:17:37    377s] 
+[08/10 11:17:37    377s] *** Summary of all messages that are not suppressed in this session:
+[08/10 11:17:37    377s] Severity  ID               Count  Summary                                  
+[08/10 11:17:37    377s] ERROR     IMPOAX-1258          1  OpenAccess (OA) based databases cannot b...
+[08/10 11:17:37    377s] ERROR     IMPIMEX-7323         1  Could not save design into OA database.  
+[08/10 11:17:37    377s] *** Message Summary: 0 warning(s), 2 error(s)
+[08/10 11:17:37    377s] 
+[08/10 11:17:40    377s] **ERROR: (IMPOAX-685):	Can't find physical path for OpenAccess design (fab20/riscv/layout). Either library definition file is missing or the library (fab20) entry is not present in library definition file cds.lib.
+<CMD> saveDesign -cellview {fab20 riscv layout}
+[08/10 11:17:40    377s] % Begin save design ... (date=08/10 11:17:40, mem=1105.3M)
+[08/10 11:17:40    377s] ----- oaOut ---------------------------
+[08/10 11:17:40    377s] Saving OpenAccess database: Lib: fab20, Cell: riscv, View: layout
+[08/10 11:17:40    377s] **ERROR: (IMPOAX-1258):	OpenAccess (OA) based databases cannot be created from LEF based libraries. To save a design database in OA cellview, first covert the LEF libraries to OA form and then reload the design using those OA libraries.
+TIMER: oaOut total process: 0h 0m  0.01s cpu {0h 0m 0s elapsed} Memory = 0.0.
+[08/10 11:17:40    377s] **ERROR: (IMPIMEX-7323):	Could not save design into OA database.
+[08/10 11:17:40    377s] 
+[08/10 11:17:40    377s] *** Summary of all messages that are not suppressed in this session:
+[08/10 11:17:40    377s] Severity  ID               Count  Summary                                  
+[08/10 11:17:40    377s] ERROR     IMPOAX-1258          1  OpenAccess (OA) based databases cannot b...
+[08/10 11:17:40    377s] ERROR     IMPIMEX-7323         1  Could not save design into OA database.  
+[08/10 11:17:40    377s] *** Message Summary: 0 warning(s), 2 error(s)
+[08/10 11:17:40    377s] 
+[08/10 11:18:04    379s] ambiguous command name "save": saveBlackBox saveColorPreference saveDesign saveDrc saveExcludeNet saveFPlan saveHInstColor saveIoFile saveModel saveNetlist saveOaBlackboxes savePartition savePtnPin saveRC saveRouteGuide saveSignalStormConstraint saveSpecialRoute saveTestcase saveTimingBudget saveTwf saveWhatIfConstraints saveWhatIfTimingAssertions saveWhatIfTimingModel saveWorkspace save_abstract save_ccopt_config save_global save_path_categories
+[08/10 11:18:14    379s] <CMD> saveWorkspace
+[08/10 11:18:14    379s] 
+[08/10 11:18:14    379s] Usage: saveWorkspace [-help] [-dir <string>] -name <string>
+[08/10 11:18:14    379s] 
+[08/10 11:18:14    379s] **ERROR: (IMPTCM-46):	Argument "-name" is required for command "saveWorkspace", either this option is not specified or an option prior to it is not specified correctly.
+  
+[08/10 11:18:18    380s] 
+[08/10 11:18:18    380s] *** Memory Usage v#1 (Current mem = 1497.250M, initial mem = 287.395M) ***
+[08/10 11:18:18    380s] 
+[08/10 11:18:18    380s] *** Summary of all messages that are not suppressed in this session:
+[08/10 11:18:18    380s] Severity  ID               Count  Summary                                  
+[08/10 11:18:18    380s] WARNING   IMPLF-108            1  There is no overlap layer defined in any...
+[08/10 11:18:18    380s] WARNING   IMPFP-710            1  File version %s is too old.              
+[08/10 11:18:18    380s] WARNING   IMPFP-3961           4  The techSite '%s' has no related standar...
+[08/10 11:18:18    380s] WARNING   IMPTS-124            2  Timing library description of pin '%s' i...
+[08/10 11:18:18    380s] WARNING   IMPEXT-2766          3  The sheet resistance for layer %s is not...
+[08/10 11:18:18    380s] WARNING   IMPEXT-2773          3  The via resistance between layers %s and...
+[08/10 11:18:18    380s] ERROR     IMPSYT-6000          2  No Object Selected.                      
+[08/10 11:18:18    380s] WARNING   IMPCK-8086           4  The command %s is obsolete and will be r...
+[08/10 11:18:18    380s] WARNING   IMPVL-159           68  Pin '%s' of cell '%s' is defined in LEF ...
+[08/10 11:18:18    380s] ERROR     IMPSPR-73            1  Failed to create bus guide. Must provide...
+[08/10 11:18:18    380s] WARNING   IMPPP-556            2  A SAMENET rule between different layers ...
+[08/10 11:18:18    380s] WARNING   IMPPP-557            3  A single-layer VIARULE GENERATE for turn...
+[08/10 11:18:18    380s] WARNING   IMPOPT-7177          1  Option %s in 'setOptMode -usefulSkewCCOp...
+[08/10 11:18:18    380s] ERROR     IMPOAX-685           2  Can't find physical path for OpenAccess ...
+[08/10 11:18:18    380s] ERROR     IMPOAX-1258          2  OpenAccess (OA) based databases cannot b...
+[08/10 11:18:18    380s] WARNING   IMPCTE-107           1  The following globals have been obsolete...
+[08/10 11:18:18    380s] WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+[08/10 11:18:18    380s] ERROR     IMPTCM-46            1  Argument "%s" is required for command "%...
+[08/10 11:18:18    380s] ERROR     IMPIMEX-7323         2  Could not save design into OA database.  
+[08/10 11:18:18    380s] *** Message Summary: 94 warning(s), 10 error(s)
+[08/10 11:18:18    380s] 
+[08/10 11:18:18    380s] --- Ending "Innovus" (totcpu=0:06:20, real=0:49:58, mem=1497.2M) ---

@@ -1,0 +1,62 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Fri Jul 17 13:45:47 2020                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v17.11-s080_1 (64bit) 08/04/2017 11:13 (Linux 2.6.18-194.el5)
+#@(#)CDS: NanoRoute 17.11-s080_1 NR170721-2155/17_11-UB (database version 2.30, 390.7.1) {superthreading v1.44}
+#@(#)CDS: AAE 17.11-s034 (64bit) 08/04/2017 (Linux 2.6.18-194.el5)
+#@(#)CDS: CTE 17.11-s053_1 () Aug  1 2017 23:31:41 ( )
+#@(#)CDS: SYNTECH 17.11-s012_1 () Jul 21 2017 02:29:12 ( )
+#@(#)CDS: CPE v17.11-s095
+#@(#)CDS: IQRC/TQRC 16.1.1-s215 (64bit) Thu Jul  6 20:18:10 PDT 2017 (Linux 2.6.18-194.el5)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getVersion
+getDrawView
+loadWorkspace -name Physical
+restoreDesign /home/rjridle/fabcds/par/DBS/init.enc.dat riscv
+win
+selectWire 21.6000 1280.1000 2887.2000 1281.9000 1 VDD
+dbSetStripBoxState [uiGetRecordObjByInfo -objType sWire -rect {21.6 1280.1 2887.2 1281.9} -layer 1 -name VDD] ROUTED
+pan 3.637 -17.436
+deselectAll
+selectWire 21.6000 1310.1000 2887.2000 1311.9000 1 VSS
+dbSetStripBoxState [uiGetRecordObjByInfo -objType sWire -rect {21.6 1310.1 2887.2 1311.9} -layer 1 -name VSS] ROUTED
+setLayerPreference violation -isVisible 0
+setLayerPreference violation -isVisible 1
+pan -53.723 -8.008
+pan 17.987 0.612
+deselectAll
+selectMarker 22.4500 1340.9500 22.5500 1341.0500 1 3 7
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false
+zoomBox 21.95 1340.45 23.05 1341.55
+zoomBox 21.95 1340.45 23.05 1341.55
+floorPlan -help
+deselectAll
+selectWire 21.6000 1340.1000 2887.2000 1341.9000 1 VDD
+pan -124.410 244.376
+pan 217.717 -115.524
+setLayerPreference violation -isVisible 0
+uiSetTool ruler
+pan 0.875 397.141
+pan 25.368 368.274
+pan -0.875 411.137
+pan 0.875 384.019
+pan 17.496 425.133
+pan 31.491 363.025
+get_visible_nets
+pan -10.544 -0.025
+pan 1246.513 5.238
+pan -320.357 -458.001
+pan 147.388 -443.383
+pan -70.649 -455.565
+pan 75.522 -438.512
+pan -3.106 -373.771
+pan -12.425 -386.195
+get_visible_nets
+pan 1312.200 2468.185
