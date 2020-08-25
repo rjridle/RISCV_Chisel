@@ -403,9 +403,9 @@ class decoder extends Module {
         io.memWriteEnable := 0.U
         io.branchSrc := 0.U
         io.aluControl := 0.U
-/*
+        /*
         when(io.funct7 === "b0000000".U) {                  //FADD.S
-            //io.fpuControl := 0.U
+            io.fpuControl := 0.U
             io.fpuRegWriteEnable := 1.U
         }.elsewhen(io.funct7 === "b0000100".U) {            //FSUB.S 
             io.fpuControl := 1.U
@@ -417,7 +417,7 @@ class decoder extends Module {
             io.fpuControl := 3.U
             io.fpuRegWriteEnable := 1.U
         }
-*/
+        */
     }.otherwise {                                               // NONE
         io.regSrc := 0.U
         io.immSrc := 0.U
@@ -425,7 +425,6 @@ class decoder extends Module {
         io.pcSrc := 0.U
         io.memToReg := 0.U
         io.regWriteEnable := 0.U
-        //io.fpuRegWriteEnable := 0.U
         io.memWriteEnable := 0.U
         io.branchSrc := 0.U
         io.aluControl := 0.U
@@ -584,20 +583,20 @@ class datapath extends Module {
     rf.io.regWriteData := regWriteData
     io.memWriteData := rf.io.regReadData2
      
-
+/*
     //FPU logic
-    //fpu.io.a := fpurf.io.fpuRegReadData1
-    //fpu.io.b := fpurf.io.fpuRegReadData2
-    //fpu.io.fpuControl := io.fpuControl
+    fpu.io.a := fpurf.io.fpuRegReadData1
+    fpu.io.b := fpurf.io.fpuRegReadData2
+    fpu.io.fpuControl := io.fpuControl
     
        
     //fpuRegFile logic
-    //fpurf.io.fpuRegWriteEnable := io.fpuRegWriteEnable
-    //fpurf.io.fpuRegWriteAddress := io.instr(11,7)
-    //fpurf.io.fpuRegWriteData := fpu.io.s.asSInt
-    //fpurf.io.fpuRegReadAddress1 := io.instr(19,15)
-    //fpurf.io.fpuRegReadAddress2 := io.instr(24,20)
-
+    fpurf.io.fpuRegWriteEnable := io.fpuRegWriteEnable
+    fpurf.io.fpuRegWriteAddress := io.instr(11,7)
+    fpurf.io.fpuRegWriteData := fpu.io.s
+    fpurf.io.fpuRegReadAddress1 := io.instr(19,15)
+    fpurf.io.fpuRegReadAddress2 := io.instr(24,20)
+*/
 
     //ALU Logic
     alu.io.a := Mux(io.pcSrc.andR, pcPlus4.asSInt, rf.io.regReadData1)
@@ -629,7 +628,6 @@ class datapath extends Module {
 */
 }
 
-/*
 class MessageRegFile extends Bundle {
   val regWriteEnable = UInt(1.W)
   val regReadAddress1 = UInt(5.W)
@@ -652,7 +650,6 @@ class MessageRegFile extends Bundle {
     p"|___________________________\n"
   }
 }
-*/
 
 class regfile extends Module {
     val io = IO(new Bundle {
@@ -666,7 +663,7 @@ class regfile extends Module {
     })
 
     val rf = Mem(32, SInt(32.W))
-    //val regfileMessage = Wire(new MessageRegFile)
+    val regfileMessage = Wire(new MessageRegFile)
 
     when(io.regWriteEnable.andR && !(io.regWriteAddress === 0.U)){
         rf(io.regWriteAddress) := io.regWriteData
@@ -677,7 +674,6 @@ class regfile extends Module {
     io.regReadData1 := rf(io.regReadAddress1)
     io.regReadData2 := rf(io.regReadAddress2)
 
-/*
     regfileMessage.regWriteData := io.regWriteData
     regfileMessage.regWriteEnable := io.regWriteEnable
     regfileMessage.regWriteAddress := io.regWriteAddress
@@ -696,18 +692,16 @@ class regfile extends Module {
         printf(p"$regVal\n")
     }
     printf("|___________________________\n")
-*/
 }
-
 /*
 class MessageFpuRegFile extends Bundle {
   val fpuRegWriteEnable = UInt(1.W)
   val fpuRegReadAddress1 = UInt(5.W)
   val fpuRegReadAddress2 = UInt(5.W)
   val fpuRegWriteAddress = UInt(5.W)
-  val fpuRegWriteData = SInt(32.W)
-  val fpuRegReadData1 = SInt(32.W)
-  val fpuRegReadData2 = SInt(32.W)
+  val fpuRegWriteData = UInt(32.W)
+  val fpuRegReadData1 = UInt(32.W)
+  val fpuRegReadData2 = UInt(32.W)
 
   override def toPrintable: Printable = {
     p"\n\n\n___________________________\n" +
@@ -722,29 +716,29 @@ class MessageFpuRegFile extends Bundle {
     p"|___________________________\n"
   }
 }
-*/
 
-/*
+
+
 class fpuRegfile extends Module {
     val io = IO(new Bundle {
         val fpuRegWriteEnable = Input(UInt(1.W))
         val fpuRegWriteAddress = Input(UInt(5.W))
-        val fpuRegWriteData = Input(SInt(32.W))
+        val fpuRegWriteData = Input(UInt(32.W))
         val fpuRegReadAddress1 = Input(UInt(5.W))
         val fpuRegReadAddress2 = Input(UInt(5.W))
-        val fpuRegReadData1 = Output(SInt(32.W))
-        val fpuRegReadData2 = Output(SInt(32.W))
+        val fpuRegReadData1 = Output(UInt(32.W))
+        val fpuRegReadData2 = Output(UInt(32.W))
     })
 
-    val fpu_rf = Mem(32, SInt(32.W))
-    //val fpuRegfileMessage = Wire(new MessageFpuRegFile)
+    val fpu_rf = Mem(32, UInt(32.W))
+    val fpuRegfileMessage = Wire(new MessageFpuRegFile)
 
-    fpu_rf(0.U) := 1036831949.S
+    fpu_rf(0.U) := "h3DCCCCCD".U
     
     when(io.fpuRegWriteEnable.andR && !(io.fpuRegWriteAddress === 0.U)){
         fpu_rf(io.fpuRegWriteAddress) := io.fpuRegWriteData
     }.otherwise {
-        fpu_rf(0.U) := 1036831949.S
+        fpu_rf(0.U) := "h3DCCCCCD".U
     }
 
     io.fpuRegReadData1 := fpu_rf(io.fpuRegReadAddress1)
@@ -762,7 +756,7 @@ class fpuRegfile extends Module {
 
     printf("\n\n\n___________________________\n")
     for(j <- 0 to 31){
-        val regVal = Wire(SInt(32.W))
+        val regVal = Wire(UInt(32.W))
         regVal := fpu_rf(j.U)
         printf("| fpu_rf(" + j + ") = ") 
         printf(p"${Hexadecimal(regVal)}\n")
@@ -781,7 +775,7 @@ class MessageAlu extends Bundle {
   val greaterThanFlag = UInt(1.W)
 
   override def toPrintable: Printable = {
-    p"\n\n\n___________________________\n" +
+    p"\n\n\n___________________________\n" +/
     p"|alu Module:\n" +
     p"|  a               : 0x${Hexadecimal(a)}\n" +
     p"|  b               : 0x${Hexadecimal(b)}\n" +
@@ -829,16 +823,16 @@ class alu extends Module {
         io.out := io.a ^ io.b
     }.elsewhen (io.aluControl === 7.U) {                //SRL, SRLI
         io.out := io.a >> io.b(11,0)
-    }.elsewhen(io.aluControl === 8.U) {                 //MUL, (not in RV32I)            //
-        io.out := io.a * io.b
+    /*}.elsewhen(io.aluControl === 8.U) {                 //MUL, (not in RV32I)            
+        io.out := io.a * io.b*/
     }.elsewhen(io.aluControl === 9.U) {                  //SLT, SLTI
         when(io.a < io.b){
             io.out := 1.S
         }.otherwise{
             io.out := 0.S
         }
-    }.elsewhen(io.aluControl === 10.U){                //DIV (not in RV32I)
-        io.out := io.a / io.b
+    /*}.elsewhen(io.aluControl === 10.U){                //DIV (not in RV32I)
+        io.out := io.a / io.b*/
     }.elsewhen(io.aluControl === 12.U){                 //SUB
         io.out := io.a - io.b
     }.otherwise {
@@ -862,151 +856,154 @@ class alu extends Module {
 */
 }
 
-//class MessageFpu extends Bundle {
-//    val a = SInt(32.W)
-//    val b = SInt(32.W)
-//    val mant_a = UInt(24.W)
-//    val mant_b = UInt(24.W)
-//    val exp_a = UInt(8.W)
-//    val exp_b = UInt(8.W)
-//    val aminusb = UInt(8.W)
-//    val bminusa = UInt(8.W)
-//    val alessb = UInt(1.W)
-//    val shmant = UInt(24.W)
-//    val shamt = UInt(8.W)
-//    val shiftedval = UInt(24.W)
-//    val addval = UInt(24.W)
-//    val ovf = UInt(1.W)
-//    val exp_pre = UInt(8.W)
-//    val exponent = UInt(8.W)
-//    val result = UInt(48.W)
-//    val addresult = UInt(25.W)
-//    val fract = UInt(23.W)
-//    val s = UInt(32.W)
-//
-//  override def toPrintable: Printable = {
-//    p"\n\n\n___________________________\n" +
-//    p"|fpadd Module:\n" +
-//    p"|  a          : 0x${Hexadecimal(a)}\n" +
-//    p"|  b          : 0x${Hexadecimal(b)}\n" +
-//    p"|  mant_a     : b${Binary(mant_a)}\n" +
-//    p"|  mant_b     : b${Binary(mant_b)}\n" +
-//    p"|  exp_a      : b${Binary(exp_a)}\n" +
-//    p"|  exp_b      : b${Binary(exp_b)}\n" +
-//    p"|  aminusb    : b${Binary(shmant)}\n" +
-//    p"|  bminusa    : b${Binary(shamt)}\n" +
-//    p"|  alessb     : b${Binary(alessb)}\n" +
-//    p"|  exp_pre    : b${Binary(exp_pre)}\n" +
-//    p"|  shamt      : b${Binary(shamt)}\n" +
-//    p"|  shiftedval : b${Binary(shiftedval)}\n" +
-//    p"|  ovf        : b${Binary(ovf)}\n" +
-//    p"|  shmant     : 0x${Hexadecimal(shmant)}\n" +
-//    p"|  addval     : 0x${Hexadecimal(addval)}\n" +
-//    p"|  addresult  : 0x${Hexadecimal(addresult)}\n" +
-//    p"|  result     : 0x${Hexadecimal(result)}\n" +
-//    p"|  exponent   : b${Binary(exponent)}\n" +
-//    p"|  fract      : b${Binary(fract)}\n" +
-//    p"|  s          : 0x${Hexadecimal(s)}\n" +
-//    p"|___________________________\n"
-//  }
-//}
-//
-//class fpu extends Module {
-//    val io = IO(new Bundle {
-//        val a = Input(SInt(32.W))
-//        val b = Input(SInt(32.W))
-//        val fpuControl = Input(UInt(2.W))
-//        val s = Output(UInt(32.W))
-//    })
-//    val mant_a = Wire(UInt(24.W))
-//    val mant_b = Wire(UInt(24.W))
-//    val exp_a = Wire(UInt(8.W))
-//    val exp_b = Wire(UInt(8.W))
-//    val exponent = Wire(UInt(8.W))
-//    val fract = Wire(UInt(23.W))
-//    val shmant = Wire(UInt(25.W))
-//    val shamt = Wire(UInt(8.W))
-//    val shiftedval = Wire(UInt(25.W))
-//    val addval = Wire(UInt(25.W))
-//    val ovf = Wire(UInt(1.W))
-//    val exp_pre = Wire(UInt(8.W))
-//    val addresult = Wire(UInt(25.W))
-//    val result = Wire(UInt(48.W))
-//    //val fpuMessage = Wire(new MessageFpu) 
-//    
-//    //Getting exponents and mantissa
-//    exp_a := io.a(30, 23)
-//    mant_a := Cat(1.U, io.a(22, 0))
-//    exp_b := io.b(30,23)
-//    mant_b := Cat(1.U, io.b(22, 0))
-//    //*******************************
-//
-//    //Result for multiply
-//    result := mant_a * mant_b
-//
-//    //EXPCOMP
-//    val aminusb = exp_a - exp_b
-//    val bminusa = exp_b - exp_a
-//    val alessb = Wire(UInt(1.W))
-//    
-//    when(aminusb(7) === 1.U) {
-//        alessb := 1.U
-//    }.otherwise {
-//        alessb := 0.U
-//    }
-//
-//    exp_pre := Mux(alessb.andR, exp_b, exp_a)
-//    shamt := Mux(alessb.andR, bminusa, aminusb)
-//    //***************************************************
-//
-//
-//    //SHIFTMANT
-//    shiftedval := Mux(alessb.andR, (mant_a >> shamt), (mant_b >> shamt))
-//    ovf := (shamt(7) | shamt(6) | shamt(5) | (shamt(4) & shamt(3)))
-//    shmant := Mux(ovf.andR, 0.U, shiftedval)
-//    //***************************************************************
-//
-//    //ADDMANT
-//    addval := Mux(alessb.andR, mant_b, mant_a)
-//    addresult := shmant + addval
-//
-//    when(io.fpuControl === 0.U | io.fpuControl === 1.U){
-//        fract := Mux(addresult(24).andR, addresult(23, 1), addresult(22, 0))
-//        exponent := Mux(addresult(24).andR, (exp_pre + 1.U), exp_pre)
-//    }.elsewhen (io.fpuControl === 2.U | io.fpuControl === 3.U){
-//        fract := Mux(result(47).andR, result(46,24), result(45,23))
-//        exponent := Mux(result(47).andR, ((exp_a + exp_b) - 126.U), ((exp_a + exp_b) - 127.U))
-//    }.otherwise{
-//        fract := 0.U
-//        exponent := 0.U
-//    }
-//    //*************************************************************************
-//
-//    //Final result
-//    io.s := Cat(0.U, exponent, fract)
-//
-//    fpuMessage.a := io.a
-//    fpuMessage.b := io.b
-//    fpuMessage.mant_a := mant_a
-//    fpuMessage.mant_b := mant_b
-//    fpuMessage.exp_a := exp_a
-//    fpuMessage.exp_b := exp_b
-//    fpuMessage.aminusb := aminusb
-//    fpuMessage.bminusa := bminusa
-//    fpuMessage.alessb := alessb
-//    fpuMessage.shmant := shmant
-//    fpuMessage.shamt := shamt
-//    fpuMessage.shiftedval := shiftedval
-//    fpuMessage.addval := addval
-//    fpuMessage.ovf := ovf
-//    fpuMessage.exp_pre := exp_pre
-//    fpuMessage.exponent := exponent
-//    fpuMessage.addresult := addresult
-//    fpuMessage.result := result
-//    fpuMessage.fract := fract
-//    fpuMessage.s := io.s
-//    printf(p"$fpuMessage")
-//}
+/*
+class MessageFpu extends Bundle {
+   val a = SInt(32.W)
+   val b = SInt(32.W)
+   val mant_a = UInt(24.W)
+   val mant_b = UInt(24.W)
+   val exp_a = UInt(8.W)
+   val exp_b = UInt(8.W)
+   val aminusb = UInt(8.W)
+   val bminusa = UInt(8.W)
+   val alessb = UInt(1.W)
+   val shmant = UInt(24.W)
+   val shamt = UInt(8.W)
+   val shiftedval = UInt(24.W)
+   val addval = UInt(24.W)
+   val ovf = UInt(1.W)
+   val exp_pre = UInt(8.W)
+   val exponent = UInt(8.W)
+   val result = UInt(48.W)
+   val addresult = UInt(25.W)
+   val fract = UInt(23.W)
+   val s = UInt(32.W)
+
+ override def toPrintable: Printable = {
+   p"\n\n\n___________________________\n" +
+   p"|fpadd Module:\n" +
+   p"|  a          : 0x${Hexadecimal(a)}\n" +
+   p"|  b          : 0x${Hexadecimal(b)}\n" +
+   p"|  mant_a     : b${Binary(mant_a)}\n" +
+   p"|  mant_b     : b${Binary(mant_b)}\n" +
+   p"|  exp_a      : b${Binary(exp_a)}\n" +
+   p"|  exp_b      : b${Binary(exp_b)}\n" +
+   p"|  aminusb    : b${Binary(shmant)}\n" +
+   p"|  bminusa    : b${Binary(shamt)}\n" +
+   p"|  alessb     : b${Binary(alessb)}\n" +
+   p"|  exp_pre    : b${Binary(exp_pre)}\n" +
+   p"|  shamt      : b${Binary(shamt)}\n" +
+   p"|  shiftedval : b${Binary(shiftedval)}\n" +
+   p"|  ovf        : b${Binary(ovf)}\n" +
+   p"|  shmant     : 0x${Hexadecimal(shmant)}\n" +
+   p"|  addval     : 0x${Hexadecimal(addval)}\n" +
+   p"|  addresult  : 0x${Hexadecimal(addresult)}\n" +
+   p"|  result     : 0x${Hexadecimal(result)}\n" +
+   p"|  exponent   : b${Binary(exponent)}\n" +
+   p"|  fract      : b${Binary(fract)}\n" +
+   p"|  s          : 0x${Hexadecimal(s)}\n" +
+   p"|___________________________\n"
+ }
+}
+*/
+
+/*
+
+
+class fpu extends Module {
+   val io = IO(new Bundle {
+       val a = Input(UInt(32.W))
+       val b = Input(UInt(32.W))
+       val fpuControl = Input(UInt(2.W))
+       val s = Output(UInt(32.W))
+   })
+   val mant_a = Wire(UInt(24.W))
+   val mant_b = Wire(UInt(24.W))
+   val exp_a = Wire(UInt(8.W))
+   val exp_b = Wire(UInt(8.W))
+   val exponent = Wire(UInt(8.W))
+   val fract = Wire(UInt(23.W))
+   val shmant = Wire(UInt(25.W))
+   val shamt = Wire(UInt(8.W))
+   val shiftedval = Wire(UInt(25.W))
+   val addval = Wire(UInt(25.W))
+   val ovf = Wire(UInt(1.W))
+   val exp_pre = Wire(UInt(8.W))
+   val addresult = Wire(UInt(25.W))
+   val result = Wire(UInt(48.W))
+   //val fpuMessage = Wire(new MessageFpu) 
+   
+   //Getting exponents and mantissa
+   exp_a := io.a(30, 23)
+   mant_a := Cat(1.U, io.a(22, 0))
+   exp_b := io.b(30,23)
+   mant_b := Cat(1.U, io.b(22, 0))
+   
+   //Result for multiply
+   result := mant_a * mant_b
+
+   //EXPCOMP
+   val aminusb = exp_a - exp_b
+   val bminusa = exp_b - exp_a
+   val alessb = Wire(UInt(1.W))
+   
+   when(aminusb(7) === 1.U) {
+       alessb := 1.U
+   }.otherwise {
+       alessb := 0.U
+   }
+
+   exp_pre := Mux(alessb.andR, exp_b, exp_a)
+   shamt := Mux(alessb.andR, bminusa, aminusb)
+   
+
+
+   //SHIFTMANT
+   shiftedval := Mux(alessb.andR, (mant_a >> shamt), (mant_b >> shamt))
+   ovf := (shamt(7) | shamt(6) | shamt(5) | (shamt(4) & shamt(3)))
+   shmant := Mux(ovf.andR, 0.U, shiftedval)
+   
+   //ADDMANT
+   addval := Mux(alessb.andR, mant_b, mant_a)
+   addresult := shmant + addval
+
+   when(io.fpuControl === 0.U | io.fpuControl === 1.U){
+       fract := Mux(addresult(24).andR, addresult(23, 1), addresult(22, 0))
+       exponent := Mux(addresult(24).andR, (exp_pre + 1.U), exp_pre)
+   }.elsewhen (io.fpuControl === 2.U | io.fpuControl === 3.U){
+       fract := Mux(result(47).andR, result(46,24), result(45,23))
+       exponent := Mux(result(47).andR, ((exp_a + exp_b) - 126.U), ((exp_a + exp_b) - 127.U))
+   }.otherwise{
+       fract := 0.U
+       exponent := 0.U
+   }
+   
+
+   //Final result
+   io.s := Cat(0.U, exponent, fract)
+   fpuMessage.a := io.a
+   fpuMessage.b := io.b
+   fpuMessage.mant_a := mant_a
+   fpuMessage.mant_b := mant_b
+   fpuMessage.exp_a := exp_a
+   fpuMessage.exp_b := exp_b
+   fpuMessage.aminusb := aminusb
+   fpuMessage.bminusa := bminusa
+   fpuMessage.alessb := alessb
+   fpuMessage.shmant := shmant
+   fpuMessage.shamt := shamt
+   fpuMessage.shiftedval := shiftedval
+   fpuMessage.addval := addval
+   fpuMessage.ovf := ovf
+   fpuMessage.exp_pre := exp_pre
+   fpuMessage.exponent := exponent
+   fpuMessage.addresult := addresult
+   fpuMessage.result := result
+   fpuMessage.fract := fract
+   fpuMessage.s := io.s
+   printf(p"$fpuMessage")
+}
+*/
 
 class imem extends Module {
     val io = IO(new Bundle {
