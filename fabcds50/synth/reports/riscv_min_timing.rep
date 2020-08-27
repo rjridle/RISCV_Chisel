@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : riscv
 Version: M-2016.12-SP1
-Date   : Tue Aug 25 12:18:07 2020
+Date   : Thu Aug 27 11:42:27 2020
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.

@@ -1,0 +1,14 @@
+
+fpaddtest.out:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <.text>:
+   0:	000070d3          	fadd.s	ft1,ft0,ft0
+   4:	0010f153          	fadd.s	ft2,ft1,ft1
+   8:	002171d3          	fadd.s	ft3,ft2,ft2
+   c:	0021f253          	fadd.s	ft4,ft3,ft2
+  10:	004272d3          	fadd.s	ft5,ft4,ft4
+  14:	0052f353          	fadd.s	ft6,ft5,ft5
+  18:	106373d3          	fmul.s	ft7,ft6,ft6

@@ -22,7 +22,7 @@ if not file_exists:
 
 out_file_name = file_path.split('/')[-1].split('.')[0] + '.hex'
 
-p = subprocess.Popen([riscv_asm, "-aln", "-march=rv32i", "-W", file_path, "-o", riscv_file_out], stdout=subprocess.PIPE)
+p = subprocess.Popen([riscv_asm, "-aln", "-march=rv32imafdc", "-W", file_path, "-o", riscv_file_out], stdout=subprocess.PIPE)
 
 out, err = p.communicate()
 

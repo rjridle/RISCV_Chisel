@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version M-2016.12-SP1 for linux64 -- Jan 13, 2017
-#@ # Date:   Tue Aug 25 12:16:30 2020
+#@ # Date:   Thu Aug 27 11:40:49 2020
 #@ # Run by: rjridle@rivendell.ecen.okstate.edu
 #@ 
 
@@ -5750,7 +5750,7 @@ source -echo -verbose /home/rjridle/risc-v-chisel/fabcds50/synth/scripts/synth.t
 #@ set_output_delay 0.0 -max -clock $my_clk [all_outputs]
 #@ 
 #@ # Setting load constraint on output ports 
-#@ set_load [expr [load_of s8_osu130/DFFSXL/D] * 1] [all_outputs]
+#@ set_load [expr [load_of s8_osu130_tt_1P8_25C.ccs/DFFX2/D] * 1] [all_outputs]
 #@ 
 #@ # Set the wire load model 
 #@ set_wire_load_mode "top"

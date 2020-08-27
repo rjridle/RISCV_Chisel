@@ -77,7 +77,7 @@ set_input_delay 0.0 -max -clock $my_clk $all_in_ex_clk
 set_output_delay 0.0 -max -clock $my_clk [all_outputs]
 
 # Setting load constraint on output ports 
-set_load [expr [load_of s8_osu130/DFFSXL/D] * 1] [all_outputs]
+set_load [expr [load_of s8_osu130_tt_1P8_25C.ccs/DFFX2/D] * 1] [all_outputs]
 
 # Set the wire load model 
 set_wire_load_mode "top"
